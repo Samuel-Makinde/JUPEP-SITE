@@ -1,10 +1,12 @@
-import About from './About/About'
+// import About from './About/About'
+import Footer from './Footer/Footer'
 
 function App() {
 
   return (
     <div>
-      <About/>
+      {/* <About/> */}
+      <Footer/>
     </div>
   )
 }
