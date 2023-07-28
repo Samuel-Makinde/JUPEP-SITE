@@ -12,7 +12,11 @@ export default {
       lg: '976px',
       xl: '1024px'
     },
-    extend: {},
+    extend: {
+      animation: ['motion-safe'],
+      backgroundColor: ['checked'],
+      borderColor: ['checked'],
+    },
   },
   plugins: [],
 }
