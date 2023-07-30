@@ -45,7 +45,7 @@ function Footer() {
             </p>
           </div>
 
-          <div className="w-full space-y-[5px] sm:ml-0 pl-[35px]">
+          <div className="w-full space-y-[5px] sm:pl-[0] pl-[35px]">
             <h2 className="text-3xl">Learn</h2>
             <div className="border border-[#f4b223] w-[100px] mt-[8px]"></div>
             <p>
