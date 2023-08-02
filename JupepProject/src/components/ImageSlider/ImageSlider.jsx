@@ -28,7 +28,7 @@ const ImageSlider = () => {
       <Slider {...settings}>
         <div className="relative w-full h-full border-none font-euclid">
           <img
-            className={`rounded-[30px] md:rounded-none md:w-full  border-none ${styles.imageContainer}`}
+            className={`rounded-[30px] md:rounded-none md:w-full   border-none ${styles.imageContainer}`}
             src={banner}
             alt="banner"
           />
@@ -47,7 +47,7 @@ const ImageSlider = () => {
         </div>
         <div className="w-full h-full border-none">
           <img
-            className={`rounded-[30px] md:rounded-none md:w-full  border-none ${styles.imageContainer}`}
+            className={`rounded-[30px] md:rounded-none md:w-full   border-none ${styles.imageContainer}`}
             src={artPQ}
             alt="artPQ"
           />

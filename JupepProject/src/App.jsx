@@ -5,6 +5,7 @@ import SignUp from "./pages/SignUP/SignUp";
 import Login from "./pages/Login";
 import Home from "./pages/Home/Home";
 import PdfasImage from "./pages/PDF/PdfasImage";
+import ContactUs from "./pages/Contact/ContactUs";
 function App() {
   return (
     <div>
@@ -17,7 +18,8 @@ function App() {
           </Routes>
         </Router>
       </UserProvider> */}
-      <Home />
+      {/* <Home /> */}
+      <ContactUs />
       {/* <PdfasImage /> */}
       {/* <h1>i amgood</h1> */}
     </div>

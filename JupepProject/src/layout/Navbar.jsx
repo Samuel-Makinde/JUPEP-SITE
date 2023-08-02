@@ -3,6 +3,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 // import { Link } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
 // import { BsSearch } from "react-icons/bs";
+import { TbCurrencyNaira } from "react-icons/tb";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -22,7 +23,7 @@ const Navbar = () => {
     setToggle(!toggle);
   };
   return (
-    <main className="fixed w-full h-[60px] md:h-[60px] flex justify-between items-center px-4 bg-white shadow-sm z-20 font-euclid">
+    <main className="fixed w-full h-[60px] flex justify-between items-center px-4 bg-white text-gray-800 shadow-md z-20 font-euclid capitalize">
       <div onClick={handleToggle} className="md:hidden z-10">
         {toggle ? (
           <div className="w-[32px] h-[32px] bg-[#EDEFFD] cursor-pointer flex justify-center items-center rounded-[20px]">
@@ -33,7 +34,7 @@ const Navbar = () => {
         )}
       </div>
       {/* <Link to="/"> */}
-      <div className="w-[93px] h-[24px] md:w-[175px] md:h-[50px] ml-[20px] cursor-pointer ">
+      <div className="w-[93px] h-[24px] md:h-full ml-[20px] md:flex items-center  cursor-pointer ">
         {/* <img src={logoImage} alt="logoImage" /> */}
         <h1>Booklandia</h1>
       </div>
@@ -104,7 +105,7 @@ const Navbar = () => {
 
       {/* big screen topBar */}
 
-      <ul className="hidden flex-row space-x-6 mr-[70px]  md:flex">
+      <ul className="hidden flex-row space-x-4 lg:space-x-6 mr-[70px]  md:flex items-center">
         <li>
           {/* <Link to="home" smooth={true} duration={500}> */}
           Home
@@ -120,17 +121,20 @@ const Navbar = () => {
           View Subjects
           {/* </Link> */}
         </li>
-        <li>Compare Syllabus</li>
+        <li>Syllabus</li>
         <li>
           {/* <Link to="projects" smooth={true} duration={500}> */}
           Contact
           {/* </Link> */}
         </li>
-        <li className="">
-          {/* <Link to="contacts" smooth={true} duration={500}> */}
-          Pricing Category
-          {/* </Link> */}
-        </li>
+
+        {/* <Link to="contacts" smooth={true} duration={500}> */}
+        <button className="bg-blue-600 rounded-md shadow-md shadow-blue-800 hover:opacity-80 flex text-white px-[10px] py-[7px]">
+          <TbCurrencyNaira size={24} className="mr-[5px]" />
+          Pricing
+        </button>
+
+        {/* </Link> */}
       </ul>
     </main>
   );

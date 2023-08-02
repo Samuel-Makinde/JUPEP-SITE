@@ -80,10 +80,10 @@ const Home = () => {
         </div> */}
         <div className="w-full h-full  ">
           <div className="w-full h-full  bg-[#275bd4] text-white flex flex-col items-center ">
-            <h1 className=" text-2xl mt-[40px]">
+            <h1 className=" text-2xl mt-[40px] text-center">
               How we solved Jupeb reading problem
             </h1>
-            <p className="w-full md:w-[500px] px-4 md:px-0 h-full mt-[30px] pb-[40px]">
+            <p className="w-full md:w-[600px] px-4 md:px-0 h-full mt-[30px] pb-[40px]">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
               tenetur, voluptates distinctio optio deserunt deleniti dolorem et
               quasi quos vitae voluptate fuga ea adipisci eum, quibusdam
@@ -104,32 +104,33 @@ const Home = () => {
                 below and more while free user tend to enjoy telegram channel
                 benefit{" "}
               </p>
-              <div className="w-full h-full md:grid grid-flow-col gap-4 text-[16px] mt-[30px]">
+              <div className="w-full h-full md:grid grid-flow-col  gap-4 text-[16px] text-gray-700 text-center mt-[50px] leading-normal">
                 <div className="w-full h-full flex flex-col items-center">
                   <ImBook size={40} className="text-blue-500" />
                   <p className="mt-[15px]">
-                    Jupeb Textbooks that contain explanation of all topics in
-                    001/002/003/004
+                    Jupeb Textbooks that contain{" "}
+                    <b>explanation of all topics </b>
+                    in 001/002/003/004
                   </p>
                 </div>
-                <div className="w-full h-full flex flex-col items-center">
+                <div className="w-full h-full flex flex-col items-center mt-[40px] md:mt-0">
                   <ImBook size={40} className="text-blue-900" />
                   <p className="mt-[15px]">Jupeb Past questions and Answers </p>
                 </div>
-                <div className="w-full h-full flex flex-col items-center">
+                <div className="w-full h-full flex flex-col items-center mt-[40px] md:mt-0">
                   <BsTelegram size={40} className="text-blue-900" />
                   <p className="mt-[15px]">
                     Active Telegram channel to ask questions or find help on
                     topics you don&apos;t understand
                   </p>
                 </div>
-                <div className="w-full h-full flex flex-col items-center">
+                <div className="w-full h-full flex flex-col items-center mt-[40px] md:mt-0">
                   <TbBrandZoom size={40} className="text-blue-900" />
                   <p className="mt-[15px]">
                     Weekly video call to explain a section details
                   </p>
                 </div>
-                <div className="w-full h-full flex flex-col items-center">
+                <div className="w-full h-full flex flex-col items-center mt-[40px] md:mt-0">
                   <TbDevices size={40} className="text-blue-900 " />
                   <p className="mt-[15px]">
                     Oppurtunity to read any time, anywhere with your device
@@ -137,66 +138,92 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full h-full flex flex-col items-center mt-[80px] ">
-              <h2>Browse Through All Available Subjects</h2>
+            <div className="w-full h-full flex flex-col items-center mt-[150px] text-gray-900">
+              <h2 className="text-center text-[18px] md:text-[30px]">
+                Browse Through All Available Subjects
+              </h2>
               <div className="w-full h-full mt-[40px] grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 place-items-center">
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] shadow-lg hover:scale-110 duration-500 rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-blue-900" />
-                  <p className="mt-[10px]">Physics</p>
+                  <p className="mt-[10px] text-[16px] md:text-[25px]">
+                    Physics
+                  </p>
                 </div>
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-blue-900" />
-                  <p className="mt-[10px]">Physics</p>
+                  <p className="mt-[10px] text-[16px] md:text-[25px]">
+                    Physics
+                  </p>
                 </div>
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-blue-900" />
-                  <p className="mt-[10px]">Physics</p>
+                  <p className="mt-[10px] text-[16px] md:text-[25px]">
+                    Physics
+                  </p>
                 </div>
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-blue-900" />
-                  <p className="mt-[10px]">Physics</p>
+                  <p className="mt-[10px] text-[16px] md:text-[25px]">
+                    Physics
+                  </p>
                 </div>
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-blue-900" />
-                  <p className="mt-[20px]">Physics</p>
+                  <p className="mt-[20px] text-[16px] md:text-[25px]">
+                    Physics
+                  </p>
                 </div>
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-blue-900" />
-                  <p className="mt-[10px]">Physics</p>
+                  <p className="mt-[10px] text-[16px] md:text-[25px]">
+                    Physics
+                  </p>
                 </div>
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-blue-900" />
-                  <p className="mt-[10px]">Physics</p>
+                  <p className="mt-[10px] text-[16px] md:text-[25px]">
+                    Physics
+                  </p>
                 </div>
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-blue-900" />
-                  <p className="mt-[10px]">Physics</p>
+                  <p className="mt-[10px] text-[16px] md:text-[25px]">
+                    Physics
+                  </p>
                 </div>
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-blue-900" />
-                  <p className="mt-[10px]">Physics</p>
+                  <p className="mt-[10px] text-[16px] md:text-[25px]">
+                    Physics
+                  </p>
                 </div>
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-blue-900" />
-                  <p className="mt-[10px]">Physics</p>
+                  <p className="mt-[10px] text-[16px] md:text-[25px]">
+                    Physics
+                  </p>
                 </div>
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-blue-900" />
-                  <p className="mt-[10px]">Physics</p>
+                  <p className="mt-[10px] text-[16px] md:text-[25px]">
+                    Physics
+                  </p>
                 </div>
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-blue-900" />
-                  <p className="mt-[10px]">Physics</p>
+                  <p className="mt-[10px] text-[16px] md:text-[25px]">
+                    Physics
+                  </p>
                 </div>
               </div>
             </div>
 
-            <div className="w-full h-full md:h-[400px] flex flex-col md:flex-row items-center  md:justify-evenly  bg-blue-900  text-white rounded-[15px] mt-[90px]">
+            <div className="w-full h-full md:h-[470px] lg:h-[400px] flex flex-col md:flex-row items-center  md:justify-evenly pl-3 lg:pl-0  bg-blue-600  text-white rounded-[15px] mt-[90px]">
               <div className="md:w-[500px] h-full flex flex-col justify-center ">
                 <BiLogoTelegram size={200} className="text-[#f2f3f5]" />
                 {/* <div className="bg-red-800 h-[90px] w-[200px] text-center"> */}
                 <a
-                  className="text-black h-[60px] w-[200px] md:w-[250px] mt-[20px] flex justify-center items-center bg-[#FFCB3E] transform motion-safe:hover:scale-110 rounded-[10px]"
+                  className="text-black h-[60px] w-[200px] lg:w-[250px] mt-[20px] flex justify-center items-center bg-[#FFCB3E] hover:opacity-90 rounded-[10px]"
                   rel="noreferrer"
                   target="_blank"
                   href="https://t.me/+u5_EgioIoPM3Njk0"
@@ -205,42 +232,43 @@ const Home = () => {
                   Click to Join
                 </a>
               </div>
-              <div className="md:w-[440px] w-full h-full px-4 py-4">
+              <div className="md:w-[440px] w-full h-full  px-4 py-4">
                 {" "}
-                <h3 className="font-bold">
+                <h3 className="font-bold text-center">
                   Join our telegram channel for free
                 </h3>
                 <h4 className="font-semibold text-center mt-[10px]">
                   Benefit of Joining{" "}
                 </h4>
-                <div className="text-[#f2f3f5] text-[18px] mt-[15px] ">
-                  <p className="">
+                <div className="text-[#f2f3f5] text-[18px] text-center md:text-left mt-[15px] leading-snug ">
+                  <p className="mt-[15px]">
                     Opportunity to ask Jupep related questions from academial
                   </p>
-                  <p>
+                  <p className="mt-[15px]">
                     You get to interact with other students talking Jupeb in
                     other schools
                   </p>
-                  <p>
+                  <p className="mt-[15px]">
                     You get to interact with other students talking Jupeb in
                     other schools
                   </p>
-                  <p>
+                  <p className="mt-[15px]">
                     You get to interact with other students talking Jupeb in
                     other schools
                   </p>
                 </div>
               </div>
             </div>
+
             <div className="mt-[90px] ">
               <img src={college} alt="college" className="w-full h-[300px]" />
             </div>
             <div
               className={`w-full h-full md:h-[300px] flex items-center justify-between px-10 mt-[90px] border-[3px] border-[#f7b704] shadow-lg rounded-[10px] ${styles.comparePlan}`}
             >
-              <div className="text-[16px]">
+              <div className="text-[16px] mb-[20px]">
                 <h5 className="text-[30px] mt-[20px]">Start For free</h5>
-                <div>
+                <div className="mt-[15px]">
                   <input
                     type="checkbox"
                     id="first"
@@ -249,7 +277,7 @@ const Home = () => {
                   />
                   <label htmlFor="first">acess to all textbooks</label>
                 </div>
-                <div>
+                <div className="mt-[7px]">
                   <input
                     type="checkbox"
                     id="second"
@@ -260,7 +288,7 @@ const Home = () => {
                     acess to past questions and answers
                   </label>
                 </div>
-                <div>
+                <div className="mt-[7px]">
                   <input
                     type="checkbox"
                     id="third"
@@ -274,7 +302,7 @@ const Home = () => {
                 </div>
                 <button
                   type="submit"
-                  className="h-[40px] w-[180px] bg-[#f7b704] text-white text-[22px] mt-[30px] rounded-[10px] shadow-lg opacity-90 hover:opacity-100"
+                  className="h-[40px] w-[180px]  bg-[#f7b704] text-white text-[22px] mt-[30px]  rounded-[10px] shadow-lg opacity-90 hover:opacity-100"
                 >
                   View Plans
                 </button>

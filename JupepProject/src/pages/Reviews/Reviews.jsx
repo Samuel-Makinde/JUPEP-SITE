@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import testimonials from "../../data/Review";
 
-const testimonialLimit = 3;
+const testimonialLimit = window.innerWidth >= 768 ? 3 : 1;
 
 const Reviews = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -31,17 +31,17 @@ const Reviews = () => {
   }, [currentIndex]);
 
   return (
-    <article className="w-full h-full mt-[100px] text-gray-600 font-semibold">
-      <h1 className="w-full h-full text-center">
+    <article className="w-full h-full mt-[100px] text-gray-600 ">
+      <h1 className="w-full h-full font-bold text-center text-[22px] md:text-[35px]">
         Reviews from past and current students
       </h1>
-      <div className="testimonial-container flex overflow-hidden transition-transform ease-in-out duration-500 mt-[50px]">
+      <div className="testimonial-container flex overflow-hidden transition-transform ease-in-out duration-500 mt-[50px] ">
         {visibleTestimonials.map((review) => {
           const { id, name, image, text } = review;
           return (
             <div
               key={id}
-              className="testimonial flex-shrink-0 w-1/3 px-4 text-center"
+              className="testimonial flex-shrink-0 w-full md:w-1/3 px-4 text-center"
             >
               <img
                 src={image}
@@ -49,7 +49,7 @@ const Reviews = () => {
                 className="h-[70px] w-[70px] md:h-[140px] md:w-[140px] mx-auto rounded-full"
               />
               <p className="text-lg font-bold mt-4">{name}</p>
-              <p className=" text-[16px]">{text}</p>
+              <p className=" text-[16px] leading-snug font-normal">{text}</p>
             </div>
           );
         })}
