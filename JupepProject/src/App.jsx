@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Home from "./pages/Home/Home";
 import PdfasImage from "./pages/PDF/PdfasImage";
 import ContactUs from "./pages/Contact/ContactUs";
+import Pricing from "./pages/Pricing-Page/Pricing";
 function App() {
   return (
     <div>
@@ -19,7 +20,8 @@ function App() {
         </Router>
       </UserProvider> */}
       {/* <Home /> */}
-      <ContactUs />
+      {/* <ContactUs /> */}
+      <Pricing />
       {/* <PdfasImage /> */}
       {/* <h1>i amgood</h1> */}
     </div>

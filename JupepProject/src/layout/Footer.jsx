@@ -2,7 +2,7 @@ import { FaLinkedin, FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className="bg-[#26282a] w-full  mt-[100px] h-full px-4 md:px-6 lg:px-10">
+    <footer className="bg-[#26282a] w-full   h-full px-4 md:px-6 lg:px-10">
       <div className="w-full h-full">
         {/*Taria  */}
         <div className=" text-white text-center md:pt-[10px] pt-[10px] md:pl-[14px] sm:pl-[40px] w-full h-full">

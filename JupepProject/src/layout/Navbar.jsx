@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
 // import { BsSearch } from "react-icons/bs";
 import { TbCurrencyNaira } from "react-icons/tb";
