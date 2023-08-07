@@ -18,7 +18,7 @@ const FAQPage = () => {
   };
 
   return (
-    <main className="w-full h-full mt-[120px] text-gray-950 font-medium capitalize">
+    <main className="w-full h-full mt-[120px] text-gray-950 font-medium capitalize mb-[70px]">
       <div className="w-full h-full md:flex md:justify-evenly px-4 md:px-6 lg:px-8 ">
         <div className="md:mt-[22px]">
           <h1 className="md:text-[35px] font-bold">Frequently Ask Questions</h1>

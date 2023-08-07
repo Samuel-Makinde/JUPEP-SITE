@@ -7,21 +7,27 @@ import Home from "./pages/Home/Home";
 import PdfasImage from "./pages/PDF/PdfasImage";
 import ContactUs from "./pages/Contact/ContactUs";
 import Pricing from "./pages/Pricing-Page/Pricing";
+import ScrollToTop from "./layout/ScrollToTop/ScrollToTop";
+import About from "./pages/About/About";
 function App() {
   return (
     <div>
-      {/* <UserProvider>
+      <UserProvider>
         <Router>
+          <ScrollToTop />
           <Routes>
-            <Route path="/login" element={<Login />} /> 
-             <Route path="/" element={<SignUp />} />
-            <Route path="/home" element={<Home />} />
+            {/* <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} /> */}
+            <Route path="/" element={<Home />} />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </Router>
-      </UserProvider> */}
+      </UserProvider>
       {/* <Home /> */}
       {/* <ContactUs /> */}
-      <Pricing />
+      {/* <Pricing /> */}
       {/* <PdfasImage /> */}
       {/* <h1>i amgood</h1> */}
     </div>

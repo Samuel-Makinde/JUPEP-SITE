@@ -13,6 +13,8 @@ import college from "../../assets/Home Landing Image/college.jpeg";
 // import physcis from "../../assets/Home Landing Image/physcis.png";
 import { GiAtom } from "react-icons/gi";
 import { BiLogoTelegram } from "react-icons/bi";
+import { Link } from "react-router-dom";
+
 import styles from "./home.module.css";
 import compare from "../../assets/Home Landing Image/comparePlan.jpeg";
 import Reviews from "../Reviews/Reviews";
@@ -300,12 +302,14 @@ const Home = () => {
                     syllabus
                   </label>
                 </div>
-                <button
-                  type="submit"
-                  className="h-[40px] w-[180px]  bg-[#f7b704] text-white text-[22px] mt-[30px]  rounded-[10px] shadow-lg opacity-90 hover:opacity-100"
-                >
-                  View Plans
-                </button>
+                <Link to="/pricing">
+                  <button
+                    type="submit"
+                    className="h-[40px] w-[180px]  bg-[#f7b704] text-white text-[22px] mt-[30px]  rounded-[10px] shadow-lg opacity-90 hover:opacity-100"
+                  >
+                    View Plans
+                  </button>
+                </Link>
               </div>
               <div className="w-[300px] h-[250px] ">
                 <img src={compare} alt="devices" className="rounded-[10px]" />

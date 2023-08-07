@@ -5,7 +5,7 @@ import { BsWhatsapp } from "react-icons/bs";
 const ContactUs = () => {
   return (
     <Layout>
-      <main className="w-full h-full bg-white px-4 md:px-6 lg:px-20 ">
+      <main className="w-full h-full bg-white px-4 md:px-6 lg:px-20 mb-[70px] ">
         <div className="w-full h-full pt-[100px] md:pt-[150px]">
           <h1 className="text-[24px] md:text-[48px]">Contact Us</h1>
           <p>

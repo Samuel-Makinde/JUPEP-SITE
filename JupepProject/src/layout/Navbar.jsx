@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
 // import { BsSearch } from "react-icons/bs";
 import { TbCurrencyNaira } from "react-icons/tb";
+import { GoPeople } from "react-icons/go";
+import { IoPricetagOutline } from "react-icons/io5";
+import { MdOutlineContactPhone } from "react-icons/md";
+import { FiBookOpen, FiBook } from "react-icons/fi";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -33,12 +37,12 @@ const Navbar = () => {
           <FaBars className="text-[#54555B] w-[18px] h-[16px]  cursor-pointer transition-transform hover:scale-110 ease-in-out delay-1000 duration-1000 transform" />
         )}
       </div>
-      {/* <Link to="/"> */}
-      <div className="w-[93px] h-[24px] md:h-full ml-[20px] md:flex items-center  cursor-pointer ">
-        {/* <img src={logoImage} alt="logoImage" /> */}
-        <h1>Booklandia</h1>
-      </div>
-      {/* </Link> */}
+      <Link to="/" smooth={true} duration={500}>
+        <div className="w-[93px] h-[24px] md:h-full ml-[20px] md:flex items-center  cursor-pointer ">
+          {/* <img src={logoImage} alt="logoImage" /> */}
+          <h1>Booklandia</h1>
+        </div>
+      </Link>
 
       {/* mobile-view-navbar */}
       <ul
@@ -60,24 +64,24 @@ const Navbar = () => {
         </li>
         {/* </Link> */}
 
-        {/* <Link to="/"> */}
-        <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal ">
-          <AiOutlineHome size={20} />
-          <h1 className="pl-[10px] cursor-pointer">Home</h1>
-        </li>
-        {/* </Link> */}
+        <Link to="/" smooth={true} duration={500}>
+          <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal ">
+            <AiOutlineHome size={20} />
+            <h1 className="pl-[10px] cursor-pointer">Home</h1>
+          </li>
+        </Link>
 
-        {/* <Link to="/savedproduct"> */}
-        <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal ">
-          {/* <img src={love} alt="cart" className="cursor-pointer" /> */}
-          <h1 className="pl-[7px] cursor-pointer">Saved hostel</h1>
-        </li>
-        {/* </Link> */}
+        <Link to="/about">
+          <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal ">
+            <GoPeople size={20} />
+            <h1 className="pl-[7px] cursor-pointer">About</h1>
+          </li>
+        </Link>
 
         {/* <Link to="/cart"> */}
         <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal ">
-          {/* <img src={cart} alt="cart" className="cursor-pointer" /> */}
-          <h1 className="pl-[10px] cursor-pointer">Cart</h1>
+          <FiBook size={20} />
+          <h1 className="pl-[10px] cursor-pointer">View Subjects</h1>
         </li>
         {/* </Link> */}
 
@@ -85,8 +89,8 @@ const Navbar = () => {
 
         {/* <Link to="/about"> */}
         <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal ">
-          {/* <img src={aboutUs} alt="about" className="cursor-pointer" /> */}
-          <h1 className="pl-[10px] cursor-pointer">About us</h1>
+          <FiBookOpen size={20} />
+          <h1 className="pl-[10px] cursor-pointer">Syllabus</h1>
         </li>
         {/* </Link> */}
 
@@ -95,26 +99,34 @@ const Navbar = () => {
           <h1 className="pl-[10px] cursor-pointer">Contact us</h1>
         </li> */}
 
-        {/* <Link to="/staff"> */}
-        <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal ">
-          {/* <img src={staffs} alt="staffs" className="cursor-pointer" /> */}
-          <h1 className="pl-[10px] cursor-pointer">Staff page</h1>
-        </li>
-        {/* </Link> */}
+        <Link to="/contact" smooth={true} duration={500}>
+          <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal ">
+            <MdOutlineContactPhone size={24} />
+            <h1 className="pl-[10px] cursor-pointer">Contact</h1>
+          </li>
+        </Link>
+
+        <Link to="/pricing" smooth={true} duration={500}>
+          <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal ">
+            <IoPricetagOutline size={24} />
+            <h1 className="pl-[10px] cursor-pointer">Pricing</h1>
+          </li>
+        </Link>
       </ul>
 
       {/* big screen topBar */}
 
       <ul className="hidden flex-row space-x-4 lg:space-x-6 mr-[70px]  md:flex items-center">
         <li>
-          {/* <Link to="home" smooth={true} duration={500}> */}
-          Home
-          {/* </Link> */}
+          <Link to="/" smooth={true} duration={500}>
+            {" "}
+            Home
+          </Link>
         </li>
         <li>
-          {/* <Link to="about" smooth={true} duration={500}> */}
-          About
-          {/* </Link> */}
+          <Link to="/about" smooth={true} duration={500}>
+            About
+          </Link>
         </li>
         <li>
           {/* <Link to="skills" smooth={true} duration={500}> */}
@@ -123,18 +135,17 @@ const Navbar = () => {
         </li>
         <li>Syllabus</li>
         <li>
-          {/* <Link to="projects" smooth={true} duration={500}> */}
-          Contact
-          {/* </Link> */}
+          <Link to="/contact" smooth={true} duration={500}>
+            Contact
+          </Link>
         </li>
 
-        {/* <Link to="contacts" smooth={true} duration={500}> */}
-        <button className="bg-blue-600 rounded-md shadow-md shadow-blue-800 hover:opacity-80 flex text-white px-[10px] py-[7px]">
-          <TbCurrencyNaira size={24} className="mr-[5px]" />
-          Pricing
-        </button>
-
-        {/* </Link> */}
+        <Link to="/pricing" smooth={true} duration={500}>
+          <button className="bg-blue-600 rounded-md shadow-md shadow-blue-800 hover:opacity-80 flex text-white px-[10px] py-[7px]">
+            <TbCurrencyNaira size={24} className="mr-[5px]" />
+            Pricing
+          </button>
+        </Link>
       </ul>
     </main>
   );
