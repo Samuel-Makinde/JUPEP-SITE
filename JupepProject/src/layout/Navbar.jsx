@@ -8,6 +8,8 @@ import { GoPeople } from "react-icons/go";
 import { IoPricetagOutline } from "react-icons/io5";
 import { MdOutlineContactPhone } from "react-icons/md";
 import { FiBookOpen, FiBook } from "react-icons/fi";
+import { RxPerson } from "react-icons/rx";
+
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -42,13 +44,14 @@ const Navbar = () => {
       >
         <Link to="/signup" smooth="true" duration={500}>
         <li className="text-[#04050C] leading-[20px] text-[16px] flex px-[24px] py-[16px]  font-medium">
+          <RxPerson />
           <h1 className="pl-[10px] cursor-pointer">Sign UP</h1>
         </li>
         </Link>
 
         <Link to="/login" smooth="true" duration={500}>
         <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal ">
-          
+          <RxPerson />
           <h1 className="pl-[10px] cursor-pointer">Log in</h1>
         </li>
         </Link>
@@ -106,6 +109,7 @@ const Navbar = () => {
       {/* big screen topBar */}
 
       <ul className="hidden flex-row space-x-4 lg:space-x-6 mr-[70px]  md:flex items-center">
+         
         <li>
           <Link to="/" smooth="true" duration={500}>
             {" "}
@@ -137,6 +141,18 @@ const Navbar = () => {
             <TbCurrencyNaira size={24} className="mr-[5px]" />
             Pricing
           </button>
+        </Link>
+        <Link to="/signup" smooth="true" duration={500}>
+        <li >
+          <h1 >Sign-up</h1>
+        </li>
+        </Link>
+
+        <Link to="/login" smooth="true" duration={500}>
+        <li >
+          
+          <h1 >Log in</h1>
+        </li>
         </Link>
       </ul>
     </main>

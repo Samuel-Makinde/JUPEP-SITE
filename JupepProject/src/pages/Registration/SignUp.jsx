@@ -2,11 +2,11 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import axios from "axios";
 // import { FcGoogle } from "react-icons/fc";
 // import { FaFacebook } from "react-icons/fa";
 // import { BsTwitter } from "react-icons/bs";
 import { BsTelephone } from "react-icons/bs";
-
 import { RxPerson } from "react-icons/rx";
 import { IoIosSchool } from "react-icons/io";
 import { AiOutlineMail } from "react-icons/ai";
@@ -66,17 +66,38 @@ const SignUp = () => {
     passwordNotVisibleC((prevState) => !prevState);
   };
 
+   const onSubmit = async (data, e) => {
+  e.preventDefault();
+  console.log(data)
+  try {
+    const username = data.firstName + '.' + data.lastName.charAt(0).toLowerCase();
+    const response = await axios.post(`http://localhost:5000/api/v1/register`, {
+      username: username,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        phoneNumber: data.phoneNumber,
+        university: data.university,
+        password: data.password,
+      })
+      console.log("success: ",data);
+    console.log("working", response)
+  } catch (error) {
+    console.log(error.message)
+  }
+};
+
   return (
     <main className="w-full h-full px-4 font-sans md:bg-[#A4C6FC] text-black">
       <div className="w-full h-full">
-        <h1 className="text-2xl md:text-4xl text-blue-800 font-extrabold">
-          Welcome to Booklandia
+        <h1 className="text-2xl md:text-4xl pt-[20px] text-blue-800 font-extrabold">
+          Welcome to EaseReads
         </h1>
       </div>
       <div className="w-full h-full flex justify-center items-center mt-[60px] pb-[40px]">
         <div className="md:w-9/12 lg:w-8/12 xl:w-7/12 h-full mt-[40px] md:bg-white md:shadow-2xl md:rounded-[8px] flex flex-col justify-center items-center  ">
           <form
-            onSubmit={handleSubmit()}
+            onSubmit={handleSubmit(onSubmit)}
             className="w-full h-full flex flex-col justify-center items-center px-4"
           >
             <div className="w-full h-full text-center ">

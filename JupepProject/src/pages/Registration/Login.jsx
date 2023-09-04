@@ -48,7 +48,7 @@ const Login = () => {
   return (
     <main className="-full h-full px-4 font-sans md:bg-[#A4C6FC] text-black">
       <div className="w-full h-full">
-        <h1 className="text-2xl md:text-4xl text-blue-800 font-extrabold">
+        <h1 className="text-2xl md:text-4xl pt-[20px] text-blue-800 font-extrabold">
           Welcome to EaseReads
         </h1>
       </div>

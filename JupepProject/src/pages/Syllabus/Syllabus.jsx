@@ -25,13 +25,13 @@ const sub = () => {
             className="w-full  pt-[80px]"
           >
               
-            <div className="md:pt-[20px]  text-center md:flex md:flex-row md:justify-center md:space-x-[120px] md:pr-[50px]">
+            <div className="md:pt-[20px] text-center flex flex-col md:flex-row justify-center items-center  ">
               <div className="md:w-[900px] lg:w-[800px]">
                 <h2 className="text-4xl font-bold text-center">{item.title}</h2>
                 <p className="pt-[20px] md:text-2xl text-xl md:pl-20 text-center">
                   {item.description}
                 </p>
-                <p className="underline mt-[30px] text-xl text-blue-950   cursor-pointer">
+                <p className="underline mt-[30px]  text-xl text-blue-950 cursor-pointer font-bold">
                   {item.download}
                 </p>
               </div>

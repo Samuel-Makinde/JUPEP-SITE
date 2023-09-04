@@ -12,7 +12,7 @@ import { BsTelegram } from "react-icons/bs";
 import college from "../../assets/Home Landing Image/college.jpeg";
 // import physcis from "../../assets/Home Landing Image/physcis.png";
 import { GiAtom } from "react-icons/gi";
-import { BiLogoTelegram } from "react-icons/bi";
+import { BsWhatsapp } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 import styles from "./home.module.css";
@@ -220,15 +220,15 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="w-full h-full md:h-[470px] lg:h-[400px] flex flex-col md:flex-row items-center  md:justify-evenly pl-3 lg:pl-0  bg-blue-600  text-white rounded-[15px] mt-[90px]">
+            <div className="w-full h-full md:h-[470px] lg:h-[400px] flex flex-col md:flex-row items-center  md:justify-evenly pl-3 lg:pl-0  bg-[#3B82F6]  text-white rounded-[15px] mt-[90px]">
               <div className="md:w-[500px] h-full flex flex-col justify-center ">
-                <BiLogoTelegram size={200} className="text-[#f2f3f5]" />
+                <BsWhatsapp size={200} className="text-white" />
                 {/* <div className="bg-red-800 h-[90px] w-[200px] text-center"> */}
                 <a
                   className="text-black h-[60px] w-[200px] lg:w-[250px] mt-[20px] flex justify-center items-center bg-[#FFCB3E] hover:opacity-90 rounded-[10px]"
                   rel="noreferrer"
                   target="_blank"
-                  href="https://t.me/+u5_EgioIoPM3Njk0"
+                  href="https://chat.whatsapp.com/B4uHSlVlwjAE8Y9bqWDtRF"
                 >
                   {" "}
                   Click to Join
@@ -237,7 +237,7 @@ const Home = () => {
               <div className="md:w-[440px] w-full h-full  px-4 py-4">
                 {" "}
                 <h3 className="font-bold text-center">
-                  Join our telegram channel for free
+                  Join our Whatsapp community for free
                 </h3>
                 <h4 className="font-semibold text-center mt-[10px]">
                   Benefit of Joining{" "}
