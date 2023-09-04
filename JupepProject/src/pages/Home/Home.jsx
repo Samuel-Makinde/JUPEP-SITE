@@ -277,7 +277,7 @@ const Home = () => {
                     checked
                     className={`${styles.checkbox}`}
                   />
-                  <label htmlFor="first">acess to all textbooks</label>
+                  <label htmlFor="first">access to all textbooks</label>
                 </div>
                 <div className="mt-[7px]">
                   <input
@@ -287,7 +287,7 @@ const Home = () => {
                     className={`${styles.checkbox} text-yellow-500`}
                   />
                   <label htmlFor="second">
-                    acess to past questions and answers
+                    access to past questions and answers
                   </label>
                 </div>
                 <div className="mt-[7px]">

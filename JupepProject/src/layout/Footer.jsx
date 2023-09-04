@@ -1,4 +1,5 @@
 import { FaLinkedin, FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -28,48 +29,43 @@ function Footer() {
 
         <div className="w-full h-full text-white mt-[90px] lg:grid lg:grid-cols-5 grid grid-cols-2">
           <div className="w-full space-y-[5px]">
-            <h2 className="text-3xl">Zendy</h2>
+            <h2 className="text-3xl">EaseReads</h2>
             <div className="border border-[#f4b223] w-[100px] mt-[8px]"></div>
+            <Link to="/about" smooth="true" duration={500}>
             <p>
               <button>About</button>
             </p>
-            <p>
-              <button>Careers</button>
-            </p>
-            <p>
-              <button>Publisher Partners</button>
-            </p>
+            </Link>
+            <Link to="/contact" smooth="true" duration={500}>
             <p>
               <button>Contact Us</button>
             </p>
+            </Link>
           </div>
 
           <div className="w-full space-y-[5px] sm:pl-[0] pl-[35px]">
             <h2 className="text-3xl">Learn</h2>
             <div className="border border-[#f4b223] w-[100px] mt-[8px]"></div>
-            <p>
-              <button>FAQS</button>
-            </p>
-            <p>
-              <button>Blogs</button>
-            </p>
-            <p>
+            {/* <Link> */}
+             <p>
               <button>Terms of Use</button>
             </p>
+            {/* </Link> */}
+           {/* <link> */}
             <p>
               <button>Privacy Policy</button>
             </p>
+           {/* </link> */}
+           
           </div>
 
           <div className="w-full space-y-[5px]">
             <h2 className="text-3xl lg:mt-0 mt-[20px]">Discover</h2>
             <div className="border border-[#f4b223] w-[130px] mt-[8px]"></div>
-            <p>
-              <button>Journals</button>
-            </p>
-            <p>
-              <button>Proceedings</button>
-            </p>
+            <Link to="/syllabus" smooth="true" duration={500} >
+            <button>Jupeb Syllabus</button>
+            </Link>
+           
             <p>
               <button>Books</button>
             </p>

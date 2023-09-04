@@ -1,13 +1,6 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-// import banner from "../../assets/Home Landing Image/Jupeb banner 1.jpg";
-// import science from "../../assets/Home Landing Image/jupeb hard cover-science & management science.jpg";
-// import artPQ from "../../assets/Home Landing Image/jupeb hard cover ART  & SOCAIL SCIENCE.jpg";
-// import management from "../../assets/Home Landing Image/jupeb hard cover management.jpg";
-// import unilag from "../../assets/Home Landing Image/UNILAG standing.jpg";
-// import oau from "../../assets/Home Landing Image/oau standing.jpg";
-// import unilorin from "../../assets/Home Landing Image/unilorin standing.jpg";
 import futa from "../../assets/Home Landing Image/new futa.jpg";
 import Nfuta from "../../assets/Home Landing Image/large futa.jpg";
 import styles from "./ImageSlider.module.css";

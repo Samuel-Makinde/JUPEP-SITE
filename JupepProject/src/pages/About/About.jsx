@@ -14,7 +14,7 @@ const About = () => {
           <div className=" w-full h-full md:grid md:grid-cols-2 md:gap-10 overflow-hidden">
             <h1 className=" font-semibold text-[24px] leading-[30.43px] md:text-[48px] lg:w-[613px] md:w-[400px] md:h-[183px] lg:ml-[83px] md:ml-[50px] md:leading-[60.86px]">
               At <span className="text-[#4D5DED]"> Booklandia</span> We are
-              passionate about your academic sucess.
+              passionate about your academic success.
             </h1>
             <p className="font-regular lg:w-[469px] mt-[25px] md:h-[80px] md:mt-[103px] md:mr-[5px] break-words leading-[20.29px] text-[#54555B] text-[16px]">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa in

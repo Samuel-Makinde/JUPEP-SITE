@@ -2,13 +2,12 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { FcGoogle } from "react-icons/fc";
-import { FaFacebook } from "react-icons/fa";
-import { BsTwitter } from "react-icons/bs";
+// import { FcGoogle } from "react-icons/fc";
+// import { FaFacebook } from "react-icons/fa";
+// import { BsTwitter } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
 import { BiKey } from "react-icons/bi";
-import { Link, useNavigate } from "react-router-dom";
-import { useGlobalContext } from "../context/AuthContext";
+import { Link } from "react-router-dom";
 
 const formSchema = yup.object().shape({
   email: yup
@@ -28,14 +27,9 @@ const formSchema = yup.object().shape({
 });
 
 const Login = () => {
-  const { Login } = useGlobalContext();
   const [passwordVisibile, passwordNotVisible] = useState(false);
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
-  const [errorMessage, setErrorMessage] = useState("");
-  const navigate = useNavigate();
+  
+ 
 
   const togglePassword = () => {
     passwordNotVisible((prevState) => !prevState);
@@ -49,24 +43,13 @@ const Login = () => {
     resolver: yupResolver(formSchema),
   });
 
-  const onSubmit = async (data) => {
-    // e.preventDefault();
-    setErrorMessage("");
-    try {
-      await Login(data.email, data.password);
-      setFormData(data);
-      navigate("/home");
-    } catch (error) {
-      setErrorMessage(error.message);
-      console.log(error.message);
-    }
-  };
+  
 
   return (
     <main className="-full h-full px-4 font-sans md:bg-[#A4C6FC] text-black">
       <div className="w-full h-full">
         <h1 className="text-2xl md:text-4xl text-blue-800 font-extrabold">
-          Welcome to Booklandia
+          Welcome to EaseReads
         </h1>
       </div>
 
@@ -74,7 +57,7 @@ const Login = () => {
         <div className="w-full h-full md:w-8/12 lg:w-7/12 xl:w-6/12 pb-[20px] md:bg-white md:shadow-2xl md:rounded-[8px] flex flex-col justify-center items-center">
           <form
             className="w-full h-full flex flex-col justify-center items-center px-4 "
-            onSubmit={handleSubmit(onSubmit)}
+            onSubmit={handleSubmit()}
           >
             <div className="w-full h-full text-center ">
               <h1 className="text-[#04050C] text-[24px] md:text-[48px] ">
@@ -86,7 +69,8 @@ const Login = () => {
               </p>
             </div>
 
-            <div className="w-full h-full mt-[25px] flex flex-col md:flex-row items-center justify-evenly text-center ">
+            {/* social media login */}
+            {/* <div className="w-full h-full mt-[25px] flex flex-col md:flex-row items-center justify-evenly text-center ">
               <button className="w-full h-[60px]  flex items-center justify-center border border-[#B3B4BB] px-4 rounded-[8px] cursor-pointer">
                 <FcGoogle size={24} className="mr-[10px]" />
                 <p className="text-[#04050C] text-[16px] leading-[20.21px]">
@@ -105,15 +89,15 @@ const Login = () => {
                   Log in with Twitter
                 </p>
               </button>
-            </div>
+            </div> */}
 
-            <div className="w-full flex items-center mt-[30px] ">
+            {/* <div className="w-full flex items-center mt-[30px] ">
               <div className="flex-1 h-[1px] border-[1px] border-b-gray-800"></div>
               <p className="mx-4 text-gray-600">OR</p>
               <div className="flex-1 border-[1px] border-b-gray-800"></div>
-            </div>
+            </div> */}
 
-            <div className="w-full h-full mt-[30px]">
+            <div className="w-full h-full mt-[90px]">
               <div className="relative w-full h-full flex flex-col-reverse">
                 <label
                   className="absolute top-[4px] left-[50px] text-[#04050C] md:text-[12px] leading-[15.22px]"
@@ -131,12 +115,12 @@ const Login = () => {
                   name="email"
                   {...register("email")}
                   placeholder="email address"
-                  className="w-full h-[60px] border-2  border-[#B3B4BB] rounded-[5px]"
+                  className="w-full h-[60px] border-2  border-[#B3B4BB] rounded-[5px] outline-none"
                   style={{ paddingLeft: "50px" }}
                 />
               </div>
               <small
-                className="text-red-900 text-[14px] font-light"
+                className="text-red-900 text-[14px] font-bold"
                 style={{
                   visibility: errors.email ? "visible" : "hidden",
                 }}
@@ -150,7 +134,7 @@ const Login = () => {
                 <label
                   className="absolute top-[4px] left-[50px] text-[#04050C] md:text-[12px] leading-[15.22px]"
                   htmlFor="password"
-                ></label>
+                >Password</label>
                 <BiKey
                   size={24}
                   className="absolute top-[20px] left-[10px] text-[#85868D]"
@@ -161,20 +145,20 @@ const Login = () => {
                   name="password"
                   {...register("password")}
                   placeholder="********"
-                  className="w-full h-[60px] border-2  border-[#B3B4BB] rounded-[5px]"
+                  className="w-full h-[60px] border-2  border-[#B3B4BB] rounded-[5px] outline-none"
                   style={{ paddingLeft: "50px" }}
                 />
                 <button
                   type="button"
                   onClick={togglePassword}
-                  className="absolute top-1/3 right-[20px] bg-transparent border-none text-red-900"
+                  className="absolute top-1/3 right-[20px] bg-transparent border-none text-red-900 font-semibold"
                 >
                   {passwordVisibile ? "Hide" : "show"}
                 </button>
               </div>
 
               <small
-                className="text-red-900 text-[14px] font-light"
+                className="text-red-900 text-[14px] font-bold"
                 style={{
                   visibility: errors.password ? "visible" : "hidden",
                 }}
@@ -188,13 +172,13 @@ const Login = () => {
                 Remember me
               </p>
 
-              <p className="text-[#4D5DED] text-[16px] leading-[15.22px]  cursor-pointer">
+              <p className="text-[#303b9a] text-[16px] leading-[15.22px]  cursor-pointer font-semibold">
                 Forgot Password?
               </p>
             </div>
             <div className="w-full h-[60px] mt-[40px] flex justify-center bg-[#4D5DED] opacity-80 hover:opacity-100 text-[16px] md:text-[20px] rounded-[12px] text-white cursor-pointer">
               <button className="w-full h-full" type="submit">
-                Sign Up
+                Login
               </button>
             </div>
             <p className="text-[#2F3035] text-[16px] leading-[20.22px] font-normal mt-[30px] text-center">

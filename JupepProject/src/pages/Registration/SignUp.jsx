@@ -1,22 +1,21 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { FcGoogle } from "react-icons/fc";
-import { FaFacebook } from "react-icons/fa";
-import { BsTwitter, BsTelephone } from "react-icons/bs";
+// import { FcGoogle } from "react-icons/fc";
+// import { FaFacebook } from "react-icons/fa";
+// import { BsTwitter } from "react-icons/bs";
+import { BsTelephone } from "react-icons/bs";
+
 import { RxPerson } from "react-icons/rx";
 import { IoIosSchool } from "react-icons/io";
 import { AiOutlineMail } from "react-icons/ai";
 import { BiKey } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import { useGlobalContext } from "../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../../firebase_setup/firebase-config";
 
-// import { auth } from "../../firebase_setup/firebase-config";
-// import { database } from "../../firebase_setup/firebase-config";
+
+
+
 
 const formSchema = yup.object().shape({
   firstName: yup.string().required("first name can't be empty"),
@@ -32,7 +31,7 @@ const formSchema = yup.object().shape({
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
       "Invalid email address"
     ),
-  university: yup.string().required("select your institution"),
+  university: yup.string().required("provide your institution name"),
   password: yup
     .string()
     .required("Password is required")
@@ -47,26 +46,6 @@ const formSchema = yup.object().shape({
 });
 
 const SignUp = () => {
-  const { Signup, error, setCurrentUser, currentUser } = useGlobalContext();
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    phoneNumber: "",
-    email: "",
-    university: "",
-    password: "",
-  });
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        alert("logged in");
-        navigate("/home");
-      }
-    });
-    return () => unsubscribe();
-  }, [navigate]);
 
   const {
     register,
@@ -76,20 +55,6 @@ const SignUp = () => {
     resolver: yupResolver(formSchema),
   });
 
-  const onSubmit = async (data) => {
-    // e.preventDefault();
-    Signup(
-      data.firstName,
-      data.lastName,
-      data.phoneNumber,
-      data.university,
-      data.email,
-      data.password,
-      data.cpassword
-    );
-    setFormData(data);
-    setCurrentUser({ firstName: data.firstName, lastName: data.lastName });
-  };
 
   const [passwordVisibile, passwordNotVisible] = useState(false);
   const togglePassword = () => {
@@ -111,20 +76,22 @@ const SignUp = () => {
       <div className="w-full h-full flex justify-center items-center mt-[60px] pb-[40px]">
         <div className="md:w-9/12 lg:w-8/12 xl:w-7/12 h-full mt-[40px] md:bg-white md:shadow-2xl md:rounded-[8px] flex flex-col justify-center items-center  ">
           <form
-            onSubmit={handleSubmit(onSubmit)}
+            onSubmit={handleSubmit()}
             className="w-full h-full flex flex-col justify-center items-center px-4"
           >
             <div className="w-full h-full text-center ">
               <h1 className="text-[#04050C] text-[24px] md:text-[48px] ">
                 Create your Account
               </h1>
-              <p className="text-[#04050C] mt-[5px]">
+              <p className="text-[#04050C] mt-[20px]">
                 sign in to have full access to all jupep textbooks, jupep past
                 questions and answers, postutme questions and access to our
                 telegram channel to get more update about our products.
               </p>
             </div>
-            <div className="w-full h-full mt-[25px] flex flex-col md:flex-row items-center justify-evenly text-center ">
+
+            {/* social media signup */}
+            {/* <div className="w-full h-full mt-[25px] flex flex-col md:flex-row items-center justify-evenly text-center ">
               <button className="w-full h-[60px]  flex items-center justify-center border border-[#B3B4BB] px-4 rounded-[8px] cursor-pointer">
                 <FcGoogle size={24} className="mr-[10px]" />
                 <p className="text-[#04050C] text-[16px] leading-[20.21px]">
@@ -143,15 +110,15 @@ const SignUp = () => {
                   Sign Up with Twitter
                 </p>
               </button>
-            </div>
+            </div> */}
 
-            <div className="w-full flex items-center mt-[30px] ">
+            {/* <div className="w-full flex items-center mt-[30px] ">
               <div className="flex-1 h-[1px] border-[1px] border-b-gray-800"></div>
               <p className="mx-4 text-gray-600">OR</p>
               <div className="flex-1 border-[1px] border-b-gray-800"></div>
-            </div>
+            </div> */}
 
-            <div className="w-full md:w-10/12 h-full mt-[40px]">
+            <div className="w-full md:w-10/12 h-full mt-[70px]">
               <div className="w-full  md:flex justify-between">
                 <div className="w-full h-full md:w-5/12 ">
                   <div className="relative w-full  flex flex-col-reverse ">
@@ -176,7 +143,7 @@ const SignUp = () => {
                     />
                   </div>
                   <small
-                    className="text-red-900 text-[14px] font-light"
+                    className="text-red-900 text-[14px] font-bold"
                     style={{
                       visibility: errors.firstName ? "visible" : "hidden",
                     }}
@@ -208,7 +175,7 @@ const SignUp = () => {
                     />
                   </div>
                   <small
-                    className="text-red-900 text-[14px] font-light"
+                    className="text-red-900 text-[14px] font-bold"
                     style={{
                       visibility: errors.lastName ? "visible" : "hidden",
                     }}
@@ -242,7 +209,7 @@ const SignUp = () => {
                     />
                   </div>
                   <small
-                    className="text-red-900 text-[14px] font-light"
+                    className="text-red-900 text-[14px] font-bold"
                     style={{
                       visibility: errors.phoneNumber ? "visible" : "hidden",
                     }}
@@ -274,7 +241,7 @@ const SignUp = () => {
                     />
                   </div>
                   <small
-                    className="text-red-900 text-[14px] font-light"
+                    className="text-red-900 text-[14px] font-bold"
                     style={{
                       visibility: errors.university ? "visible" : "hidden",
                     }}
@@ -307,7 +274,7 @@ const SignUp = () => {
                   />
                 </div>
                 <small
-                  className="text-red-900 text-[14px] font-light"
+                  className="text-red-900 text-[14px] font-bold"
                   style={{
                     visibility: errors.email ? "visible" : "hidden",
                   }}
@@ -338,13 +305,13 @@ const SignUp = () => {
                   <button
                     type="button"
                     onClick={togglePassword}
-                    className="absolute top-1/3 right-[20px] bg-transparent border-none text-red-900"
+                    className="absolute top-1/3 right-[20px] bg-transparent border-none text-red-900 font-bold"
                   >
                     {passwordVisibile ? "Hide" : "show"}
                   </button>
                 </div>
                 <small
-                  className="text-red-900 text-[14px] font-light"
+                  className="text-red-900 text-[14px] font-bold"
                   style={{
                     visibility: errors.password ? "visible" : "hidden",
                   }}
@@ -375,13 +342,13 @@ const SignUp = () => {
                   <button
                     type="button"
                     onClick={toggleCPassword}
-                    className="absolute top-1/3 right-[20px] bg-transparent border-none text-red-900"
+                    className="absolute top-1/3 right-[20px] bg-transparent border-none text-red-900 font-bold"
                   >
                     {cpasswordVisibile ? "Hide" : "show"}
                   </button>
                 </div>
                 <small
-                  className="text-red-900 text-[14px] font-light"
+                  className="text-red-900 text-[14px] font-bold"
                   style={{
                     visibility: errors.cpassword ? "visible" : "hidden",
                   }}
