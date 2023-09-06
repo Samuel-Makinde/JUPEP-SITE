@@ -7,8 +7,8 @@ function Footer() {
       <div className="w-full h-full ">
        
         <div className=" text-white text-center pt-[20px]  w-full h-full">
-          <h3 className="text-4xl">Grow your knowledge</h3>
-          <p className="mt-[25px] text-[18px] ">
+          <h3 className="md:text-4xl text-2xl">Grow your knowledge</h3>
+          <p className="mt-[25px] md:text-[18px] text-[16px] ">
             Join thousands of fellow knowledge enthusiasts and subscribe to our{" "}
             <br></br> weekly newsletter for content alerts, research tips, and
             more.
@@ -29,8 +29,8 @@ function Footer() {
 
         <div className="w-full h-full text-white mt-[90px] grid grid-cols-2 gap-4 md:grid-cols-4 justify-items-center ">
           <div className="w-full space-y-[5px]">
-            <h2 className="text-3xl">EaseReads</h2>
-            <div className="border border-[#f4b223] w-[100px] mt-[8px]"></div>
+            <h2 className="text-2xl md:text-3xl">EaseReads</h2>
+            <div className="border border-[#f4b223] w-[110px] mt-[8px]"></div>
             <Link to="/about" smooth="true" duration={500}>
             <p>
               <button>About</button>
@@ -44,8 +44,8 @@ function Footer() {
           </div>
 
           <div className="w-full space-y-[5px] ">
-            <h2 className="text-3xl">Learn</h2>
-            <div className="border border-[#f4b223] w-[100px] mt-[8px]"></div>
+            <h2 className="text-2xl md:text-3xl">Learn</h2>
+            <div className="border border-[#f4b223] w-[110px] mt-[8px]"></div>
             {/* <Link> */}
              <p>
               <button>Terms of Use</button>
@@ -60,8 +60,8 @@ function Footer() {
           </div>
 
           <div className="w-full space-y-[5px] mt-[30px] md:mt-0">
-            <h2 className="text-3xl ">Discover</h2>
-            <div className="border border-[#f4b223] w-[130px] mt-[8px]"></div>
+            <h2 className="text-2xl md:text-3xl ">Discover</h2>
+            <div className="border border-[#f4b223] w-[110px] mt-[8px]"></div>
             <Link to="/syllabus" smooth="true" duration={500} >
             <button>Jupeb Syllabus</button>
             </Link>
@@ -71,8 +71,8 @@ function Footer() {
           </div>
 
           <div className="w-full mt-[30px] md:mt-0 " >
-              <h5 className="text-xl">Social Media</h5>
-              <div className="border border-[#f4b223] w-[120px] mt-[8px]"></div>
+              <h5 className="text-2xl md:text-3xl">Social Media</h5>
+              <div className="border border-[#f4b223] w-[110px] mt-[8px]"></div>
             <div className="  flex space-x-[15px] pt-[10px]">
               <FaLinkedin size={20} />
               <FaTwitter size={20} />

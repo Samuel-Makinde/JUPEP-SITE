@@ -85,7 +85,7 @@ const Home = () => {
             <h1 className=" text-2xl mt-[40px] text-center">
               How we solved Jupeb reading problem
             </h1>
-            <p className="w-full md:w-[600px] px-4 md:px-0 h-full mt-[30px] pb-[40px]">
+            <p className="w-full md:w-[600px] px-4 md:px-0 h-full mt-[30px] pb-[40px] text-[16px] text-center">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
               tenetur, voluptates distinctio optio deserunt deleniti dolorem et
               quasi quos vitae voluptate fuga ea adipisci eum, quibusdam
@@ -120,9 +120,9 @@ const Home = () => {
                   <p className="mt-[15px]">Jupeb Past questions and Answers </p>
                 </div>
                 <div className="w-full h-full flex flex-col items-center mt-[40px] md:mt-0">
-                  <BsTelegram size={40} className="text-blue-900" />
+                  <BsWhatsapp size={40} className="text-blue-900" />
                   <p className="mt-[15px]">
-                    Active Telegram channel to ask questions or find help on
+                    Active WhatsApp community to ask questions or find help on
                     topics you don&apos;t understand
                   </p>
                 </div>
@@ -220,12 +220,12 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="w-full h-full md:h-[470px] lg:h-[400px] flex flex-col md:flex-row items-center  md:justify-evenly pl-3 lg:pl-0  bg-[#3B82F6]  text-white rounded-[15px] mt-[90px]">
-              <div className="md:w-[500px] h-full flex flex-col justify-center ">
-                <BsWhatsapp size={200} className="text-white" />
+            <div className="w-full h-full md:h-[470px] lg:h-[400px] flex flex-col md:flex-row items-center  md:justify-evenly pl-3 lg:pl-0   bg-[#3B82F6]  text-white rounded-[15px] mt-[90px] pt-[30px] md:pt-0">
+              <div className="md:w-[500px] h-full flex flex-col justify-center items-center ">
+                <BsWhatsapp  className="text-white w-[100px] h-[100px] md:w-[200px] md:h-[200px]" />
                 {/* <div className="bg-red-800 h-[90px] w-[200px] text-center"> */}
                 <a
-                  className="text-black h-[60px] w-[200px] lg:w-[250px] mt-[20px] flex justify-center items-center bg-[#FFCB3E] hover:opacity-90 rounded-[10px]"
+                  className="text-black h-[60px] w-[160px] md:w-[200px] lg:w-[250px] mt-[20px] flex justify-center items-center bg-[#FFCB3E] hover:opacity-90 rounded-[10px]"
                   rel="noreferrer"
                   target="_blank"
                   href="https://chat.whatsapp.com/B4uHSlVlwjAE8Y9bqWDtRF"
@@ -236,13 +236,13 @@ const Home = () => {
               </div>
               <div className="md:w-[440px] w-full h-full  px-4 py-4">
                 {" "}
-                <h3 className="font-bold text-center">
+                <h3 className="font-bold text-center text-[20px]">
                   Join our Whatsapp community for free
                 </h3>
-                <h4 className="font-semibold text-center mt-[10px]">
+                <h4 className="font-semibold text-center mt-[10px] text-[20px]">
                   Benefit of Joining{" "}
                 </h4>
-                <div className="text-[#f2f3f5] text-[18px] text-center md:text-left mt-[15px] leading-snug ">
+                <div className="text-[#f2f3f5] text-[16px] text-center md:text-left mt-[15px] leading-snug ">
                   <p className="mt-[15px]">
                     Opportunity to ask Jupep related questions from academial
                   </p>
@@ -266,7 +266,7 @@ const Home = () => {
               <img src={college} alt="college" className="w-full h-[300px]" />
             </div>
             <div
-              className={`w-full h-full md:h-[300px] flex items-center justify-between px-10 mt-[90px] border-[3px] border-[#f7b704] shadow-lg rounded-[10px] ${styles.comparePlan}`}
+              className={`w-full h-full md:h-[300px] flex items-center justify-between px-10 mt-[90px] border-[3px] border-[#f7b704] shadow-2xl rounded-[10px] ${styles.comparePlan} leading-snug`}
             >
               <div className="text-[16px] mb-[20px]">
                 <h5 className="text-[30px] mt-[20px]">Start For free</h5>

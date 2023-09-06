@@ -32,7 +32,7 @@ const Navbar = () => {
       <Link to="/" smooth="true" duration={500}>
         <div className="w-[93px] h-[24px] md:h-full ml-[20px] md:flex items-center  cursor-pointer ">
           {/* <img src={logoImage} alt="logoImage" /> */}
-          <h1>Booklandia</h1>
+          <h1>EaseReads</h1>
         </div>
       </Link>
 

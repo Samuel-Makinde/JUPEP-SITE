@@ -10,15 +10,15 @@ const sub = () => {
       {/* front page */}
 
       <div className="text-center pt-[120px]">
-        <h2 className="md:text-5xl text-2xl font-bold">
+        <h2 className="md:text-5xl text-[24px] font-bold">
           Browse Through Jubep Syllabus
         </h2>
-        <p className="pt-[20px] text-2xl">
+        <p className="pt-[15px] text-[18px] text-gray-700">
           Lorem ipsum dolor, sit amet consectetur adipisicing.
         </p>
       </div>
 
-      <section className=" ">
+      <section className="mb-[60px] ">
         {syllabus.map((item) => (
           <div
             key={item.id}
@@ -27,16 +27,16 @@ const sub = () => {
               
             <div className="md:pt-[20px] text-center flex flex-col md:flex-row justify-center items-center  ">
               <div className="md:w-[900px] lg:w-[800px]">
-                <h2 className="text-4xl font-bold text-center">{item.title}</h2>
-                <p className="pt-[20px] md:text-2xl text-xl md:pl-20 text-center">
+                <h2 className="text-2xl md:text-3xl  font-bold text-center">{item.title}</h2>
+                <p className="pt-[20px] md:text-2xl text-[18px] text-gray-700 md:pl-20 text-center">
                   {item.description}
                 </p>
-                <p className="underline mt-[30px]  text-xl text-blue-950 cursor-pointer font-bold">
+                <p className="underline mt-[20px]  text-[20px] text-blue-950 cursor-pointer font-bold">
                   {item.download}
                 </p>
               </div>
               {/* img */}
-              <div className=" sm:py-[40px]">
+              <div className="mt-[10px]">
                 <img
                   className="h-[230px] lg:w-[220px] md:w-[400px] rounded-[10px]"
                   src={item.img}

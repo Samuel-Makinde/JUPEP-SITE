@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import axios from "axios";
@@ -12,6 +13,9 @@ import { IoIosSchool } from "react-icons/io";
 import { AiOutlineMail } from "react-icons/ai";
 import { BiKey } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -46,7 +50,8 @@ const formSchema = yup.object().shape({
 });
 
 const SignUp = () => {
-
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
@@ -69,6 +74,7 @@ const SignUp = () => {
    const onSubmit = async (data, e) => {
   e.preventDefault();
   console.log(data)
+  setLoading(true)
   try {
     const username = data.firstName + '.' + data.lastName.charAt(0).toLowerCase();
     const response = await axios.post(`http://localhost:5000/api/v1/register`, {
@@ -80,15 +86,27 @@ const SignUp = () => {
         university: data.university,
         password: data.password,
       })
-      console.log("success: ",data);
-    console.log("working", response)
-  } catch (error) {
-    console.log(error.message)
+    setLoading(false)
+    toast.success(response.data.msg, {
+    onClose: () => {
+    navigate("/verify-email");
+  },
+});
+  } catch (error) { 
+    setLoading(false)
+    toast.error(error.response.data.msg, {
+    autoClose: false,
+    closeOnClick: true,
+    onClose: () => {
+    // You can choose to navigate or handle errors differently here
+  },
+});
   }
 };
 
   return (
-    <main className="w-full h-full px-4 font-sans md:bg-[#A4C6FC] text-black">
+    <main className="w-full h-full px-4 font-sans md:bg-[#A4C6FC] text-black z-0">
+      
       <div className="w-full h-full">
         <h1 className="text-2xl md:text-4xl pt-[20px] text-blue-800 font-extrabold">
           Welcome to EaseReads
@@ -405,6 +423,7 @@ const SignUp = () => {
           </form>
         </div>
       </div>
+      {loading && <LoadingSpinner />}
     </main>
   );
 };
