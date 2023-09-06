@@ -174,7 +174,7 @@ const SignUp = () => {
                     <input
                       type="text"
                       id="firstname"
-                      className="  h-[60px] border-2  border-[#B3B4BB] rounded-[5px]"
+                      className="  h-[60px] border-2  border-[#B3B4BB] rounded-[5px] outline-none"
                       name="firstName"
                       {...register("firstName")}
                       placeholder="first name"
@@ -206,7 +206,7 @@ const SignUp = () => {
                     <input
                       type="text"
                       id="lastname"
-                      className=" h-[60px] border-2  border-[#B3B4BB] rounded-[5px]"
+                      className=" h-[60px] border-2  border-[#B3B4BB] rounded-[5px] outline-none"
                       name="lastName"
                       {...register("lastName")}
                       placeholder="last name"
@@ -243,7 +243,7 @@ const SignUp = () => {
                       name="phoneNumber"
                       {...register("phoneNumber")}
                       placeholder="phone number"
-                      className="w-full h-[60px] border-2  border-[#B3B4BB] rounded-[5px]"
+                      className="w-full h-[60px] border-2  border-[#B3B4BB] rounded-[5px] outline-none"
                       style={{ paddingLeft: "50px" }}
                     />
                   </div>
@@ -275,7 +275,7 @@ const SignUp = () => {
                       name="university"
                       {...register("university")}
                       placeholder="eg UNILAG, UNIBEN, BUK"
-                      className="w-full h-[60px] border-2  border-[#B3B4BB] rounded-[5px]"
+                      className="w-full h-[60px] border-2  border-[#B3B4BB] rounded-[5px] outline-none"
                       style={{ paddingLeft: "50px" }}
                     />
                   </div>
@@ -308,7 +308,7 @@ const SignUp = () => {
                     name="email"
                     {...register("email")}
                     placeholder="email address"
-                    className="w-full h-[60px] border-2  border-[#B3B4BB] rounded-[5px]"
+                    className="w-full h-[60px] border-2  border-[#B3B4BB] rounded-[5px] outline-none"
                     style={{ paddingLeft: "50px" }}
                   />
                 </div>
@@ -338,7 +338,7 @@ const SignUp = () => {
                     name="password"
                     {...register("password")}
                     placeholder="********"
-                    className="w-full h-[60px] border-2  border-[#B3B4BB] rounded-[5px]"
+                    className="w-full h-[60px] border-2  border-[#B3B4BB] rounded-[5px] outline-none"
                     style={{ paddingLeft: "50px" }}
                   />
                   <button
@@ -375,7 +375,7 @@ const SignUp = () => {
                     name="cpassword"
                     {...register("cpassword")}
                     placeholder="**********"
-                    className="w-full h-[60px] border-2  border-[#B3B4BB] rounded-[5px]"
+                    className="w-full h-[60px] border-2  border-[#B3B4BB] rounded-[5px] outline-none"
                     style={{ paddingLeft: "50px" }}
                   />
                   <button
