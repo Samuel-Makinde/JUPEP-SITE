@@ -3,7 +3,7 @@ import {IoIosArrowBack} from 'react-icons/io'
 import {MdEmail} from "react-icons/md"
 import logo from "../../assets/Home Landing Image/college.jpeg"
 
-const VerifyEmail = () => {
+const VerifyPage = () => {
   return (
     <main className="w-full h-full  md:bg-gray-200">
         <div className="w-full flex flex-col  md:flex justify-center items-center">
@@ -35,4 +35,4 @@ const VerifyEmail = () => {
   )
 }
 
-export default VerifyEmail
+export default VerifyPage

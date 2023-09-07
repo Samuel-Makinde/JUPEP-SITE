@@ -89,7 +89,7 @@ const SignUp = () => {
     setLoading(false)
     toast.success(response.data.msg, {
     onClose: () => {
-    navigate("/verify-email");
+    navigate("/verify-email-page");
   },
 });
   } catch (error) { 
@@ -338,7 +338,7 @@ const SignUp = () => {
                     name="password"
                     {...register("password")}
                     placeholder="********"
-                    className="w-full h-[60px] border-2  border-[#B3B4BB] rounded-[5px] outline-none"
+                    className="w-full h-[60px] border-2  border-[#B3B4BB] rounded-[5px] outline-none "
                     style={{ paddingLeft: "50px" }}
                   />
                   <button

@@ -8,7 +8,9 @@ import Pricing from "./pages/Pricing-Page/Pricing";
 import ScrollToTop from "./layout/ScrollToTop/ScrollToTop";
 import About from "./pages/About/About";
 import Syllabus from "./pages/Syllabus/Syllabus";
-import VerifyEmail from "./pages/Registration/verifyEmail";
+import VerifyPage from "./pages/Registration/verifyPage";
+import UserVerifyEmail from "./pages/Registration/UserVerifyEmail";
+
 
 function App() {
   return (
@@ -17,9 +19,10 @@ function App() {
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/verify-email" element={<VerifyEmail />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/verify-email-page" element={<VerifyPage />} />
+            <Route path="/user/verify-email" element={<UserVerifyEmail />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/about" element={<About />} />
