@@ -20,7 +20,7 @@ const UserVerifyEmail = () => {
                 verificationToken: queryParam.get('token'),
                 email: queryParam.get('email')
             })
-            if(response.data.msg === 'Email verified successfully'){
+            if(response.data.msg === 'Email verified successfully' || response.data.msg === 'Email has been verified'){
                 sessionStorage.setItem("isVerified", "true")
                 setIsVerified(true)
             } else {
@@ -53,7 +53,7 @@ if(error){
     )
 }
 
-if (isVerified) {
+if (isVerified || sessionStorage.isVerified === "true") {
     return (
       <main className="w-full h-full">
         <div className="w-full  mt-[50px] px-5 flex flex-col justify-center items-center ">
