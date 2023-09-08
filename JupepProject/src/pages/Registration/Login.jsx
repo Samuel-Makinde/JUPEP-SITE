@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import axios from "axios";
-
 // import { FcGoogle } from "react-icons/fc";
 // import { FaFacebook } from "react-icons/fa";
 // import { BsTwitter } from "react-icons/bs";
@@ -59,21 +58,19 @@ const Login = () => {
     const response = await axios.post(`http://localhost:5000/api/v1/login`, {
         email: data.email,
         password: data.password,
-      })
+      }, {
+              withCredentials: true,
+})
     
     setLoading(false)
-    toast.success(response.data.msg, {
-    onClose: () => {
     navigate("/");
-  },
-});
   } catch (error) { 
     setLoading(false)
     toast.error(error.response.data.msg, {
     autoClose: false,
     closeOnClick: true,
     onClose: () => {
-    // You can choose to navigate or handle errors differently here
+   
   },
 });
   }
