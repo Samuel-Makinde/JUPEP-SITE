@@ -1,5 +1,5 @@
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import futa from "../../assets/Home Landing Image/new futa.jpg";
 import Nfuta from "../../assets/Home Landing Image/large futa.jpg";
