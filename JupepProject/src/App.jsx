@@ -10,12 +10,14 @@ import About from "./pages/About/About";
 import Syllabus from "./pages/Syllabus/Syllabus";
 import VerifyPage from "./pages/Registration/verifyPage";
 import UserVerifyEmail from "./pages/Registration/UserVerifyEmail";
+import { UserProvider } from "./context/AuthContext";
 
 
 function App() {
   return (
     <div>
         <Router>
+      <UserProvider>
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -29,6 +31,7 @@ function App() {
             <Route path="/syllabus" element={<Syllabus />} />
 
           </Routes>
+      </UserProvider>
         </Router>
       {/* <Home /> */}
       {/* <ContactUs /> */}

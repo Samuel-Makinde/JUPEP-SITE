@@ -2,16 +2,15 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import axios from "axios";
 // import { FcGoogle } from "react-icons/fc";
 // import { FaFacebook } from "react-icons/fa";
 // import { BsTwitter } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
 import { BiKey } from "react-icons/bi";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner";
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
+import { useGlobalContext } from "../../context/AuthContext";
 
 
 const formSchema = yup.object().shape({
@@ -33,8 +32,7 @@ const formSchema = yup.object().shape({
 
 const Login = () => {
   const [passwordVisibile, passwordNotVisible] = useState(false);
-   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate()
+  const {Login, loading} = useGlobalContext()
   
  
 
@@ -50,31 +48,6 @@ const Login = () => {
     resolver: yupResolver(formSchema),
   });
 
-  const onSubmit = async (data, e) => {
-  e.preventDefault();
-  console.log(data)
-  setLoading(true)
-  try {
-    const response = await axios.post(`http://localhost:5000/api/v1/login`, {
-        email: data.email,
-        password: data.password,
-      }, {
-              withCredentials: true,
-})
-    
-    setLoading(false)
-    navigate("/");
-  } catch (error) { 
-    setLoading(false)
-    toast.error(error.response.data.msg, {
-    autoClose: false,
-    closeOnClick: true,
-    onClose: () => {
-   
-  },
-});
-  }
-};
 
 
   return (
@@ -89,7 +62,7 @@ const Login = () => {
         <div className="w-full h-full md:w-8/12 lg:w-7/12 xl:w-6/12 pb-[20px] md:bg-white md:shadow-2xl md:rounded-[8px] flex flex-col justify-center items-center">
           <form
             className="w-full h-full flex flex-col justify-center items-center px-4 "
-            onSubmit={handleSubmit(onSubmit)}
+            onSubmit={handleSubmit(Login)}
           >
             <div className="w-full h-full text-center ">
               <h1 className="text-[#04050C] text-[24px] md:text-[48px] ">

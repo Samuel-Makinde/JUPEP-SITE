@@ -1,18 +1,20 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { AiOutlineHome } from "react-icons/ai";
-// import { BsSearch } from "react-icons/bs";
+import { AiOutlineHome, AiOutlineLogout } from "react-icons/ai";
 import { TbCurrencyNaira } from "react-icons/tb";
 import { GoPeople } from "react-icons/go";
 import { IoPricetagOutline } from "react-icons/io5";
 import { MdOutlineContactPhone } from "react-icons/md";
 import { FiBookOpen, FiBook } from "react-icons/fi";
 import { RxPerson } from "react-icons/rx";
+import { useGlobalContext } from "../context/AuthContext";
+
 
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const {user, LogOut} = useGlobalContext()
 
   // To set mobile navbar toggle
   const handleToggle = () => {
@@ -40,10 +42,15 @@ const Navbar = () => {
       <ul
         className={`${
           toggle ? "block" : "hidden"
-        } w-3/4 bg-white absolute top-0 left-0 h-screen md:hidden flex flex-col  pt-[100px]   `}
+        } w-3/4 bg-white absolute top-0 left-0 h-screen md:hidden flex flex-col  pt-[50px]   `}
       >
-        <Link to="/signup" smooth="true" duration={500}>
-        <li className="text-[#04050C] leading-[20px] text-[16px] flex px-[24px] py-[16px]  font-medium">
+        {user ? 
+        ( <p className="w-full text-center text-[22px] font-semibold">Welcome {user}</p>  )
+        : 
+        ( 
+          <div>
+            <Link to="/signup" smooth="true" duration={500} >
+               <li className="text-[#04050C] leading-[20px] text-[16px] flex px-[24px] py-[16px] mt-[50px] font-medium">
           <RxPerson />
           <h1 className="pl-[10px] cursor-pointer">Sign UP</h1>
         </li>
@@ -56,8 +63,13 @@ const Navbar = () => {
         </li>
         </Link>
 
+          </div> 
+        ) 
+        }
+       
+
         <Link to="/" smooth="true" duration={500}>
-          <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal ">
+          <li className={`${user ? " mt-[50px]" : "mt-0"} text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal `}>
             <AiOutlineHome size={20} />
             <h1 className="pl-[10px] cursor-pointer">Home</h1>
           </li>
@@ -104,11 +116,20 @@ const Navbar = () => {
             <h1 className="pl-[10px] cursor-pointer">Pricing</h1>
           </li>
         </Link>
+        { user ?  (
+          <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal"
+          onClick={LogOut}
+          >
+            <AiOutlineLogout size={24} />
+            <h1 className="pl-[10px] cursor-pointer">LogOut</h1>
+          </li>
+        ) : ""}
+        
       </ul>
 
       {/* big screen topBar */}
 
-      <ul className="hidden flex-row space-x-4 lg:space-x-6 mr-[70px]  md:flex items-center">
+      <ul className="hidden flex-row space-x-2 lg:space-x-6 mr-[20px]  md:flex items-center">
          
         <li>
           <Link to="/" smooth="true" duration={500}>
@@ -123,7 +144,7 @@ const Navbar = () => {
         </li>
         <li>
           {/* <Link to="skills" smooth="true" duration={500}> */}
-          View Subjects
+          View-Subjects
           {/* </Link> */}
         </li>
         <Link to="/syllabus" smooth="true" duration={500}>
@@ -142,7 +163,35 @@ const Navbar = () => {
             Pricing
           </button>
         </Link>
-        <Link to="/signup" smooth="true" duration={500}>
+
+        {user ? 
+        ( 
+        <div className="flex flex-col text-center ">
+          <p className=" text-[22px] font-semibold md:text-[18px] lg:text-[20px]">Welcome {user}</p> 
+          <p className="font-medium cursor-pointer"
+          onClick={LogOut}
+          >Logout</p>
+        </div> 
+          )
+        : 
+        ( 
+          <div className="flex ">
+            <Link to="/signup" smooth="true" duration={500} >
+               <li >
+          <h1 >Sign-up</h1>
+        </li>
+        </Link>
+
+        <Link to="/login" smooth="true" duration={500}>
+          <li className="pl-[20px]" >
+          <h1 >Log in</h1>
+        </li>
+        </Link>
+
+          </div> 
+        ) 
+        }
+        {/* <Link to="/signup" smooth="true" duration={500}>
         <li >
           <h1 >Sign-up</h1>
         </li>
@@ -153,7 +202,7 @@ const Navbar = () => {
           
           <h1 >Log in</h1>
         </li>
-        </Link>
+        </Link> */}
       </ul>
     </main>
   );
