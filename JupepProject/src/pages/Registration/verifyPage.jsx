@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import {IoIosArrowBack} from 'react-icons/io'
 import {MdEmail} from "react-icons/md"
-import logo from "../../assets/logo/new logo.jpg"
+import logo from "../../assets/logo/ease read logooo png version-07.png"
 
 const VerifyPage = () => {
 

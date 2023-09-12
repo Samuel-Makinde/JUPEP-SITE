@@ -9,6 +9,8 @@ import { MdOutlineContactPhone } from "react-icons/md";
 import { FiBookOpen, FiBook } from "react-icons/fi";
 import { RxPerson } from "react-icons/rx";
 import { useGlobalContext } from "../context/AuthContext";
+import logo from "../assets/logo/ease read logooo png version-07.png"
+
 
 
 
@@ -32,9 +34,9 @@ const Navbar = () => {
         )}
       </div>
       <Link to="/" smooth="true" duration={500}>
-        <div className="w-[93px] h-[24px] md:h-full ml-[20px] md:flex items-center  cursor-pointer ">
-          {/* <img src={logoImage} alt="logoImage" /> */}
-          <h1>EaseReads</h1>
+        <div className="w-[93.76px] h-[34px] md:h-full ml-[20px] md:flex items-center  cursor-pointer ">
+          <img src={logo} alt="logo"  className="w-[93.76px] h-[34px]" />
+
         </div>
       </Link>
 
