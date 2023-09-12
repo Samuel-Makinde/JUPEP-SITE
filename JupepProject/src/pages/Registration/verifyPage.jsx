@@ -1,27 +1,27 @@
 import { Link } from "react-router-dom"
 import {IoIosArrowBack} from 'react-icons/io'
 import {MdEmail} from "react-icons/md"
-import logo from "../../assets/Home Landing Image/college.jpeg"
+import logo from "../../assets/logo/new logo.jpg"
 
 const VerifyPage = () => {
 
     
 
   return (
-    <main className="w-full h-full  md:bg-gray-200">
-        <div className="w-full flex flex-col  md:flex justify-center items-center">
-            <div className="bg-white w-full px-5  md:w-[500px]">
-                <div className="w-full flex mt-[35px] justify-between">
+    <main className="w-full h-screen  md:bg-[#A4C6FC]">
+        <div className="w-full h-full flex flex-col   justify-center items-center">
+            <div className="bg-white rounded-[12px] md:shadow-2xl w-full h-full px-5 py-5  md:w-[600px] md:h-[500px]">
+                <div className="w-full flex  justify-between">
                     <Link to="/signup" smooth="true" duration={500}>
                         <div className="w-[24px] h-[24px] bg-[#D3D7FB] rounded-[60px]  cursor-pointer " >
                             <IoIosArrowBack size={22} className="text-blue-700 " />
                         </div>
                     </Link>
-                    <img src={logo} alt="logo" className="w-[93.76px] h-[24px] " />
+                    <img src={logo} alt="logo"  className="w-[93.76px] h-[34px]" />
                 </div>
 
                 {/* verify part */}
-                <div className="w-full  h-[192px]  mt-[200px] flex flex-col justify-center items-center">
+                <div className="w-full  h-full flex flex-col justify-center items-center">
                     <div className="w-[80px] h-[80px] bg-[#D3D7FB] rounded-[60px] flex justify-center items-center">
                         <MdEmail size={32} className="text-blue-700" />
                     </div>

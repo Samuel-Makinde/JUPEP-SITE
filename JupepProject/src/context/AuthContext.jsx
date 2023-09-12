@@ -20,7 +20,7 @@ const UserProvider = ({ children }) => {
   console.log(data)
   setLoading(true)
   try {
-    const response = await axios.post(`http://localhost:5000/api/v1/login`, {
+    const response = await axios.post(`https://jupeb-site-backend.onrender.com/api/v1/login`, {
         email: data.email,
         password: data.password,
       }, {
@@ -39,6 +39,17 @@ const UserProvider = ({ children }) => {
 });
   }
 };
+
+ 
+const fetchUser = async () => {
+    try {
+      const { data } = await axios.post("http://localhost:5000/api/v1/showMe");
+      setUser(data.username);
+    } catch (error) {
+      setUser(null);
+    }
+    setLoading(false);
+  };
 
 // useEffect(() => {
 //     const checkAccessToken = async () => {
@@ -110,7 +121,10 @@ const LogOut = async (e, userId) => {
 
 }
   
-    
+  useEffect(() => {
+    fetchUser();
+  }, []);
+ 
   
 
   return (

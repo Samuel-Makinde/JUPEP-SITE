@@ -77,7 +77,7 @@ const SignUp = () => {
   setLoading(true)
   try {
     const username = data.firstName + '.' + data.lastName.charAt(0).toLowerCase();
-    const response = await axios.post(`http://localhost:5000/api/v1/register`, {
+    const response = await axios.post(`https://jupeb-site-backend.onrender.com/api/v1/register`, {
       username: username,
         firstName: data.firstName,
         lastName: data.lastName,
