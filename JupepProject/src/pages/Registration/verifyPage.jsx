@@ -8,19 +8,49 @@ import "./Reg.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+// import { useState } from "react";
+import axios from "axios";
+
 const VerifyPage = () => {
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   email: "",
+  // });
+
+  // useEffect(() => {
+  //   axios.post("/api/v1/verify-email")
+  //   .then(response => {
+  //     const { data } = response;
+  //     setFormData(data);
+  //   })
+  //   .catch(error => {
+  //     console.error("request failed", error);
+  //   });
+  // }, []);
+
+  const onSubmit = (data) => {
+    console.log(data)
+    axios.post(`http://localhost:5000/api/v1/resend-email`, {
+      name: data.name,
+      email:data.email,
+    })
+    .then((response) => {
+      console.log("sending", response);
+    }) .catch((error) => {
+      console.log("not sending", error);
+    }) ;
+  };
+
+
   const { modalOpen, closeModal, openModal } = useGlobalContext();
   const formSchema = yup.object().shape({
     name: yup
       .string()
-      .required("name is required")
-      .matches(
-        /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,}$/,
-        "invalid Password"
-      ),
+      .required(""),
+
     email: yup
       .string()
-      .required("email can't be empty")
+      .required("")
       .matches(
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
         "Invalid email address"
@@ -76,34 +106,34 @@ const VerifyPage = () => {
                   modalOpen ? "modal-overlay show-modal" : "modal-overlay"
                 }`}
               >
-                <div
-                  className="modal-container"
-                  onSubmit={handleSubmit()}
+                <form
+                  className="modal-container pt-[4rem]"
+                  onSubmit={handleSubmit(onSubmit)}
                 >
                   <input
                     type="name"
                     id="name"
                     name="name"
                     {...register("name")}
-                    placeholder="name"
-                    className="w-[20rem] h-[3rem] border-2  border-[#B3B4BB] rounded-[5px] outline-none"
+                    placeholder="Name"
+                    className="w-[15rem] md:w-[25rem] h-[3rem] border-2  border-[#B3B4BB] rounded-[5px] outline-none"
                     style={{ paddingLeft: "1rem" }}
                   />
                   <small
                     className="text-red-900 text-[14px] font-bold"
                     style={{
-                      visibility: errors.email ? "visible" : "hidden",
+                      visibility: errors.name ? "visible" : "hidden",
                     }}
                   >
-                    {errors.email?.message}
+                    {errors.name?.message}
                   </small>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     {...register("email")}
-                    placeholder="email address"
-                    className="w-[20rem] h-[3rem] border-2  border-[#B3B4BB] rounded-[5px] outline-none"
+                    placeholder="Email address"
+                    className="w-[15rem] md:w-[25rem] h-[3rem] border-2  border-[#B3B4BB] rounded-[5px] outline-none"
                     style={{ paddingLeft: "1rem" }}
                   />
                   <small
@@ -117,12 +147,10 @@ const VerifyPage = () => {
                   <button className="close-modal-btn" onClick={closeModal}>
                     <FaTimes></FaTimes>
                   </button>
-                  {/* <div className="w-full h-[60px] mt-[40px] flex justify-center bg-[#4D5DED] opacity-80 hover:opacity-100 text-[16px] md:text-[20px] rounded-[12px] text-white cursor-pointer">
-                    <button className="w-full h-full" type="submit">
-                      Login
-                    </button>
-                  </div> */}
-                </div>
+                  <button  className="btn" >
+                    Submit
+                  </button>
+                </form>
               </div>
             </div>
           </div>

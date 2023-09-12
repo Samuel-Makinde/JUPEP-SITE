@@ -29,7 +29,7 @@
     background: var(--clr-white);
     border-radius: var(--radius);
     width: 90vw;
-    height: 30vh;
+    height: 50vh;
     max-width: var(--fixed-width);
     text-align: center;
     display: grid;
@@ -45,5 +45,16 @@
     background: transparent;
     border-color: transparent;
     color: var(--clr-red-dark);
+    cursor: pointer;
+  }
+
+  .btn {
+    width: max-content;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    background-color: #39cdcc;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 5px;
     cursor: pointer;
   }
