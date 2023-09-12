@@ -34,8 +34,8 @@ const Navbar = () => {
         )}
       </div>
       <Link to="/" smooth="true" duration={500}>
-        <div className="w-[93.76px] h-[34px] md:h-full ml-[20px] md:flex items-center  cursor-pointer ">
-          <img src={logo} alt="logo"  className="w-[93.76px] h-[34px]" />
+        <div className="w-[93.76px] h-[30px] md:h-full ml-[20px] md:flex items-center  cursor-pointer ">
+          <img src={logo} alt="logo"  className="w-[93.76px] h-[30px]" />
 
         </div>
       </Link>
