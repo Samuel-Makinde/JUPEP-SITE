@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
+// import authFetch from "./AxiosInterceptor";
 
 
 
@@ -40,74 +41,34 @@ const UserProvider = ({ children }) => {
   }
 };
 
- 
+ const authFetch = axios.create({
+  withCredentials: true, // Include cookies in the request
+});
 const fetchUser = async () => {
     try {
-      const { data } = await axios.post("http://localhost:5000/api/v1/showMe");
+      const { data } = await authFetch("https://jupeb-site-backend.onrender.com/api/v1/showMe", {},
+      {
+        withCredentials: true, // Include cookies in the request
+      }
+      );
       setUser(data.username);
     } catch (error) {
+      if (error.response && (error.response.status === 401 || error.response.status === 404)) {
+          navigate('/login');
+        }
       setUser(null);
     }
     setLoading(false);
   };
-
-// useEffect(() => {
-//     const checkAccessToken = async () => {
-//       // Check if there is an access token stored in cookies
-//       const accessTokenCookie = document.cookie
-//         .split("; ")
-//         .find((cookie) => cookie.startsWith("accessToken="));
-//         console.log("acesstoken fro memory", accessTokenCookie)
-//         console.log("All cookies:", document.cookie);
-
-//       if (accessTokenCookie) {
-//         // There is an access token; you can decode and validate it if needed
-//         // For simplicity, we'll assume it's valid
-//         setLoading(false);
-//         console.log("acess token still valid")
-//         return;
-//       }
-//       console.log("accesstoken not valid")
-
-
-//       // No access token, check for a valid refresh token
-//       const refreshTokenCookie = document.cookie
-//         .split("; ")
-//         .find((cookie) => cookie.startsWith("refreshToken="));
-//       if (refreshTokenCookie) {
-//         try {
-//           // Use the refresh token to obtain a new access token from the server
-//           const response = await axios.post(
-//             "http://localhost:5000/api/v1/refreshAccessToken",
-//             {
-//               refreshToken: refreshTokenCookie.split("=")[1],
-//             },
-//             {
-//               withCredentials: true,
-//             }
-//           );
-
-//           // Update the user state with the new access token
-//           setUser(response.data.username);
-//         } catch (error) {
-//           // Handle errors, e.g., the refresh token is expired
-//           console.error("Error refreshing access token:", error);
-//         }
-//       }
-
-//       setLoading(false);
-//     };
-
-//     checkAccessToken();
-//   }, []);
 
 
 const LogOut = async (e, userId) => {
   e.preventDefault();
   setLoading(true)
   try {
-    const response = await axios.post('http://localhost:5000/api/v1/logOut', {user: userId} )
+    const response = await axios.post('https://jupeb-site-backend.onrender.com/api/v1/logOut', {user: userId} )
    setLoading(false)
+   setUser(null);
     navigate("/");
   } catch (error) {
     toast.error(error.response.data.msg, {
