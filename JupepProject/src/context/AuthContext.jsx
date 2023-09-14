@@ -41,21 +41,19 @@ const UserProvider = ({ children }) => {
   }
 };
 
- const authFetch = axios.create({
-  withCredentials: true, // Include cookies in the request
-});
+//  const authFetch = axios.create({
+//   withCredentials: true, // Include cookies in the request
+// });
 const fetchUser = async () => {
     try {
-      const { data } = await authFetch("https://jupeb-site-backend.onrender.com/api/v1/showMe", {},
+      const { data } = await axios.post("https://jupeb-site-backend.onrender.com/api/v1/showMe", {},
       {
         withCredentials: true, // Include cookies in the request
       }
       );
       setUser(data.username);
     } catch (error) {
-      if (error.response && (error.response.status === 401 || error.response.status === 404)) {
-          navigate('/login');
-        }
+      console.log(error.message)
       setUser(null);
     }
     setLoading(false);
@@ -66,7 +64,11 @@ const LogOut = async (e, userId) => {
   e.preventDefault();
   setLoading(true)
   try {
-    const response = await axios.post('https://jupeb-site-backend.onrender.com/api/v1/logOut', {user: userId} )
+    const response = await axios.post('https://jupeb-site-backend.onrender.com/api/v1/logOut',
+    {
+        withCredentials: true, // Include cookies in the request
+      }
+    )
    setLoading(false)
    setUser(null);
     navigate("/");
