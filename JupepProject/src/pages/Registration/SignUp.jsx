@@ -77,7 +77,7 @@ const SignUp = () => {
   setLoading(true)
   try {
     const username = data.firstName + '.' + data.lastName.charAt(0).toLowerCase();
-    const response = await axios.post(`http://localhost:5000/api/v1/register`, {
+    const response = await axios.post(`https://jupeb-site-backend.onrender.com/api/v1/register`, {
       username: username,
         firstName: data.firstName,
         lastName: data.lastName,
@@ -129,33 +129,6 @@ const SignUp = () => {
               </p>
             </div>
 
-            {/* social media signup */}
-            {/* <div className="w-full h-full mt-[25px] flex flex-col md:flex-row items-center justify-evenly text-center ">
-              <button className="w-full h-[60px]  flex items-center justify-center border border-[#B3B4BB] px-4 rounded-[8px] cursor-pointer">
-                <FcGoogle size={24} className="mr-[10px]" />
-                <p className="text-[#04050C] text-[16px] leading-[20.21px]">
-                  Sign up with Google
-                </p>
-              </button>
-              <button className="w-full h-[60px] mt-[15px] md:mt-0 flex items-center justify-center border border-[#B3B4BB] px-4 rounded-[8px] cursor-pointer">
-                <FaFacebook size={24} className="mr-[10px] text-blue-700" />
-                <p className="text-[#04050C] text-[16px] leading-[20.21px]">
-                  Sign up with Facebook
-                </p>
-              </button>
-              <button className="w-full h-[60px] mt-[15px] md:mt-0 flex items-center justify-center border border-[#B3B4BB] px-4 rounded-[8px] cursor-pointer">
-                <BsTwitter size={24} className="mr-[10px] text-blue-700" />
-                <p className="text-[#04050C] text-[16px] leading-[20.21px]">
-                  Sign Up with Twitter
-                </p>
-              </button>
-            </div> */}
-
-            {/* <div className="w-full flex items-center mt-[30px] ">
-              <div className="flex-1 h-[1px] border-[1px] border-b-gray-800"></div>
-              <p className="mx-4 text-gray-600">OR</p>
-              <div className="flex-1 border-[1px] border-b-gray-800"></div>
-            </div> */}
 
             <div className="w-full md:w-10/12 h-full mt-[70px]">
               <div className="w-full  md:flex justify-between">

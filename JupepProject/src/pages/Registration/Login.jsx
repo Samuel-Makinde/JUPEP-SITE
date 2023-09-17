@@ -28,8 +28,6 @@ const formSchema = yup.object().shape({
 
 const Login = () => {
   const [passwordVisibile, passwordNotVisible] = useState(false);
-  
- 
 
   const togglePassword = () => {
     passwordNotVisible((prevState) => !prevState);
@@ -42,8 +40,6 @@ const Login = () => {
   } = useForm({
     resolver: yupResolver(formSchema),
   });
-
-  
 
   return (
     <main className="-full h-full px-4 font-sans md:bg-[#A4C6FC] text-black">
@@ -134,7 +130,9 @@ const Login = () => {
                 <label
                   className="absolute top-[4px] left-[50px] text-[#04050C] md:text-[12px] leading-[15.22px]"
                   htmlFor="password"
-                >Password</label>
+                >
+                  Password
+                </label>
                 <BiKey
                   size={24}
                   className="absolute top-[20px] left-[10px] text-[#85868D]"
@@ -172,9 +170,12 @@ const Login = () => {
                 Remember me
               </p>
 
-              <p className="text-[#303b9a] text-[16px] leading-[15.22px]  cursor-pointer font-semibold">
-                Forgot Password?
-              </p>
+              <Link to="/forgotpassword">
+                {" "}
+                <p className="text-[#303b9a] text-[16px] leading-[15.22px]  cursor-pointer font-semibold">
+                  Forgot Password?
+                </p>
+              </Link>
             </div>
             <div className="w-full h-[60px] mt-[40px] flex justify-center bg-[#4D5DED] opacity-80 hover:opacity-100 text-[16px] md:text-[20px] rounded-[12px] text-white cursor-pointer">
               <button className="w-full h-full" type="submit">

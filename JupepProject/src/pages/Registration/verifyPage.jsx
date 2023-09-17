@@ -8,35 +8,37 @@ import "./Reg.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-// import { useState } from "react";
 import axios from "axios";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useState } from "react";
 
 const VerifyPage = () => {
-  // const [formData, setFormData] = useState({
-  //   name: "",
-  //   email: "",
-  // });
+  const [loading, setLoading] = useState(false)
 
-  // useEffect(() => {
-  //   axios.post("/api/v1/verify-email")
-  //   .then(response => {
-  //     const { data } = response;
-  //     setFormData(data);
-  //   })
-  //   .catch(error => {
-  //     console.error("request failed", error);
-  //   });
-  // }, []);
-
-  const onSubmit = (data) => {
+  const onSubmit = async (data, e) => {
+    e.preventDefault();
     console.log(data)
-    axios.post(`http://localhost:5000/api/v1/resend-email`, {
-      name: data.name,
+    setLoading(true)
+    axios.post(`https://jupeb-site-backend.onrender.com/api/v1/resend-email`, {
+      firstName: data.firstName,
       email:data.email,
     })
     .then((response) => {
+      toast.success(response.data.msg, {
+        onClose: () => {
+      },
+    })
       console.log("sending", response);
     }) .catch((error) => {
+      setLoading(false)
+    toast.error(error.response.data.msg, {
+    autoClose: false,
+    closeOnClick: true,
+    onClose: () => {
+    // You can choose to navigate or handle errors differently here
+  },
+})
       console.log("not sending", error);
     }) ;
   };
@@ -44,7 +46,7 @@ const VerifyPage = () => {
 
   const { modalOpen, closeModal, openModal } = useGlobalContext();
   const formSchema = yup.object().shape({
-    name: yup
+    firstName: yup
       .string()
       .required(""),
 
@@ -111,21 +113,21 @@ const VerifyPage = () => {
                   onSubmit={handleSubmit(onSubmit)}
                 >
                   <input
-                    type="name"
-                    id="name"
-                    name="name"
-                    {...register("name")}
-                    placeholder="Name"
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    {...register("firstName")}
+                    placeholder="firstName"
                     className="w-[15rem] md:w-[25rem] h-[3rem] border-2  border-[#B3B4BB] rounded-[5px] outline-none"
                     style={{ paddingLeft: "1rem" }}
                   />
                   <small
                     className="text-red-900 text-[14px] font-bold"
                     style={{
-                      visibility: errors.name ? "visible" : "hidden",
+                      visibility: errors.firstName ? "visible" : "hidden",
                     }}
                   >
-                    {errors.name?.message}
+                    {errors.firstName?.message}
                   </small>
                   <input
                     type="email"

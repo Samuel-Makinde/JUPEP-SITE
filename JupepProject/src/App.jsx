@@ -10,6 +10,8 @@ import About from "./pages/About/About";
 import Syllabus from "./pages/Syllabus/Syllabus";
 import VerifyPage from "./pages/Registration/verifyPage";
 import UserVerifyEmail from "./pages/Registration/UserVerifyEmail";
+import ForgotPassword from "./pages/Registration/ForgotPassword";
+import ResetPassword from "./pages/Registration/ResetPassword";
 
 
 function App() {
@@ -27,7 +29,8 @@ function App() {
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/about" element={<About />} />
             <Route path="/syllabus" element={<Syllabus />} />
-
+            <Route path="/forgotpassword" element={<ForgotPassword />} />
+            <Route path="/user/reset-password" element={<ResetPassword />} />
           </Routes>
         </Router>
       {/* <Home /> */}
