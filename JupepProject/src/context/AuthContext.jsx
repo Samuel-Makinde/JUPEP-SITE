@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
-// import authFetch from "./AxiosInterceptor";
+import authFetch from "./AxiosInterceptor";
 
 
 
@@ -13,7 +13,10 @@ const UserContext = React.createContext();
 const UserProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate()
+    
     const [user, setUser] =useState(null)
+    const [books, setBooks] =useState([])
+
 
 
     const Login = async (data, e) => {
@@ -88,13 +91,29 @@ const LogOut = async (e, userId) => {
     fetchUser();
   }, []);
  
-  
+//   const authFetch = axios.create({
+//   // withCredentials: true, 
+// });
+  const getBooks = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/api/v1/books")
+    setBooks(response.data)
+    } catch (error) {
+      console.log("get books error", error.message)
+    }
+  }
+
+   useEffect(() => {
+    getBooks();
+  }, []);
+
 
   return (
     <UserContext.Provider
      value={{
       loading,
       user,
+      books,
       setUser,
       Login,
       setLoading,

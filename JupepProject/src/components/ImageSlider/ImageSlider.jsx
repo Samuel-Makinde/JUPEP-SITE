@@ -4,6 +4,9 @@ import Slider from "react-slick";
 import futa from "../../assets/Home Landing Image/new futa.jpg";
 import Nfuta from "../../assets/Home Landing Image/large futa.jpg";
 import styles from "./ImageSlider.module.css";
+import Futa768 from '../../assets/Home Landing Image/FUTA 768 w   250 h.jpg'
+import Futa320 from '../../assets/Home Landing Image/FUTA 320 W 250 H.jpg'
+
 
 const ImageSlider = () => {
   const settings = {
@@ -23,7 +26,7 @@ const ImageSlider = () => {
         <div className="relative w-full h-full border-none font-euclid">
           <img
             className={`rounded-[30px] md:rounded-none md:w-full   border-none ${styles.imageContainer}`}
-            src={futa}
+            src={Futa320}
             alt="banner"
           />
           <div className="absolute w-full top-[80px] flex items-center justify-center ">

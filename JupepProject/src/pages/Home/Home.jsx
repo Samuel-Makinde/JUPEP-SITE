@@ -8,24 +8,26 @@ import { pdfjs } from "react-pdf";
 import { Document, Page } from "react-pdf";
 import { ImBook } from "react-icons/im";
 import { TbDevices, TbBrandZoom } from "react-icons/tb";
-import { BsTelegram } from "react-icons/bs";
 import college from "../../assets/Home Landing Image/college.jpeg";
 // import physcis from "../../assets/Home Landing Image/physcis.png";
+import chemistry from "../../assets/Home Landing Image/chemistry3.png"
 import { GiAtom } from "react-icons/gi";
 import { BsWhatsapp } from "react-icons/bs";
 import { Link } from "react-router-dom";
+
 
 import styles from "./home.module.css";
 import compare from "../../assets/Home Landing Image/comparePlan.jpeg";
 import Reviews from "../Reviews/Reviews";
 import FAQPage from "../FAQ/FAQPage";
-
+import { useGlobalContext } from "../../context/AuthContext";
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.js",
   import.meta.url
 ).toString();
 
 const Home = () => {
+  const { books } = useGlobalContext()
   // const { currentUser } = useGlobalContext();
   // const navigate = useNavigate();
   // useEffect(() => {
@@ -142,81 +144,112 @@ const Home = () => {
             </div>
             <div className="w-full h-full flex flex-col items-center mt-[150px] text-gray-900">
               <h2 className="text-center text-[18px] md:text-[30px]">
-                Browse Through All Available Subjects
+                View Available Subjects
               </h2>
+
+              {/* {books.map((book) => (
+                 <div key={book._id} className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] shadow-lg hover:scale-110 duration-500 rounded-[10px] cursor-pointer">
+                  <img src={book.image} alt="" />
+                  <p className="mt-[10px] text-[16px] md:text-[25px]">
+                    {book.describtion}
+                  </p>
+                </div>
+              ))} */}
               <div className="w-full h-full mt-[40px] grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 place-items-center">
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] shadow-lg hover:scale-110 duration-500 rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-blue-900" />
-                  <p className="mt-[10px] text-[16px] md:text-[25px]">
+                  <p className="mt-[10px] text-[16px] md:text-[20px]">
                     Physics
+                  </p>
+                </div>
+                <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-white w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
+                  <img src={chemistry} alt="chemistry" className="w-[90px] h-[90px]" />
+                  <p className="mt-[10px] text-[16px] md:text-[20px]">
+                    Chemistry
                   </p>
                 </div>
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-blue-900" />
-                  <p className="mt-[10px] text-[16px] md:text-[25px]">
-                    Physics
+                  <p className="mt-[10px] text-[16px] md:text-[20px]">
+                    Biology
                   </p>
                 </div>
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-blue-900" />
-                  <p className="mt-[10px] text-[16px] md:text-[25px]">
-                    Physics
+                  <p className="mt-[10px] text-[16px] md:text-[20px]">
+                    Mathematics
                   </p>
                 </div>
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-blue-900" />
-                  <p className="mt-[10px] text-[16px] md:text-[25px]">
-                    Physics
+                  <p className="mt-[10px] text-[16px] md:text-[16px] text-center leading-snug">
+                    JUPEB Science Past questions and answer
                   </p>
                 </div>
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-blue-900" />
-                  <p className="mt-[20px] text-[16px] md:text-[25px]">
-                    Physics
+                  <p className="mt-[20px] text-[16px] md:text-[20px]">
+                    Government
                   </p>
                 </div>
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-blue-900" />
-                  <p className="mt-[10px] text-[16px] md:text-[25px]">
-                    Physics
+                  <p className="mt-[10px] text-[16px] md:text-[18px]">
+                    Literature-In-English
                   </p>
                 </div>
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-blue-900" />
-                  <p className="mt-[10px] text-[16px] md:text-[25px]">
-                    Physics
+                  <p className="mt-[10px] text-[16px] md:text-[20px]">
+                    CRS
                   </p>
                 </div>
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-blue-900" />
-                  <p className="mt-[10px] text-[16px] md:text-[25px]">
-                    Physics
+                  <p className="mt-[10px] text-[16px] md:text-[20px]">
+                    Economics
                   </p>
                 </div>
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-blue-900" />
-                  <p className="mt-[10px] text-[16px] md:text-[25px]">
-                    Physics
+                  <p className="mt-[10px] text-[16px] md:text-[18px] text-center leading-snug">
+                    JUPEB Art Past questions and answer
                   </p>
                 </div>
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-blue-900" />
-                  <p className="mt-[10px] text-[16px] md:text-[25px]">
-                    Physics
+                  <p className="mt-[10px] text-[16px] md:text-[18px] text-center leading-snug ">
+                    JUPEB Management Past questions and answer
                   </p>
                 </div>
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-blue-900" />
-                  <p className="mt-[10px] text-[16px] md:text-[25px]">
-                    Physics
+                  <p className="mt-[10px] text-[16px] md:text-[20px]">
+                    Accounting
                   </p>
                 </div>
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-blue-900" />
-                  <p className="mt-[10px] text-[16px] md:text-[25px]">
-                    Physics
+                  <p className="mt-[10px] text-[16px] md:text-[20px]">
+                    Business Studies
                   </p>
                 </div>
+                <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
+                  <GiAtom size={70} className="text-blue-900" />
+                  <p className="mt-[10px] text-[16px] md:text-[20px]">
+                    Visual Art
+                  </p>
+                </div>
+                <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] hover:scale-110 duration-500 shadow-lg rounded-[10px] cursor-pointer">
+                  <GiAtom size={70} className="text-blue-900" />
+                  <p className="mt-[10px] text-[16px] md:text-[20px]">
+                    History
+                  </p>
+                </div>
+              </div>
+              <div className="w-full flex  md:justify-center mt-[20px] ">
+                <button className="h-[60px] px-4  bg-blue-900 text-white text-[18px] font-semibold mr-[20px] rounded-[10px] hover:shadow-xl">View Syllabus</button>
+                <button className="h-[60px] border-[2px] border-blue-900 px-4 text-[18px] font-semibold rounded-[10px] text-blue-900 hover:shadow-xl">Start reading with EaseReads</button>
               </div>
             </div>
 
