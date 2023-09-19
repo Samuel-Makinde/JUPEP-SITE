@@ -47,7 +47,7 @@ const Navbar = () => {
       <ul
         className={`${
           toggle ? "block" : "hidden"
-        } w-3/4 bg-white absolute top-0 left-0 h-screen md:hidden flex flex-col  pt-[50px]   `}
+        } w-3/4 bg-white absolute top-0 left-0 h-screen md:hidden flex flex-col  pt-[50px]  shadow-2xl `}
       >
         {user ? 
         ( <p className="w-full text-center text-[22px] font-semibold">Welcome {user}</p>  )
