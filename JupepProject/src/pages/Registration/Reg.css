@@ -39,13 +39,14 @@
 
   .close-modal-btn {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 2rem;
+    top:  10rem;
+    right: 5.5rem;
+    font-size: 2.5rem;
     background: transparent;
     border-color: transparent;
     color: var(--clr-red-dark);
     cursor: pointer;
+    z-index: 1;
   }
 
   .btn {

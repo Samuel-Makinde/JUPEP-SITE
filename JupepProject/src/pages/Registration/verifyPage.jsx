@@ -108,6 +108,9 @@ const VerifyPage = () => {
                   modalOpen ? "modal-overlay show-modal" : "modal-overlay"
                 }`}
               >
+                <button className="close-modal-btn" onClick={closeModal}>
+                    <FaTimes></FaTimes>
+                  </button>
                 <form
                   className="modal-container pt-[4rem]"
                   onSubmit={handleSubmit(onSubmit)}
@@ -146,9 +149,9 @@ const VerifyPage = () => {
                   >
                     {errors.email?.message}
                   </small>
-                  <button className="close-modal-btn" onClick={closeModal}>
+                  {/* <button className="close-modal-btn" onClick={closeModal}>
                     <FaTimes></FaTimes>
-                  </button>
+                  </button> */}
                   <button  className="btn" >
                     Submit
                   </button>
