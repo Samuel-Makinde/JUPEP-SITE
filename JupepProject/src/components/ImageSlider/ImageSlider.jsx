@@ -23,17 +23,13 @@ const ImageSlider = () => {
   return (
     <main className={styles.container}>
       <Slider {...settings}>
-        <div className="relative w-full h-full border-none font-euclid">
+        <div className=" w-full h-full border-none font-euclid">
           <img
             className={`rounded-[30px] md:rounded-none md:w-full   border-none ${styles.imageContainer}`}
             src={Futa320}
             alt="banner"
           />
-          <div className="absolute w-full top-[80px] flex items-center justify-center ">
-            <h1 className="text-[16px] leading-[20px] w-5/6 xl:text-[100px] xl:leading-[91px] md:text-[60px] md:leading-[70px]  text-white">
-              Find, choose and book your preferable hostel with ease
-            </h1>
-          </div>
+         
         </div>
         <div className="w-full h-full border-none">
           <img
@@ -42,19 +38,20 @@ const ImageSlider = () => {
             alt="scinece"
           />
         </div>
-        <div className="w-full h-full border-none">
+        <div className=" w-full h-full border-none">
           <img
             className={`rounded-[30px] md:rounded-none md:w-full   border-none ${styles.imageContainer}`}
             src={futa}
             alt="artPQ"
           />
         </div>
-        <div className="w-full h-full border-none">
+        <div className=" w-full h-full border-none">
           <img
             className={`rounded-[30px] md:rounded-none md:w-full  border-none ${styles.imageContainer}`}
             src={Nfuta}
             alt="management"
           />
+          
         </div>
         <div className="w-full h-full border-none">
           <img

@@ -176,10 +176,11 @@ const Login = () => {
                 <input type="checkbox" id="check" className="cursor-pointer" />{" "}
                 Remember me
               </p>
-
+              <Link to="/forgot-password" smooth="true" duration={500} >
               <p className="text-[#303b9a] text-[16px] leading-[15.22px]  cursor-pointer font-semibold">
                 Forgot Password?
               </p>
+              </Link>
             </div>
             <div className="w-full h-[60px] mt-[40px] flex justify-center bg-[#4D5DED] opacity-80 hover:opacity-100 text-[16px] md:text-[20px] rounded-[12px] text-white cursor-pointer">
               <button className="w-full h-full" type="submit">
@@ -188,7 +189,7 @@ const Login = () => {
             </div>
             <p className="text-[#2F3035] text-[16px] leading-[20.22px] font-normal mt-[30px] text-center">
               Don&apos;t have an account?{" "}
-              <Link to="/">
+              <Link to="/sign-up" smooth="true" duration={500}>
                 <button className="text-[#4D5DED]">Sign Up.</button>
               </Link>
             </p>

@@ -26,74 +26,17 @@ import history from "../../assets/Home Landing Image/historynew.jpeg"
 import pastquestion from "../../assets/Home Landing Image/pastQ.png"
 import { GiAtom } from "react-icons/gi";
 import { BsWhatsapp } from "react-icons/bs";
-
-
 import styles from "./home.module.css";
 import compare from "../../assets/Home Landing Image/comparePlan.jpeg";
 import Reviews from "../Reviews/Reviews";
 import FAQPage from "../FAQ/FAQPage";
-import { useGlobalContext } from "../../context/AuthContext";
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.js",
-  import.meta.url
-).toString();
+
 
 const Home = () => {
-  const { books } = useGlobalContext()
-  // const { currentUser } = useGlobalContext();
-  // const navigate = useNavigate();
-  // useEffect(() => {
-  //   if (!currentUser) {
-  //     // Handle the case where the user is not signed in
-  //     navigate("/login");
-  //   }
-  // }, [currentUser, navigate]);
-
-  // if (!currentUser) {
-  //   // Return null if currentUser is not available
-  //   return null;
-  // }
-
-  /* <h1 className="px-4 md:px-8 ">
-          Welcome, {currentUser.firstName} {currentUser.lastName}{" "}
-        {currentUser.email}
-        </h1> */
-
-  // const url =
-  //   "https://firebasestorage.googleapis.com/v0/b/login-practice-664be.appspot.com/o/samuel.resume.pdf?alt=media&token=5fa2cd30-0e77-4c08-869c-781e74809646";
-  const [pdfData, setPdfData] = useState(null);
-  const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
-  const fetchPDF = async () => {
-    try {
-      const response = await fetch(url, { mode: "no-cors" });
-      const arrayBuffer = await response.arrayBuffer();
-      const uint8Array = new Uint8Array(arrayBuffer);
-      setPdfData(uint8Array);
-    } catch (error) {
-      console.error("Error fetching PDF:", error);
-    }
-  };
-
-  const onDocumentLoadSuccess = ({ numPages }) => {
-    setPageNumber(numPages);
-  };
-
   return (
     <Layout>
       <main className="w-full h-full pt-[90px] md:pt-0 text-2xl">
         <ImageSlider />
-
-        {/* <div className="w-full h-full">
-          <div>
-            <Document file={fetchPDF} onLoadSuccess={onDocumentLoadSuccess}>
-              <Page pageNumber={pageNumber} />
-            </Document>
-            <p>
-              Page {pageNumber} of {numPages}
-            </p>
-          </div>
-        </div> */}
         <div className="w-full h-full  ">
           <div className="w-full h-full  bg-[#275bd4] text-white flex flex-col items-center ">
             <h1 className=" text-2xl mt-[40px] text-center">
@@ -263,7 +206,7 @@ const Home = () => {
                 <Link to="/syllabus" smooth="true" duration={500}>
                 <button className="h-[60px] w-[100px] sm:w-[150px] px-2  bg-blue-900 text-white text-[13px] sm:text-[16px] md:text-[18px] font-semibold mr-[20px] rounded-[10px] hover:shadow-xl">View Syllabus</button>
                 </Link>
-                <Link to="/" smooth="true" duration={500}>
+                <Link to="/view-subject" smooth="true" duration={500}>
                 <button className="h-[60px] w-[200px] sm:w-[280px] border-[2px] border-blue-900 px-2 text-[13px] sm:text-[16px] md:text-[18px] font-semibold rounded-[10px] text-blue-900 hover:shadow-xl">Start reading with EaseReads</button>
                 </Link>
               </div>

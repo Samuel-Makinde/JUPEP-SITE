@@ -46,16 +46,16 @@ function Footer() {
           <div className="w-full space-y-[5px] ">
             <h2 className="text-2xl md:text-3xl">Learn</h2>
             <div className="border border-[#f4b223] w-[110px] mt-[8px]"></div>
-            {/* <Link> */}
+            <Link to="/term-of-use" smooth="true" duration={500}>
              <p>
               <button>Terms of Use</button>
             </p>
-            {/* </Link> */}
-           {/* <link> */}
+            </Link>
+           <Link to="/privacy-policy" smooth="true" duration={500}>
             <p>
               <button>Privacy Policy</button>
             </p>
-           {/* </link> */}
+           </Link>
            
           </div>
 

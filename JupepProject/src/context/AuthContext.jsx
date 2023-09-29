@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect} from "react";
+import React, {useState, useContext, useEffect,} from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -62,6 +62,10 @@ const fetchUser = async () => {
     setLoading(false);
   };
 
+   useEffect(() => {
+    fetchUser();
+  }, []);
+
 
 const LogOut = async (e, userId) => {
   e.preventDefault();
@@ -76,6 +80,7 @@ const LogOut = async (e, userId) => {
    setUser(null);
     navigate("/");
   } catch (error) {
+    setLoading(false)
     toast.error(error.response.data.msg, {
     autoClose: false,
     closeOnClick: true,
@@ -87,16 +92,15 @@ const LogOut = async (e, userId) => {
 
 }
   
-  useEffect(() => {
-    fetchUser();
-  }, []);
+ 
  
 //   const authFetch = axios.create({
 //   // withCredentials: true, 
 // });
+
   const getBooks = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/v1/books")
+      const response = await axios.get("https://jupeb-site-backend.onrender.com/api/v1/books")
     setBooks(response.data)
     } catch (error) {
       console.log("get books error", error.message)
@@ -124,6 +128,7 @@ const LogOut = async (e, userId) => {
     </UserContext.Provider>
   );
 };
+
 
 export const useGlobalContext = () => {
   return useContext(UserContext);

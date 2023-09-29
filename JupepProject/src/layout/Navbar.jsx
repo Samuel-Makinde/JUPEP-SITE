@@ -25,14 +25,14 @@ const Navbar = () => {
     setToggle(!toggle);
   };
   return (
-    <main className="fixed w-full h-[60px] flex justify-between items-center px-4 bg-white text-gray-800 shadow-md z-20 font-euclid capitalize">
-      <div onClick={handleToggle} className="md:hidden z-10">
+    <main className="fixed w-full h-[60px] flex justify-between items-center px-4 bg-white text-gray-800 shadow-md z-30 font-euclid capitalize">
+      <div onClick={handleToggle} className="md:hidden z-30">
         {toggle ? (
           <div className="w-[32px] h-[32px] bg-[#EDEFFD] cursor-pointer flex justify-center items-center rounded-[20px]">
-            <FaTimes className="text-[#54555B] w-[18px] h-[16px]   transition-transform ease-in-out delay-1000 duration-1000 transform hover:scale-110" />
+            <FaTimes className="text-[#54555B] w-[18px] h-[16px]  transform ease-in-out delay-300 duration-500  hover:scale-110 " />
           </div>
         ) : (
-          <FaBars className="text-[#54555B] w-[18px] h-[16px]  cursor-pointer transition-transform hover:scale-110 ease-in-out delay-1000 duration-1000 transform" />
+          <FaBars className="text-[#54555B] w-[18px] h-[16px]  cursor-pointer transform hover:scale-110 ease-in-out delay-300 duration-500 " />
         )}
       </div>
       <Link to="/" smooth="true" duration={500}>
@@ -45,9 +45,9 @@ const Navbar = () => {
 
       {/* mobile-view-navbar */}
       <ul
-        className={`${
-          toggle ? "block" : "hidden"
-        } w-3/4 bg-white absolute top-0 left-0 h-screen md:hidden flex flex-col  pt-[50px]  shadow-2xl `}
+        className={` transform  ease-in-out duration-500 delay-150 ${
+          toggle ? "translate-x-0" : "-translate-x-full"
+        } w-3/4 bg-white absolute top-0 left-0 h-screen md:hidden flex flex-col  pt-[50px]  shadow-md `}
       >
         {user ? 
         ( <p className="w-full text-center text-[22px] font-semibold">Welcome {user}</p>  )
@@ -80,23 +80,23 @@ const Navbar = () => {
           </li>
         </Link>
 
-        <Link to="/about">
+        <Link to="/about" smooth="true" duration={500}>
           <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal ">
             <GoPeople size={20} />
             <h1 className="pl-[7px] cursor-pointer">About</h1>
           </li>
         </Link>
 
-        {/* <Link to="/cart"> */}
+        <Link to="/view-subject" smooth="true" duration={500}>
         <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal ">
           <FiBook size={20} />
           <h1 className="pl-[10px] cursor-pointer">View Subjects</h1>
         </li>
-        {/* </Link> */}
+        </Link>
 
         <li className=" flex border-b-2 mt-[10px] border-b-[#D4D5DB] mx-[15px] "></li>
 
-        <Link to="/syllabus">
+        <Link to="/syllabus" smooth="true" duration={500}>
         <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal ">
           <FiBookOpen size={20} />
           <h1 className="pl-[10px] cursor-pointer">Syllabus</h1>
@@ -148,9 +148,9 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          {/* <Link to="skills" smooth="true" duration={500}> */}
+          <Link to="/view-subject" smooth="true" duration={500}>
           View-Subjects
-          {/* </Link> */}
+          </Link>
         </li>
         <Link to="/syllabus" smooth="true" duration={500}>
            <li>Syllabus</li>

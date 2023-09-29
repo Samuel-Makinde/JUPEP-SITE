@@ -8,9 +8,15 @@ import Pricing from "./pages/Pricing-Page/Pricing";
 import ScrollToTop from "./layout/ScrollToTop/ScrollToTop";
 import About from "./pages/About/About";
 import Syllabus from "./pages/Syllabus/Syllabus";
-import VerifyPage from "./pages/Registration/verifyPage";
+import VerifyPage from "./pages/Registration/VerifyPage";
 import UserVerifyEmail from "./pages/Registration/UserVerifyEmail";
 import { UserProvider } from "./context/AuthContext";
+import TermOfUse from "./pages/Regulation/TermOfUse";
+import PrivacyPolicy from "./pages/regulation/PrivacyPolicy";
+import ForgotPassword from "./pages/Registration/ForgotPassword";
+import ResetPassword from "./pages/Registration/ResetPassword";
+import ViewSubject from "./pages/ViewSubject/ViewSubject";
+import UploadFile from "./pages/UploadFile";
 
 
 function App() {
@@ -18,26 +24,30 @@ function App() {
     <div>
         <Router>
       <UserProvider>
-          <ScrollToTop />
+           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/signup" element={<SignUp />} />
+            <Route path="/sign-up" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/user/reset-password" element={<ResetPassword />} />
+            <Route path="/term-of-use" element={<TermOfUse />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/verify-email-page" element={<VerifyPage />} />
             <Route path="/user/verify-email" element={<UserVerifyEmail />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/about" element={<About />} />
             <Route path="/syllabus" element={<Syllabus />} />
+            <Route path="/view-subject" element={<ViewSubject />} />
+            <Route path="/file-upload" element={<UploadFile />} />
 
-          </Routes>
+
+
+          </Routes> 
       </UserProvider>
         </Router>
-      {/* <Home /> */}
-      {/* <ContactUs /> */}
-      {/* <Pricing /> */}
-      {/* <PdfasImage /> */}
-      {/* <h1>i amgood</h1> */}
+      
     </div>
   );
 }
