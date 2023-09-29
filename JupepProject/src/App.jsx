@@ -8,7 +8,6 @@ import Pricing from "./pages/Pricing-Page/Pricing";
 import ScrollToTop from "./layout/ScrollToTop/ScrollToTop";
 import About from "./pages/About/About";
 import Syllabus from "./pages/Syllabus/Syllabus";
-// import VerifyPage from "./pages/Registration/VerifyPage";
 import UserVerifyEmail from "./pages/Registration/UserVerifyEmail";
 import { UserProvider } from "./context/AuthContext";
 import TermOfUse from "./pages/Regulation/TermOfUse";
@@ -17,6 +16,7 @@ import ForgotPassword from "./pages/Registration/ForgotPassword";
 import ResetPassword from "./pages/Registration/ResetPassword";
 import ViewSubject from "./pages/ViewSubject/ViewSubject";
 import UploadFile from "./pages/UploadFile";
+import VerifyPage from "./pages/Registration/VerifyPage";
 
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
             <Route path="/user/reset-password" element={<ResetPassword />} />
             <Route path="/term-of-use" element={<TermOfUse />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            {/* <Route path="/verify-email-page" element={<VerifyPage />} /> */}
+            <Route path="/verify-email-page" element={<VerifyPage />} />
             <Route path="/user/verify-email" element={<UserVerifyEmail />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/pricing" element={<Pricing />} />
