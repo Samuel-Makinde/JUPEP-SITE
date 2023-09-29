@@ -97,9 +97,9 @@ const ViewSubject = () => {
         </div>
         {showPdf && pdfData && (
           <div className="relative w-[100%] h-full mt-4  ">
-            <Document file={`http://localhost:5000/${pdfData}`} onLoadSuccess={onDocumentLoadSuccess} className="flex">
+            <Document file={`http://localhost:5000/${pdfData}`} onLoadSuccess={onDocumentLoadSuccess} className="flex -m-6">
               <Page pageNumber={pageNumber}  />
-              <Page pageNumber={pageNumber + 1} className="hidden md:flex" />
+              <Page pageNumber={pageNumber + 1} className="hidden lg:flex" />
             </Document>
             <p className="w-full text-center">
               Page {pageNumber} of {numPages}
