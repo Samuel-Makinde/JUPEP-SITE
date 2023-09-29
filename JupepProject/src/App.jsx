@@ -12,7 +12,7 @@ import Syllabus from "./pages/Syllabus/Syllabus";
 import UserVerifyEmail from "./pages/Registration/UserVerifyEmail";
 import { UserProvider } from "./context/AuthContext";
 import TermOfUse from "./pages/Regulation/TermOfUse";
-import PrivacyPolicy from "./pages/regulation/PrivacyPolicy";
+import PrivacyPolicy from "./pages/Regulation/PrivacyPolicy";
 import ForgotPassword from "./pages/Registration/ForgotPassword";
 import ResetPassword from "./pages/Registration/ResetPassword";
 import ViewSubject from "./pages/ViewSubject/ViewSubject";
