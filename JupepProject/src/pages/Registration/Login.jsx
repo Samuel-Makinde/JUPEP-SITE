@@ -51,15 +51,15 @@ const Login = () => {
 
 
   return (
-    <main className="-full h-full px-4 font-sans md:bg-[#A4C6FC] text-black">
+    <main className="-full h-full px-4 font-sans md:bg-blue-300 text-black">
       <div className="w-full h-full">
-        <h1 className="text-2xl md:text-4xl pt-[20px] text-blue-800 font-extrabold">
-          Welcome to EaseReads
+        <h1 className="text-2xl md:text-4xl pt-[20px] text-white font-extrabold">
+          Welcome Back
         </h1>
       </div>
 
-      <div className="w-full h-full flex justify-center items-center mt-[60px] pb-[40px]">
-        <div className="w-full h-full md:w-8/12 lg:w-7/12 xl:w-6/12 pb-[20px] md:bg-white md:shadow-2xl md:rounded-[8px] flex flex-col justify-center items-center">
+      <div className="w-full h-full flex justify-center items-center mt-[40px] pb-[40px]">
+        <div className="w-full h-full md:w-8/12 lg:w-7/12 xl:w-6/12 pb-[20px] md:bg-white md:shadow-lg md:rounded-[8px] flex flex-col justify-center items-center">
           <form
             className="w-full h-full flex flex-col justify-center items-center px-4 "
             onSubmit={handleSubmit(Login)}
@@ -68,7 +68,7 @@ const Login = () => {
               <h1 className="text-[#04050C] text-[24px] md:text-[48px] ">
                 User Login
               </h1>
-              <p className="text-[#04050C] mt-[5px]">
+              <p className="text-[#04050C] mt-[25px]">
                 Login in to read jupep textbooks, jupep past questions and
                 answers, postutme questions and answers.
               </p>
@@ -177,12 +177,12 @@ const Login = () => {
                 Remember me
               </p>
               <Link to="/forgot-password" smooth="true" duration={500} >
-              <p className="text-[#303b9a] text-[16px] leading-[15.22px]  cursor-pointer font-semibold">
+              <p className="text-blue-700 text-[16px] leading-[15.22px]  cursor-pointer font-semibold">
                 Forgot Password?
               </p>
               </Link>
             </div>
-            <div className="w-full h-[60px] mt-[40px] flex justify-center bg-[#4D5DED] opacity-80 hover:opacity-100 text-[16px] md:text-[20px] rounded-[12px] text-white cursor-pointer">
+            <div className="w-full h-[60px] mt-[40px] flex justify-center bg-[#4190EA] opacity-80 hover:opacity-100 text-[16px] md:text-[20px] rounded-[12px] text-white cursor-pointer">
               <button className="w-full h-full" type="submit">
                 Login
               </button>

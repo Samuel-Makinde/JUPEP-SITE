@@ -38,7 +38,7 @@ const Home = () => {
       <main className="w-full h-full pt-[90px] md:pt-0 text-2xl">
         <ImageSlider />
         <div className="w-full h-full  ">
-          <div className="w-full h-full  bg-[#275bd4] text-white flex flex-col items-center ">
+          <div className="w-full h-full  bg-[#4190EA] text-white flex flex-col items-center ">
             <h1 className=" text-2xl mt-[40px] text-center">
               How we solved Jupeb reading problem
             </h1>
@@ -54,7 +54,7 @@ const Home = () => {
           </div>
           <div className="w-full h-full px-4 md:px-6 lg:px-10 ">
             <div className="w-full h-full flex flex-col items-center mt-[80px] ">
-              <h1 className="text-4xl text-blue-900">
+              <h1 className="text-4xl text-[#4190EA]">
                 {" "}
                 <strong>What we offer </strong>{" "}
               </h1>
@@ -65,7 +65,7 @@ const Home = () => {
               </p>
               <div className="w-full h-full md:grid grid-flow-col  gap-4 text-[16px] text-gray-700 text-center mt-[50px] leading-normal">
                 <div className="w-full h-full flex flex-col items-center">
-                  <ImBook size={40} className="text-blue-500" />
+                  <ImBook size={40} className="text-[#4190EA]" />
                   <p className="mt-[15px]">
                     Jupeb Textbooks that contain{" "}
                     <b>explanation of all topics </b>
@@ -73,24 +73,24 @@ const Home = () => {
                   </p>
                 </div>
                 <div className="w-full h-full flex flex-col items-center mt-[40px] md:mt-0">
-                  <ImBook size={40} className="text-blue-900" />
+                  <ImBook size={40} className="text-blue-500" />
                   <p className="mt-[15px]">Jupeb Past questions and Answers </p>
                 </div>
                 <div className="w-full h-full flex flex-col items-center mt-[40px] md:mt-0">
-                  <BsWhatsapp size={40} className="text-blue-900" />
+                  <BsWhatsapp size={40} className="text-blue-600" />
                   <p className="mt-[15px]">
                     Active WhatsApp community to ask questions or find help on
                     topics you don&apos;t understand
                   </p>
                 </div>
                 <div className="w-full h-full flex flex-col items-center mt-[40px] md:mt-0">
-                  <TbBrandZoom size={40} className="text-blue-900" />
+                  <TbBrandZoom size={40} className="text-blue-700" />
                   <p className="mt-[15px]">
                     Weekly video call to explain a section details
                   </p>
                 </div>
                 <div className="w-full h-full flex flex-col items-center mt-[40px] md:mt-0">
-                  <TbDevices size={40} className="text-blue-900 " />
+                  <TbDevices size={40} className="text-blue-800 " />
                   <p className="mt-[15px]">
                     Oppurtunity to read any time, anywhere with your device
                   </p>
@@ -112,7 +112,7 @@ const Home = () => {
               ))} */}
               <div className="w-full h-full mt-[40px] grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 place-items-center">
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-white w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] shadow-lg hover:scale-110 duration-500 rounded-[10px] cursor-pointer">
-                  <GiAtom size={70} className="text-blue-900" />
+                  <GiAtom size={70} className="text-[#4190EA]" />
                   <p className="mt-[10px] text-[13px] sm:text-[16px] md:text-[20px]">
                     Physics
                   </p>
@@ -204,10 +204,10 @@ const Home = () => {
               </div>
               <div className="w-full flex  md:justify-center mt-[20px] ">
                 <Link to="/syllabus" smooth="true" duration={500}>
-                <button className="h-[60px] w-[100px] sm:w-[150px] px-2  bg-blue-900 text-white text-[13px] sm:text-[16px] md:text-[18px] font-semibold mr-[20px] rounded-[10px] hover:shadow-xl">View Syllabus</button>
+                <button className="h-[60px] w-[100px] sm:w-[150px] px-2  bg-[#4190EA] text-white text-[13px] sm:text-[16px] md:text-[18px] font-semibold mr-[20px] rounded-[10px] hover:shadow-xl">View Syllabus</button>
                 </Link>
                 <Link to="/view-subject" smooth="true" duration={500}>
-                <button className="h-[60px] w-[200px] sm:w-[280px] border-[2px] border-blue-900 px-2 text-[13px] sm:text-[16px] md:text-[18px] font-semibold rounded-[10px] text-blue-900 hover:shadow-xl">Start reading with EaseReads</button>
+                <button className="h-[60px] w-[200px] sm:w-[280px] border-[2px] border-[#4190EA] px-2 text-[13px] sm:text-[16px] md:text-[18px] font-semibold rounded-[10px] text-[#4190EA] hover:shadow-xl">Start reading with EaseReads</button>
                 </Link>
               </div>
             </div>

@@ -105,15 +105,15 @@ const SignUp = () => {
 };
 
   return (
-    <main className="w-full h-full px-4 font-sans md:bg-[#A4C6FC] text-black z-0">
+    <main className="w-full h-full px-4 font-sans md:bg-blue-300  text-black z-0">
       
       <div className="w-full h-full">
-        <h1 className="text-2xl md:text-4xl pt-[20px] text-blue-800 font-extrabold">
+        <h1 className="text-2xl md:text-4xl pt-[20px] text-white font-extrabold">
           Welcome to EaseReads
         </h1>
       </div>
       <div className="w-full h-full flex justify-center items-center mt-[60px] pb-[40px]">
-        <div className="md:w-9/12 lg:w-8/12 xl:w-7/12 h-full mt-[40px] md:bg-white md:shadow-2xl md:rounded-[8px] flex flex-col justify-center items-center  ">
+        <div className="md:w-9/12 lg:w-8/12 xl:w-7/12 h-full mt-[40px] md:bg-white md:shadow-lg md:rounded-[8px] flex flex-col justify-center items-center  ">
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="w-full h-full flex flex-col justify-center items-center px-4"
@@ -395,7 +395,7 @@ const SignUp = () => {
                   {errors.cpassword?.message}
                 </small>
               </div>
-              <div className="w-full h-[60px] mt-[40px] flex justify-center bg-[#4D5DED] opacity-80 hover:opacity-100 text-[16px] md:text-[20px] rounded-[12px] text-white cursor-pointer">
+              <div className="w-full h-[60px] mt-[40px] flex justify-center bg-[#4190EA] opacity-80 hover:opacity-100 text-[16px] md:text-[20px] rounded-[12px] text-white cursor-pointer">
                 <button className="w-full h-full" type="submit">
                   Sign Up
                 </button>

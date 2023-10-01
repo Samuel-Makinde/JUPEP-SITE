@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import SignUp from "./pages/Registration/SignUp";
-import Login from "./pages/Registration/Login";
+import Login from "./pages/Registration/Login"; 
 import Home from "./pages/Home/Home";
 import ContactUs from "./pages/Contact/ContactUs";
 import Pricing from "./pages/Pricing-Page/Pricing";
@@ -17,6 +17,7 @@ import ResetPassword from "./pages/Registration/ResetPassword";
 import ViewSubject from "./pages/ViewSubject/ViewSubject";
 import UploadFile from "./pages/UploadFile";
 import VerifyPage from "./pages/Registration/VerifyPage";
+// import ProtectedRoute from "./pages/ProtectedRoute/ProtectedRoute";
 
 
 function App() {
@@ -39,6 +40,12 @@ function App() {
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/about" element={<About />} />
             <Route path="/syllabus" element={<Syllabus />} />
+            {/* <ProtectedRoute path="/view-subject" >
+              <ViewSubject />
+            </ProtectedRoute> */}
+            {/* <Route path="/view-subject/*" element={<ProtectedRoute>
+              <ViewSubject />
+            </ProtectedRoute>} /> */}
             <Route path="/view-subject" element={<ViewSubject />} />
             <Route path="/file-upload" element={<UploadFile />} />
 

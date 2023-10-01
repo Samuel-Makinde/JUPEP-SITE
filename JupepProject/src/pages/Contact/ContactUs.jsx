@@ -19,7 +19,7 @@ const ContactUs = () => {
               Email: Booklandia@gmail.com
             </p>
             <a
-              className="text-white text-[16px] md:text-[20px] h-[60px] w-[200px] lg:w-[250px] mt-[20px] md:mt-0 flex justify-center items-center bg-[#28A219] hover:opacity-90 rounded-[10px] md:mr-[30px]"
+              className="text-white text-[16px] md:text-[20px] h-[60px] w-[200px] lg:w-[250px] mt-[20px] md:mt-0 flex justify-center items-center bg-[#41E960] hover:opacity-90 rounded-[10px] md:mr-[30px]"
               href="https://wa.me/08129577490"
               target="_blank"
               rel="noopener noreferrer"
@@ -29,7 +29,7 @@ const ContactUs = () => {
             </a>
 
             <a
-              className="text-white text-[16px] md:text-[20px] h-[60px] w-[200px] lg:w-[250px] mt-[20px] md:mt-0 flex justify-center items-center bg-[#2AA2DC] hover:opacity-90 rounded-[10px]"
+              className="text-white text-[16px] md:text-[20px] h-[60px] w-[200px] lg:w-[250px] mt-[20px] md:mt-0 flex justify-center items-center bg-[#4190EA] hover:opacity-90 rounded-[10px]"
               rel="noreferrer"
               target="_blank"
               href="https://t.me/+u5_EgioIoPM3Njk0"
@@ -73,7 +73,7 @@ const ContactUs = () => {
                 rows="10"
               ></textarea>
               <input
-                className="mt-[15px] p-[12px] cursor-pointer text-2xl bg-blue-700 hover:bg-blue-900 text-white md:w-[500px] sm:w-[90%] outline-none"
+                className="mt-[15px] p-[12px] cursor-pointer text-2xl bg-[#4190EA] hover:bg-blue-600 text-white md:w-[500px] sm:w-[90%] outline-none"
                 type="submit"
                 value="Submit"
               />

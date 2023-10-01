@@ -163,7 +163,7 @@ const Navbar = () => {
         </li>
 
         <Link to="/pricing" smooth="true" duration={500}>
-          <button className="bg-blue-600 rounded-md shadow-md shadow-blue-800 hover:opacity-80 flex text-white px-[10px] py-[7px]">
+          <button className="bg-[#4190EA] rounded-md shadow-md shadow-[#4190EA] hover:opacity-80 flex text-white px-[10px] py-[7px]">
             <TbCurrencyNaira size={24} className="mr-[5px]" />
             Pricing
           </button>
@@ -181,7 +181,7 @@ const Navbar = () => {
         : 
         ( 
           <div className="flex ">
-            <Link to="/signup" smooth="true" duration={500} >
+            <Link to="/sign-up" smooth="true" duration={500} >
                <li >
           <h1 >Sign-up</h1>
         </li>

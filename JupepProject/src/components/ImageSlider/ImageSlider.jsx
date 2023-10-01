@@ -6,6 +6,9 @@ import Nfuta from "../../assets/Home Landing Image/large futa.jpg";
 import styles from "./ImageSlider.module.css";
 import Futa768 from '../../assets/Home Landing Image/FUTA 768 w   250 h.jpg'
 import Futa320 from '../../assets/Home Landing Image/FUTA 320 W 250 H.jpg'
+import pq from "../../assets/Home Landing Image/p-management.jpg"
+import pq420 from "../../assets/Home Landing Image/pq-mana420.jpg"
+
 
 
 const ImageSlider = () => {
@@ -23,18 +26,18 @@ const ImageSlider = () => {
   return (
     <main className={styles.container}>
       <Slider {...settings}>
-        <div className=" w-full h-full border-none font-euclid">
+        <div className="  h-full border-none font-euclid">
           <img
             className={`rounded-[30px] md:rounded-none md:w-full   border-none ${styles.imageContainer}`}
-            src={Futa320}
+            src={pq}
             alt="banner"
           />
          
         </div>
-        <div className="w-full h-full border-none">
+        <div className="  border-none">
           <img
             className={`rounded-[30px] md:rounded-none md:w-full  border-none ${styles.imageContainer}`}
-            src={Nfuta}
+            src={pq420}
             alt="scinece"
           />
         </div>

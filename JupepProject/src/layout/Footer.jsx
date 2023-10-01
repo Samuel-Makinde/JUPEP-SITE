@@ -66,7 +66,10 @@ function Footer() {
             <button>Jupeb Syllabus</button>
             </Link>
             <p>
+              <Link to="/view-subject" smooth="true" duration={500}>
+          
               <button>Books</button>
+          </Link>
             </p>
           </div>
 
@@ -93,7 +96,7 @@ function Footer() {
         <div className="w-full text-white flex justify-center items-center flex-col md:mt-[130px] mt-[70px] pb-[20px]">
           <div className="border lg:w-[800px] md:w-[600px] sm:w-[450px] w-[200px] text-white mb-[10px] "></div>
           <p className="text-center">
-            Copyright EaseRead 2023. All Right Reserved
+            Copyright EaseReads 2023. All Right Reserved
           </p>
         </div>
       </div>

@@ -6,6 +6,7 @@ import Layout from "../../layout/Layout";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import authFetch from "../../context/AxiosInterceptor";
 
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
@@ -19,6 +20,10 @@ const ViewSubject = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const [showPdf, setShowPdf] = useState(false);
   const [books, setBooks] = useState([]);
+
+//   const authFetch = axios.create({
+//    withCredentials: true, // Include cookies in the request
+//  });
 
   // ... (previous state and useEffect)
 
@@ -77,7 +82,7 @@ const ViewSubject = () => {
                   <div className="w-full h-full flex justify-center items-center">
                     <button
                       onClick={() => togglePdf(book.pdf.filePath)}
-                      className="w-[250px] h-[70px] text-[20px] bg-blue-300 rounded-[10px] shadow-md font-bold mt-[20px]"
+                      className="w-[250px] h-[70px] text-[20px] bg-[#4190EA] rounded-[10px] text-white shadow-md font-bold mt-[20px]"
                     >
                       <span className="relative flex h-3 w-3 top-0">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
