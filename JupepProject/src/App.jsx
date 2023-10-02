@@ -13,6 +13,8 @@ import UserVerifyEmail from "./pages/Registration/UserVerifyEmail";
 import ForgotPassword from "./pages/Registration/ForgotPassword";
 import ResetPassword from "./pages/Registration/ResetPassword";
 import ViewSyllabusPage from "./pages/Syllabus/ViewSyllabusPage";
+import ViewSubject from "./pages/ViewSubject/ViewSubject";
+
 
 
 function App() {
@@ -33,7 +35,11 @@ function App() {
             <Route path="/forgotpassword" element={<ForgotPassword />} />
             <Route path="/user/reset-password" element={<ResetPassword />} />
             <Route path="/syllabus-page" element={<ViewSyllabusPage />} />
-          </Routes>
+         
+            <Route path="/view-subject" element={<ViewSubject />} />
+            {/* <Route path="/file-upload" element={<UploadFile />} /> */}
+          </Routes> 
+      {/* </UserProvider> */}
         </Router>
       {/* <Home /> */}
       {/* <ContactUs /> */}
