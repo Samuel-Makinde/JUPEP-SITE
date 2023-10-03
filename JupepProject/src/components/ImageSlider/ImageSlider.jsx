@@ -1,11 +1,11 @@
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import futa from "../../assets/Home Landing Image/new futa.jpg";
 import Nfuta from "../../assets/Home Landing Image/large futa.jpg";
 import styles from "./ImageSlider.module.css";
-import Futa768 from '../../assets/Home Landing Image/FUTA 768 w   250 h.jpg'
-import Futa320 from '../../assets/Home Landing Image/FUTA 320 W 250 H.jpg'
+// import Futa768 from '../../assets/Home Landing Image/FUTA 768 w   250 h.jpg'
+// import Futa320 from '../../assets/Home Landing Image/FUTA 320 W 250 H.jpg'
 import pq from "../../assets/Home Landing Image/p-management.jpg"
 import pq420 from "../../assets/Home Landing Image/pq-mana420.jpg"
 
