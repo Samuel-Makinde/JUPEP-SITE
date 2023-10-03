@@ -1,10 +1,9 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-
-
-
-const authFetch = axios.create()
+const authFetch = axios.create({
+    withCredentials: true,
+})
 
 authFetch.interceptors.response.use(
     (response) => {
