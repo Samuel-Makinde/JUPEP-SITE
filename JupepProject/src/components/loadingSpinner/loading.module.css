@@ -20,7 +20,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid #2a0bf5;
+    border: 10px solid #2a0bf5;
     border-top-color: #333;
     border-radius: 50%;
     animation: spin 1s infinite linear;

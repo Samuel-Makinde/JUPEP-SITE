@@ -16,11 +16,11 @@ const ContactUs = () => {
             <p className="text-[20px] md:text-[24px] md:mr-[30px]">
               {" "}
               Call : 08129577490 <br />
-              Email: Booklandia@gmail.com
+              Email: easereadscare@gmail.com
             </p>
             <a
               className="text-white text-[16px] md:text-[20px] h-[60px] w-[200px] lg:w-[250px] mt-[20px] md:mt-0 flex justify-center items-center bg-[#41E960] hover:opacity-90 rounded-[10px] md:mr-[30px]"
-              href="https://wa.me/08129577490"
+              href="https://wa.me/+2348129577490"
               target="_blank"
               rel="noopener noreferrer"
             >

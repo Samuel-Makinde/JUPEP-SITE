@@ -1,33 +1,45 @@
 const questions = [
   {
     id: 1,
-    title: 'Do I have to allow the use of cookies?',
+    title: 'Are the Jupeb textbooks available for all subjects (001/002/003/004)?',
     info:
-      'Unicorn vinyl poutine brooklyn, next level direct trade iceland. Shaman copper mug church-key coloring book, whatever poutine normcore fixie cred kickstarter post-ironic street art.',
+      'Yes, our Jupeb textbooks cover all topics in subjects 001, 002, 003, and 004, providing detailed explanations to support your learning',
   },
   {
     id: 2,
-    title: 'how do I change my My Page password?',
+    title: 'Are the weekly video calls mandatory, and how do they work?',
     info:
-      'coloring book forage photo booth gentrify lumbersexual. Migas chillwave poutine synth shoreditch, enamel pin thundercats fashion axe roof party polaroid chartreuse.',
+      'Weekly video calls are optional but highly recommended. They provide in-depth explanations of specific sections, and you can join them at your convenience.',
   },
   {
     id: 3,
-    title: 'What is BankID?',
+    title: 'How can I join the active WhatsApp community?',
     info:
-      'Enamel pin fam sustainable woke whatever venmo. Authentic asymmetrical put a bird on it, lumbersexual activated charcoal kinfolk banjo cred pickled sartorial.',
+      "You can join our WhatsApp community by requesting an invitation through our platform. It's a great place to ask questions and get help from fellow students.",
   },
   {
     id: 4,
-    title: 'Whose birth number can I use?',
+    title: 'How can I access study materials on your platform?',
     info:
-      'Edison bulb direct trade gentrify beard lo-fi seitan sustainable roof party franzen occupy squid. Knausgaard cronut succulents, scenester readymade shabby chic lyft. Copper mug meh vegan gentrify.',
+      'You can access study materials on our platform at any time, from anywhere, using your device.',
   },
   {
     id: 5,
-    title: 'When do I recieve a password ordered by letter?',
+    title: 'Is there a cost associated with using your platform?',
     info:
-      'Locavore franzen fashion axe live-edge neutra irony synth af tilde shabby chic man braid chillwave waistcoat copper mug messenger bag. Banjo snackwave blog, microdosing thundercats migas vaporware viral lo-fi seitan ',
+      'We offer both free and premium membership options. While many features are available for free, premium memberships offer additional benefits and resources. ',
+  },
+  {
+    id: 6,
+    title: 'How can I contact your support team if I have technical issues or questions?',
+    info:
+      "You can reach our support team through the contact information provided on our website, and we'll be happy to assist you.",
+  },
+  {
+    id: 7,
+    title: 'How can I get started with your platform today?',
+    info:
+      'To get started, simply sign up on our website and explore the wealth of resources and support we offer for Jupeb exam preparation. ',
   },
 ]
 export default questions

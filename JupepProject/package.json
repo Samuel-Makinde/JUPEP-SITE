@@ -1,5 +1,6 @@
 {
   "name": "jupepproject",
+  "homepage": "https://easereads.com/",
   "private": true,
   "version": "0.0.0",
   "type": "module",

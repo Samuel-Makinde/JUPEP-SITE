@@ -10,17 +10,16 @@
     overflow-x: hidden;
 }
 
-.imageContainer {
+/* .imageContainer {
     width: 98%;
     height: 300px;
     padding-left: 10px;
 }
 
-@media screen and (min-width:768px) {
+@media screen and (min-width:800px) {
     .imageContainer {
-        min-width: max-content;
-        height: 100vh;
+        
+        height: 750px;
         padding-left: 0px;
     }
-
-}
+} */

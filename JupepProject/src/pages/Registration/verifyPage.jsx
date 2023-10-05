@@ -79,7 +79,7 @@ const VerifyPage = () => {
       <div className="w-full h-full flex flex-col   justify-center items-center">
         <div className="bg-white rounded-[12px] md:shadow-2xl w-full h-full px-5 py-5  md:w-[600px] md:h-[500px]">
           <div className="w-full flex mt-[35px] justify-between">
-            <Link to="/signup" smooth="true" duration={500}>
+            <Link to="/sign-up" smooth="true" duration={500}>
               <div className="w-[24px] h-[24px] bg-[#D3D7FB] rounded-[60px]  cursor-pointer ">
                 <IoIosArrowBack size={22} className="text-blue-700 " />
               </div>

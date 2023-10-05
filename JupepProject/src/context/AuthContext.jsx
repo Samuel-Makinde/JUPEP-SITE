@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
-import authFetch from "./AxiosInterceptor";
+
 
 
 
@@ -16,6 +16,7 @@ const UserProvider = ({ children }) => {
     
     const [user, setUser] =useState(null)
     const [books, setBooks] =useState([])
+    const [userId, setUserId] = useState([])
 
 
 
@@ -32,6 +33,7 @@ const UserProvider = ({ children }) => {
 })
     setLoading(false)
     setUser(response.data.username)
+    setUserId(response.data.userId)
     navigate("/");
   } catch (error) { 
     setLoading(false)
@@ -44,9 +46,7 @@ const UserProvider = ({ children }) => {
   }
 };
 
-//  const authFetch = axios.create({
-//   withCredentials: true, // Include cookies in the request
-// });
+
 const fetchUser = async () => {
     try {
       const { data } = await axios.post("https://jupeb-site-backend.onrender.com/api/v1/showMe", {},
@@ -67,15 +67,19 @@ const fetchUser = async () => {
   }, []);
 
 
-const LogOut = async (e, userId) => {
+const LogOut = async (e, ) => {
   e.preventDefault();
   setLoading(true)
   try {
-    const response = await axios.post('https://jupeb-site-backend.onrender.com/api/v1/logOut',
-    {
-        withCredentials: true, // Include cookies in the request
-      }
-    )
+    const axiosInstance = axios.create({
+      withCredentials: true,
+    });
+
+    // Send the user ID in the request body
+    const response = await axiosInstance.post(
+      'https://jupeb-site-backend.onrender.com/api/v1/logOut',
+      { user: userId } // Include the user ID in the request body
+    );
    setLoading(false)
    setUser(null);
     navigate("/");
@@ -91,12 +95,6 @@ const LogOut = async (e, userId) => {
   
 
 }
-  
- 
- 
-//   const authFetch = axios.create({
-//   // withCredentials: true, 
-// });
 
   const getBooks = async () => {
     try {

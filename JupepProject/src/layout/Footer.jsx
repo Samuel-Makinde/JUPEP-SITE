@@ -1,4 +1,5 @@
-import { FaLinkedin, FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
+// import { FaLinkedin, FaTwitter,  FaInstagram } from "react-icons/fa";
+import {FaFacebook,} from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 function Footer() {
@@ -8,14 +9,10 @@ function Footer() {
        
         <div className=" text-white text-center pt-[20px]  w-full h-full">
           <h3 className="md:text-4xl text-2xl">Grow your knowledge</h3>
-          <p className="mt-[25px] md:text-[18px] text-[16px] ">
-            Join thousands of fellow knowledge enthusiasts and subscribe to our{" "}
-            <br></br> weekly newsletter for content alerts, research tips, and
-            more.
-          </p>
+          
         </div>
 
-        <div className="flex items-center justify-center mt-[30px]">
+        {/* <div className="flex items-center justify-center mt-[30px]">
           <div className="relative mt-[10px] w-[650px]">
             <input
               className=" w-full h-[60px] rounded-[50px] pl-[30px]"
@@ -25,9 +22,9 @@ function Footer() {
               join
             </button>
           </div>
-        </div>
+        </div> */}
 
-        <div className="w-full h-full text-white mt-[90px] grid grid-cols-2 gap-4 md:grid-cols-4 justify-items-center ">
+        <div className="w-full h-full text-white mt-[30px] grid grid-cols-2 gap-4 md:grid-cols-4 justify-items-center ">
           <div className="w-full space-y-[5px]">
             <h2 className="text-2xl md:text-3xl">EaseReads</h2>
             <div className="border border-[#f4b223] w-[110px] mt-[8px]"></div>
@@ -77,23 +74,18 @@ function Footer() {
               <h5 className="text-2xl md:text-3xl">Social Media</h5>
               <div className="border border-[#f4b223] w-[110px] mt-[8px]"></div>
             <div className="  flex space-x-[15px] pt-[10px]">
-              <FaLinkedin size={20} />
-              <FaTwitter size={20} />
-              <FaFacebook size={20} />
-              <FaInstagram size={20} />
+              {/* <FaLinkedin size={20} /> */}
+              {/* <FaTwitter size={20} /> */}
+              <a href="https://web.facebook.com/profile.php?id=61550130099443&_rdc=1&_rdr" target="_blank" rel="noopener noreferrer">
+
+              <FaFacebook size={24} />
+              </a>
+              {/* <FaInstagram size={20} /> */}
             </div>
           </div>
-         
-          
-          {/* <div className="lg:mt-[50px] lg:ml-[180px] lg:space-y-[10px] hidden lg:block">
-            <FaLinkedin size={25} />
-            <FaTwitter size={25} />
-            <FaFacebook size={25} />
-            <FaInstagram size={25} />
-          </div> */}
         </div>
 
-        <div className="w-full text-white flex justify-center items-center flex-col md:mt-[130px] mt-[70px] pb-[20px]">
+        <div className="w-full text-white flex justify-center items-center flex-col md:mt-[70px] mt-[70px] pb-[20px]">
           <div className="border lg:w-[800px] md:w-[600px] sm:w-[450px] w-[200px] text-white mb-[10px] "></div>
           <p className="text-center">
             Copyright EaseReads 2023. All Right Reserved

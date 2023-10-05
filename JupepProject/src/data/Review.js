@@ -1,39 +1,41 @@
+import samuel from "../assets/Home Landing Image/samuel.png"
+import peter from "../assets/Home Landing Image/peter.jpg"
+import peterAkojede from "../assets/Home Landing Image/peterAkojede.jpg"
+import dave from "../assets/Home Landing Image/dave.jpg"
+
+
 const reviews = [
   {
     id: 1,
-    name: 'susan smith',
+    name: 'Peter Adesoye',
     job: 'web developer',
-    image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg',
+    image: peter,
     text:
-      "I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry",
+      "This platform is a game-changer for Jupeb prep. It's flexible, informative, and the WhatsApp community is a lifesaver!",
   },
   {
     id: 2,
-    name: 'anna johnson',
+    name: 'Peter Akojede',
     job: 'web designer',
-    image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883409/person-2_np9x5l.jpg',
+    image: peterAkojede,
     text:
-      'Helvetica artisan kinfolk thundercats lumbersexual blue bottle. Disrupt glossier gastropub deep v vice franzen hell of brooklyn twee enamel pin fashion axe.photo booth jean shorts artisan narwhal.',
+      "I love the accessibility and in-depth explanations in the video calls. My Jupeb studies have become so much easier.",
   },
   {
     id: 3,
-    name: 'peter jones',
+    name: 'Samuel Makinde',
     job: 'intern',
-    image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883417/person-3_ipa0mj.jpg',
+    image: samuel,
     text:
-      'Sriracha literally flexitarian irony, vape marfa unicorn. Glossier tattooed 8-bit, fixie waistcoat offal activated charcoal slow-carb marfa hell of pabst raclette post-ironic jianbing swag.',
+      "The past questions and answers are gold. They've given me the confidence I need for the exam.",
   },
   {
     id: 4,
-    name: 'bill anderson',
+    name: 'Dave Aderinto',
     job: 'the boss',
-    image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883423/person-4_t9nxjt.jpg',
+    image: dave,
     text:
-      'Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ',
+      "This site's textbooks are a must-have. They simplify complex topics, making studying a breeze. Highly recommended!",
   },
 ];
 

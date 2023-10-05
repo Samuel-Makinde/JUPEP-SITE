@@ -1,17 +1,9 @@
-// import { useNavigate } from "react-router-dom";
-// import { useGlobalContext } from "../../context/AuthContext";
-// import { useEffect } from "react";
-import { useState } from "react";
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
 import Layout from "../../layout/Layout";
 import { Link } from "react-router-dom";
-
-import { pdfjs } from "react-pdf";
-import { Document, Page } from "react-pdf";
 import { ImBook } from "react-icons/im";
 import { TbDevices, TbBrandZoom } from "react-icons/tb";
-import college from "../../assets/Home Landing Image/college.jpeg";
-// import physcis from "../../assets/Home Landing Image/physcis.png";
+// import college from "../../assets/Home Landing Image/expand knowledge.jpg";
 import chemistry from "../../assets/Home Landing Image/chemistry3.png"
 import biology from "../../assets/Home Landing Image/biology2.jpeg"
 import maths from "../../assets/Home Landing Image/maths.jpeg"
@@ -35,7 +27,7 @@ import FAQPage from "../FAQ/FAQPage";
 const Home = () => {
   return (
     <Layout>
-      <main className="w-full h-full pt-[90px] md:pt-0 text-2xl">
+      <main className="w-full h-full pt-[90px] md:pt-0 text-2xl ">
         <ImageSlider />
         <div className="w-full h-full  ">
           <div className="w-full h-full  bg-[#4190EA] text-white flex flex-col items-center ">
@@ -43,25 +35,18 @@ const Home = () => {
               How we solved Jupeb reading problem
             </h1>
             <p className="w-full md:w-[600px] px-4 md:px-0 h-full mt-[30px] pb-[40px] text-[16px] text-center">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-              tenetur, voluptates distinctio optio deserunt deleniti dolorem et
-              quasi quos vitae voluptate fuga ea adipisci eum, quibusdam
-              reprehenderit. Dolor, fuga dolorum? Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Unde a est modi sunt nobis ullam
-              illo inventore consequatur, commodi excepturi, soluta ab voluptate
-              ea optio libero iusto fugiat ut doloremque.
+              We&apos;ve tackled the Jupeb reading problem by offering students a flexible solution. With our program, you can study anytime, anywhere using your device. We provide weekly video calls where experienced instructors explain specific topics in detail, ensuring you understand them thoroughly. Our active WhatsApp community is there to support you, allowing you to ask questions and find help on challenging subjects. We also offer a wealth of Jupeb past questions and answers for practice, and our textbooks contain detailed explanations for all topics in subjects 001/002/003/004. This comprehensive approach empowers students to excel in their Jupeb exams.
             </p>
           </div>
-          <div className="w-full h-full px-4 md:px-6 lg:px-10 ">
+          <div className="w-full h-full px-4 md:px-6 lg:px-8 xl:px-12 ">
             <div className="w-full h-full flex flex-col items-center mt-[80px] ">
               <h1 className="text-4xl text-[#4190EA]">
                 {" "}
                 <strong>What we offer </strong>{" "}
               </h1>
               <p className="w-full md:w-[500px] lg:w-[700px] text-center mt-[30px] h-full font-extralight text-[18px]">
-                As a subscribed user, you will enjoy all the benefits listed
-                below and more while free user tend to enjoy telegram channel
-                benefit{" "}
+                As a user, you will enjoy all the benefits listed
+                below and more
               </p>
               <div className="w-full h-full md:grid grid-flow-col  gap-4 text-[16px] text-gray-700 text-center mt-[50px] leading-normal">
                 <div className="w-full h-full flex flex-col items-center">
@@ -254,9 +239,9 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="mt-[90px] ">
-              <img src={college} alt="college" className="w-full h-[300px]" />
-            </div>
+            {/* <div className="mt-[90px] md:hidden ">
+              <img src={college} alt="college" className="w-full h-[300px] " />
+            </div> */}
             <div
               className={`w-full h-full md:h-[300px] flex items-center justify-between px-10 mt-[90px] border-[3px] border-[#f7b704] shadow-2xl rounded-[10px] ${styles.comparePlan} leading-snug`}
             >
@@ -294,14 +279,14 @@ const Home = () => {
                     syllabus
                   </label>
                 </div>
-                <Link to="/pricing">
+                {/* <Link to="/pricing">
                   <button
                     type="submit"
                     className="h-[40px] w-[180px]  bg-[#f7b704] text-white text-[22px] mt-[30px]  rounded-[10px] shadow-lg opacity-90 hover:opacity-100"
                   >
                     View Plans
                   </button>
-                </Link>
+                </Link> */}
               </div>
               <div className="w-[300px] h-[250px] ">
                 <img src={compare} alt="devices" className="rounded-[10px]" />

@@ -6,7 +6,7 @@ const sub = () => {
   return (
     <Layout>
 
-    <div className="w-full px-4 bg-white">
+    <div className="w-full px-4 bg-white mb-12">
       {/* front page */}
 
       <div className="text-center pt-[120px]">
@@ -14,7 +14,7 @@ const sub = () => {
           Browse Through Jubep Syllabus
         </h2>
         <p className="pt-[15px] text-[18px] text-gray-700">
-          Lorem ipsum dolor, sit amet consectetur adipisicing.
+          Download Jupep Syllabus
         </p>
       </div>
 
@@ -31,9 +31,14 @@ const sub = () => {
                 <p className="pt-[20px] md:text-2xl text-[18px] text-gray-700 md:pl-20 text-center">
                   {item.description}
                 </p>
-                <p className="underline mt-[20px]  text-[20px] text-blue-950 cursor-pointer font-bold">
-                  {item.download}
-                </p>
+                <a 
+                className="underline mt-[20px]  text-[20px] text-blue-950 cursor-pointer font-bold"
+                href={item.download}
+                target="_blank"
+                rel="noopener noreferrer"
+                >
+                  download {item.title}
+                </a>
               </div>
               {/* img */}
               <div className="mt-[10px]">
