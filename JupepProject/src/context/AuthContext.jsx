@@ -17,15 +17,16 @@ const UserProvider = ({ children }) => {
     const [user, setUser] =useState(null)
     const [books, setBooks] =useState([])
     const [userId, setUserId] = useState([])
+  const baseUrl = import.meta.env.VITE_BASE_URL;
+
 
 
 
     const Login = async (data, e) => {
   e.preventDefault();
-  console.log(data)
   setLoading(true)
   try {
-    const response = await axios.post(`https://jupeb-site-backend.onrender.com/api/v1/login`, {
+    const response = await axios.post(`${baseUrl}/login`, {
         email: data.email,
         password: data.password,
       }, {
@@ -49,14 +50,13 @@ const UserProvider = ({ children }) => {
 
 const fetchUser = async () => {
     try {
-      const { data } = await axios.post("https://jupeb-site-backend.onrender.com/api/v1/showMe", {},
+      const { data } = await axios.post(`${baseUrl}/showMe`, {},
       {
         withCredentials: true, // Include cookies in the request
       }
       );
       setUser(data.username);
     } catch (error) {
-      console.log(error.message)
       setUser(null);
     }
     setLoading(false);
@@ -77,7 +77,7 @@ const LogOut = async (e, ) => {
 
     // Send the user ID in the request body
     const response = await axiosInstance.post(
-      'https://jupeb-site-backend.onrender.com/api/v1/logOut',
+      `${baseUrl}/logOut`,
       { user: userId } // Include the user ID in the request body
     );
    setLoading(false)
@@ -96,18 +96,17 @@ const LogOut = async (e, ) => {
 
 }
 
-  const getBooks = async () => {
-    try {
-      const response = await axios.get("https://jupeb-site-backend.onrender.com/api/v1/books")
-    setBooks(response.data)
-    } catch (error) {
-      console.log("get books error", error.message)
-    }
-  }
+  // const getBooks = async () => {
+  //   try {
+  //     const response = await axios.get("https://jupeb-site-backend.onrender.com/api/v1/books")
+  //   setBooks(response.data)
+  //   } catch (error) {
+  //   }
+  // }
 
-   useEffect(() => {
-    getBooks();
-  }, []);
+  //  useEffect(() => {
+  //   getBooks();
+  // }, []);
 
 
   return (

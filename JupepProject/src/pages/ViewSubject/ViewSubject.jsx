@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import styles from './pdf.module.css'
 
 
 
@@ -32,23 +33,23 @@ const ViewSubject = () => {
 
 authFetch.interceptors.response.use(
     (response) => {
-        console.log("got response")
         return response;
     },
     (error) => {
-        console.log("error response")
         if (error.response.status === 401 || error.response.status === 404 || error.response.status === 500) {
             navigate('/login');
         }
         return Promise.reject(error);
     }
 )
+  const baseUrl = import.meta.env.VITE_BASE_URL;
+  const readUrl = import.meta.env.VITE_BASE_URL_VIEW_SUBJECT;
 
-  const url = "https://jupeb-site-backend.onrender.com/api/v1/files";
+
+  const url = `${baseUrl}/files`;
 
   const fetchPDF = async () => {
   setLoading(true)
-
     try {
       const response = await authFetch.get(url);
       const booksData = response.data.documents.map((book) => {
@@ -61,8 +62,6 @@ authFetch.interceptors.response.use(
       setBooks(booksData);
     } catch (error) {
       setLoading(false)
-      console.error("Error fetching PDF:", error);
-       
     }
   };
 
@@ -116,13 +115,13 @@ authFetch.interceptors.response.use(
 
   return (
     <Layout>
-       <main className="w-full h-full  pt-[80px] mb-14">
+       <main className={`w-full h-full  pt-[80px] mb-14 ${styles.pdf} `}>
         <div className="w-full h-full flex flex-col px-4 md:px-6 xl:px-8">
           {books && books.map((book) => (
             <div key={book._id} className="border-[1px] border-[#bfc0c4] rounded-[10px] mt-[40px] p-4">
               <div className="w-full h-full md:flex justify-between">
                 <div className="h-full flex justify-center md:flex-none">
-                  <img src={`https://jupeb-site-backend.onrender.com/${book.image.filePath}`} alt="book image" className="w-[200px] h-[200px] rounded-[10px]" />
+                  <img src={`${readUrl}/${book.image.filePath}`} alt="book image" className="w-[200px] h-[200px] rounded-[10px]" />
                 </div>
                 <div className="w-full h-full flex flex-col justify-center md:pl-[20px]">
                   <h1 className="text-[18px] font-bold mt-[20px] md:mt-0">{book.name} TextBook</h1>
@@ -130,7 +129,7 @@ authFetch.interceptors.response.use(
                   <div className="w-full h-full flex justify-center items-center">
                     <button
                       onClick={() => togglePdf(book)}
-                      className={`w-[250px] h-[70px] text-[20px] rounded-[10px] shadow-md font-bold mt-[20px] ${
+                      className={`w-[250px] h-[80px] text-[17px] rounded-[10px] shadow-md font-bold mt-[20px] ${
                         book.opened ? "bg-gray-300" : "bg-blue-300"
                       }`}
                     >
@@ -148,10 +147,7 @@ authFetch.interceptors.response.use(
               </div>
               {book.opened && (
                 <div className="relative w-[100%] h-full mt-4 select-none cursor-not-allowed -m-6 ">
-                  <Document file={`https://jupeb-site-backend.onrender.com/${book.pdf.filePath}`} loading={<LoadingSpinner />} onLoadSuccess={onDocumentLoadSuccess}  onLoadError={handleError} className="flex" 
-                  // onItemClick={(pageNumber) => {
-                  //   navigate(`/page/${pageNumber}`)
-                  //  }}
+                  <Document file={`${baseUrl}/files/${book._id}`} loading={<LoadingSpinner />} onLoadSuccess={onDocumentLoadSuccess}  onLoadError={handleError} className='flex' 
                   >
                     <Page pageNumber={book.pageNumber}  />
                     <Page pageNumber={book.pageNumber + 1} className="hidden lg:flex" />

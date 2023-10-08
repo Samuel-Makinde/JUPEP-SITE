@@ -9,7 +9,7 @@ const TermOfUse = () => {
         <div className="w-full h-full pt-[120px]">
             <div className="w-full h-full  text-center"> 
             <h1 className="w-full h-full  text-[25px] font-semibold">Terms of Use Agreement</h1>
-            <p>Last Modify Date: September 9th, 2023 </p>
+            <p>Last Modify Date: October 7th, 2023 </p>
         </div>
 
         {/* agreement section */}

@@ -69,7 +69,7 @@ const Login = () => {
                 User Login
               </h1>
               <p className="text-[#04050C] mt-[25px]">
-                Login in to read jupep textbooks, jupep past questions and
+                Login in to read jupeb textbooks, jupeb past questions and
                 answers, postutme questions and answers.
               </p>
             </div>

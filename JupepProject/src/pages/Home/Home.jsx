@@ -221,19 +221,16 @@ const Home = () => {
                 </h4>
                 <div className="text-[#f2f3f5] text-[16px] text-center md:text-left mt-[15px] leading-snug ">
                   <p className="mt-[15px]">
-                    Opportunity to ask Jupep related questions from academial
+                     Get help with Jupeb-related questions and study resources provided by easereads.
                   </p>
                   <p className="mt-[15px]">
-                    You get to interact with other students talking Jupeb in
-                    other schools
+                    Connect with students from different schools for collaborative learning.
                   </p>
                   <p className="mt-[15px]">
-                    You get to interact with other students talking Jupeb in
-                    other schools
+                    Find motivation and support during your Jupeb exam preparation journey.
                   </p>
                   <p className="mt-[15px]">
-                    You get to interact with other students talking Jupeb in
-                    other schools
+                   Stay informed about Jupeb exam important announcements.
                   </p>
                 </div>
               </div>

@@ -15,18 +15,17 @@ const ForgotPassword = () => {
     
     const onSubmit = async(data, e) => {
         e.preventDefault(),
-        console.log(data)
         setLoading(true)
         axios.post(`https://jupeb-site-backend.onrender.com/api/v1/forgot-password`, {
             email:data.email
         })
         .then((response) => {
+            setLoading(false)
             toast.success(response.data.msg, {
                 onClose: () => {
                     navigate("/login");
                 },
             })
-            console.log("sending", response);
         }).catch((error) => {
             setLoading(false)
             toast.error(error.response.data.msg, {

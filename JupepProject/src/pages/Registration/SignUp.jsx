@@ -70,14 +70,15 @@ const SignUp = () => {
   const toggleCPassword = () => {
     passwordNotVisibleC((prevState) => !prevState);
   };
+  
+  const baseUrl = import.meta.env.VITE_BASE_URL;
 
    const onSubmit = async (data, e) => {
   e.preventDefault();
-  console.log(data)
   setLoading(true)
   try {
     const username = data.firstName + '.' + data.lastName.charAt(0).toLowerCase();
-    const response = await axios.post(`https://jupeb-site-backend.onrender.com/api/v1/register`, {
+    const response = await axios.post(`${baseUrl}/register`, {
       username: username,
         firstName: data.firstName,
         lastName: data.lastName,
@@ -123,9 +124,9 @@ const SignUp = () => {
                 Create your Account
               </h1>
               <p className="text-[#04050C] mt-[20px]">
-                sign in to have full access to all jupep textbooks, jupep past
-                questions and answers, postutme questions and access to our
-                telegram channel to get more update about our products.
+                sign in to have full access to all jupeb textbooks, jupeb past
+                questions and answers, postutme questions and access to easereads
+                whatsapp community to get more update about our products.
               </p>
             </div>
 
@@ -403,20 +404,24 @@ const SignUp = () => {
             </div>
             <p className="text-[#54555B] text-[12px] mt-[15px] text-center">
               By siging up, you agree to the{" "}
+              <Link to="/term-of-use" smooth="true" duration={500} >
               <span className="text-[#4D5DED] cursor-pointer">
                 {" "}
                 Terms of Service
               </span>{" "}
+              </Link>
               and{" "}
+              <Link to="/privacy-policy" smooth="true" duration={500}>
               <span className="text-[#4D5DED] cursor-pointer">
                 Privacy Policy
               </span>
-              , including{" "}
-              <span className="text-[#4D5DED] cursor-pointer">Cookie use</span>.
+              </Link>
+              {/* , including{" "}
+              <span className="text-[#4D5DED] cursor-pointer">Cookie use</span>. */}
             </p>
             <p className="text-[#2F3035] text-[16px] md:text-[20px] mt-[10px]">
               Have an account?{" "}
-              <Link to="/login">
+              <Link to="/login" smooth="true" duration={500}>
                 <button className="text-[#4D5DED] cursor-pointer">login</button>
               </Link>
             </p>

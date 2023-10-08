@@ -54,7 +54,7 @@ const Navbar = () => {
         : 
         ( 
           <div>
-            <Link to="/signup" smooth="true" duration={500} >
+            <Link to="/sign-up" smooth="true" duration={500} >
                <li className="text-[#04050C] leading-[20px] text-[16px] flex px-[24px] py-[16px] mt-[50px] font-medium">
           <RxPerson />
           <h1 className="pl-[10px] cursor-pointer">Sign UP</h1>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { FaTimes } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import logo from "../../assets/logo/ease read logooo png version-07.png"
+import logo from "../../assets/logo/ease read logoooreduced png-09.png"
 import "./Reg.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -14,6 +14,7 @@ import { useState } from "react";
 import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner";
 
 
+
 const VerifyPage = () => {
   const [loading, setLoading] = useState(false)
   const [modalOpen, setIsModalOpen] = useState(false); 
@@ -22,22 +23,21 @@ const VerifyPage = () => {
   const toggleModal = () => {
   setIsModalOpen((prevState) => !prevState);
 };
-
+  const baseUrl = import.meta.env.VITE_BASE_URL;
 
   const onSubmit = async (data, e) => {
     e.preventDefault();
-    console.log(data)
     setLoading(true)
-    axios.post(`https://jupeb-site-backend.onrender.com/api/v1/resend-email`, {
+    axios.post(`${baseUrl}/resend-email`, {
       firstName: data.firstName,
       email:data.email,
     })
     .then((response) => {
+      setLoading(false)
       toast.success(response.data.msg, {
         onClose: () => {
       },
     })
-      console.log("sending", response);
     }) .catch((error) => {
       setLoading(false)
     toast.error(error.response.data.msg, {
@@ -47,7 +47,6 @@ const VerifyPage = () => {
     // You can choose to navigate or handle errors differently here
   },
 })
-      console.log("not sending", error);
     }) ;
   };
 

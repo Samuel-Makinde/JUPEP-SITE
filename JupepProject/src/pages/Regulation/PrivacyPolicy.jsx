@@ -8,7 +8,7 @@ const PrivacyPolicy = () => {
         <div className="w-full h-full pt-[120px]">
             <div className="w-full h-full  text-center"> 
             <h1 className="w-full h-full  text-[25px] font-semibold">Privacy Policy</h1>
-            <p>Last Modify Date: September 9th, 2023 </p>
+            <p>Last Modify Date: October 7th, 2023 </p>
 
             <p className="mt-[40px]">Welcome to easereads.com. We respect your privacy and are committed to protecting it through our compliance with this privacy policy. This policy explains how we collect, use, disclose, and protect your personal information when you use our website or services.</p>
         </div>

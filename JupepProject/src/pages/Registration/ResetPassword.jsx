@@ -19,7 +19,7 @@ const navigate = useNavigate()
   const queryParam = new URLSearchParams(location.search);
 
   const onSubmit = async (data, e) => {
-    e.preventDefault(), console.log(data);
+    e.preventDefault(),
     setLoading(true);
 
     try {

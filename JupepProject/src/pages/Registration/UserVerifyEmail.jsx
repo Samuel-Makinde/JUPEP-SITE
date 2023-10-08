@@ -11,12 +11,13 @@ const UserVerifyEmail = () => {
     
     const location = useLocation()
     const queryParam = new URLSearchParams(location.search)
+  const baseUrl = import.meta.env.VITE_BASE_URL;
     
 
     const verifyUserToken = async () => {
         setLoading(true)
         try {
-            const response = await axios.post("https://jupeb-site-backend.onrender.com/api/v1/verify-email", {
+            const response = await axios.post(`${baseUrl}/verify-email`, {
                 verificationToken: queryParam.get('token'),
                 email: queryParam.get('email')
             })
@@ -26,10 +27,8 @@ const UserVerifyEmail = () => {
             } else {
                 setError(true)
             }
-            console.log("this is response", response)
         } catch (error) {
             setError(true)
-            console.log(error.message)
         }
         setLoading(false)
     }

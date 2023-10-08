@@ -1,5 +1,7 @@
 // import { FaLinkedin, FaTwitter,  FaInstagram } from "react-icons/fa";
 import {FaFacebook,} from "react-icons/fa";
+import {BsTelegram} from "react-icons/bs"
+import {FaSquareWhatsapp} from "react-icons/fa6"
 import { Link } from "react-router-dom";
 
 function Footer() {
@@ -8,7 +10,7 @@ function Footer() {
       <div className="w-full h-full ">
        
         <div className=" text-white text-center pt-[20px]  w-full h-full">
-          <h3 className="md:text-4xl text-2xl">Grow your knowledge</h3>
+          <h3 className="md:text-4xl text-2xl">Expand your knowledge</h3>
           
         </div>
 
@@ -80,7 +82,13 @@ function Footer() {
 
               <FaFacebook size={24} />
               </a>
-              {/* <FaInstagram size={20} /> */}
+              <a href="https://t.me/+u5_EgioIoPM3Njk0" target="_blank" rel="noopener noreferrer">
+              <BsTelegram size={24} />
+              </a>
+              <a  href="https://chat.whatsapp.com/B4uHSlVlwjAE8Y9bqWDtRF" target="_blank" rel="noopener noreferrer">
+                <FaSquareWhatsapp size={24} />
+              </a>
+                
             </div>
           </div>
         </div>
