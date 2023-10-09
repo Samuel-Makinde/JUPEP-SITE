@@ -35,6 +35,7 @@ const UserProvider = ({ children }) => {
     setLoading(false)
     setUser(response.data.username)
     setUserId(response.data.userId)
+    localStorage.setItem("username", response.data.username);
     navigate("/");
   } catch (error) { 
     setLoading(false)
@@ -63,7 +64,12 @@ const fetchUser = async () => {
   };
 
    useEffect(() => {
-    fetchUser();
+   const storedUsername = localStorage.getItem("username");
+        if (storedUsername) {
+            setUser(storedUsername);
+        } else {
+            fetchUser();
+        }
   }, []);
 
 
@@ -82,6 +88,7 @@ const LogOut = async (e, ) => {
     );
    setLoading(false)
    setUser(null);
+   localStorage.removeItem("username");
     navigate("/");
   } catch (error) {
     setLoading(false)

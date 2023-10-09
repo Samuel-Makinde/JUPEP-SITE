@@ -46,7 +46,7 @@ authFetch.interceptors.response.use(
   const readUrl = import.meta.env.VITE_BASE_URL_VIEW_SUBJECT;
 
 
-  const url = `${baseUrl}/files`;
+  const url = `http://localhost:5000/api/v1/files`;
 
   const fetchPDF = async () => {
   setLoading(true)
@@ -68,6 +68,17 @@ authFetch.interceptors.response.use(
   useEffect(() => {
     fetchPDF();
   }, []);
+
+  //  const getPDF = async () => {
+  //   try {
+  //     const response = await fetch(`${baseUrl}/files/${book._id}`);
+  //     const arrayBuffer = await response.arrayBuffer();
+  //     const uint8Array = new Uint8Array(arrayBuffer);
+  //     setPdfData(uint8Array);
+  //   } catch (error) {
+  //     console.error("Error fetching PDF:", error);
+  //   }
+  // };
 
   const onDocumentLoadSuccess = ({ numPages }) => {
     setNumPages(numPages);
@@ -112,6 +123,7 @@ authFetch.interceptors.response.use(
   },
 });
   }
+  
 
   return (
     <Layout>
@@ -147,7 +159,7 @@ authFetch.interceptors.response.use(
               </div>
               {book.opened && (
                 <div className="relative w-[100%] h-full mt-4 select-none cursor-not-allowed -m-6 ">
-                  <Document file={`${baseUrl}/files/${book._id}`} loading={<LoadingSpinner />} onLoadSuccess={onDocumentLoadSuccess}  onLoadError={handleError} className='flex' 
+                  <Document file={`http://localhost:5000/api/v1/files/${book._id}`} loading={<LoadingSpinner />} onLoadSuccess={onDocumentLoadSuccess}  onLoadError={handleError} className='flex' 
                   >
                     <Page pageNumber={book.pageNumber}  />
                     <Page pageNumber={book.pageNumber + 1} className="hidden lg:flex" />
