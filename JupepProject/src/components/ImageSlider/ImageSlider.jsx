@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import art480 from "../../assets/Home Landing Image/art480.jpg"
 import mana480 from "../../assets/Home Landing Image/mana480.jpg"

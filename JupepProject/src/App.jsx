@@ -18,6 +18,8 @@ import ViewSubject from "./pages/ViewSubject/ViewSubject";
 // import UploadFile from "./pages/UploadFile";
 import VerifyPage from "./pages/Registration/VerifyPage";
 import Error from "./pages/Error/Error";
+// import Cookies from "./pages/ThirdPartyCookie/Cookies";
+import Cookies from "./pages/ThirdPartyCookie/Cookies";
 
 
 function App() {
@@ -41,6 +43,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/syllabus" element={<Syllabus />} />
             <Route path="/view-subject" element={<ViewSubject />} />
+            <Route path="/cookies" element={<Cookies />} />
             {/* <Route path="/file-upload" element={<UploadFile />} /> */}
             <Route path='*' element={<Error />} />
 
