@@ -89,7 +89,9 @@ const SignUp = () => {
     setLoading(false)
     toast.success(response.data.msg, {
     onClose: () => {
-    navigate("/verify-email-page");
+    // navigate("/verify-email-page");
+    const verificationUrl = `/verify-email-page?email=${data.email}&firstName=${data.firstName}`;
+    navigate (verificationUrl)
   },
 });
   } catch (error) { 
