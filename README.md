@@ -85,5 +85,5 @@ Please contact the project owner for inquiries or permissions related to any usa
 
 If you have any questions, feedback, or need assistance, please don't hesitate to contact us:
 
-- Email: samuelmakinde19.com
+- Email: samuelmakinde19@gmail.com
 
