@@ -18,7 +18,11 @@ import ViewSubject from "./pages/ViewSubject/ViewSubject";
 // import UploadFile from "./pages/UploadFile";
 import VerifyPage from "./pages/Registration/VerifyPage";
 import Error from "./pages/Error/Error";
-
+import ThirdPartyCookie from "./pages/ThirdPartyCookie/ThirdPartyCookie";
+import VideoPage from "./pages/VideoPage/VideoPage";
+import AdminLogin from "./pages/Registration/AdminLogin";
+import AdminLayout from "./layout/AdminLayout";
+import AdminHome from "./pages/Admin/AdminHome";
 
 function App() {
   return (
@@ -41,6 +45,23 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/syllabus" element={<Syllabus />} />
             <Route path="/view-subject" element={<ViewSubject />} />
+            <Route path="/view-subject/third-party-cookie" element={<ThirdPartyCookie />} />
+            <Route path="/video-page" element={<VideoPage />} />
+
+            <Route path="/admin-login" element={<AdminLogin />} />
+
+             <Route
+            path='/admin/*'
+            element={
+              <AdminLayout>
+                <Routes>
+                  <Route path="" element={<AdminHome />} />
+                </Routes>
+              </AdminLayout>
+            }
+          /> 
+            
+
             {/* <Route path="/file-upload" element={<UploadFile />} /> */}
             <Route path='*' element={<Error />} />
 

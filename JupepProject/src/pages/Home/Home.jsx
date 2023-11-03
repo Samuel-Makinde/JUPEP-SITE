@@ -87,15 +87,15 @@ const Home = () => {
                 View Available Subjects
               </h2>
 
-              {/* {books.map((book) => (
-                 <div key={book._id} className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-[#EEEFF2] w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] shadow-lg hover:scale-110 duration-500 rounded-[10px] cursor-pointer">
-                  <img src={book.image} alt="" />
-                  <p className="mt-[10px] text-[16px] md:text-[25px]">
-                    {book.describtion}
-                  </p>
-                </div>
-              ))} */}
-              <div className="w-full h-full mt-[40px] grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 place-items-center">
+              <div className="w-full flex  md:justify-center mt-[40px] ">
+                <Link to="/syllabus" smooth="true" duration={500}>
+                <button className="h-[60px] w-[100px] sm:w-[150px] px-2  bg-[#4190EA] text-white text-[13px] sm:text-[16px] md:text-[18px] font-semibold mr-[20px] rounded-[10px] hover:shadow-xl">View Syllabus</button>
+                </Link>
+                <Link to="/view-subject" smooth="true" duration={500}>
+                <button className="h-[60px] w-[200px] sm:w-[280px] border-[2px] border-[#4190EA] px-2 text-[13px] sm:text-[16px] md:text-[18px] font-semibold rounded-[10px] text-[#4190EA] hover:shadow-xl">Start reading with EaseReads</button>
+                </Link>
+              </div>
+              <div className="w-full h-full mt-[40px] grid  grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 place-items-center">
                 <div className="bg-white border-[1px] border-[#bfc0c4] hover:border-none flex flex-col items-center justify-center hover:bg-white w-[100px] h-[100px] sm:w-[150px]  sm:h-[150px] md:w-[170px] md:h-[170px] xl:w-[180px] xl:h-[180px] shadow-lg hover:scale-110 duration-500 rounded-[10px] cursor-pointer">
                   <GiAtom size={70} className="text-[#4190EA]" />
                   <p className="mt-[10px] text-[13px] sm:text-[16px] md:text-[20px]">
@@ -187,14 +187,7 @@ const Home = () => {
                   </p>
                 </div>
               </div>
-              <div className="w-full flex  md:justify-center mt-[20px] ">
-                <Link to="/syllabus" smooth="true" duration={500}>
-                <button className="h-[60px] w-[100px] sm:w-[150px] px-2  bg-[#4190EA] text-white text-[13px] sm:text-[16px] md:text-[18px] font-semibold mr-[20px] rounded-[10px] hover:shadow-xl">View Syllabus</button>
-                </Link>
-                <Link to="/view-subject" smooth="true" duration={500}>
-                <button className="h-[60px] w-[200px] sm:w-[280px] border-[2px] border-[#4190EA] px-2 text-[13px] sm:text-[16px] md:text-[18px] font-semibold rounded-[10px] text-[#4190EA] hover:shadow-xl">Start reading with EaseReads</button>
-                </Link>
-              </div>
+              
             </div>
 
             <div className="w-full h-full md:h-[470px] lg:h-[400px] flex flex-col md:flex-row items-center  md:justify-evenly pl-3 lg:pl-0   bg-[#3B82F6]  text-white rounded-[15px] mt-[90px] pt-[30px] md:pt-0">

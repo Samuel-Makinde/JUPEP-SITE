@@ -67,9 +67,12 @@ function Footer() {
             <p>
               <Link to="/view-subject" smooth="true" duration={500}>
           
-              <button>Books</button>
+              <button>Read Books</button>
           </Link>
             </p>
+             <Link to="/video-page" smooth="true" duration={500} >
+            <button>Tutorial</button>
+            </Link>
           </div>
 
           <div className="w-full mt-[30px] md:mt-0 " >

@@ -15,6 +15,7 @@ import styles from './pdf.module.css'
 
 
 
+
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.js",
   import.meta.url
@@ -36,22 +37,24 @@ authFetch.interceptors.response.use(
         return response;
     },
     (error) => {
-        if (error.response.status === 401 || error.response.status === 404 || error.response.status === 500) {
-            navigate('/login');
+        if (error.response.status === 404 || error.response.status === 500) {
+            navigate('*');
+        } else if(error.response.status === 401){
+          navigate('/view-subject/third-party-cookie')
         }
         return Promise.reject(error);
     }
 )
-  const baseUrl = import.meta.env.VITE_BASE_URL;
-  const readUrl = import.meta.env.VITE_BASE_URL_VIEW_SUBJECT;
+  // const baseUrl = import.meta.env.VITE_BASE_URL;
+  // const readUrl = import.meta.env.VITE_BASE_URL_VIEW_SUBJECT;
 
 
-  const url = `http://localhost:5000/api/v1/files`;
+  
 
   const fetchPDF = async () => {
   setLoading(true)
     try {
-      const response = await authFetch.get(url);
+      const response = await authFetch.get(`https://jupeb-site-backend.onrender.com/api/v1/files`);
       const booksData = response.data.documents.map((book) => {
         book.image.filePath = book.image.filePath.replace(/\/\//g, '/');
         book.pageNumber = 1
@@ -124,16 +127,18 @@ authFetch.interceptors.response.use(
 });
   }
   
+//   VITE_BASE_URL= https://jupeb-site-backend.onrender.com/api/v1
+// VITE_BASE_URL_VIEW_SUBJECT = https://jupeb-site-backend.onrender.com
 
   return (
     <Layout>
        <main className={`w-full h-full  pt-[80px] mb-14 ${styles.pdf} `}>
-        <div className="w-full h-full flex flex-col px-4 md:px-6 xl:px-8">
+        <div className="w-full h-full flex flex-col px-4 md:px-6 lg:px-8 xl:px-12">
           {books && books.map((book) => (
             <div key={book._id} className="border-[1px] border-[#bfc0c4] rounded-[10px] mt-[40px] p-4">
               <div className="w-full h-full md:flex justify-between">
                 <div className="h-full flex justify-center md:flex-none">
-                  <img src={`${readUrl}/${book.image.filePath}`} alt="book image" className="w-[200px] h-[200px] rounded-[10px]" />
+                  <img src={`https://jupeb-site-backend.onrender.com/${book.image.filePath}`} alt="book image" className="w-[200px] h-[200px] rounded-[10px]" />
                 </div>
                 <div className="w-full h-full flex flex-col justify-center md:pl-[20px]">
                   <h1 className="text-[18px] font-bold mt-[20px] md:mt-0">{book.name} TextBook</h1>
@@ -159,7 +164,7 @@ authFetch.interceptors.response.use(
               </div>
               {book.opened && (
                 <div className="relative w-[100%] h-full mt-4 select-none cursor-not-allowed -m-6 ">
-                  <Document file={`http://localhost:5000/api/v1/files/${book._id}`} loading={<LoadingSpinner />} onLoadSuccess={onDocumentLoadSuccess}  onLoadError={handleError} className='flex' 
+                  <Document file={`https://jupeb-site-backend.onrender.com/api/v1/files/${book._id}`} loading={<LoadingSpinner />} onLoadSuccess={onDocumentLoadSuccess}  onLoadError={handleError} className='flex' 
                   >
                     <Page pageNumber={book.pageNumber}  />
                     <Page pageNumber={book.pageNumber + 1} className="hidden lg:flex" />

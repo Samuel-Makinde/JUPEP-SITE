@@ -11,13 +11,13 @@ const UserVerifyEmail = () => {
     
     const location = useLocation()
     const queryParam = new URLSearchParams(location.search)
-  const baseUrl = import.meta.env.VITE_BASE_URL;
+  // const baseUrl = import.meta.env.VITE_BASE_URL;
     
 
     const verifyUserToken = async () => {
         setLoading(true)
         try {
-            const response = await axios.post(`${baseUrl}/verify-email`, {
+            const response = await axios.post(`https://jupeb-site-backend.onrender.com/api/v1/verify-email`, {
                 verificationToken: queryParam.get('token'),
                 email: queryParam.get('email')
             })

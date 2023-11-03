@@ -71,14 +71,14 @@ const SignUp = () => {
     passwordNotVisibleC((prevState) => !prevState);
   };
   
-  const baseUrl = import.meta.env.VITE_BASE_URL;
+  // const baseUrl = import.meta.env.VITE_BASE_URL;
 
    const onSubmit = async (data, e) => {
   e.preventDefault();
   setLoading(true)
   try {
     const username = data.firstName + '.' + data.lastName.charAt(0).toLowerCase();
-    const response = await axios.post(`${baseUrl}/register`, {
+    const response = await axios.post(`https://jupeb-site-backend.onrender.com/api/v1/register`, {
       username: username,
         firstName: data.firstName,
         lastName: data.lastName,
@@ -113,7 +113,7 @@ const SignUp = () => {
           Welcome to EaseReads
         </h1>
       </div>
-      <div className="w-full h-full flex justify-center items-center mt-[60px] pb-[40px]">
+      <div className="w-full h-full flex justify-center items-center mt-[30px] md:mt-[60px] pb-[40px]">
         <div className="md:w-9/12 lg:w-8/12 xl:w-7/12 h-full mt-[40px] md:bg-white md:shadow-lg md:rounded-[8px] flex flex-col justify-center items-center  ">
           <form
             onSubmit={handleSubmit(onSubmit)}

@@ -17,7 +17,7 @@ const UserProvider = ({ children }) => {
     const [user, setUser] =useState(null)
     const [books, setBooks] =useState([])
     const [userId, setUserId] = useState([])
-  const baseUrl = import.meta.env.VITE_BASE_URL;
+  // const baseUrl = import.meta.env.VITE_BASE_URL;
 
 
 
@@ -26,7 +26,7 @@ const UserProvider = ({ children }) => {
   e.preventDefault();
   setLoading(true)
   try {
-    const response = await axios.post(`${baseUrl}/login`, {
+    const response = await axios.post(`https://jupeb-site-backend.onrender.com/api/v1/login`, {
         email: data.email,
         password: data.password,
       }, {
@@ -51,7 +51,7 @@ const UserProvider = ({ children }) => {
 
 const fetchUser = async () => {
     try {
-      const { data } = await axios.post(`${baseUrl}/showMe`, {},
+      const { data } = await axios.post(`https://jupeb-site-backend.onrender.com/api/v1/showMe`, {},
       {
         withCredentials: true, // Include cookies in the request
       }
@@ -83,7 +83,7 @@ const LogOut = async (e, ) => {
 
     // Send the user ID in the request body
     const response = await axiosInstance.post(
-      `${baseUrl}/logOut`,
+      `https://jupeb-site-backend.onrender.com/api/v1/logOut`,
       { user: userId } // Include the user ID in the request body
     );
    setLoading(false)

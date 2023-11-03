@@ -94,6 +94,13 @@ const Navbar = () => {
         </li>
         </Link>
 
+        <Link to="/video-page" smooth="true" duration={500}>
+        <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal ">
+          <FiBook size={20} />
+          <h1 className="pl-[10px] cursor-pointer">Tutorial</h1>
+        </li>
+        </Link>
+
         <li className=" flex border-b-2 mt-[10px] border-b-[#D4D5DB] mx-[15px] "></li>
 
         <Link to="/syllabus" smooth="true" duration={500}>
@@ -150,6 +157,11 @@ const Navbar = () => {
         <li>
           <Link to="/view-subject" smooth="true" duration={500}>
           View-Subjects
+          </Link>
+        </li>
+         <li>
+          <Link to="/video-page" smooth="true" duration={500}>
+          Tutorial
           </Link>
         </li>
         <Link to="/syllabus" smooth="true" duration={500}>
