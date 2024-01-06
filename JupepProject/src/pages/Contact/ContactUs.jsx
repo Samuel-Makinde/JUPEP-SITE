@@ -58,6 +58,7 @@ const ContactUs = () => {
                 type="email"
                 name="email "
                 placeholder="@emailaddress.com"
+                required
               />
               <input
                 className="mb-[20px] p-[15px] bg-gray-200 border-none md:w-[500px] sm:w-[90%] outline-none"
@@ -65,12 +66,14 @@ const ContactUs = () => {
                 name="institution"
                 id="institution"
                 placeholder="Institution eg. OAU"
+                required
               />
               <textarea
                 className="md:w-[500px] sm:w-[90%] bg-gray-200 pt-[15px] pl-[10px]  resize-none outline-none"
                 name="message"
                 placeholder="Message me"
                 rows="10"
+                required
               ></textarea>
               <input
                 className="mt-[15px] p-[12px] cursor-pointer text-2xl bg-[#4190EA] hover:bg-blue-600 text-white md:w-[500px] sm:w-[90%] outline-none"

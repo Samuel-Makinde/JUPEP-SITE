@@ -11,7 +11,8 @@ const UserVerifyEmail = () => {
     
     const location = useLocation()
     const queryParam = new URLSearchParams(location.search)
-  // const baseUrl = import.meta.env.VITE_BASE_URL;
+      // const baseUrl = import.meta.env.EASEREADS_BASE_URL;
+
     
 
     const verifyUserToken = async () => {

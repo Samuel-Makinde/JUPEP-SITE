@@ -7,4 +7,12 @@ export default defineConfig({
   build: {
     chunkSizeWarningLimit: 1500,
   },
+  // server: {
+  //   proxy: {
+  //     '/api': {
+  //       target: process.env.VITE_EASEREADS_BASE_URL,
+  //       changeOrigin: true,
+  //     },
+  //   },
+  // },
 })

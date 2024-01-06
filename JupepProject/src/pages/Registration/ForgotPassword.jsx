@@ -12,6 +12,8 @@ import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner";
 const ForgotPassword = () => {
     const [loading, setLoading] = useState(false)
     const navigate =useNavigate()
+    // const baseUrl = import.meta.env.EASEREADS_BASE_URL;
+
     
     const onSubmit = async(data, e) => {
         e.preventDefault(),

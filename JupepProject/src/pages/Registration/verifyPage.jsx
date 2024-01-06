@@ -20,30 +20,32 @@ const queryParams = new URLSearchParams(location.search);
 
 const email = queryParams.get("email");
 const firstName = queryParams.get("firstName");
+// const baseUrl = import.meta.env.EASEREADS_BASE_URL;
+
 
   const onSubmit = async () => {
-    setLoading(true)
-    axios.post(`https://jupeb-site-backend.onrender.com/api/v1/resend-email`, {
+    setLoading(true) 
+    try {
+      const response = await axios.post(`https://jupeb-site-backend.onrender.com/api/v1/resend-email`, {
       email: email,
       firstName: firstName,
     })
-    .then((response) => {
-      toast.success(response.data.msg, {
+    setLoading(false)
+     toast.success(response.data.msg, {
         onClose: () => {
       },
     })
-      console.log("sending", response);
-    }) .catch((error) => {
+    } catch (error) {
       setLoading(false)
-    toast.error(error.response.data.msg, {
+       toast.error(error.response.data.msg, {
     autoClose: false,
     closeOnClick: true,
     onClose: () => {
   },
-})
-      console.log("not sending", error);
-    }) ;
-  };
+})   
+}
+}
+    
 
   return (
     <main className="w-full h-screen  md:bg-[#A4C6FC]">

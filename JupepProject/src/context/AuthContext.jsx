@@ -1,8 +1,8 @@
 import React, {useState, useContext, useEffect,} from "react";
 import { useNavigate } from "react-router-dom";
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
+import { showToast } from "../components/ShowToast";
 
 
 
@@ -16,8 +16,8 @@ const UserProvider = ({ children }) => {
     
     const [user, setUser] =useState(null)
     const [books, setBooks] =useState([])
-    const [userId, setUserId] = useState([])
-  // const baseUrl = import.meta.env.VITE_BASE_URL;
+    // const [userId, setUserId] = useState([])
+  const baseUrl = import.meta.env.EASEREADS_BASE_URL;
 
 
 
@@ -33,43 +33,48 @@ const UserProvider = ({ children }) => {
               withCredentials: true,
 })
     setLoading(false)
-    setUser(response.data.username)
-    setUserId(response.data.userId)
-    localStorage.setItem("username", response.data.username);
+    setUser(response.data.data.username)
+
+
+    sessionStorage.setItem('accessToken', response.data.accessToken);
+    sessionStorage.setItem('refreshToken', response.data.refreshToken);
+    sessionStorage.setItem('role', response.data.data.userRole);
+    sessionStorage.setItem('UserId', response.data.data.UserId);
+    sessionStorage.setItem("username", response.data.data.username);
+    // setUserId(response.data.data.UserId)
+    // console.log("user id", setUserId)
+    showToast(response.data.msg) 
     navigate("/");
+   
   } catch (error) { 
     setLoading(false)
-    toast.error(error.response.data.msg, {
-    autoClose: false,
-    closeOnClick: true,
-    onClose: () => {
-  },
-});
+    showToast(error.response.data.msg)
   }
 };
 
 
-const fetchUser = async () => {
-    try {
-      const { data } = await axios.post(`https://jupeb-site-backend.onrender.com/api/v1/showMe`, {},
-      {
-        withCredentials: true, // Include cookies in the request
-      }
-      );
-      setUser(data.username);
-    } catch (error) {
-      setUser(null);
-    }
-    setLoading(false);
-  };
+// const fetchUser = async () => {
+//     try {
+//       const { data } = await axios.post(`https://jupeb-site-backend.onrender.com/api/v1/showMe`, {},
+//       {
+//         withCredentials: true, // Include cookies in the request
+//       }
+//       );
+//       setUser(data.username);
+//     } catch (error) {
+//       setUser(null);
+//     }
+//     setLoading(false);
+//   };
 
    useEffect(() => {
-   const storedUsername = localStorage.getItem("username");
+   const storedUsername = sessionStorage.getItem("username");
         if (storedUsername) {
             setUser(storedUsername);
-        } else {
-            fetchUser();
-        }
+        } 
+        // else {
+        //     fetchUser();
+        // }
   }, []);
 
 
@@ -77,30 +82,27 @@ const LogOut = async (e, ) => {
   e.preventDefault();
   setLoading(true)
   try {
-    const axiosInstance = axios.create({
-      withCredentials: true,
-    });
-
-    // Send the user ID in the request body
-    const response = await axiosInstance.post(
+ 
+    const userId = sessionStorage.getItem("UserId")
+    const response = await axios.post(
       `https://jupeb-site-backend.onrender.com/api/v1/logOut`,
       { user: userId } // Include the user ID in the request body
     );
    setLoading(false)
    setUser(null);
-   localStorage.removeItem("username");
-    navigate("/");
+   sessionStorage.removeItem("username");
+   sessionStorage.removeItem("UserId");
+   sessionStorage.removeItem("accessToken");
+   sessionStorage.removeItem("refreshToken");
+   sessionStorage.removeItem("role");
+
+
+    showToast(response.data.msg) 
+    navigate("/");   
   } catch (error) {
     setLoading(false)
-    toast.error(error.response.data.msg, {
-    autoClose: false,
-    closeOnClick: true,
-    onClose: () => {
-  },
-});
+    showToast(error.response.data.msg) 
   }
-  
-
 }
 
   // const getBooks = async () => {

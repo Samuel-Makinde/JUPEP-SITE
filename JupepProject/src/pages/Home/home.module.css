@@ -1,12 +1,8 @@
-.comparePlan {
-    background-image: linear-gradient(to right,
-            #fff7e5,
-            rgb(255, 255, 255)) !important;
-}
-/* .checkbox{
-    display: none;
-} */
+@media screen and (max-width: 768px) {
+    .videos {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
 
-.comparePlan label{
-    margin-left: 10px;
+
 }

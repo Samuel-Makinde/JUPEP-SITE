@@ -17,6 +17,7 @@ const ResetPassword = () => {
 const navigate = useNavigate()
   const location = useLocation();
   const queryParam = new URLSearchParams(location.search);
+    // const baseUrl = import.meta.env.EASEREADS_BASE_URL;
 
   const onSubmit = async (data, e) => {
     e.preventDefault(),

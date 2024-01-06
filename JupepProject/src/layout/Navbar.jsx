@@ -25,7 +25,7 @@ const Navbar = () => {
     setToggle(!toggle);
   };
   return (
-    <main className="fixed w-full h-[60px] flex justify-between items-center px-4 md:px-6 lg:px-8 xl:px-12 bg-white text-gray-800 shadow-md z-30 font-euclid capitalize">
+    <main className="fixed w-full h-[60px] flex justify-between items-center px-4 md:px-6 lg:px-8 xl:px-16 bg-white text-gray-800 shadow-md z-30 font-euclid capitalize">
       <div onClick={handleToggle} className="md:hidden z-30">
         {toggle ? (
           <div className="w-[32px] h-[32px] bg-[#EDEFFD] cursor-pointer flex justify-center items-center rounded-[20px]">
@@ -38,8 +38,6 @@ const Navbar = () => {
       <Link to="/" smooth="true" duration={500}>
         <div className=" h-[28px] md:h-full  md:flex items-center  cursor-pointer ">
           <img src={logo} alt="logo"  className=" h-[30px] md:h-[34px]" />
-
-
         </div>
       </Link>
 
@@ -195,13 +193,13 @@ const Navbar = () => {
           <div className="flex ">
             <Link to="/sign-up" smooth="true" duration={500} >
                <li >
-          <h1 >Sign-up</h1>
+          <h1  className="text-primary0Blue border-2 border-primary2 p-2 rounded-[45px] font-semibold">Create Account</h1>
         </li>
         </Link>
 
         <Link to="/login" smooth="true" duration={500}>
           <li className="pl-[20px]" >
-          <h1 >Log in</h1>
+          <h1 className="bg-primary0Blue text-primary1  p-2 rounded-[45px] font-semibold">Log in</h1>
         </li>
         </Link>
 

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -13,17 +13,16 @@ import { IoIosSchool } from "react-icons/io";
 import { AiOutlineMail } from "react-icons/ai";
 import { BiKey } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-
-
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { FaStar } from "react-icons/fa";
+import samuel from "../../assets/Home Landing Image/samuel.png"
+import peterAkojede from "../../assets/Home Landing Image/peterAkojede.jpg"
 
 
 const formSchema = yup.object().shape({
-  firstName: yup.string().required("first name can't be empty"),
-  lastName: yup.string().required("last name is required"),
+  userName: yup.string().required(" name can't be empty"),
   phoneNumber: yup
     .string()
     .required("phone number is required")
@@ -35,7 +34,7 @@ const formSchema = yup.object().shape({
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
       "Invalid email address"
     ),
-  university: yup.string().required("provide your institution name"),
+  university: yup.string().required("provide your university name"),
   password: yup
     .string()
     .required("Password is required")
@@ -51,6 +50,7 @@ const formSchema = yup.object().shape({
 
 const SignUp = () => {
   const [loading, setLoading] = useState(false);
+  const [institution, setInstitution] = useState([])
   const navigate = useNavigate()
   const {
     register,
@@ -71,17 +71,15 @@ const SignUp = () => {
     passwordNotVisibleC((prevState) => !prevState);
   };
   
-  // const baseUrl = import.meta.env.VITE_BASE_URL;
+    // const baseUrl = import.meta.env.EASEREADS_BASE_URL;
+
 
    const onSubmit = async (data, e) => {
   e.preventDefault();
   setLoading(true)
   try {
-    const username = data.firstName + '.' + data.lastName.charAt(0).toLowerCase();
     const response = await axios.post(`https://jupeb-site-backend.onrender.com/api/v1/register`, {
-      username: username,
-        firstName: data.firstName,
-        lastName: data.lastName,
+        userName: data.userName,
         email: data.email,
         phoneNumber: data.phoneNumber,
         university: data.university,
@@ -90,7 +88,8 @@ const SignUp = () => {
     setLoading(false)
     toast.success(response.data.msg, {
     onClose: () => {
-    navigate("/verify-email-page");
+   const verificationUrl = `/verify-email-page?email=${data.email}&firstName=${data.firstName}`;
+     navigate (verificationUrl)
   },
 });
   } catch (error) { 
@@ -105,31 +104,82 @@ const SignUp = () => {
   }
 };
 
+ const getAllUniversity = async () => {
+  try {
+    const response = await axios.get('https://jupeb-site-backend.onrender.com/api/v1/get-all-universities')
+    const result = response.data.data
+    const sortedInstitution = result.sort((a, b) => {
+      const institutionA = a.university.toUpperCase();
+      const institutionB = b.university.toUpperCase();
+      if(institutionA < institutionB){
+        return -1
+      }
+      if(institutionA > institutionB){
+        return 1
+      }
+
+      return 0
+
+    }) 
+    setInstitution(sortedInstitution)
+    console.log("this is institution", setInstitution)
+    console.log("this is university", sortedInstitution)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+useEffect(() => {
+  getAllUniversity()
+ 
+}, [])
+
   return (
-    <main className="w-full h-full px-4 font-sans md:bg-blue-300  text-black z-0">
+    <main className="w-full h-full font-body text-secH ">
+
       
-      <div className="w-full h-full">
-        <h1 className="text-2xl md:text-4xl pt-[20px] text-white font-extrabold">
-          Welcome to EaseReads
+      <div className="w-full min-h-screen md:grid md:grid-cols-2">
+        <div className=" h-full bg-primary0Blue pb-[20px] px-6 md:px-3 lg:px-6">
+          
+          <h1 className="text-2xl md:text-4xl pt-[40px] text-white font-extrabold">
+         Welcome aboard! 🚀
         </h1>
+        <p className="text-pS text-primary1 mt-[20px] font-medium">Join our vibrant learning community and embark on an exciting journey of exploration and knowledge. Dive into engaging reading sessions, interactive practice, and make every moment count on your exceptional learning adventure. We&apos;re thrilled to have you with us! Let&apos;s get started together!</p>
+        <div className="mt-[120px] ">
+          <div className="w-full flex ">
+          <FaStar size={24} className="text-secR" /> 
+          <FaStar size={24} className="text-secR ml-2" /> 
+          <FaStar size={24} className="text-secR ml-2" /> 
+          <FaStar size={24} className="text-secR ml-2" /> 
+          <FaStar size={24} className="text-secR ml-2" /> 
+
+          </div>
+          <p className="text-pS text-primary1 mt-[20px] font-medium">This site is a game-changer! From the moment I signed up, the experience has been nothing short of exceptional. The diverse range of resources, interactive learning features, and the ability to connect with ChatGPT for questions have made studying a joy. The user-friendly interface and well-structured content make it easy to navigate. Five stars without a doubt — this platform has enriched my learning journey in ways I couldn&apos;t have imagined!</p>
+          <div className="mt-[20px] w-[239px] h-[70px] flex justify-between items-center">
+            <img src={peterAkojede} alt="user" className="w-[70px] h-full rounded-xl " />
+            <p className="text-primary1 text-pL">Peter Akojede</p>
+          </div>
+        </div>
+        </div>
+
+        <div className="h-full md:bg-primary1   px-6 md:px-3 lg:px-14 xl:px-16 mt-[40px] md:mt-0 pb-[20px]">
+          <Link to="/" smooth="true" duration={500}>
+      <div className="w-[37px] h-[37px] flex justify-center bg-primary0Blue mt-[40px] items-center">
+          <FaArrowLeftLong size={27} className="text-primary1" />
       </div>
-      <div className="w-full h-full flex justify-center items-center mt-[30px] md:mt-[60px] pb-[40px]">
-        <div className="md:w-9/12 lg:w-8/12 xl:w-7/12 h-full mt-[40px] md:bg-white md:shadow-lg md:rounded-[8px] flex flex-col justify-center items-center  ">
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="w-full h-full flex flex-col justify-center items-center px-4"
-          >
-            <div className="w-full h-full text-center ">
+      </Link>
+      <div className="w-full  mt-[20px]">
               <h1 className="text-[#04050C] text-[24px] md:text-[48px] ">
-                Create your Account
+               Sign Up
               </h1>
-              <p className="text-[#04050C] mt-[20px]">
-                sign in to have full access to all jupeb textbooks, jupeb past
-                questions and answers, postutme questions and access to easereads
-                whatsapp community to get more update about our products.
+              <p className="text-secH mt-[25px]">
+                Sign up and starting learning
               </p>
             </div>
-
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            
+          >
             {/* social media signup */}
             {/* <div className="w-full h-full mt-[25px] flex flex-col md:flex-row items-center justify-evenly text-center ">
               <button className="w-full h-[60px]  flex items-center justify-center border border-[#B3B4BB] px-4 rounded-[8px] cursor-pointer">
@@ -158,85 +208,51 @@ const SignUp = () => {
               <div className="flex-1 border-[1px] border-b-gray-800"></div>
             </div> */}
 
-            <div className="w-full md:w-10/12 h-full mt-[70px]">
+            <div className="w-full  h-full mt-[70px]">
               <div className="w-full  md:flex justify-between">
                 <div className="w-full h-full md:w-5/12 ">
                   <div className="relative w-full  flex flex-col-reverse ">
                     <label
-                      className="absolute top-[4px] left-[50px] text-[#04050C] md:text-[12px] leading-[15.22px]"
-                      htmlFor="firstname"
+                      className="absolute top-[4px] left-[50px] text-secH md:text-[12px] leading-[15.22px]"
+                      htmlFor="username"
                     >
-                      first Name
+                      User Name
                     </label>
                     <RxPerson
                       size={24}
-                      className="absolute top-[20px] left-[10px] text-[#85868D]"
+                      className="absolute top-[20px] left-[10px] text-secT"
                     />
                     <input
                       type="text"
-                      id="firstname"
-                      className="  h-[60px] border-2  border-[#B3B4BB] rounded-[5px] outline-none"
-                      name="firstName"
-                      {...register("firstName")}
-                      placeholder="first name"
+                      id="username"
+                      className="  h-[60px] border-2  border-primary2 rounded-[5px] outline-none"
+                      name="username"
+                      {...register("username")}
+                      placeholder="user name"
                       style={{ paddingLeft: "50px" }}
                     />
                   </div>
                   <small
                     className="text-red-900 text-[14px] font-bold"
                     style={{
-                      visibility: errors.firstName ? "visible" : "hidden",
+                      visibility: errors.userName ? "visible" : "hidden",
                     }}
                   >
-                    {errors.firstName?.message}
+                    {errors.userName?.message}
                   </small>
                 </div>
 
-                <div className="w-full h-full mt-[30px] md:mt-0 md:w-5/12 ">
-                  <div className="relative w-full  flex flex-col-reverse ">
-                    <label
-                      className="absolute top-[4px] left-[50px] text-[#04050C] md:text-[12px] leading-[15.22px]"
-                      htmlFor="lastname"
-                    >
-                      Last Name
-                    </label>
-                    <RxPerson
-                      size={24}
-                      className="absolute top-[20px] left-[10px] text-[#85868D]"
-                    />
-                    <input
-                      type="text"
-                      id="lastname"
-                      className=" h-[60px] border-2  border-[#B3B4BB] rounded-[5px] outline-none"
-                      name="lastName"
-                      {...register("lastName")}
-                      placeholder="last name"
-                      style={{ paddingLeft: "50px" }}
-                    />
-                  </div>
-                  <small
-                    className="text-red-900 text-[14px] font-bold"
-                    style={{
-                      visibility: errors.lastName ? "visible" : "hidden",
-                    }}
-                  >
-                    {errors.lastName?.message}
-                  </small>
-                </div>
-              </div>
-
-              <div className="w-full md:flex justify-between md:mt-[30px]">
-                <div className="w-full  md:w-5/12 h-full mt-[30px] md:mt-0">
+               <div className="w-full  md:w-5/12 h-full mt-[30px] md:mt-0">
                   <div className="relative w-full flex flex-col-reverse justify-center ">
                     <label
-                      className="absolute top-[4px] left-[50px] text-[#04050C] md:text-[12px] leading-[15.22px]"
+                      className="absolute top-[4px] left-[50px] text-secH md:text-[12px] leading-[15.22px]"
                       htmlFor="phonenumber"
                     >
                       phoneNumber
                     </label>
                     <BsTelephone
                       size={24}
-                      className="absolute top-[20px] left-[10px] text-[#85868D]"
+                      className="absolute top-[20px] left-[10px] text-secT"
                     />
                     <input
                       type="text"
@@ -244,7 +260,7 @@ const SignUp = () => {
                       name="phoneNumber"
                       {...register("phoneNumber")}
                       placeholder="phone number"
-                      className="w-full h-[60px] border-2  border-[#B3B4BB] rounded-[5px] outline-none"
+                      className="w-full h-[60px] border-2  border-primary2 rounded-[5px] outline-none"
                       style={{ paddingLeft: "50px" }}
                     />
                   </div>
@@ -257,28 +273,59 @@ const SignUp = () => {
                     {errors.phoneNumber?.message}
                   </small>
                 </div>
+              </div>
+
+              <div className="w-full md:flex justify-between md:mt-[30px]">
+                <div className="w-full  md:w-5/12 h-full mt-[30px] md:mt-0">
+                  <div className="relative w-full flex flex-col-reverse justify-center ">
+                    <label
+                    className="absolute top-[4px] left-[50px] text-secH md:text-[12px] leading-[15.22px]"
+                    htmlFor="email"
+                  >
+                    Email
+                  </label>
+                  <AiOutlineMail
+                    size={24}
+                    className="absolute top-[20px] left-[10px] text-secT"
+                  />
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    {...register("email")}
+                    placeholder="email address"
+                    className="w-full h-[60px] border-2  border-primary2 rounded-[5px] outline-none"
+                    style={{ paddingLeft: "50px" }}
+                  />
+                </div>
+                <small
+                  className="text-red-900 text-[14px] font-bold"
+                  style={{
+                    visibility: errors.email ? "visible" : "hidden",
+                  }}
+                >
+                  {errors.email?.message}
+                </small>
+                </div>
 
                 <div className="w-full md:w-5/12 h-full mt-[30px] md:mt-0">
-                  <div className="relative   flex flex-col-reverse justify-center ">
-                    <label
-                      className="absolute top-[4px] left-[50px] text-[#04050C] md:text-[12px] leading-[15.22px]"
-                      htmlFor="university"
-                    >
-                      University
-                    </label>
-                    <IoIosSchool
+                  <div className="relative   flex flex-col-reverse justify-center  ">
+                  
+                     <IoIosSchool
                       size={24}
-                      className="absolute top-[20px] left-[10px] text-[#85868D]"
+                      className="absolute top-[20px] left-[10px] text-secT"
                     />
-                    <input
-                      type="text"
-                      id="university"
-                      name="university"
-                      {...register("university")}
-                      placeholder="eg UNILAG, UNIBEN, BUK"
-                      className="w-full h-[60px] border-2  border-[#B3B4BB] rounded-[5px] outline-none"
-                      style={{ paddingLeft: "50px" }}
-                    />
+                   <select name="university" id="university"
+                   className="w-full h-[60px] border-2  border-primary2 rounded-[5px] outline-none pl-[50px]  cursor-pointer"
+                   {...register("university", { required: true })}
+                   >
+                    <option value="" className="cursor-pointer ">Select University</option>
+                    {institution.map((uni) => (
+                      <option key={uni._id} value={uni.university} >
+                        {uni.university}
+                      </option>
+                    ))}
+                   </select>
                   </div>
                   <small
                     className="text-red-900 text-[14px] font-bold"
@@ -294,44 +341,12 @@ const SignUp = () => {
               <div className="w-full h-full mt-[30px]">
                 <div className="relative w-full h-full flex flex-col-reverse">
                   <label
-                    className="absolute top-[4px] left-[50px] text-[#04050C] md:text-[12px] leading-[15.22px]"
-                    htmlFor="email"
-                  >
-                    Email
-                  </label>
-                  <AiOutlineMail
-                    size={24}
-                    className="absolute top-[20px] left-[10px] text-[#85868D]"
-                  />
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    {...register("email")}
-                    placeholder="email address"
-                    className="w-full h-[60px] border-2  border-[#B3B4BB] rounded-[5px] outline-none"
-                    style={{ paddingLeft: "50px" }}
-                  />
-                </div>
-                <small
-                  className="text-red-900 text-[14px] font-bold"
-                  style={{
-                    visibility: errors.email ? "visible" : "hidden",
-                  }}
-                >
-                  {errors.email?.message}
-                </small>
-              </div>
-
-              <div className="w-full h-full mt-[30px]">
-                <div className="relative w-full h-full flex flex-col-reverse">
-                  <label
-                    className="absolute top-[4px] left-[50px] text-[#04050C] md:text-[12px] leading-[15.22px]"
+                    className="absolute top-[4px] left-[50px] text-secH md:text-[12px] leading-[15.22px]"
                     htmlFor="password"
                   ></label>
                   <BiKey
                     size={24}
-                    className="absolute top-[20px] left-[10px] text-[#85868D]"
+                    className="absolute top-[20px] left-[10px] text-secT"
                   />
                   <input
                     type={passwordVisibile ? "text" : "password"}
@@ -339,7 +354,7 @@ const SignUp = () => {
                     name="password"
                     {...register("password")}
                     placeholder="********"
-                    className="w-full h-[60px] border-2  border-[#B3B4BB] rounded-[5px] outline-none "
+                    className="w-full h-[60px] border-2  border-primary2 rounded-[5px] outline-none "
                     style={{ paddingLeft: "50px" }}
                   />
                   <button
@@ -363,12 +378,12 @@ const SignUp = () => {
               <div className="w-full h-full mt-[30px]">
                 <div className="relative w-full h-full flex flex-col-reverse">
                   <label
-                    className="absolute top-[4px] left-[50px] text-[#04050C] md:text-[12px] leading-[15.22px]"
+                    className="absolute top-[4px] left-[50px] text-secH md:text-[12px] leading-[15.22px]"
                     htmlFor="cpassword"
                   ></label>
                   <BiKey
                     size={24}
-                    className="absolute top-[20px] left-[10px] text-[#85868D]"
+                    className="absolute top-[20px] left-[10px] text-secT"
                   />
                   <input
                     type={cpasswordVisibile ? "text" : "password"}
@@ -376,7 +391,7 @@ const SignUp = () => {
                     name="cpassword"
                     {...register("cpassword")}
                     placeholder="**********"
-                    className="w-full h-[60px] border-2  border-[#B3B4BB] rounded-[5px] outline-none"
+                    className="w-full h-[60px] border-2  border-primary2 rounded-[5px] outline-none"
                     style={{ paddingLeft: "50px" }}
                   />
                   <button
@@ -396,39 +411,46 @@ const SignUp = () => {
                   {errors.cpassword?.message}
                 </small>
               </div>
-              <div className="w-full h-[60px] mt-[40px] flex justify-center bg-[#4190EA] opacity-80 hover:opacity-100 text-[16px] md:text-[20px] rounded-[12px] text-white cursor-pointer">
+              {loading ? 
+              <div className="w-full h-[60px] mt-[40px] flex justify-center bg-primary0Blue opacity-30  text-[16px] md:text-[20px] rounded-[12px] text-primary1 cursor-pointer">
+                <button className="w-full h-full" type="submit">
+                  Processing...
+                </button>
+              </div>
+              :
+              <div className="w-full h-[60px] mt-[40px] flex justify-center bg-primary0Blue opacity-100 hover:opacity-80 text-[16px] md:text-[20px] rounded-[12px] text-primary1 cursor-pointer">
                 <button className="w-full h-full" type="submit">
                   Sign Up
                 </button>
               </div>
+              }
+              
             </div>
             <p className="text-[#54555B] text-[12px] mt-[15px] text-center">
               By siging up, you agree to the{" "}
               <Link to="/term-of-use" smooth="true" duration={500} >
-              <span className="text-[#4D5DED] cursor-pointer">
+              <span className="text-sec1 cursor-pointer">
                 {" "}
                 Terms of Service
               </span>{" "}
               </Link>
               and{" "}
               <Link to="/privacy-policy" smooth="true" duration={500}>
-              <span className="text-[#4D5DED] cursor-pointer">
+              <span className="text-sec1 cursor-pointer">
                 Privacy Policy
               </span>
               </Link>
-              {/* , including{" "}
-              <span className="text-[#4D5DED] cursor-pointer">Cookie use</span>. */}
+             
             </p>
-            <p className="text-[#2F3035] text-[16px] md:text-[20px] mt-[10px]">
+            <p className="text-[#2F3035] text-[16px] text-center md:text-[20px] mt-[10px]">
               Have an account?{" "}
               <Link to="/login" smooth="true" duration={500}>
-                <button className="text-[#4D5DED] cursor-pointer">login</button>
+                <button className="text-primary0Blue cursor-pointer">login</button>
               </Link>
             </p>
           </form>
         </div>
       </div>
-      {loading && <LoadingSpinner />}
     </main>
   );
 };
