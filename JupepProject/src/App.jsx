@@ -23,6 +23,7 @@ import VideoPage from "./pages/VideoPage/VideoPage";
 import AdminLogin from "./pages/Registration/AdminLogin";
 import AdminLayout from "./layout/AdminLayout";
 import AdminHome from "./pages/Admin/AdminHome";
+import { ComingSoon } from "./pages/ComingSoon/ComingSoon";
 
 function App() {
   return (
@@ -47,6 +48,8 @@ function App() {
             <Route path="/view-subject" element={<ViewSubject />} />
             <Route path="/view-subject/third-party-cookie" element={<ThirdPartyCookie />} />
             <Route path="/video-page" element={<VideoPage />} />
+            <Route path="/coming-soon" element={<ComingSoon />} />
+
 
             <Route path="/admin-login" element={<AdminLogin />} />
 

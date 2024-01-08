@@ -22,6 +22,7 @@ export default {
         primary4: "#FCFBF4",
         primary5: "#667085",
         primary6: "#28374B",
+        primary7: "#000000",
         secR: "#FFD700",
         secT: "#85868D",
         secH: "#000000",
@@ -30,6 +31,7 @@ export default {
         sec3: "#232F49",
         sec4: "#D9D9D9",
         sec5: "#FFD700",
+        sec6: "#54555B",
       },
       fontFamily: {
         'body': ['"Open Sans"', "sans"],
