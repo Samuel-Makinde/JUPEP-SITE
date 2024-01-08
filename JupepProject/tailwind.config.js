@@ -1,19 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    './public/**/*.html',
-    './src/**/*.{js,jsx,ts,tsx,vue}',
-  ],
+  content: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx,vue}"],
 
   theme: {
     screens: {
-      sm: '480px',
-      md: '768px',
-      lg: '976px',
-      xl: '1024px',
+      sm: "300px",
+      md: "768px",
+      lg: "976px",
+      xl: "1024px",
     },
     extend: {
-      animation: ['motion-safe'],
+      animation: ["motion-safe"],
       colors: {
         primary0Blue: "#203B8A",
         primary1: "#FFFFFF",
@@ -32,17 +29,16 @@ export default {
         sec5: "#FFD700",
       },
       fontFamily: {
-        'body': ['"Open Sans"', "sans"],
-        'sans': ['Outfit', 'sans'],
-        'roboto': ['Roboto', 'Arial', 'sans-serif'],
+        body: ['"Open Sans"', "sans"],
+        sans: ["Outfit", "sans"],
+        roboto: ["Roboto", "Arial", "sans-serif"],
       },
       fontSize: {
         pS: "16px",
         pL: "20px",
-        pXL: "24px"
+        pXL: "24px",
       },
     },
   },
   plugins: [],
-}
-
+};
