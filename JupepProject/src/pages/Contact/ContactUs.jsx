@@ -2,7 +2,8 @@ import Layout from "../../layout/Layout";
 import { BiLogoTelegram } from "react-icons/bi";
 import { BsWhatsapp } from "react-icons/bs";
 import Button from "../../components/button/button";
-// import InputField from "../../components/input/inputfield";
+import InputField from "../../components/input/inputfield";
+import TextArea from "../../components/input/textarea";
 const ContactUs = () => {
   return (
     <Layout>
@@ -63,48 +64,55 @@ const ContactUs = () => {
             </div>
           </div>
 
-          <div className="w-full h-full md:mt-[10rem] sm:mt-[3rem]">
+          <div className="w-full h-full md:mt-[10rem] sm:mt-[3rem] bg-primary4 p-[3rem]">
             <form
               className="flex flex-col w-full h-full max-w-[600px]"
               // action="https://getform.io/f/4ad2067f-1328-47af-86e6-90c1a47749a5"
               method="POST"
             >
-              <input
-                className="mb-[20px] p-[15px] border-none md:w-[500px] sm:w-[90%] bg-[#dfe0e1] outline-none"
+              <InputField
+                // className="mb-[20px] p-[15px] border-none md:w-[500px] sm:w-[90%] bg-[#dfe0e1] outline-none"
+                name="Full Name"
+                label="Full Name"
                 type="text"
                 placeholder="Full Name"
-                name="name"
+                style={{ height: "100%" }}
                 required
               />
-              <input
-                className="mb-[20px] p-[15px] bg-gray-200 border-none md:w-[500px] sm:w-[90%] outline-none"
+              <InputField
+                // className="mb-[20px] p-[15px] bg-gray-200 border-none md:w-[500px] sm:w-[90%] outline-none"
                 type="email"
                 name="email "
+                label="Email"
                 placeholder="@emailaddress.com"
+                style={{ height: "100%" }}
                 required
               />
-              <input
-                className="mb-[20px] p-[15px] bg-gray-200 border-none md:w-[500px] sm:w-[90%] outline-none"
+              <InputField
+                // className="mb-[20px] p-[15px] bg-gray-200 border-none md:w-[500px] sm:w-[90%] outline-none"
                 type="text"
-                name="institution"
-                id="institution"
+                name="Institution"
+                label="Institution"
+                id="Institution"
                 placeholder="Institution eg. OAU"
+                style={{ height: "100%" }}
                 required
               />
-              <textarea
-                className="md:w-[500px] sm:w-[90%] bg-gray-200 pt-[15px] pl-[10px]  resize-none outline-none"
+              <TextArea
+                // className="md:w-[500px] sm:w-[90%] bg-gray-200 pt-[15px] pl-[10px]  resize-none outline-none"
                 name="message"
                 placeholder="Message me"
-                rows="10"
+                // rows="10"
+                label="Message"
                 required
-              ></textarea>
+              ></TextArea>
               {/* <input
                 className="mt-[15px] p-[12px] cursor-pointer text-2xl bg-[#4190EA] hover:bg-blue-600 text-white md:w-[500px] sm:w-[90%] outline-none"
                 type="submit"
                 value="Submit"
               /> */}
               <Button
-                className="mt-[15px] p-[12px] cursor-pointer text-2xl bg-[#4190EA] hover:bg-blue-600 text-white md:w-[500px] sm:w-[91%] outline-none"
+                className="mt-[15px] p-[12px] cursor-pointer text-2xl bg-[#4190EA] hover:bg-blue-600 text-white rounded-[0.5rem] md:w-[100%] sm:w-[100%] outline-none"
                 type="submit"
                 value="Submit"
               >

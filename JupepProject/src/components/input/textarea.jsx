@@ -1,10 +1,7 @@
-import { useState } from 'react';
-import { COLORS } from '../../assets/color/index';
-import { MdOutlineVisibilityOff, MdOutlineVisibility } from 'react-icons/md';
-import PropTypes from 'prop-types';
-import './inputfield.css';
+import PropTypes from "prop-types";
+import "./textarea.css";
 
-const InputField = ({
+const TextArea = ({
   name,
   placeholder,
   type,
@@ -20,7 +17,7 @@ const InputField = ({
   ariaInvalid,
   ariaDescribedby,
   Inputref,
-  
+
   onFocus,
   readOnly,
   toolTipId,
@@ -28,15 +25,15 @@ const InputField = ({
   ...props
 }) => {
   // const {register} = useFormContext()
-  const [hidePassword, setHidePassword] = useState(false);
+  //   const [hidePassword, setHidePassword] = useState(false);
   return (
-    <div className='input_container'>
-      <div className='input_label'>
+    <div className="text_container">
+      <div className="text_label">
         <label>{label}</label>
       </div>
-      <div className='inputField_container'>
-        <input
-          type={password ? (hidePassword ? 'text' : 'password') : type}
+      <div className="textField_container">
+        <textarea
+          //   type={password ? (hidePassword ? 'text' : 'password') : type}
           name={name}
           placeholder={placeholder}
           required={required}
@@ -47,39 +44,23 @@ const InputField = ({
           onChange={onChange}
           min={min}
           aria-invalid={ariaInvalid}
-          autoComplete='off'
+          autoComplete="off"
           aria-describedby={ariaDescribedby}
           ref={Inputref}
           onFocus={onFocus}
           readOnly={readOnly}
-          className='input_field'
+          className="text_field"
           // {...register(name)}
           {...props}
-        />
-        {password && (
-          <div
-            className='password_Icon'
-            onClick={() => {
-              setHidePassword(!hidePassword);
-            }}>
-            {hidePassword ? (
-              <MdOutlineVisibility size={24} style={{ color: COLORS.primary }} />
-            ) : (
-              <MdOutlineVisibilityOff
-                size={24}
-                style={{ color: COLORS.menuIcon }}
-              />
-            )}
-          </div>
-        )}
+        ></textarea>
       </div>
     </div>
   );
 };
 
-export default InputField;
+export default TextArea;
 
-InputField.prototype = {
+TextArea.prototype = {
   name: PropTypes.string,
   onChange: PropTypes.any,
   label: PropTypes.string,
@@ -95,7 +76,7 @@ InputField.prototype = {
   style: PropTypes.any,
   min: PropTypes.number,
   ariaInvalid:
-    PropTypes.boolean | 'false' | 'true' | 'grammar' | 'spelling' | undefined,
+    PropTypes.boolean | "false" | "true" | "grammar" | "spelling" | undefined,
   ariaDescribedby: PropTypes.string | undefined,
   Inputref: PropTypes.any,
 };
