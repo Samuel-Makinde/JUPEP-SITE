@@ -5,6 +5,9 @@ import { TbCurrencyNaira } from "react-icons/tb";
 import FAQPage from "../FAQ/FAQPage";
 
 const Pricing = () => {
+  const handleSumit = async () => {
+    // const
+  };
   return (
     <Layout>
       <main className="w-full h-full   text-gray-800">
@@ -45,19 +48,20 @@ const Pricing = () => {
                   Current Plan
                 </h2>
                 <h2 className="mt-[45px] text-center text-[30px]">
-                  Booklandia Free
+                  EaseReads Free
                 </h2>
                 <div className="text-[16px] mb-[20px]">
                   <div className="mt-[15px]">
                     <input type="checkbox" id="fourth" checked />
                     <label htmlFor="fourth" className="ml-[7px]">
-                      acess to all textbooks
+                      acess to easereads community
                     </label>
                   </div>
                   <div className="mt-[7px]">
                     <input type="checkbox" id="fifth" checked />
                     <label htmlFor="fifth" className="ml-[7px]">
-                      acess to past questions and answers
+                      opportunity to get JUPEB related question answers from
+                      expert
                     </label>
                   </div>
                   <div className="mt-[7px]">
@@ -84,35 +88,46 @@ const Pricing = () => {
             </div>
 
             <div className="w-[320px] lg:w-[310px] xl:w-[330px] h-[450px] bg-[#EAAA00] rounded-[10px] flex flex-col justify-center items-center mt-[60px] lg:mt-0">
-              <div className="relative w-[300px] text-white lg:w-[290px] xl:w-[310px] h-[430px]  border-[2px] rounded border-white px-4">
+              <div className="relative w-[300px] text-white lg:w-[290px] xl:w-[310px] h-[430px]  border-[2px] rounded border-white px-4 ">
                 <h2 className="absolute w-[130px] top-0 right-1 text-[14px] bg-white text-[#EAAA00] font-semibold mt-[5px] text-center py-1 rounded-[10px] uppercase">
                   Most Popular
                 </h2>
                 <h3 className="mt-[45px]  text-[30px] text-center">
-                  Booklandia PLus
+                  EaseReads PLus
                 </h3>
                 <div className="text-[16px] mb-[20px]">
                   <div className="mt-[15px]">
                     <input type="checkbox" id="seven" checked />
                     <label htmlFor="seven" className="ml-[7px]">
-                      acess to all textbooks
+                      all easereads free plan
                     </label>
                   </div>
                   <div className="mt-[7px]">
                     <input type="checkbox" id="eight" checked />
                     <label htmlFor="eight" className="ml-[7px]">
-                      acess to past questions and answers
+                      access to read jupeb textbooks
                     </label>
                   </div>
                   <div className="mt-[7px]">
-                    <input type="checkbox" id="nine" checked />
-                    <label htmlFor="nine" className="ml-[7px]">
-                      24/7 support to answer any question related to jupeb
-                      syllabus
+                    <input type="checkbox" id="eight" checked />
+                    <label htmlFor="eight" className="ml-[7px]">
+                      access to practice jupeb exam questions
+                    </label>
+                  </div>
+                  <div className="mt-[7px]">
+                    <input type="checkbox" id="eight" checked />
+                    <label htmlFor="eight" className="ml-[7px]">
+                      acesss to ask easereads a.i 20 questions
+                    </label>
+                  </div>
+                  <div className="mt-[7px]">
+                    <input type="checkbox" id="eight" checked />
+                    <label htmlFor="eight" className="ml-[7px]">
+                      access to create a unique study plan for your self
                     </label>
                   </div>
                 </div>
-                <div className="w-full h-[100px] mt-[80px] md:mt-[50px] lg:mt-[90px] flex flex-col  items-center font-semibold">
+                <div className="w-full h-[100px] mt-9 flex flex-col  items-center font-semibold">
                   <div className="w-[230px] text-center text-[20px] flex justify-center">
                     <TbCurrencyNaira size={24} className="mt-[4px]" />{" "}
                     <p>
@@ -134,26 +149,31 @@ const Pricing = () => {
               </h2>
               <div className="w-[300px] lg:w-[280px] xl:w-[310px] h-[430px] border-[2px] rounded border-[#EAAA00] px-4">
                 <h2 className="mt-[45px] text-center text-[30px]">
-                  Booklandia Pro
+                  EaseReads Pro
                 </h2>
                 <div className="text-[16px] mb-[20px]">
                   <div className="mt-[15px]">
                     <input type="checkbox" id="tenth" checked />
                     <label htmlFor="tenth" className="ml-[7px]">
-                      acess to all textbooks
+                      all EaseReads PLus plan
                     </label>
                   </div>
                   <div className="mt-[7px]">
                     <input type="checkbox" id="eleven" checked />
                     <label htmlFor="eleven" className="ml-[7px]">
-                      acess to past questions and answers
+                      access watch tutorial videos on each topic
                     </label>
                   </div>
                   <div className="mt-[7px]">
-                    <input type="checkbox" id="twelve" checked />
-                    <label htmlFor="twelve" className="ml-[7px]">
-                      24/7 support to answer any question related to jupeb
-                      syllabus
+                    <input type="checkbox" id="eleven" checked />
+                    <label htmlFor="eleven" className="ml-[7px]">
+                      acesss to ask easereads a.i 20 questions
+                    </label>
+                  </div>
+                  <div className="mt-[7px]">
+                    <input type="checkbox" id="eleven" checked />
+                    <label htmlFor="eleven" className="ml-[7px]">
+                      acesss to participate in monthly test
                     </label>
                   </div>
                 </div>
@@ -161,7 +181,7 @@ const Pricing = () => {
                   <div className="w-[230px] text-center text-[20px] flex justify-center">
                     <TbCurrencyNaira size={24} className="mt-[4px]" />{" "}
                     <p>
-                      <span> 4,500</span>{" "}
+                      <span> 3,500</span>{" "}
                       <span className="text-[14px]">/ MONTH</span>{" "}
                     </p>
                   </div>

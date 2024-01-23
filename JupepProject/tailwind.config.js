@@ -23,6 +23,8 @@ export default {
         primary5: "#667085",
         primary6: "#28374B",
         primary7: "#000000",
+        primary8: "#FCFBF4",
+        primary9: "#EAAA00",
         secR: "#FFD700",
         secT: "#85868D",
         secH: "#000000",
@@ -32,6 +34,8 @@ export default {
         sec4: "#D9D9D9",
         sec5: "#FFD700",
         sec6: "#54555B",
+        sec7: "#25D366",
+        sec8: "#FF0000"
       },
       fontFamily: {
         'body': ['"Open Sans"', "sans"],

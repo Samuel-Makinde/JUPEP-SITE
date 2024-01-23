@@ -64,9 +64,7 @@ const Home = () => {
                 real-life format practice questions prepare you for success in
                 exams. At our platform, innovation meets convenience, providing
                 a seamless and tailored learning experience just for you.
-                Unleash your potential and choose excellence with our
-                user-friendly tools and comprehensive approach. Elevate your
-                academic experience and thrive in your educational pursuits.
+                <br />
                 Your path to success begins here!
               </p>
             </div>
@@ -86,11 +84,11 @@ const Home = () => {
                   <img
                     src={reading}
                     alt="about"
-                    className="h-[350px]  w-[400px] "
+                    className="h-[350px]  sm:w-[400px] "
                   />
                 </div>
                 <div className=" px-4 md:px-0  md:w-5/12 md:text-left flex flex-col  ">
-                  <h1 className="text-xl md:text-2xl mt-[40px] font-roboto md:mt-0 text-secH font-bold uppercase">
+                  <h1 className="text-lg sm:text-xl md:text-2xl mt-[40px] font-roboto md:mt-0 text-secH font-bold uppercase">
                     Engage in the act of reading
                   </h1>
                   <p className=" text-left   text-[16px] text-primary3">
@@ -116,7 +114,7 @@ const Home = () => {
 
             {/* video sections */}
             <div className="w-full px-4 md:px-6 lg:px-8 xl:px-20 mt-[130px] ">
-              <h1 className="text-xl md:text-2xl text-secH font-roboto font-bold uppercase  ">
+              <h1 className="text-lg sm:text-xl md:text-2xl text-secH font-roboto font-bold uppercase  ">
                 Recommended Videos for you{" "}
               </h1>
               <p className="md:w-6/12 text-primary5 font-normal text-base ">
@@ -130,26 +128,32 @@ const Home = () => {
               className={`relative w-full h-full px-4 md:px-6 lg:px-8 xl:px-20 overflow-auto ${styles.videos}`}
             >
               <div className="min-w-min h-full mt-[30px] flex justify-between overflow-auto ">
-                <div className="w-[280px] md:w-[320px] h-[438px] pt-3 bg-sec4 px-4 rounded-3xl">
+                <div className="w-[250px] sm:w-[280px] md:w-[320px] h-[438px] pt-3 bg-sec4 px-4 rounded-3xl">
                   <img
                     src={recommended1}
                     alt="pictures"
                     className="w-[300px] h-[180px] "
                   />
-                  <p className="w-20 mt-3 rounded-xl flex justify-center items-center text-secH font-medium text-sm bg-primary1 font-roboto uppercase">
-                    Jupeb
-                  </p>
-                  <h2 className="font-bold font-body text-secH text-xl mt-3">
-                    Mixture of Element II
+                  <div className="w-full flex justify-between">
+                    <p className="w-24  sm:w-28 mt-3 rounded-xl flex justify-center items-center text-secH font-medium text-xs sm:text-sm bg-primary1 font-roboto uppercase">
+                      Chemistry
+                    </p>
+                    <p className="w-24 sm:w-28 mt-3 rounded-xl flex justify-center items-center text-secH font-medium text-xs sm:text-sm bg-secR font-roboto uppercase">
+                      coming soon
+                    </p>
+                  </div>
+                  <h2 className="font-bold font-body text-secH text-lg sm:text-xl mt-3">
+                    Measurement
                   </h2>
-                  <p className="md:w-11/12 text-primary5 font-normal text-base ">
-                    Lorem ipsum dolor sit amet consectetur. Urna curabitur
-                    convallis gravida pellentesque. Libero enim eu sit tempus.
+                  <p className="md:w-11/12 h-[90px] text-primary5 font-normal text-sm ">
+                    Topic discussed. <br />
+                    Basic unit of measurement, precision, form, types of error &
+                    mathematical operation e.t.c
                   </p>
-                  <div className="mt-[40px] flex">
-                    <img src={frame} alt="frame" />
-                    <p className="text-sm text-primary3 my-auto ml-3">
-                      Viewed By 120+ people
+                  <div className="w-full mt-[40px] flex">
+                    <img src={frame} alt="frame" className="" />
+                    <p className="text-xs sm:text-sm text-primary3 my-auto ml-2">
+                      Viewed By 0 people
                     </p>
                   </div>
                 </div>
@@ -160,20 +164,26 @@ const Home = () => {
                     alt="pictures"
                     className="w-[300px] h-[180px] "
                   />
-                  <p className="w-20 mt-3 rounded-xl flex justify-center items-center text-secH font-medium text-sm bg-primary1 font-roboto uppercase">
-                    Jupeb
-                  </p>
-                  <h2 className="font-bold font-body text-secH text-xl mt-3">
-                    Mixture of Element II
+                  <div className="w-full flex justify-between">
+                    <p className="w-24  sm:w-28 mt-3 rounded-xl flex justify-center items-center text-secH font-medium text-xs sm:text-sm bg-primary1   font-roboto uppercase">
+                      Physics
+                    </p>
+                    <p className="w-24 sm:w-28 mt-3 rounded-xl flex justify-center items-center text-secH font-medium text-xs sm:text-sm bg-secR font-roboto uppercase">
+                      coming soon
+                    </p>
+                  </div>
+                  <h2 className="font-bold font-body text-secH text-lg sm:text-xl mt-3">
+                    Physical Quantity & Unit
                   </h2>
-                  <p className="md:w-11/12 text-primary5 font-normal text-base ">
-                    Lorem ipsum dolor sit amet consectetur. Urna curabitur
-                    convallis gravida pellentesque. Libero enim eu sit tempus.
+                  <p className="md:w-11/12 h-[90px] text-primary5 font-normal text-sm ">
+                    Topics Discussed <br />
+                    physical quality, quality, measurement techniques,
+                    galvanometer e.t.c
                   </p>
                   <div className="mt-[40px] flex">
                     <img src={frame} alt="frame" />
-                    <p className="text-sm text-primary3 my-auto ml-3">
-                      Viewed By 120+ people
+                    <p className="text-xs sm:text-sm text-primary3 my-auto ml-3">
+                      Viewed By 0 people
                     </p>
                   </div>
                 </div>
@@ -184,20 +194,25 @@ const Home = () => {
                     alt="pictures"
                     className="w-[300px] h-[180px] "
                   />
-                  <p className="w-20 mt-3 rounded-xl flex justify-center items-center text-secH font-medium text-sm bg-primary1 font-roboto uppercase">
-                    Jupeb
-                  </p>
-                  <h2 className="font-bold font-body text-secH text-xl mt-3">
-                    Mixture of Element II
+                  <div className="w-full flex justify-between">
+                    <p className="w-24  sm:w-28 mt-3 rounded-xl flex justify-center items-center text-secH font-medium text-xs sm:text-sm bg-primary1 font-roboto uppercase">
+                      BIOLOGY
+                    </p>
+                    <p className="w-24 sm:w-28 mt-3 rounded-xl flex justify-center items-center text-secH font-medium text-xs sm:text-sm bg-secR font-roboto uppercase">
+                      COMING SOON
+                    </p>
+                  </div>
+                  <h2 className="font-bold  font-body text-secH text-xl mt-3">
+                    Origin of Living Being
                   </h2>
-                  <p className="md:w-11/12 text-primary5 font-normal text-base ">
-                    Lorem ipsum dolor sit amet consectetur. Urna curabitur
-                    convallis gravida pellentesque. Libero enim eu sit tempus.
+                  <p className="md:w-11/12 h-[90px] text-primary5 font-normal text-sm ">
+                    scientific method, origin of life, origin of cell, central
+                    tendency, biostastistic.
                   </p>
                   <div className="mt-[40px] flex">
                     <img src={frame} alt="frame" />
-                    <p className="text-sm text-primary3 my-auto ml-3">
-                      Viewed By 120+ people
+                    <p className="text-xs sm:text-sm text-primary3 my-auto ml-3">
+                      Viewed By 0 people
                     </p>
                   </div>
                 </div>
@@ -208,20 +223,25 @@ const Home = () => {
                     alt="pictures"
                     className="w-[300px] h-[180px] "
                   />
-                  <p className="w-20 mt-3 rounded-xl flex justify-center items-center text-secH font-medium text-sm bg-primary1 font-roboto uppercase">
-                    Jupeb
-                  </p>
+                  <div className="w-full flex justify-between">
+                    <p className="w-24  sm:w-28 mt-3 rounded-xl flex justify-center items-center text-secH font-medium text-xs sm:text-sm bg-primary1 font-roboto uppercase">
+                      MATHEMATICS
+                    </p>
+                    <p className="w-24 sm:w-28 mt-3 rounded-xl flex justify-center items-center text-secH font-medium text-xs sm:text-sm bg-secR font-roboto uppercase">
+                      COMING SOON
+                    </p>
+                  </div>
                   <h2 className="font-bold font-body text-secH text-xl mt-3">
-                    Mixture of Element II
+                    Real Numbers
                   </h2>
-                  <p className="md:w-11/12 text-primary5 font-normal text-base ">
-                    Lorem ipsum dolor sit amet consectetur. Urna curabitur
-                    convallis gravida pellentesque. Libero enim eu sit tempus.
+                  <p className="md:w-11/12 h-[90px] text-primary5 font-normal text-sm ">
+                    real numbers, mathematical induction sequency and series,
+                    binary operator
                   </p>
                   <div className="mt-[40px] flex">
                     <img src={frame} alt="frame" />
-                    <p className="text-sm text-primary3 my-auto ml-3">
-                      Viewed By 120+ people
+                    <p className="text-xs sm:text-sm text-primary3 my-auto ml-3">
+                      Viewed By 0 people
                     </p>
                   </div>
                 </div>
@@ -232,20 +252,25 @@ const Home = () => {
                     alt="pictures"
                     className="w-[300px] h-[180px] "
                   />
-                  <p className="w-20 mt-3 rounded-xl flex justify-center items-center text-secH font-medium text-sm bg-primary1 font-roboto uppercase">
-                    Jupeb
-                  </p>
+                  <div className="w-full flex justify-between">
+                    <p className="w-24  sm:w-28 mt-3 rounded-xl flex justify-center items-center text-secH font-medium text-xs sm:text-sm bg-primary1 font-roboto uppercase">
+                      GOVERNMENT
+                    </p>
+                    <p className="w-24 sm:w-28 mt-3 rounded-xl flex justify-center items-center text-secH font-medium text-xs sm:text-sm bg-secR font-roboto uppercase">
+                      COMING SOON
+                    </p>
+                  </div>
                   <h2 className="font-bold font-body text-secH text-xl mt-3">
-                    Mixture of Element II
+                    Government & Politics
                   </h2>
-                  <p className="md:w-11/12 text-primary5 font-normal text-base ">
-                    Lorem ipsum dolor sit amet consectetur. Urna curabitur
-                    convallis gravida pellentesque. Libero enim eu sit tempus.
+                  <p className="md:w-11/12 h-[90px] text-primary5 font-normal text-base ">
+                    what is politics, david easton&apos;s view, harold lasswell,
+                    approaches, view
                   </p>
                   <div className="mt-[40px] flex">
                     <img src={frame} alt="frame" />
-                    <p className="text-sm text-primary3 my-auto ml-3">
-                      Viewed By 120+ people
+                    <p className="text-xs sm:text-sm text-primary3 my-auto ml-3">
+                      Viewed By 0 people
                     </p>
                   </div>
                 </div>
@@ -256,20 +281,24 @@ const Home = () => {
                     alt="pictures"
                     className="w-[300px] h-[180px] "
                   />
-                  <p className="w-20 mt-3 rounded-xl flex justify-center items-center text-secH font-medium text-sm bg-primary1 font-roboto uppercase">
-                    Jupeb
-                  </p>
+                  <div className="w-full flex justify-between">
+                    <p className="w-24  sm:w-28 mt-3 rounded-xl flex justify-center items-center text-secH font-medium text-xs sm:text-sm bg-primary1 font-roboto uppercase">
+                      LITERATURE
+                    </p>
+                    <p className="w-24 sm:w-28 mt-3 rounded-xl flex justify-center items-center text-secH font-medium text-xs sm:text-sm bg-secR font-roboto uppercase">
+                      COMING SOON
+                    </p>
+                  </div>
                   <h2 className="font-bold font-body text-secH text-xl mt-3">
-                    Mixture of Element II
+                    Dramatic Literature
                   </h2>
-                  <p className="md:w-11/12 text-primary5 font-normal text-base ">
-                    Lorem ipsum dolor sit amet consectetur. Urna curabitur
-                    convallis gravida pellentesque. Libero enim eu sit tempus.
+                  <p className="md:w-11/12 h-[90px] text-primary5 font-normal text-base ">
+                    Drama, origin of drama, element of drama
                   </p>
                   <div className="mt-[40px] flex">
                     <img src={frame} alt="frame" />
-                    <p className="text-sm text-primary3 my-auto ml-3">
-                      Viewed By 120+ people
+                    <p className="text-xs sm:text-sm text-primary3 my-auto ml-3">
+                      Viewed By 0 people
                     </p>
                   </div>
                 </div>
@@ -280,7 +309,11 @@ const Home = () => {
 
             <div className="w-full h-full py-4 md:py-12 bg-primary4   md:px-6 lg:px-8 xl:px-20 flex flex-col-reverse md:flex-row md:justify-between mt-[130px]">
               <div className="w-full flex mt-8 md:mt-0  justify-center md:flex-none md:w-5/12">
-                <img src={exam} alt="about" className="h-[300px]  w-[400px] " />
+                <img
+                  src={exam}
+                  alt="about"
+                  className="h-[300px]  sm:w-[400px] "
+                />
               </div>
               <div className=" px-4 md:px-0 md:w-6/12 flex flex-col  ">
                 <h1 className="text-xl md:text-2xl mt-[40px] font-roboto md:mt-0 text-secH font-semibold uppercase">
@@ -299,7 +332,7 @@ const Home = () => {
                   confidence. Experience personalized exam preparation that
                   aligns seamlessly with your study progress.
                 </p>
-                <Link to="/coming-soon" smooth="true" duration={500}>
+                <Link to="/instruction" smooth="true" duration={500}>
                   <button className="w-full md:w-[220px] mt-[20px] h-[59px] bg-primary0Blue hover:bg-sec3 flex justify-center items-center text-primary1 font-body text-xl rounded-[45px]">
                     Take Exams
                   </button>
@@ -314,7 +347,7 @@ const Home = () => {
                 <img
                   src={easereadAi}
                   alt="about"
-                  className="h-[350px]  w-[400px] "
+                  className="h-[350px]  sm:w-[400px] "
                 />
               </div>
               <div className="px-4 md:px-0  md:w-6/12 flex flex-col  ">
@@ -349,7 +382,7 @@ const Home = () => {
                 <img
                   src={studyPlanner}
                   alt="about"
-                  className="h-[300px]  w-[400px] "
+                  className="h-[300px] sm:w-[400px] "
                 />
               </div>
               <div className="px-4 md:px-0  md:w-6/12 flex flex-col  ">
@@ -378,11 +411,15 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="w-full h-full md:h-[470px] lg:h-[400px] flex flex-col md:flex-row items-center  md:justify-evenly mt-[130px]  ">
-              <div className="md:w-[500px] h-full flex flex-col justify-center items-center ">
+            <div className="w-full h-full px-4 md:h-[470px] lg:h-[400px] flex flex-col-reverse md:flex-row md:items-center  md:justify-evenly mt-[130px]  ">
+              <div className="md:w-[500px] h-full flex flex-col md:justify-center md:items-center ">
                 {/* <BsWhatsapp  className="text-white w-[100px] h-[100px] md:w-[200px] md:h-[200px]" /> */}
                 {/* <div className="bg-red-800 h-[90px] w-[200px] text-center"> */}
-                <img src={whatsapp} alt="whatsapp" className="h-[250px]" />
+                <img
+                  src={whatsapp}
+                  alt="whatsapp"
+                  className="h-[95px] w-[95px] md:w-[250px] md:h-[250px] "
+                />
                 <a
                   className="w-[220px] mt-[20px] h-[59px] bg-primary0Blue hover:bg-sec3 flex justify-center items-center text-primary1 font-body text-xl rounded-[45px]"
                   rel="noreferrer"
@@ -393,7 +430,7 @@ const Home = () => {
                   Click to Join
                 </a>
               </div>
-              <div className="md:w-[440px] w-full h-full  px-4 py-4">
+              <div className="md:w-[440px] w-full h-full   py-4">
                 {" "}
                 <h3 className="font-semibold text-xl md:text-2xl font-roboto text-secH">
                   Join our Whatsapp community for free
@@ -481,7 +518,7 @@ const Home = () => {
                     <FaStar size={24} className="text-secR ml-2" />
                     <FaStar size={24} className="text-secR ml-2" />
                   </div>
-                  <p className="h-40 text-pS text-secH mt-[20px] font-medium font-roboto">
+                  <p className="h-56 md:h-56 lg:h-40  text-pS text-secH mt-[20px] font-medium font-roboto">
                     Exceptional Resource! The platform offers an incredible
                     array of learning materials, from textbooks and videos to an
                     AI feature for instant clarification. The study planner is a
@@ -489,7 +526,7 @@ const Home = () => {
                     effectively. A one-stop-shop for comprehensive exam
                     preparation!
                   </p>
-                  <div className="mt-[20px] w-[215px] h-[70px] flex justify-between items-center">
+                  <div className="mt-8 sm:mt-[20px] w-[215px] h-[70px] flex justify-between items-center">
                     <img
                       src={peterAkojede}
                       alt="user"
@@ -508,14 +545,14 @@ const Home = () => {
                     <FaStar size={24} className="text-secR ml-2" />
                     <FaStar size={24} className="text-secR ml-2" />
                   </div>
-                  <p className="h-40 text-pS text-secH mt-[20px] font-medium font-roboto">
+                  <p className="h-56 md:h-56 lg:h-40 text-pS text-secH mt-[20px] font-medium font-roboto">
                     Top-notch Exam Readiness! The practice exams in real-life
                     format have been invaluable in boosting my confidence. The
                     ability to customize exams based on subjects, sections, or
                     topics allows for targeted preparation. A must-have for any
                     student serious about acing their exams!
                   </p>
-                  <div className="mt-[20px] w-[215px] h-[70px] flex justify-between items-center">
+                  <div className="mt-8 sm:mt-[20px] w-[215px] h-[70px] flex justify-between items-center">
                     <img
                       src={dave}
                       alt="user"
@@ -537,7 +574,7 @@ const Home = () => {
                     <FaStar size={24} className="text-secR ml-2" />
                     <FaStarHalfAlt size={24} className="text-secR ml-2" />
                   </div>
-                  <p className="h-40 text-pS text-secH mt-[20px] font-medium font-roboto">
+                  <p className="h-56 md:h-56 lg:h-40 text-pS text-secH mt-[20px] font-medium font-roboto">
                     Innovative Learning Experience! Easereads AI is a standout
                     feature, providing instant answers to questions on
                     challenging topics. The user-friendly study planner has
@@ -545,7 +582,7 @@ const Home = () => {
                     progress. This platform truly takes the stress out of exam
                     preparation.
                   </p>
-                  <div className="mt-[20px] w-[215px] h-[70px] flex justify-between items-center">
+                  <div className="mt-8 sm:mt-[20px] w-[215px] h-[70px] flex justify-between items-center">
                     <img
                       src={peter}
                       alt="user"
@@ -565,7 +602,7 @@ const Home = () => {
                     <FaStar size={24} className="text-secR ml-2" />
                     <FaStar size={24} className="text-secR ml-2" />
                   </div>
-                  <p className="h-40 text-pS text-secH mt-[20px] font-medium font-roboto">
+                  <p className="h-56 md:h-56 lg:h-40 text-pS text-secH mt-[20px] font-medium font-roboto">
                     Flexible and Comprehensive! The site&apos;s flexibility to
                     take exams on any subject, section, or topic is a
                     game-changer. The curated collection of recommended videos
@@ -573,7 +610,7 @@ const Home = () => {
                     platform that has enhanced my learning experience
                     significantly!
                   </p>
-                  <div className="mt-[20px] w-[245px] h-[70px] flex justify-between items-center">
+                  <div className="mt-8 sm:mt-[20px] w-[245px] h-[70px] flex justify-between items-center">
                     <img
                       src={samuel}
                       alt="user"
