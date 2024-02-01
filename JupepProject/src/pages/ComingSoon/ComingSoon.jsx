@@ -3,7 +3,7 @@ import Layout from "../../layout/Layout";
 export const ComingSoon = () => {
   return (
     <Layout>
-      <main className="w-full h-screen pt-[90px] flex justify-center items-center">
+      <main className="w-full h-screen dark:bg-navyBlue pt-[90px] flex justify-center items-center">
         <img
           src={coming}
           alt="Coming-Soon"

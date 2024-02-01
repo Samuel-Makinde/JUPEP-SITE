@@ -1,6 +1,6 @@
 const ExamResultSpinner = () => {
   return (
-    <div className="w-full h-full flex flex-col justify-center items-center pt-[120px]">
+    <div className="w-full h-screen flex  justify-center dark:bg-navyBlue items-center pt-32">
       <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
         Exams Result:
       </h2>

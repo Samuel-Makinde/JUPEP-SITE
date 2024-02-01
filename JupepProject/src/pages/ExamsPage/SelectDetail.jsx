@@ -6,6 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 import Layout from "../../layout/Layout";
 import { showToast } from "../../components/ShowToast";
 import Select from "react-select";
+import JupebSubjects from "../../data/JupebSubjects";
 
 const SelectDetail = () => {
   const [isLoading, setLoading] = useState(false);
@@ -21,17 +22,16 @@ const SelectDetail = () => {
   const navigate = useNavigate();
 
   const options = subject.map((subject) => ({
-    value: subject.name,
-    label: <div>{subject.name}</div>,
+    value: subject,
+    label: <div>{subject}</div>,
   }));
 
   //   const authFetch = AxiosInterceptor();
   const selectSubject = async () => {
     try {
-      const response = await axios.get(
-        `https://jupeb-site-backend.onrender.com/api/v1/subjectName`
-      );
-      setSubject(response.data.subjects);
+      console.log("this is jupeb", JupebSubjects);
+      setSubject(JupebSubjects);
+      console.log("this is subject", subject);
     } catch (error) {
       console.log(error);
       showToast(error.response.data.msg);
@@ -49,6 +49,11 @@ const SelectDetail = () => {
     // Fetch subject parts when the selected subject changes
     try {
       setloading(true);
+
+      if (!selectedSubject.trim()) {
+        showToast("Please select a Subject");
+        return;
+      }
       const response = await axios.post(
         `https://jupeb-site-backend.onrender.com/api/v1/getSubjectPartNumber`,
         {
@@ -114,12 +119,12 @@ const SelectDetail = () => {
 
   const customStyles = {
     control: (baseStyles, state) => ({
-      // ...provided,
       ...baseStyles,
       height: "60px",
-      // border: "2px solid #707070", // Set the border
       boxShadow: "none",
       border: state.isFocused ? "2px solid #FFD700" : "2px solid #203B8A",
+      backgroundColor: "#D1D5DB",
+      // color: "#111827",
     }),
   };
 
@@ -137,13 +142,13 @@ const SelectDetail = () => {
 
   return (
     <Layout showFooter={false}>
-      <main className="w-full h-full pt-20 font-roboto">
+      <main className="w-full min-h-screen pt-20 font-roboto dark:bg-navyBlue dark:text-secH ">
         <div className="w-full  h-full px-4 flex flex-col justify-center items-center ">
-          <h1 className="text-center font-roboto font-bold text-base  md:text-xl mt-8 capitalize">
+          <h1 className="text-center font-roboto font-bold text-base dark:text-primary1  md:text-xl mt-8 capitalize">
             Please fill all the fields below
           </h1>
 
-          <div className="w-full md:w-96 h-16 mt-10 outline-none">
+          <div className="w-full  md:w-96 h-16 mt-10 outline-none">
             <Select
               options={options}
               onChange={handleSubjectChange}
@@ -189,9 +194,9 @@ const SelectDetail = () => {
               isLoading={isLoading}
               onMenuOpen={handleMenuOpen}
             />
-            <p className="flex mt-3">
+            <p className="flex mt-3 dark:text-primary1">
               <AiOutlineInfoCircle size={18} />{" "}
-              <span className="text-xs pl-3">
+              <span className="text-xs pl-3 ">
                 {" "}
                 select maximum of 7 topics to get depth knowledge of each topic{" "}
               </span>
@@ -199,7 +204,7 @@ const SelectDetail = () => {
           </div>
           <button
             onClick={handleSubmit}
-            className="h-[60px] w-full md:w-96 bg-primary0Blue hover:bg-opacity-80  text-[16px] md:text-[20px] rounded-[12px] text-primary1 cursor-pointer mt-12"
+            className="h-[60px] w-full md:w-96 bg-primary0Blue hover:bg-opacity-80  text-[16px] md:text-[20px] rounded-[12px] font-bold text-primary1 cursor-pointer mt-12"
           >
             Continue
           </button>

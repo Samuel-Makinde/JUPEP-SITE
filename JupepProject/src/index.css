@@ -4,9 +4,9 @@
 @tailwind utilities;
 
 /* Hide scrollbar but allow scrolling */
-.scroll-container {
+/* .scroll-container {
     overflow: auto;
-  }
+  } */
   
   .scroll-container::-webkit-scrollbar {
     width: 0.5em;

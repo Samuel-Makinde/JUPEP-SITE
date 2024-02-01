@@ -15,9 +15,9 @@ const Instruction = () => {
 
   return (
     <Layout showFooter={false}>
-      <main className="w-full h-full px-4 md:px-8 xl:px-12 pt-[100px] mb-14 font-body">
+      <main className="w-full h-full px-4 md:px-8 xl:px-12 pt-[100px] pb-14 font-body dark:bg-navyBlue dark:text-lightGray">
         <div className="w-full h-full">
-          <h1 className="text-center text-2xl font-roboto font-bold">
+          <h1 className="text-center text-2xl font-roboto font-bold dark:text-primary1">
             Instruction
           </h1>
           <h1 className="text-center font-roboto">
@@ -26,7 +26,9 @@ const Instruction = () => {
           </h1>
 
           <div className="mt-10 text-base">
-            <h2 className="font-roboto font-bold">Exams Instruction:</h2>
+            <h2 className="font-roboto font-bold dark:text-primary1">
+              Exams Instruction:
+            </h2>
             <ul className="pl-6 md:px-8 xl:px-12 list-disc ">
               <li>
                 Make sure you have a stable internet connection before starting
@@ -40,7 +42,9 @@ const Instruction = () => {
                 period
               </li>
             </ul>
-            <h2 className="font-roboto font-bold mt-6">Environment:</h2>
+            <h2 className="font-roboto font-bold mt-6 dark:text-primary1">
+              Environment:
+            </h2>
             <ul className="pl-6 md:px-8 xl:px-12 list-disc ">
               <li>Choose a quiet and well-lit space to take the exam.</li>
               <li>You can take the Exam on your Phone, Tab or Laptop</li>
@@ -51,7 +55,9 @@ const Instruction = () => {
               <li>You can take the Exam on your Phone, Tab or Laptop</li>
             </ul>
 
-            <h2 className="font-roboto font-bold mt-6">Time Management:</h2>
+            <h2 className="font-roboto font-bold mt-6 dark:text-primary1">
+              Time Management:
+            </h2>
             <ul className="pl-6 md:px-8 xl:px-12 list-disc ">
               <li>Note the start and end times of the exam.</li>
               <li>
@@ -60,7 +66,7 @@ const Instruction = () => {
               </li>
             </ul>
 
-            <h2 className="font-roboto font-bold mt-6">
+            <h2 className="font-roboto font-bold mt-6dark:text-primary1 dark:text-primary1">
               Saving and Submission:
             </h2>
             <ul className="pl-6 md:px-8 xl:px-12 list-disc ">
@@ -71,7 +77,9 @@ const Instruction = () => {
               </li>
             </ul>
 
-            <h2 className="font-roboto font-bold mt-6">Complain:</h2>
+            <h2 className="font-roboto font-bold mt-6 dark:text-primary1">
+              Complain:
+            </h2>
             <ul className="pl-6 md:px-8 xl:px-12 list-disc ">
               <li>
                 In case of any complain, contact us through any mean on the
@@ -80,7 +88,7 @@ const Instruction = () => {
             </ul>
           </div>
           <Link to="/select-details" smooth="true" duration={500}>
-            <button className="w-full h-[60px] mt-[40px] flex justify-center items-center bg-primary0Blue hover:bg-opacity-80  text-[16px] md:text-[20px] rounded-[12px] text-primary1 cursor-pointer">
+            <button className="w-full h-[60px] mt-[40px] flex justify-center items-center bg-primary0Blue hover:bg-opacity-80  text-[16px] md:text-[20px] rounded-[12px] text-primary1 cursor-pointer font-bold">
               Continue
             </button>
           </Link>

@@ -118,7 +118,7 @@ const ExamPage = () => {
       const subject = sessionStorage.getItem("subject");
       const email = sessionStorage.getItem("email");
       const response = await axios.post(
-        `http://localhost:5000/api/v1/score-jupeb-exams`,
+        `https://jupeb-site-backend.onrender.com/api/v1/score-jupeb-exams`,
         {
           email: email,
           selectedSubject: subject,
@@ -154,7 +154,7 @@ const ExamPage = () => {
 
   return (
     <Layout showFooter={false}>
-      <main className="w-full h-full  pt-[120px] font-body">
+      <main className="w-full min-h-screen  pt-[120px] font-body dark:bg-navyBlue">
         <div className="w-full h-full px-4 flex justify-center">
           {showResults ? (
             <div className="w-full md:w-[500px] lg:w-[700px] xl:w-[850px] bg-primary6 text-white p-4 rounded-md">

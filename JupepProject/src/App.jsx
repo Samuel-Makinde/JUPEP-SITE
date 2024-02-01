@@ -56,7 +56,7 @@ function App() {
             />
             <Route path="/video-page" element={<VideoPage />} />
             <Route path="/coming-soon" element={<ComingSoon />} />
-            <Route path="/easereads-ai" element={<EaseReadsAL />} />
+            {/* <Route path="/easereads-ai" element={<EaseReadsAL />} /> */}
             <Route path="/instruction" element={<Instruction />} />
             <Route path="/select-details" element={<SelectDetail />} />
             <Route path="/exam-page" element={<ExamPage />} />
