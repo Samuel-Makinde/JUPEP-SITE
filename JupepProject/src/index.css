@@ -2,3 +2,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Hide scrollbar but allow scrolling */
+.scroll-container {
+    overflow: auto;
+  }
+  
+  .scroll-container::-webkit-scrollbar {
+    width: 0.5em;
+  }
+  
+  .scroll-container::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Hide scrollbar thumb */
+  }
+  
+  .scroll-container::-webkit-scrollbar-track {
+    background-color: transparent; /* Hide scrollbar track */
+  }

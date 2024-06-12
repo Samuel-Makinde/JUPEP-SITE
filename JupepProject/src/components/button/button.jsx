@@ -1,13 +1,9 @@
 // import React from "react";
 import PropTypes from "prop-types";
 
-const Button = ({ onClick, type, children, className }) => {
+const Button = ({ onClick, type, children }) => {
   return (
-    <button
-      onClick={onClick}
-      type={type}
-      className={`bg-primary0Blue hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-[1.5rem] sm:w-[9rem] md:w-[12rem] h-[3.8rem] ${className}`}
-    >
+    <button onClick={onClick} type={type}>
       {children}
     </button>
   );

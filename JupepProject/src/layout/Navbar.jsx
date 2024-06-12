@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AiOutlineHome, AiOutlineLogout } from "react-icons/ai";
@@ -9,35 +9,61 @@ import { MdOutlineContactPhone } from "react-icons/md";
 import { FiBookOpen, FiBook } from "react-icons/fi";
 import { RxPerson } from "react-icons/rx";
 import { useGlobalContext } from "../context/AuthContext";
-import logo from "../assets/logo/ease read logoooreduced png-09.png"
+import logo from "../assets/logo/ease read logoooreduced png-09.png";
 // import Bglogo from "../assets/logo/ease read logooo png version-07.png"
-
-
-
-
+import { RiArrowDownSFill } from "react-icons/ri";
+import { MdOutlinePersonalVideo } from "react-icons/md";
+import { PiExam } from "react-icons/pi";
+import { GiArtificialIntelligence } from "react-icons/gi";
+import { SlCalender } from "react-icons/sl";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-  const {user, LogOut} = useGlobalContext()
+  const { user, LogOut } = useGlobalContext();
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+  const navbarRef = useRef(null);
 
   // To set mobile navbar toggle
   const handleToggle = () => {
     setToggle(!toggle);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        toggle &&
+        navbarRef.current &&
+        !navbarRef.current.contains(event.target)
+      ) {
+        // Clicked outside the navbar
+        setToggle(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Cleanup the event listener when the component unmounts
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [toggle]);
+
   return (
-    <main className="fixed w-full h-[60px] flex justify-between items-center px-4 md:px-6 lg:px-8 xl:px-16 bg-white text-gray-800 shadow-md z-30 font-euclid capitalize">
-      <div onClick={handleToggle} className="md:hidden z-30">
+    <main className="fixed w-full h-[60px] flex justify-between font-roboto items-center px-4 md:px-6 lg:px-8 xl:px-16 bg-primary4 text-primary7 shadow-md z-30 font-euclid capitalize">
+      <div onClick={handleToggle} className="md:hidden z-30" ref={navbarRef}>
         {toggle ? (
-          <div className="w-[32px] h-[32px] bg-[#EDEFFD] cursor-pointer flex justify-center items-center rounded-[20px]">
-            <FaTimes className="text-[#54555B] w-[18px] h-[16px]  transform ease-in-out delay-300 duration-500  hover:scale-110 " />
+          <div className="w-full h-[32px] bg- cursor-pointer flex justify-end items-center rounded-[20px]">
+            <FaTimes className="text-sec6 w-[18px] h-[16px]  transform ease-in-out delay-300 duration-500  hover:scale-110" />
           </div>
         ) : (
-          <FaBars className="text-[#54555B] w-[30px] h-[24px]  cursor-pointer transform hover:scale-110 ease-in-out delay-300 duration-500 " />
+          <FaBars className="text-sec6 w-[30px] h-[24px]  cursor-pointer transform hover:scale-110 ease-in-out delay-300 duration-500 " />
         )}
       </div>
+
       <Link to="/" smooth="true" duration={500}>
         <div className=" h-[28px] md:h-full  md:flex items-center  cursor-pointer ">
-          <img src={logo} alt="logo"  className=" h-[30px] md:h-[34px]" />
+          <img src={logo} alt="logo" className=" h-[30px] md:h-[34px]" />
         </div>
       </Link>
 
@@ -45,67 +71,81 @@ const Navbar = () => {
       <ul
         className={` transform  ease-in-out duration-500 delay-150 ${
           toggle ? "translate-x-0" : "-translate-x-full"
-        } w-3/4 bg-white absolute top-0 left-0 h-screen md:hidden flex flex-col  pt-[50px]  shadow-md `}
+        } w-3/4 bg-primary4 absolute top-0 left-0 h-screen md:hidden flex flex-col  pt-[50px]  shadow-md `}
       >
-        {user ? 
-        ( <p className="w-full text-center text-[22px] font-semibold">Welcome {user}</p>  )
-        : 
-        ( 
+        {user ? (
+          <p className="w-full text-center text-[22px] font-semibold">
+            Welcome {user}
+          </p>
+        ) : (
           <div>
-            <Link to="/sign-up" smooth="true" duration={500} >
-               <li className="text-[#04050C] leading-[20px] text-[16px] flex px-[24px] py-[16px] mt-[50px] font-medium">
-          <RxPerson />
-          <h1 className="pl-[10px] cursor-pointer">Sign UP</h1>
-        </li>
-        </Link>
+            <Link to="/sign-up" smooth="true" duration={500}>
+              <li className=" leading-[20px] text-[16px] flex px-[24px] py-[14px] mt-[30px] font-medium">
+                <RxPerson />
+                <h1 className="pl-[10px] cursor-pointer">Sign Up</h1>
+              </li>
+            </Link>
 
-        <Link to="/login" smooth="true" duration={500}>
-        <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal ">
-          <RxPerson />
-          <h1 className="pl-[10px] cursor-pointer">Log in</h1>
-        </li>
-        </Link>
-
-          </div> 
-        ) 
-        }
-       
+            <Link to="/login" smooth="true" duration={500}>
+              <li className=" leading-[20px] text-base flex  px-[24px] py-[14px] font-normal">
+                <RxPerson />
+                <h1 className="pl-[10px] cursor-pointer">Log in</h1>
+              </li>
+            </Link>
+          </div>
+        )}
 
         <Link to="/" smooth="true" duration={500}>
-          <li className={`${user ? " mt-[50px]" : "mt-0"} text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal `}>
+          <li
+            className={`${
+              user ? " mt-[30px]" : "mt-0"
+            }  leading-[20px] text-[16px] flex   px-[24px] py-[14px] font-normal `}
+          >
             <AiOutlineHome size={20} />
             <h1 className="pl-[10px] cursor-pointer">Home</h1>
           </li>
         </Link>
 
         <Link to="/about" smooth="true" duration={500}>
-          <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal ">
+          <li className="leading-[20px] text-[16px] flex  px-[24px] py-[14px] font-normal ">
             <GoPeople size={20} />
-            <h1 className="pl-[7px] cursor-pointer">About</h1>
+            <h1 className="pl-[7px] cursor-pointer">About Us</h1>
           </li>
         </Link>
 
         <Link to="/view-subject" smooth="true" duration={500}>
-        <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal ">
-          <FiBook size={20} />
-          <h1 className="pl-[10px] cursor-pointer">View Subjects</h1>
-        </li>
+          <li className="leading-[20px] text-[16px] flex  px-[24px] py-[14px] font-normal ">
+            <FiBook size={20} />
+            <h1 className="pl-[10px] cursor-pointer">Read-Books</h1>
+          </li>
         </Link>
 
         <Link to="/video-page" smooth="true" duration={500}>
-        <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal ">
-          <FiBook size={20} />
-          <h1 className="pl-[10px] cursor-pointer">Tutorial</h1>
-        </li>
+          <li className="leading-[20px] text-[16px] flex  px-[24px] py-[14px] font-normal ">
+            <MdOutlinePersonalVideo size={20} />
+            <h1 className="pl-[10px] cursor-pointer">Watch Videos</h1>
+          </li>
         </Link>
 
         <li className=" flex border-b-2 mt-[10px] border-b-[#D4D5DB] mx-[15px] "></li>
 
-        <Link to="/syllabus" smooth="true" duration={500}>
-        <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal ">
-          <FiBookOpen size={20} />
-          <h1 className="pl-[10px] cursor-pointer">Syllabus</h1>
-        </li>
+        <Link to="/instruction" smooth="true" duration={500}>
+          <li className="leading-[20px] text-[16px] flex  px-[24px] py-[14px] font-normal ">
+            <PiExam size={20} />
+            <h1 className="pl-[10px] cursor-pointer">Take Exams</h1>
+          </li>
+        </Link>
+        <Link to="/easereads-ai" smooth="true" duration={500}>
+          <li className="leading-[20px] text-[16px] flex  px-[24px] py-[14px] font-normal ">
+            <GiArtificialIntelligence size={20} />
+            <h1 className="pl-[10px] cursor-pointer">Ask EaseReads A.I</h1>
+          </li>
+        </Link>
+        <Link to="/coming-soon" smooth="true" duration={500}>
+          <li className="leading-[20px] text-[16px] flex  px-[24px] py-[14px] font-normal ">
+            <SlCalender size={20} />
+            <h1 className="pl-[10px] cursor-pointer">Study Planner</h1>
+          </li>
         </Link>
 
         {/* <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal ">
@@ -114,9 +154,9 @@ const Navbar = () => {
         </li> */}
 
         <Link to="/contact" smooth="true" duration={500}>
-          <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal ">
+          <li className="leading-[20px] text-[16px] flex  px-[24px] py-[14px] font-normal ">
             <MdOutlineContactPhone size={24} />
-            <h1 className="pl-[10px] cursor-pointer">Contact</h1>
+            <h1 className="pl-[10px] cursor-pointer">Contact Us</h1>
           </li>
         </Link>
 
@@ -126,49 +166,87 @@ const Navbar = () => {
             <h1 className="pl-[10px] cursor-pointer">Pricing</h1>
           </li>
         </Link> */}
-        { user ?  (
-          <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal"
-          onClick={LogOut}
+        {user ? (
+          <li
+            className="leading-[20px] text-[16px] flex  px-[24px] py-[14px] font-normal"
+            onClick={LogOut}
           >
             <AiOutlineLogout size={24} />
             <h1 className="pl-[10px] cursor-pointer">LogOut</h1>
           </li>
-        ) : ""}
-        
+        ) : (
+          ""
+        )}
       </ul>
 
       {/* big screen topBar */}
 
       <ul className="hidden flex-row space-x-3 lg:space-x-6   md:flex items-center">
-         
-        <li>
+        <li className="hover:border-b-2 hover:border-b-primary0Blue">
           <Link to="/" smooth="true" duration={500}>
             {" "}
             Home
           </Link>
         </li>
-        <li>
+        <li className="hover:border-b-2 hover:border-b-primary0Blue">
           <Link to="/about" smooth="true" duration={500}>
-            About
+            About Us
           </Link>
         </li>
-        <li>
-          <Link to="/view-subject" smooth="true" duration={500}>
-          View-Subjects
-          </Link>
+
+        {/* Add the dropdown for big screens */}
+        <li
+          className="relative group"
+          onMouseEnter={() => setDropdownOpen(true)}
+          onMouseLeave={() => setDropdownOpen(false)}
+        >
+          <span className="cursor-pointer flex border-2 border-primary0Blue p-2 rounded-xl text-primary7 ">
+            Solutions Provided
+            <RiArrowDownSFill size={24} className="ml-2" />
+          </span>
+          <ul className="absolute hidden w-[250px] transform  ease-in-out duration-500 delay-700 shadow-md shadow-primary7  bg-primary4 rounded-xl text-primary7 font-medium p-4  space-y-2 group-hover:block">
+            <Link to="/view-subject" smooth="true" duration={500}>
+              <li className="flex items-center p-4 hover:bg-primary6  hover:text-primary1">
+                <FiBookOpen size={20} />
+                <span className="pl-2 cursor-pointer">Read Books</span>
+              </li>
+            </Link>
+
+            <Link to="/video-page" smooth="true" duration={500}>
+              <li className="flex items-center p-4 hover:bg-primary6 hover:text-primary1">
+                <MdOutlinePersonalVideo size={20} />
+                <span className="pl-2 cursor-pointer">Watch Videos</span>
+              </li>
+            </Link>
+
+            <Link to="/instruction" smooth="true" duration={500}>
+              <li className="flex items-center p-4 hover:bg-primary6 hover:text-primary1">
+                <PiExam size={20} />
+                <span className="pl-2 cursor-pointer">Take Exam</span>
+              </li>
+            </Link>
+
+            <Link to="/easereads-ai" smooth="true" duration={500}>
+              <li className="flex items-center p-4 hover:bg-primary6 hover:text-primary1">
+                <GiArtificialIntelligence size={20} />
+                <span className="pl-2 cursor-pointer">Ask EaseReads A.I</span>
+              </li>
+            </Link>
+
+            <Link to="/coming-soon" smooth="true" duration={500}>
+              <li className="flex items-center p-4 hover:bg-primary6 hover:text-primary1">
+                <SlCalender size={20} />
+                <span className="pl-2 cursor-pointer">Study Planner</span>
+              </li>
+            </Link>
+
+            {/* Add more secondary options as needed */}
+          </ul>
         </li>
-         <li>
-          <Link to="/video-page" smooth="true" duration={500}>
-          Tutorial
-          </Link>
-        </li>
-        <Link to="/syllabus" smooth="true" duration={500}>
-           <li>Syllabus</li>
-        </Link>
-       
-        <li>
+
+        <li className="hover:border-b-2 hover:border-b-primary0Blue">
           <Link to="/contact" smooth="true" duration={500}>
-            Contact
+            Contact Us
           </Link>
         </li>
 
@@ -179,33 +257,30 @@ const Navbar = () => {
           </button>
         </Link> */}
 
-        {user ? 
-        ( 
-        <div className="flex flex-col text-center ">
-          <p className=" text-[22px] font-semibold md:text-[18px] lg:text-[20px]">Welcome {user}</p> 
-          <p className="font-medium cursor-pointer"
-          onClick={LogOut}
-          >Logout</p>
-        </div> 
-          )
-        : 
-        ( 
+        {user ? (
+          <div className="flex flex-col text-center ">
+            <p className=" text-[22px] font-semibold md:text-[18px] lg:text-[20px]">
+              Welcome {user}
+            </p>
+            <p className="font-medium cursor-pointer " onClick={LogOut}>
+              Logout
+            </p>
+          </div>
+        ) : (
           <div className="flex ">
-            <Link to="/sign-up" smooth="true" duration={500} >
-               <li >
-          <h1  className="text-primary0Blue border-2 border-primary2 p-2 rounded-[45px] font-semibold">Create Account</h1>
-        </li>
-        </Link>
+            <Link to="/sign-up" smooth="true" duration={500}>
+              <li className="hover:border-b-2 hover:border-b-primary0Blue">
+                <h1 className="  font-semibold">Sign Up</h1>
+              </li>
+            </Link>
 
-        <Link to="/login" smooth="true" duration={500}>
-          <li className="pl-[20px]" >
-          <h1 className="bg-primary0Blue text-primary1  p-2 rounded-[45px] font-semibold">Log in</h1>
-        </li>
-        </Link>
-
-          </div> 
-        ) 
-        }
+            <Link to="/login" smooth="true" duration={500}>
+              <li className="ml-4 hover:border-b-2 hover:border-b-primary0Blue">
+                <h1 className=" text-primary7   font-semibold">Log in</h1>
+              </li>
+            </Link>
+          </div>
+        )}
         {/* <Link to="/signup" smooth="true" duration={500}>
         <li >
           <h1 >Sign-up</h1>

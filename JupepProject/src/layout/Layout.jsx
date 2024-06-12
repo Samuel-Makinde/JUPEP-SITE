@@ -2,17 +2,18 @@ import PropTypes from "prop-types";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, showFooter = true }) => {
   return (
     <div>
       <Navbar />
       <main>{children}</main>
-      <Footer />
+      {showFooter && <Footer />}
     </div>
   );
 };
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  showFooter: PropTypes.bool,
 };
 export default Layout;

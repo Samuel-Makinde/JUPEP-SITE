@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import SignUp from "./pages/Registration/SignUp";
-import Login from "./pages/Registration/Login"; 
+import Login from "./pages/Registration/Login";
 import Home from "./pages/Home/Home";
 import ContactUs from "./pages/Contact/ContactUs";
 import Pricing from "./pages/Pricing-Page/Pricing";
@@ -23,13 +23,18 @@ import VideoPage from "./pages/VideoPage/VideoPage";
 import AdminLogin from "./pages/Registration/AdminLogin";
 import AdminLayout from "./layout/AdminLayout";
 import AdminHome from "./pages/Admin/AdminHome";
+import { ComingSoon } from "./pages/ComingSoon/ComingSoon";
+import EaseReadsAL from "./pages/EaseReadsAI/EaseReadsAL";
+import Instruction from "./pages/ExamsPage/Instruction";
+import SelectDetail from "./pages/ExamsPage/SelectDetail";
+import ExamPage from "./pages/ExamsPage/ExamQuestions";
 
 function App() {
   return (
     <div>
-        <Router>
-      <UserProvider>
-           <ScrollToTop />
+      <Router>
+        <UserProvider>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/sign-up" element={<SignUp />} />
@@ -45,31 +50,35 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/syllabus" element={<Syllabus />} />
             <Route path="/view-subject" element={<ViewSubject />} />
-            <Route path="/view-subject/third-party-cookie" element={<ThirdPartyCookie />} />
+            <Route
+              path="/view-subject/third-party-cookie"
+              element={<ThirdPartyCookie />}
+            />
             <Route path="/video-page" element={<VideoPage />} />
+            <Route path="/coming-soon" element={<ComingSoon />} />
+            <Route path="/easereads-ai" element={<EaseReadsAL />} />
+            <Route path="/instruction" element={<Instruction />} />
+            <Route path="/select-details" element={<SelectDetail />} />
+            <Route path="/exam-page" element={<ExamPage />} />
 
             <Route path="/admin-login" element={<AdminLogin />} />
 
-             <Route
-            path='/admin/*'
-            element={
-              <AdminLayout>
-                <Routes>
-                  <Route path="" element={<AdminHome />} />
-                </Routes>
-              </AdminLayout>
-            }
-          /> 
-            
+            <Route
+              path="/admin/*"
+              element={
+                <AdminLayout>
+                  <Routes>
+                    <Route path="" element={<AdminHome />} />
+                  </Routes>
+                </AdminLayout>
+              }
+            />
 
             {/* <Route path="/file-upload" element={<UploadFile />} /> */}
-            <Route path='*' element={<Error />} />
-
-
-          </Routes> 
-      </UserProvider>
-        </Router>
-      
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </UserProvider>
+      </Router>
     </div>
   );
 }

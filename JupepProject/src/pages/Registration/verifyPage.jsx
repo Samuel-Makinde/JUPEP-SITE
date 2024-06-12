@@ -1,51 +1,49 @@
 import { Link } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
-import logo from "../../assets/logo/ease read logoooreduced png-09.png"
+import logo from "../../assets/logo/ease read logoooreduced png-09.png";
 import "./Reg.css";
 import axios from "axios";
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner";
-import { useLocation } from "react-router-dom"
-
+import { useLocation } from "react-router-dom";
 
 const VerifyPage = () => {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
 
   // Access location to get URL parameters
-const location = useLocation();
-const queryParams = new URLSearchParams(location.search);
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
 
-const email = queryParams.get("email");
-const firstName = queryParams.get("firstName");
-// const baseUrl = import.meta.env.EASEREADS_BASE_URL;
-
+  const email = queryParams.get("email");
+  const firstName = queryParams.get("firstName");
+  // const baseUrl = import.meta.env.EASEREADS_BASE_URL;
 
   const onSubmit = async () => {
-    setLoading(true) 
+    setLoading(true);
     try {
-      const response = await axios.post(`https://jupeb-site-backend.onrender.com/api/v1/resend-email`, {
-      email: email,
-      firstName: firstName,
-    })
-    setLoading(false)
-     toast.success(response.data.msg, {
-        onClose: () => {
-      },
-    })
+      const response = await axios.post(
+        `https://jupeb-site-backend.onrender.com/api/v1/resend-email`,
+        {
+          email: email,
+          firstName: firstName,
+        }
+      );
+      setLoading(false);
+      toast.success(response.data.msg, {
+        onClose: () => {},
+      });
     } catch (error) {
-      setLoading(false)
-       toast.error(error.response.data.msg, {
-    autoClose: false,
-    closeOnClick: true,
-    onClose: () => {
-  },
-})   
-}
-}
-    
+      setLoading(false);
+      toast.error(error.response.data.msg, {
+        autoClose: false,
+        closeOnClick: true,
+        onClose: () => {},
+      });
+    }
+  };
 
   return (
     <main className="w-full h-screen  md:bg-[#A4C6FC]">
@@ -87,7 +85,7 @@ const firstName = queryParams.get("firstName");
           </div>
         </div>
       </div>
-       {loading && <LoadingSpinner />}
+      {loading && <LoadingSpinner />}
     </main>
   );
 };

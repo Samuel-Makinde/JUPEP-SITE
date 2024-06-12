@@ -18,7 +18,6 @@ const Error = () => {
         </Link>
         </div>
         </div>
-        
       </div>
   )
 }
