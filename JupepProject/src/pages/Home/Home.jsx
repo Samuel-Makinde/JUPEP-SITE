@@ -6,6 +6,7 @@ import { FaStar } from "react-icons/fa";
 import FAQPage from "../FAQ/FAQPage";
 import aboutUs from "../../assets/Home Landing Image/about-us.png";
 import reading from "../../assets/Home Landing Image/reading.png";
+// import Lnew from "../../assets/logo/Lnew.png"
 import recommended1 from "../../assets/Home Landing Image/recommended videos.png";
 import exam from "../../assets/Home Landing Image/exams.png";
 import easereadAi from "../../assets/Home Landing Image/ai.png";
@@ -16,11 +17,13 @@ import peterAkojede from "../../assets/Home Landing Image/peterAkojede.jpg";
 import dave from "../../assets/Home Landing Image/dave.jpg";
 import samuel from "../../assets/Home Landing Image/samuel.png";
 import peter from "../../assets/Home Landing Image/peter.jpg";
+
 // import landing from "../../assets/Home Landing Image/landing2.jpeg";
 
 // import samuel from "../../assets/Home Landing Image/samuel.png"
 import { FaStarHalfAlt } from "react-icons/fa";
 import styles from "./home.module.css";
+import Courses from "../../components/coursecard/data";
 // import { useEffect, useState } from "react";
 // import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
@@ -110,6 +113,20 @@ const Home = () => {
                   </Link>
                 </div>
               </div>
+            </div>
+ 
+                    {/* courses */}
+            <div>
+               <h2>Browse all text book</h2>
+               <p>These are the most popular courses among REMSANA Courses learners worldwide in year 2024</p>
+
+               <h3>Recommended  for you</h3>
+               <div className="flex">
+               <Courses/>
+               </div>
+              
+
+
             </div>
 
             {/* video sections */}

@@ -16,6 +16,7 @@ import { MdOutlinePersonalVideo } from "react-icons/md";
 import { PiExam } from "react-icons/pi";
 import { GiArtificialIntelligence } from "react-icons/gi";
 import { SlCalender } from "react-icons/sl";
+import { DarkThemeToggle, Flowbite } from "flowbite-react";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -49,6 +50,26 @@ const Navbar = () => {
     };
   }, [toggle]);
 
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedMode = localStorage.getItem("darkMode");
+    return savedMode ? JSON.parse(savedMode) : false;
+  });
+
+  // Handle theme change
+  const handleThemeChange = () => {
+    setDarkMode(!darkMode);
+  };
+
+  // Apply theme class to body and save preference to local storage
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+    localStorage.setItem("darkMode", JSON.stringify(darkMode));
+  }, [darkMode]);
+
   return (
     <main className="fixed w-full h-[60px] flex justify-between font-roboto items-center px-4 md:px-6 lg:px-8 xl:px-16 bg-primary4 dark:bg-darkGray text-primary7 shadow-md z-30 font-euclid capitalize">
       <div onClick={handleToggle} className="md:hidden z-30" ref={navbarRef}>
@@ -61,13 +82,19 @@ const Navbar = () => {
         )}
       </div>
 
+      <div
+        onClick={handleThemeChange}
+        className="md:hidden w-16  flex h-[32px] justify-center items-center rounded-lg border-[4px] border-[#E5E7EB] cursor-pointer"
+      >
+        <DarkThemeToggle className="h-[30px]" onClick={handleThemeChange} />
+      </div>
       <Link to="/" smooth="true" duration={500}>
         <div className=" h-[28px] md:h-full  md:flex items-center  cursor-pointer ">
           <img src={logo} alt="logo" className=" h-[30px] md:h-[34px]" />
         </div>
       </Link>
 
-      {/* mobile-view-navbar */}
+      {/* mobile-view-sidebar */}
       <ul
         className={` transform  ease-in-out duration-500 delay-150 ${
           toggle ? "translate-x-0" : "-translate-x-full"
@@ -148,11 +175,6 @@ const Navbar = () => {
             <h1 className="pl-[10px] cursor-pointer">Study Planner</h1>
           </li>
         </Link>
-
-        {/* <li className="text-[#54555B] leading-[20px] text-[16px] flex  px-[24px] py-[16px] font-normal ">
-          <img src={contacts} alt="contact" className="cursor-pointer" />
-          <h1 className="pl-[10px] cursor-pointer">Contact us</h1>
-        </li> */}
 
         <Link to="/contact" smooth="true" duration={500}>
           <li className="leading-[20px] text-[16px] flex  px-[24px] py-[14px] font-normal ">
@@ -251,14 +273,12 @@ const Navbar = () => {
             Contact Us
           </Link>
         </li>
-
-        {/* <Link to="/pricing" smooth="true" duration={500}>
-          <button className="bg-[#4190EA] rounded-md shadow-md shadow-[#4190EA] hover:opacity-80 flex text-white px-[10px] py-[7px]">
-            <TbCurrencyNaira size={24} className="mr-[5px]" />
-            Pricing
-          </button>
-        </Link> */}
-
+        <div
+          onClick={handleThemeChange}
+          className=" w-16  flex h-[32px] justify-center items-center rounded-lg border-[4px] border-[#E5E7EB] cursor-pointer"
+        >
+          <DarkThemeToggle className="h-[30px]" onClick={handleThemeChange} />
+        </div>
         {user ? (
           <div className="flex flex-col text-center ">
             <p className=" text-[22px] font-semibold md:text-[18px] lg:text-[20px]">
@@ -288,18 +308,6 @@ const Navbar = () => {
             </Link>
           </div>
         )}
-        {/* <Link to="/signup" smooth="true" duration={500}>
-        <li >
-          <h1 >Sign-up</h1>
-        </li>
-        </Link>
-
-        <Link to="/login" smooth="true" duration={500}>
-        <li >
-          
-          <h1 >Log in</h1>
-        </li>
-        </Link> */}
       </ul>
     </main>
   );

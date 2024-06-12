@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx,vue}"],
+  darkMode: 'class',
+  content: [
+    './public/**/*.html',
+    './src/**/*.{js,jsx,ts,tsx,vue}',
+  ],
 
   theme: {
     screens: {
@@ -27,6 +31,7 @@ export default {
         primary7: "#000000",
         primary8: "#FCFBF4",
         primary9: "#EAAA00",
+        primary10: "#60B342",
         secR: "#FFD700",
         secT: "#85868D",
         secH: "#000000",

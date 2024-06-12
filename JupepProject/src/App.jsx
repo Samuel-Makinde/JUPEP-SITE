@@ -28,6 +28,11 @@ import EaseReadsAL from "./pages/EaseReadsAI/EaseReadsAL";
 import Instruction from "./pages/ExamsPage/Instruction";
 import SelectDetail from "./pages/ExamsPage/SelectDetail";
 import ExamPage from "./pages/ExamsPage/ExamQuestions";
+import Paystack from "./pages/paystack";
+import AdminUsers from "./pages/Admin/Users";
+import AdminTransaction from "./pages/Admin/AdminTransaction";
+import AdminMessages from "./pages/Admin/AdminMessages";
+import AdminSupport from "./pages/Admin/AdminSupport";
 
 function App() {
   return (
@@ -62,13 +67,18 @@ function App() {
             <Route path="/exam-page" element={<ExamPage />} />
 
             <Route path="/admin-login" element={<AdminLogin />} />
+            <Route path="/payment" element={<Paystack />} />
 
             <Route
               path="/admin/*"
               element={
                 <AdminLayout>
                   <Routes>
-                    <Route path="" element={<AdminHome />} />
+                    <Route path="dashboard" element={<AdminHome />} />
+                    <Route path="users" element={<AdminUsers />} />
+                    <Route path="transaction" element={<AdminTransaction />} />
+                    <Route path="messages" element={<AdminMessages />} />
+                    <Route path="support" element={<AdminSupport />} />
                   </Routes>
                 </AdminLayout>
               }

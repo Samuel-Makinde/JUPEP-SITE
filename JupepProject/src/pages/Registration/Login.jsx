@@ -47,7 +47,7 @@ const Login = () => {
   });
 
   return (
-    <main className="-full h-full  font-body  text-secH ">
+    <main className="w-full h-full  font-body  text-secH ">
       <div className="w-full h-full"></div>
 
       <div className=" w-full min-h-screen md:grid md:grid-cols-2">
