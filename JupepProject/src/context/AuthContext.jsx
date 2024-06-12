@@ -61,19 +61,7 @@ const UserProvider = ({ children }) => {
     }
   };
 
-  // const fetchUser = async () => {
-  //     try {
-  //       const { data } = await axios.post(`https://jupeb-site-backend.onrender.com/api/v1/showMe`, {},
-  //       {
-  //         withCredentials: true, // Include cookies in the request
-  //       }
-  //       );
-  //       setUser(data.username);
-  //     } catch (error) {
-  //       setUser(null);
-  //     }
-  //     setLoading(false);
-  //   };
+
 
   useEffect(() => {
     const storedUsername = sessionStorage.getItem("username");
@@ -110,17 +98,7 @@ const UserProvider = ({ children }) => {
     }
   };
 
-  // const getBooks = async () => {
-  //   try {
-  //     const response = await axios.get("https://jupeb-site-backend.onrender.com/api/v1/books")
-  //   setBooks(response.data)
-  //   } catch (error) {
-  //   }
-  // }
 
-  //  useEffect(() => {
-  //   getBooks();
-  // }, []);
 
   return (
     <UserContext.Provider

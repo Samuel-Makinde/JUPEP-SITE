@@ -11,7 +11,7 @@ const ExamPage = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOptions, setSelectedOptions] = useState([]);
-  const [timer, setTimer] = useState(1 * 60); // 30 minutes in seconds
+  const [timer, setTimer] = useState(1 * 60 * 30); // 30 minutes in seconds
   const [examResults, setExamResults] = useState(null);
   const [showResults, setShowResults] = useState(false);
 
@@ -135,7 +135,9 @@ const ExamPage = () => {
   };
 
   // submit exam on using all the time
+
   useEffect(() => {
+    // if (questions.length >= 0) {
     const countdown = setInterval(() => {
       setTimer((prevTimer) => {
         if (prevTimer === 0) {
@@ -145,7 +147,9 @@ const ExamPage = () => {
         return prevTimer - 1;
       });
     }, 1000);
+
     return () => clearInterval(countdown);
+    // }
   }, [selectedOptions]);
 
   if (loading) {

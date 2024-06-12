@@ -42,32 +42,70 @@ const SelectDetail = () => {
     selectSubject();
   }, []);
 
+  // const handleSubjectChange = async (selectedOption) => {
+  //   // Update the selected subject when the dropdown value changes
+  //   console.log("This is selected option", selectedOption);
+  //   setSelectedSubject(selectedOption.value);
+  //   console.log("this is the currect subject", selectedSubject);
+
+  //   // Fetch subject parts when the selected subject changes
+  //   try {
+  //     setloading(true);
+
+  //     if (!selectedSubject.trim()) {
+  //       showToast("Please select a Subject");
+  //       return;
+  //     }
+  //     const response = await axios.post(
+  //       `https://jupeb-site-backend.onrender.com/api/v1/getSubjectPartNumber`,
+  //       {
+  //         selectedSubject: selectedOption.value,
+  //       }
+  //     );
+  //     setloading(false);
+  //     setPartNumber(response.data.partNumbers);
+  //   } catch (error) {
+  //     setloading(false);
+  //     console.log(error);
+  //     showToast(error.response.data.msg);
+  //   }
+  // };
+
   const handleSubjectChange = async (selectedOption) => {
     // Update the selected subject when the dropdown value changes
-    setSelectedSubject(selectedOption);
-
-    // Fetch subject parts when the selected subject changes
-    try {
-      setloading(true);
-
-      if (!selectedSubject.trim()) {
-        showToast("Please select a Subject");
-        return;
-      }
-      const response = await axios.post(
-        `https://jupeb-site-backend.onrender.com/api/v1/getSubjectPartNumber`,
-        {
-          selectedSubject: selectedOption.value,
-        }
-      );
-      setloading(false);
-      setPartNumber(response.data.partNumbers);
-    } catch (error) {
-      setloading(false);
-      console.log(error);
-      showToast(error.response.data.msg);
-    }
+    console.log("This is selected option", selectedOption);
+    setSelectedSubject(selectedOption.value);
   };
+
+  useEffect(() => {
+    // Fetch subject parts when the selected subject changes
+    const fetchData = async () => {
+      try {
+        setloading(true);
+
+        if (!selectedSubject.trim()) {
+          showToast("Please select a Subject");
+          return;
+        }
+
+        const response = await axios.post(
+          `https://jupeb-site-backend.onrender.com/api/v1/getSubjectPartNumber`,
+          {
+            selectedSubject: selectedSubject,
+          }
+        );
+
+        setloading(false);
+        setPartNumber(response.data.partNumbers);
+      } catch (error) {
+        setloading(false);
+        console.log(error);
+        showToast(error.response.data.msg);
+      }
+    };
+
+    fetchData(); // Call the fetchData function when selectedSubject changes
+  }, [selectedSubject]); // Add selectedSubject as a dependency to the useEffect hook
 
   const getAllTopic = async () => {
     setLoading(true);
@@ -84,7 +122,7 @@ const SelectDetail = () => {
       const topicsResponse = await axios.post(
         `https://jupeb-site-backend.onrender.com/api/v1/get-topic-name`,
         {
-          selectedSubject: selectedSubject.value,
+          selectedSubject: selectedSubject,
           selectedPartNumbers: selectedPartNumber,
         }
       );
@@ -134,7 +172,7 @@ const SelectDetail = () => {
   };
 
   const handleSubmit = async () => {
-    sessionStorage.setItem("subject", selectedSubject.value);
+    sessionStorage.setItem("subject", selectedSubject);
     sessionStorage.setItem("section", selectedPartNumber);
     sessionStorage.setItem("topic", selectedTopics);
     navigate("/exam-page");
