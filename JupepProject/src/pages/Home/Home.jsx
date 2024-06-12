@@ -36,7 +36,7 @@ const Home = () => {
 
   return (
     <Layout>
-      <main className="w-full h-full pt-[90px] font-body md:pt-0 text-2xl ">
+      <main className="w-full h-full pt-[90px] dark:bg-navyBlue  font-body md:pt-0 text-2xl ">
         {/* {isLogin ? ( */}
         <ImageSlider />
         {/* ) : ( */}
@@ -53,10 +53,10 @@ const Home = () => {
               className="h-[350px] md:h-[400px] w-[600px] "
             />
             <div className="w-full h-full    flex flex-col items-center ">
-              <h1 className=" text-2xl mt-[40px] text-secH font-roboto font-semibold ">
+              <h1 className=" text-2xl mt-[40px] text-secH dark:text-primary1 font-roboto font-semibold ">
                 Why US!
               </h1>
-              <p className="w-full md:w-8/12 text-center  text-[16px] text-primary3 ">
+              <p className="w-full md:w-8/12 text-center  text-[16px] text-primary3 dark:text-lightGray ">
                 Transform your learning journey with us! Dive into a wealth of
                 resources—books, engaging videos, and Easereads A.I for
                 personalized clarity on tough concepts. Take charge of your
@@ -75,11 +75,11 @@ const Home = () => {
                 {" "}
                 <strong>What we offer </strong>{" "}
               </h1>
-              <p className="w-full md:w-[500px] lg:w-[700px] text-center mt-[30px] h-full font-extralight text-[18px]">
+              <p className="w-full md:w-[500px] lg:w-[700px] text-center dark:text-lightGray mt-[30px] h-full font-extralight text-[18px]">
                 As a user, you will enjoy all the benefits listed below and more
               </p>
 
-              <div className="w-full h-full py-4 md:py-12 bg-primary4  md:px-6 lg:px-8 xl:px-20 flex flex-col-reverse md:flex-row-reverse md:justify-between mt-[30px]">
+              <div className="w-full h-full py-4 md:py-12 bg-primary4 dark:bg-darkBlue dark:text-lightGray  md:px-6 lg:px-8 xl:px-20 flex flex-col-reverse md:flex-row-reverse md:justify-between mt-[30px]">
                 <div className="w-full flex mt-8 md:mt-0  justify-center md:flex-none md:w-5/12">
                   <img
                     src={reading}
@@ -88,10 +88,10 @@ const Home = () => {
                   />
                 </div>
                 <div className=" px-4 md:px-0  md:w-5/12 md:text-left flex flex-col  ">
-                  <h1 className="text-lg sm:text-xl md:text-2xl mt-[40px] font-roboto md:mt-0 text-secH font-bold uppercase">
+                  <h1 className="text-lg sm:text-xl md:text-2xl mt-[40px] font-roboto md:mt-0 text-secH dark:text-primary1 font-bold uppercase">
                     Engage in the act of reading
                   </h1>
-                  <p className=" text-left   text-[16px] text-primary3">
+                  <p className=" text-left dark:text-lightGray  text-[16px] text-primary3">
                     Dive into a realm of academic excellence with our exclusive
                     collection of Jupeb textbooks. Each book is a treasure
                     trove, offering detailed explanations for every topic in
@@ -114,10 +114,10 @@ const Home = () => {
 
             {/* video sections */}
             <div className="w-full px-4 md:px-6 lg:px-8 xl:px-20 mt-[130px] ">
-              <h1 className="text-lg sm:text-xl md:text-2xl text-secH font-roboto font-bold uppercase  ">
+              <h1 className="text-lg sm:text-xl md:text-2xl text-secH  dark:text-primary1 font-roboto font-bold uppercase  ">
                 Recommended Videos for you{" "}
               </h1>
-              <p className="md:w-6/12 text-primary5 font-normal text-base ">
+              <p className="md:w-6/12 text-primary5 dark:text-lightGray font-normal text-base ">
                 Explore tailored knowledge with our recommended videos,
                 enhancing your understanding of specific subject topics.
                 Streamline your study sessions with content designed to amplify
@@ -307,7 +307,7 @@ const Home = () => {
 
             {/* practice exams */}
 
-            <div className="w-full h-full py-4 md:py-12 bg-primary4   md:px-6 lg:px-8 xl:px-20 flex flex-col-reverse md:flex-row md:justify-between mt-[130px]">
+            <div className="w-full h-full py-4 md:py-12 bg-primary4 dark:bg-darkBlue    md:px-6 lg:px-8 xl:px-20 flex flex-col-reverse md:flex-row md:justify-between mt-[130px]">
               <div className="w-full flex mt-8 md:mt-0  justify-center md:flex-none md:w-5/12">
                 <img
                   src={exam}
@@ -316,10 +316,10 @@ const Home = () => {
                 />
               </div>
               <div className=" px-4 md:px-0 md:w-6/12 flex flex-col  ">
-                <h1 className="text-xl md:text-2xl mt-[40px] font-roboto md:mt-0 text-secH font-semibold uppercase">
+                <h1 className="text-xl md:text-2xl mt-[40px] font-roboto md:mt-0 text-secH dark:text-primary1 font-semibold uppercase">
                   Test your limit by engaging in our exam
                 </h1>
-                <p className="  text-[16px] text-primary3">
+                <p className="  text-[16px] text-primary3 dark:text-lightGray">
                   Empower your learning journey with the flexibility to take
                   exams on any subject, section, or topic at your convenience.
                   Assess your exam readiness after studying each subject,
@@ -351,10 +351,10 @@ const Home = () => {
                 />
               </div>
               <div className="px-4 md:px-0  md:w-6/12 flex flex-col  ">
-                <h1 className="text-xl md:text-2xl mt-[40px] font-roboto md:mt-0 text-secH font-semibold uppercase">
+                <h1 className="text-xl md:text-2xl mt-[40px] font-roboto md:mt-0 text-secH dark:text-primary1 font-semibold uppercase">
                   Ask EaseReads AI Questions
                 </h1>
-                <p className=" text-[16px] text-primary3">
+                <p className=" text-[16px] text-primary3 dark:text-lightGray">
                   Elevate your learning experience with Easereads AI, your
                   instant companion for academic clarity. Seamlessly integrated
                   into our platform, this advanced AI allows students to ask
@@ -377,7 +377,7 @@ const Home = () => {
 
             {/* study plan */}
 
-            <div className="w-full h-full bg-primary4 py-4 md:py-12   md:px-6 lg:px-8 xl:px-20 flex flex-col-reverse md:flex-row md:justify-between mt-[130px]">
+            <div className="w-full h-full bg-primary4 py-4 md:py-12  dark:bg-darkBlue  md:px-6 lg:px-8 xl:px-20 flex flex-col-reverse md:flex-row md:justify-between mt-[130px]">
               <div className="w-full flex mt-8 md:mt-0  justify-center md:flex-none md:w-5/12">
                 <img
                   src={studyPlanner}
@@ -386,10 +386,10 @@ const Home = () => {
                 />
               </div>
               <div className="px-4 md:px-0  md:w-6/12 flex flex-col  ">
-                <h1 className="text-xl md:text-2xl mt-[40px] font-roboto md:mt-0 text-secH font-semibold uppercase">
+                <h1 className="text-xl md:text-2xl mt-[40px] font-roboto md:mt-0 text-secH dark:text-primary1 font-semibold uppercase">
                   Keep your Learning on Track
                 </h1>
-                <p className=" text-[16px] text-primary3">
+                <p className=" text-[16px] text-primary3 dark:text-lightGray">
                   Take control of your academic journey with our innovative
                   study planner feature. Tailor your study plan based on the
                   subjects or topics you want to tackle, ensuring a personalized
@@ -432,13 +432,13 @@ const Home = () => {
               </div>
               <div className="md:w-[440px] w-full h-full   py-4">
                 {" "}
-                <h3 className="font-semibold text-xl md:text-2xl font-roboto text-secH">
+                <h3 className="font-semibold text-xl md:text-2xl font-roboto text-secH dark:text-primary1">
                   Join our Whatsapp community for free
                 </h3>
-                <h4 className="font-medium  mt-[10px] text-[20px] text-secH">
+                <h4 className="font-medium  mt-[10px] text-[20px] text-secH dark:text-primary1">
                   Benefit of Joining{" "}
                 </h4>
-                <div className=" text-[16px] text-left mt-[15px] leading-snug text-secH">
+                <div className=" text-[16px] text-left mt-[15px] leading-snug text-secH dark:text-lightGray">
                   <p className="mt-[15px]">
                     Get help with Jupeb-related questions and study resources
                     provided by easereads.
@@ -459,10 +459,10 @@ const Home = () => {
             </div>
 
             <div
-              className={`w-full h-full px-4 md:h-[300px] bg-primary4 py-6 md:py-12  flex items-center justify-between  md:px-6 lg:px-8 xl:px-20 mt-[130px]   leading-snug`}
+              className={`w-full h-full px-4 md:h-[300px] bg-primary4 dark:bg-darkBlue dark:text-lightGray py-6 md:py-12  flex items-center justify-between  md:px-6 lg:px-8 xl:px-20 mt-[130px]   leading-snug`}
             >
               <div className="text-[16px] mb-[20px] font-body">
-                <h5 className="text-[30px] md:mt-[20px] font-roboto">
+                <h5 className="text-[30px] md:mt-[20px] font-roboto dark:text-primary1">
                   Start For free
                 </h5>
                 <div className="mt-[15px]">
@@ -500,10 +500,10 @@ const Home = () => {
           </div>
           {/* Testimonial  */}
           <div className="w-full h-full mt-[180px] md:px-6 lg:px-8 xl:px-20 px-4 ">
-            <h2 className="font-roboto font-semibold text-secH text-center text-xl  md:text-3xl">
+            <h2 className="font-roboto font-semibold text-secH text-center dark:text-primary1 text-xl  md:text-3xl">
               Testimonials from Past and current Students
             </h2>
-            <p className="font-normal  font-roboto text-base text-center mt-[20px]">
+            <p className="font-normal  font-roboto text-base text-center mt-[20px] dark:text-lightGray">
               Here are testimonies of past and present students. See impact on
               their confidence <br className="hidden md:flex" /> and impact in
               their academics
@@ -518,7 +518,7 @@ const Home = () => {
                     <FaStar size={24} className="text-secR ml-2" />
                     <FaStar size={24} className="text-secR ml-2" />
                   </div>
-                  <p className="h-56 md:h-56 lg:h-40  text-pS text-secH mt-[20px] font-medium font-roboto">
+                  <p className="h-56 md:h-56 lg:h-40  text-pS text-secH dark:text-lightGray mt-[20px] font-medium font-roboto">
                     Exceptional Resource! The platform offers an incredible
                     array of learning materials, from textbooks and videos to an
                     AI feature for instant clarification. The study planner is a
@@ -532,7 +532,7 @@ const Home = () => {
                       alt="user"
                       className="w-[70px] h-full rounded-xl "
                     />
-                    <p className="text-secH text-pL font-roboto font-medium">
+                    <p className="text-secH dark:text-primary1 text-pL font-roboto font-medium">
                       Peter Akojede
                     </p>
                   </div>
@@ -545,7 +545,7 @@ const Home = () => {
                     <FaStar size={24} className="text-secR ml-2" />
                     <FaStar size={24} className="text-secR ml-2" />
                   </div>
-                  <p className="h-56 md:h-56 lg:h-40 text-pS text-secH mt-[20px] font-medium font-roboto">
+                  <p className="h-56 md:h-56 lg:h-40 text-pS text-secH dark:text-lightGray mt-[20px] font-medium font-roboto">
                     Top-notch Exam Readiness! The practice exams in real-life
                     format have been invaluable in boosting my confidence. The
                     ability to customize exams based on subjects, sections, or
@@ -558,7 +558,7 @@ const Home = () => {
                       alt="user"
                       className="w-[70px] h-full rounded-xl "
                     />
-                    <p className="text-secH text-pL font-roboto font-medium">
+                    <p className="text-secH text-pL dark:text-primary1 font-roboto font-medium">
                       David Aderinto
                     </p>
                   </div>
@@ -574,7 +574,7 @@ const Home = () => {
                     <FaStar size={24} className="text-secR ml-2" />
                     <FaStarHalfAlt size={24} className="text-secR ml-2" />
                   </div>
-                  <p className="h-56 md:h-56 lg:h-40 text-pS text-secH mt-[20px] font-medium font-roboto">
+                  <p className="h-56 md:h-56 lg:h-40 dark:text-lightGray text-pS text-secH mt-[20px] font-medium font-roboto">
                     Innovative Learning Experience! Easereads AI is a standout
                     feature, providing instant answers to questions on
                     challenging topics. The user-friendly study planner has
@@ -588,7 +588,7 @@ const Home = () => {
                       alt="user"
                       className="w-[70px] h-full rounded-xl "
                     />
-                    <p className="text-secH text-pL font-roboto font-medium">
+                    <p className="text-secH dark:text-primary1 text-pL font-roboto font-medium">
                       Peter Adesoye
                     </p>
                   </div>
@@ -602,7 +602,7 @@ const Home = () => {
                     <FaStar size={24} className="text-secR ml-2" />
                     <FaStar size={24} className="text-secR ml-2" />
                   </div>
-                  <p className="h-56 md:h-56 lg:h-40 text-pS text-secH mt-[20px] font-medium font-roboto">
+                  <p className="h-56 md:h-56 lg:h-40 text-pS text-secH dark:text-lightGray mt-[20px] font-medium font-roboto">
                     Flexible and Comprehensive! The site&apos;s flexibility to
                     take exams on any subject, section, or topic is a
                     game-changer. The curated collection of recommended videos
@@ -616,7 +616,7 @@ const Home = () => {
                       alt="user"
                       className="w-[70px] h-full rounded-xl "
                     />
-                    <p className="text-secH text-pL font-roboto font-medium">
+                    <p className="text-secH dark:text-primary1 text-pL font-roboto font-medium">
                       Samuel Makinde
                     </p>
                   </div>

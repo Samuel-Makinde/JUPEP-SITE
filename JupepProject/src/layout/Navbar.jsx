@@ -50,14 +50,14 @@ const Navbar = () => {
   }, [toggle]);
 
   return (
-    <main className="fixed w-full h-[60px] flex justify-between font-roboto items-center px-4 md:px-6 lg:px-8 xl:px-16 bg-primary4 text-primary7 shadow-md z-30 font-euclid capitalize">
+    <main className="fixed w-full h-[60px] flex justify-between font-roboto items-center px-4 md:px-6 lg:px-8 xl:px-16 bg-primary4 dark:bg-darkGray text-primary7 shadow-md z-30 font-euclid capitalize">
       <div onClick={handleToggle} className="md:hidden z-30" ref={navbarRef}>
         {toggle ? (
           <div className="w-full h-[32px] bg- cursor-pointer flex justify-end items-center rounded-[20px]">
-            <FaTimes className="text-sec6 w-[18px] h-[16px]  transform ease-in-out delay-300 duration-500  hover:scale-110" />
+            <FaTimes className="text-sec6 dark:text-lightGray w-[18px] h-[16px]  transform ease-in-out delay-300 duration-500  hover:scale-110" />
           </div>
         ) : (
-          <FaBars className="text-sec6 w-[30px] h-[24px]  cursor-pointer transform hover:scale-110 ease-in-out delay-300 duration-500 " />
+          <FaBars className="text-sec6 dark:text-lightGray w-[30px] h-[24px]  cursor-pointer transform hover:scale-110 ease-in-out delay-300 duration-500 " />
         )}
       </div>
 
@@ -71,10 +71,10 @@ const Navbar = () => {
       <ul
         className={` transform  ease-in-out duration-500 delay-150 ${
           toggle ? "translate-x-0" : "-translate-x-full"
-        } w-3/4 bg-primary4 absolute top-0 left-0 h-screen md:hidden flex flex-col  pt-[50px]  shadow-md `}
+        } w-3/4 bg-primary4 dark:bg-darkGray dark:text-lightGray absolute top-0 left-0 h-screen md:hidden flex flex-col  pt-[50px]  shadow-md `}
       >
         {user ? (
-          <p className="w-full text-center text-[22px] font-semibold">
+          <p className="w-full dark:text-primary1 text-center text-[22px] font-semibold">
             Welcome {user}
           </p>
         ) : (
@@ -135,7 +135,8 @@ const Navbar = () => {
             <h1 className="pl-[10px] cursor-pointer">Take Exams</h1>
           </li>
         </Link>
-        <Link to="/easereads-ai" smooth="true" duration={500}>
+        {/* <Link to="/easereads-ai" smooth="true" duration={500}> */}
+        <Link to="/coming-soon" smooth="true" duration={500}>
           <li className="leading-[20px] text-[16px] flex  px-[24px] py-[14px] font-normal ">
             <GiArtificialIntelligence size={20} />
             <h1 className="pl-[10px] cursor-pointer">Ask EaseReads A.I</h1>
@@ -181,14 +182,14 @@ const Navbar = () => {
 
       {/* big screen topBar */}
 
-      <ul className="hidden flex-row space-x-3 lg:space-x-6   md:flex items-center">
-        <li className="hover:border-b-2 hover:border-b-primary0Blue">
+      <ul className="hidden flex-row space-x-3 lg:space-x-6 dark:text-lightGray  md:flex items-center">
+        <li className="hover:border-b-2 hover:border-b-primary0Blue dark:hover:border-b-sec5 dark:hover:text-primary1">
           <Link to="/" smooth="true" duration={500}>
             {" "}
             Home
           </Link>
         </li>
-        <li className="hover:border-b-2 hover:border-b-primary0Blue">
+        <li className="hover:border-b-2 hover:border-b-primary0Blue dark:hover:border-b-sec5 dark:hover:text-primary1">
           <Link to="/about" smooth="true" duration={500}>
             About Us
           </Link>
@@ -200,11 +201,11 @@ const Navbar = () => {
           onMouseEnter={() => setDropdownOpen(true)}
           onMouseLeave={() => setDropdownOpen(false)}
         >
-          <span className="cursor-pointer flex border-2 border-primary0Blue p-2 rounded-xl text-primary7 ">
+          <span className="cursor-pointer flex border-2 border-primary0Blue dark:border-secR p-2 rounded-xl text-primary7 dark:text-lightGray ">
             Solutions Provided
             <RiArrowDownSFill size={24} className="ml-2" />
           </span>
-          <ul className="absolute hidden w-[250px] transform  ease-in-out duration-500 delay-700 shadow-md shadow-primary7  bg-primary4 rounded-xl text-primary7 font-medium p-4  space-y-2 group-hover:block">
+          <ul className="absolute hidden w-[250px] transform  ease-in-out duration-500 delay-700 shadow-md shadow-primary7  bg-primary4  rounded-xl text-primary7 font-medium p-4  space-y-2 group-hover:block">
             <Link to="/view-subject" smooth="true" duration={500}>
               <li className="flex items-center p-4 hover:bg-primary6  hover:text-primary1">
                 <FiBookOpen size={20} />
@@ -226,7 +227,8 @@ const Navbar = () => {
               </li>
             </Link>
 
-            <Link to="/easereads-ai" smooth="true" duration={500}>
+            {/* <Link to="/easereads-ai" smooth="true" duration={500}> */}
+            <Link to="/coming-soon" smooth="true" duration={500}>
               <li className="flex items-center p-4 hover:bg-primary6 hover:text-primary1">
                 <GiArtificialIntelligence size={20} />
                 <span className="pl-2 cursor-pointer">Ask EaseReads A.I</span>
@@ -244,7 +246,7 @@ const Navbar = () => {
           </ul>
         </li>
 
-        <li className="hover:border-b-2 hover:border-b-primary0Blue">
+        <li className="hover:border-b-2 hover:border-b-primary0Blue dark:hover:border-b-sec5 dark:hover:text-primary1">
           <Link to="/contact" smooth="true" duration={500}>
             Contact Us
           </Link>
@@ -262,21 +264,26 @@ const Navbar = () => {
             <p className=" text-[22px] font-semibold md:text-[18px] lg:text-[20px]">
               Welcome {user}
             </p>
-            <p className="font-medium cursor-pointer " onClick={LogOut}>
+            <p
+              className="font-medium cursor-pointer hover:border-b-2 hover:border-b-primary0Blue dark:hover:border-b-sec5 dark:hover:text-primary1 "
+              onClick={LogOut}
+            >
               Logout
             </p>
           </div>
         ) : (
           <div className="flex ">
             <Link to="/sign-up" smooth="true" duration={500}>
-              <li className="hover:border-b-2 hover:border-b-primary0Blue">
+              <li className="hover:border-b-2 hover:border-b-primary0Blue dark:hover:border-b-sec5 dark:hover:text-primary1">
                 <h1 className="  font-semibold">Sign Up</h1>
               </li>
             </Link>
 
             <Link to="/login" smooth="true" duration={500}>
-              <li className="ml-4 hover:border-b-2 hover:border-b-primary0Blue">
-                <h1 className=" text-primary7   font-semibold">Log in</h1>
+              <li className="ml-4 hover:border-b-2 hover:border-b-primary0Blue dark:hover:border-b-sec5 dark:hover:text-primary1">
+                <h1 className=" text-primary7 dark:text-secR  font-semibold">
+                  Log in
+                </h1>
               </li>
             </Link>
           </div>

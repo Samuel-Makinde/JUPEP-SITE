@@ -6,32 +6,39 @@ import Button from "../../components/Button/Button";
 const ContactUs = () => {
   return (
     <Layout>
-      <main className="w-full h-full  bg-white px-4 md:px-6 lg:px-20 mb-[70px] font-roboto">
+      <main className="w-full h-full  bg-white px-4 md:px-6 lg:px-20 pb-[70px] font-roboto dark:bg-navyBlue">
         <div className="md:flex justify-between md:gap-[5rem]">
           <div className="w-full h-full md:w-5/12 pt-[100px] md:pt-[150px]">
-            <h1 className="text-[24px] md:text-4xl font-bold">Contact Us</h1>
-            <p className="lg:text-xl text-base font-light ">
+            <h1 className="text-[24px] md:text-4xl font-bold dark:text-primary1">
+              Contact Us
+            </h1>
+            <p className="lg:text-xl text-base font-light dark:text-lightGray">
               We&apos;d love to hear from you! If you have any questions,
               inquiries, or feedback, please contact us throught any of the
               channel or fill out the form and our team will get back to you as
               soon as possible.
             </p>
             <div className="mt-24 ">
-              <h2 className="font-bold text-lg md:text-2xl">Business Hours</h2>
-              <p className="lg:text-xl text-base">
+              <h2 className="font-bold text-lg md:text-2xl dark:text-primary1">
+                Business Hours
+              </h2>
+              <p className="lg:text-xl text-base dark:text-lightGray">
                 Monday to Friday: 9:00 AM - 6:00 PM (WAT) <br />
                 Saturday and Sunday: Closed
               </p>
             </div>
             <div className="w-full h-full mt-12 md:mt-24 text-base md:text-xl flex  flex-row justify-between ">
-              <p className="text-base">
+              <p className="text-base dark:text-lightGray">
                 {" "}
-                <span className="font-semibold lg:text-2xl">
+                <span className="font-semibold lg:text-2xl dark:text-primary1">
                   Call :
-                </span> <br /> 08129577490
+                </span>{" "}
+                <br /> 08129577490
               </p>
-              <p className="text-base">
-                <span className="font-semibold lg:text-2xl">Email :</span>
+              <p className="text-base dark:text-lightGray">
+                <span className="font-semibold lg:text-2xl dark:text-primary1">
+                  Email :
+                </span>
                 <br /> easereadscare@gmail.com
               </p>
             </div>
@@ -83,7 +90,7 @@ const ContactUs = () => {
           <div className="w-full h-[800px]   md:w-5/12  md:mt-28 rounded-xl sm:mt-[3rem] bg-primary8">
             <form
               className="w-full h-full mt-20 flex flex-col items-center "
-              // action="https://getform.io/f/4ad2067f-1328-47af-86e6-90c1a47749a5"
+              action="https://getform.io/f/4ad2067f-1328-47af-86e6-90c1a47749a5"
               method="POST"
             >
               <input
@@ -126,7 +133,7 @@ const ContactUs = () => {
                 value="Submit"
               /> */}
               <button
-                className={`bg-primary0Blue hover:bg-primary6 text-white font-bold py-2 px-4 rounded-[1.5rem] w-[90%] mt-10 h-[3.8rem]`}
+                className={`bg-primary0Blue hover:bg-primary6 text-white font-bold py-2 px-4 rounded-[1.5rem] w-[90%] mt-5 h-[3.8rem]`}
                 type="submit"
                 value="Submit"
               >

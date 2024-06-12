@@ -19,6 +19,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa";
 // import samuel from "../../assets/Home Landing Image/samuel.png";
 import peterAkojede from "../../assets/Home Landing Image/peterAkojede.jpg";
+import University from "../../data/University";
 
 const formSchema = yup.object().shape({
   userName: yup.string().required(" name can't be empty"),
@@ -103,16 +104,15 @@ const SignUp = () => {
       });
     }
   };
+  // "https://jupeb-site-backend.onrender.com/api/v1/get-all-universities"
 
   const getAllUniversity = async () => {
     try {
-      const response = await axios.get(
-        "https://jupeb-site-backend.onrender.com/api/v1/get-all-universities"
-      );
-      const result = response.data.data;
+      // const response = University;
+      const result = University;
       const sortedInstitution = result.sort((a, b) => {
-        const institutionA = a.university.toUpperCase();
-        const institutionB = b.university.toUpperCase();
+        const institutionA = a.name.toUpperCase();
+        const institutionB = b.name.toUpperCase();
         if (institutionA < institutionB) {
           return -1;
         }
@@ -334,10 +334,11 @@ const SignUp = () => {
                         Select University
                       </option>
                       {institution.map((uni) => (
-                        <option key={uni._id} value={uni.university}>
-                          {uni.university}
+                        <option key={uni.id} value={uni.name}>
+                          {uni.name}
                         </option>
                       ))}
+                      <option value=""> OTHERS</option>
                     </select>
                   </div>
                   <small

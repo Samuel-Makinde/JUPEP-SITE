@@ -22,7 +22,7 @@ const UserProvider = ({ children }) => {
     setLoading(true);
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/v1/login`,
+        `https://jupeb-site-backend.onrender.com/api/v1/login`,
         {
           email: data.email,
           password: data.password,

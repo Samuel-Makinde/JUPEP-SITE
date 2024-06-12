@@ -10,8 +10,13 @@ export default {
       xl: "1024px",
     },
     extend: {
-      animation: ["motion-safe"],
+      animation: ['motion-safe'],
+      darkMode: 'class',
       colors: {
+        darkGray: '#111827',
+        navyBlue: '#192841',
+        lightGray: "#D1D5DB",
+        darkBlue: "#1F2937",
         primary0Blue: "#203B8A",
         primary1: "#FFFFFF",
         primary2: "#5E6978",
@@ -32,7 +37,9 @@ export default {
         sec5: "#FFD700",
         sec6: "#54555B",
         sec7: "#25D366",
-        sec8: "#FF0000"
+        sec8: "#FF0000",
+        sec9: "#586CA7",
+        sec10: "#5E6978"
       },
       fontFamily: {
         body: ['"Open Sans"', "sans"],

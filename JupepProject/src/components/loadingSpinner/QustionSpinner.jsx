@@ -1,6 +1,6 @@
 const QustionSpinner = () => {
   return (
-    <div>
+    <div className="w-full h-screen flex flex-col  dark:bg-navyBlue items-center pt-32 ">
       <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
         Preparing Exams Question:
       </h2>

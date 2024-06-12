@@ -214,7 +214,9 @@ const ViewSubject = () => {
 
   return (
     <Layout>
-      <main className={`w-full h-full pt-[80px] mb-14 ${styles}`}>
+      <main
+        className={`w-full h-full pt-[80px] pb-14  dark:bg-navyBlue dark:text-lightGray ${styles}`}
+      >
         <div className="w-full h-full flex flex-col px-4 md:px-6 lg:px-8 xl:px-12">
           {books &&
             books.map((book) => (
@@ -231,17 +233,17 @@ const ViewSubject = () => {
                     />
                   </div>
                   <div className="w-full h-full flex flex-col justify-center md:pl-[20px]">
-                    <h1 className="text-[18px] font-bold mt-[20px] md:mt-0">
+                    <h1 className="text-[18px] dark:text-primary1 font-bold mt-[20px] md:mt-0">
                       {book.name} TextBook
                     </h1>
-                    <p className="text-[16px] text-gray-700">
+                    <p className="text-[16px] text-gray-700 dark:text-lightGray">
                       {book.description}
                     </p>
                     <div className="w-full h-full flex flex-col md:flex-row md:justify-evenly items-center">
                       <button
                         onClick={() => togglePdf(book)}
-                        className={`w-full md:w-[250px] h-[80px] text-[17px] px-2 rounded-[10px] shadow-md font-bold mt-[20px] ${
-                          book.opened ? "bg-gray-300" : "bg-blue-500"
+                        className={`w-full md:w-[250px] dark:text-primary1 h-[80px] text-[17px] px-2 rounded-[10px] shadow-md font-bold mt-[20px] ${
+                          book.opened ? "bg-gray-300 " : "bg-blue-500"
                         }`}
                       >
                         <span className="relative flex h-3 w-3 top-0">
@@ -258,7 +260,7 @@ const ViewSubject = () => {
                         to="/video-page"
                         smooth="true"
                         duration={500}
-                        className="w-full text-white md:w-[250px] px-2 h-[80px] text-[17px] rounded-[10px] shadow-md font-bold mt-[20px] bg-blue-900 flex justify-center items-center"
+                        className="w-full text-primary1 md:w-[250px] px-2 h-[80px] text-[17px] rounded-[10px] shadow-md font-bold mt-[20px] bg-blue-900 flex justify-center items-center"
                       >
                         <button>Watch {book.name} Videos</button>
                       </Link>
@@ -289,7 +291,7 @@ const ViewSubject = () => {
                       onLoadSuccess={onDocumentLoadSuccess}
                       onLoadError={handleError}
                       onItemClick={onItemClick}
-                      className="flex"
+                      className="flex "
                     >
                       {/* Render Table of Contents */}
                       {/* Use the state pageNumber for rendering pages */}

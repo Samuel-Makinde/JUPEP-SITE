@@ -10,8 +10,8 @@ const Pricing = () => {
   };
   return (
     <Layout>
-      <main className="w-full h-full   text-gray-800">
-        <div className="w-full h-full  px-4 md:px-6 lg:px-8 xl:px-12 bg-gradient-to-r from-[#fff7e5] to-white pt-[100px] md:pt-[150px] leading-snug">
+      <main className="w-full h-full   text-gray-800 ">
+        <div className="w-full h-full  px-4 md:px-6 lg:px-8 xl:px-12 bg-gradient-to-r from-[#fff7e5] to-white pt-[100px] dark:bg-navyBlue md:pt-[150px] leading-snug">
           <div className="w-full h-full flex flex-col justify-center items-center md:items-stretch  md:flex-row md:justify-between">
             <div className="w-full h-full ">
               <h1 className="text-[20px] md:text-[32px] lg:text-[48px] text-center md:text-start font-semibold">
