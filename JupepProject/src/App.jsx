@@ -33,6 +33,7 @@ import AdminUsers from "./pages/Admin/Users";
 import AdminTransaction from "./pages/Admin/AdminTransaction";
 import AdminMessages from "./pages/Admin/AdminMessages";
 import AdminSupport from "./pages/Admin/AdminSupport";
+import BookDetails from "./pages/PriceDetails/BookDetails";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
             <Route path="/user/verify-email" element={<UserVerifyEmail />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/pricing" element={<Pricing />} />
+            <Route path="/book-details" element={<BookDetails />} />
             <Route path="/about" element={<About />} />
             <Route path="/syllabus" element={<Syllabus />} />
             <Route path="/view-subject" element={<ViewSubject />} />

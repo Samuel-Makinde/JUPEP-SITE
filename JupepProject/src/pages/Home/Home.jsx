@@ -118,10 +118,10 @@ const Home = () => {
                     {/* courses */}
             <div>
                <h2>Browse all text book</h2>
-               <p>These are the most popular courses among REMSANA Courses learners worldwide in year 2024</p>
+               <p>These are the most popular courses among Jupeb Courses learners worldwide in year 2024</p>
 
                <h3>Recommended  for you</h3>
-               <div className="flex">
+               <div>
                <Courses/>
                </div>
               

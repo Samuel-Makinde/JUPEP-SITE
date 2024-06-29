@@ -1,7 +1,7 @@
 import React from 'react'
 import exam from "../../assets/Home Landing Image/exams.png"
 import samuel from "../../assets/Home Landing Image/samuel.png"
-import peter from "../../assets/Home Landing Image/samuel.png"
+import peter from "../../assets/Home Landing Image/peter.jpg"
 import Coursecard from './coursecard'
 
 const Courses = () => {
@@ -48,7 +48,7 @@ const Courses = () => {
   return (
 
 
-    <div className='flex my-[10px]'>
+    <div className='flex'>
       {
  coursecards.map ((coursecard, index) => (
     <Coursecard 
