@@ -116,18 +116,18 @@ const Home = () => {
             </div>
  
                     {/* courses */}
-            <div>
-               <h2>Browse all text book</h2>
-               <p>These are the most popular courses among Jupeb Courses learners worldwide in year 2024</p>
+            
+              <div className="text-3xl font-bold my-10 md:ml-[80px]">
+               <h2 className="">Browse all text book</h2>
+               <p className="text-lg mb-10">These are the most popular courses among Jupeb Courses learners worldwide in year 2024</p>
 
-               <h3>Recommended  for you</h3>
-               <div>
+               <h3 className="text-2xl font-semibold mb-4">Recommended  for you</h3>
+               </div>
+           
+
+            <div className="flex justify-center items-center">
                <Courses/>
                </div>
-              
-
-
-            </div>
 
             {/* video sections */}
             <div className="w-full px-4 md:px-6 lg:px-8 xl:px-20 mt-[130px] ">

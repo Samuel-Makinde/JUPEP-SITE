@@ -7,6 +7,7 @@ import Coursecard from './coursecard'
 const Courses = () => {
     const coursecards = [
         {
+            id: 1,
             img: exam,
             course: "Biology",
             hours: "2hour",
@@ -15,7 +16,7 @@ const Courses = () => {
             author: "Musa Doe",
             authorImg: samuel
         },
-        {
+        {   id: 2,
             img: exam,
             course: "Chemistry",
             hours: "3hour",
@@ -24,7 +25,7 @@ const Courses = () => {
             author: "Jane Doe",
             authorImg: peter,
         },
-        {
+        {   id: 3,
             img: exam,
             course: "Physics",
             hours: "1hour",
@@ -33,7 +34,7 @@ const Courses = () => {
             author: "Musa Doe",
             authorImg: samuel,
         },
-        {
+        {   id: 4,
             img: exam,
             course: "Accounting",
             hours: "5hours",

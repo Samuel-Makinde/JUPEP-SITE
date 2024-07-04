@@ -6,7 +6,7 @@ import { FaRegBookmark } from "react-icons/fa6";
 const Coursecard = ({ img, course, hours, level, price, author, authorImg}) => {
   return (
     <div>
-       <div className="border rounded-[10px] w-[320px] ml-[15px]">
+       <div className="border rounded-[10px] w-[290px] ml-[15px]">
                 <img className="w-full" src={img} alt="courses"/>
                 <p className="pl-[20px] pt-[20px] "> {course} </p>
                 <div className="flex space-around w-[100px] pl-[20px] pt-[25px]"> <span className="pt-[3px]"><IoTimeOutline size={20} /> </span> <p className="text-xl pl-[8px]">{hours}</p>  <span className="pl-[15px]"> <GiNetworkBars size={20}/></span> <p className="text-xl pl-[10px]">{level}</p></div>
