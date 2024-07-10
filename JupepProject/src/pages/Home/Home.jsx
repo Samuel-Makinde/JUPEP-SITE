@@ -91,7 +91,7 @@ const Home = () => {
                   <h1 className="text-lg sm:text-xl md:text-2xl mt-[40px] font-roboto md:mt-0 text-secH dark:text-primary1 font-bold uppercase">
                     Engage in the act of reading
                   </h1>
-                  <p className=" text-left dark:text-lightGray  text-[16px] text-primary3">
+                  <p className=" text-left dark:text-lightGray  text-[16px] text-primary3 font-roboto">
                     Dive into a realm of academic excellence with our exclusive
                     collection of Jupeb textbooks. Each book is a treasure
                     trove, offering detailed explanations for every topic in

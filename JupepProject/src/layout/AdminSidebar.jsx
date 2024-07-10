@@ -96,6 +96,25 @@ const AdminSidebar = () => {
       </NavLink>
 
       <NavLink
+        to="/admin/subscription"
+        className={`w-[80%] 2xl:h-20 h-[50px] dark:text-sec2 ${
+          isActive === "/admin/subscription"
+            ? "rounded-[10px] bg-primary2 dark:text-primary3 text-primary1"
+            : ""
+        } mt-4 2xl:mt-6 hover:bg-primary2  hover:text-primary3 hover:rounded-[10px]`}
+        onClick={() => handleOptionClick("/admin/subscription")}
+      >
+        <button className="w-full h-full flex justify-center items-center font-semibold capitalize">
+          {isActive === "/admin/subscription" ? (
+            <img src={userWhite} alt="dashborad" className="mr-5 " />
+          ) : (
+            <img src={user} alt="dashborad" className="mr-5 " />
+          )}
+          <p className="w-[60%] text-left">Subscriptions</p>
+        </button>
+      </NavLink>
+
+      <NavLink
         to="/admin/messages"
         className={`w-[80%] 2xl:h-20 h-[50px] dark:text-sec2  ${
           isActive === "/admin/messages"
@@ -140,25 +159,6 @@ const AdminSidebar = () => {
               10
             </span>
           </p>
-        </button>
-      </NavLink>
-
-      <NavLink
-        to="/admin/setting"
-        className={`w-[80%] 2xl:h-20 h-[50px] dark:text-sec2 ${
-          isActive === "/admin/setting"
-            ? "rounded-[10px] bg-primary2 dark:text-primary3 text-primary1"
-            : ""
-        } mt-4 2xl:mt-6 hover:bg-primary2  hover:text-primary3 hover:rounded-[10px]`}
-        onClick={() => handleOptionClick("/admin/setting")}
-      >
-        <button className="w-full h-full flex justify-center items-center font-semibold capitalize">
-          {isActive === "/admin/setting" ? (
-            <img src={settingWhite} alt="dashborad" className="mr-5 " />
-          ) : (
-            <img src={setting} alt="dashborad" className="mr-5 " />
-          )}
-          <p className="w-[60%] text-left">settings</p>
         </button>
       </NavLink>
 

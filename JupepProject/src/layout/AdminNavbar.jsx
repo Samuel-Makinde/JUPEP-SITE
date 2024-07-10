@@ -46,20 +46,24 @@ import logo from "../assets/logo/ease read logoooreduced png-09.png";
 import { DarkThemeToggle, Flowbite } from "flowbite-react";
 
 const AdminNavbar = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedMode = localStorage.getItem("darkMode");
+    return savedMode ? JSON.parse(savedMode) : false;
+  });
 
   // Handle theme change
   const handleThemeChange = () => {
     setDarkMode(!darkMode);
   };
 
-  // Apply theme class to body
+  // Apply theme class to body and save preference to local storage
   useEffect(() => {
     if (darkMode) {
       document.body.classList.add("dark");
     } else {
       document.body.classList.remove("dark");
     }
+    localStorage.setItem("darkMode", JSON.stringify(darkMode));
   }, [darkMode]);
 
   return (

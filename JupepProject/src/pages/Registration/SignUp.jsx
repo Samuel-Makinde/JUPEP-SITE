@@ -135,7 +135,7 @@ const SignUp = () => {
   }, []);
 
   return (
-    <main className="w-full h-full font-body text-secH ">
+    <main className="w-full h-full font-body text-secH dark:text-lightGray dark:bg-darkBlue ">
       <div className="w-full min-h-screen md:grid md:grid-cols-2">
         <div className=" h-full bg-primary0Blue pb-[20px] px-6 md:px-3 lg:px-6">
           <h1 className="text-2xl md:text-4xl pt-[40px] text-white font-extrabold">
@@ -177,17 +177,19 @@ const SignUp = () => {
           </div>
         </div>
 
-        <div className="h-full md:bg-primary1   px-6 md:px-3 lg:px-14 xl:px-16 mt-[40px] md:mt-0 pb-[20px]">
+        <div className="h-full text-secH dark:text-lightGray dark:bg-darkBlue   px-6 md:px-3 lg:px-14 xl:px-16 mt-[40px] md:mt-0 pb-[20px]">
           <Link to="/" smooth="true" duration={500}>
             <div className="w-[37px] h-[37px] flex justify-center bg-primary0Blue mt-[40px] items-center">
               <FaArrowLeftLong size={27} className="text-primary1" />
             </div>
           </Link>
           <div className="w-full  mt-[20px]">
-            <h1 className="text-[#04050C] text-[24px] md:text-[48px] ">
+            <h1 className="dark:text-lightGray text-[24px] md:text-[48px] ">
               Sign Up
             </h1>
-            <p className="text-secH mt-[25px]">Sign up and starting learning</p>
+            <p className=" dark:text-lightGray mt-[25px]">
+              Sign up and starting learning
+            </p>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
             {/* social media signup */}
@@ -223,7 +225,7 @@ const SignUp = () => {
                 <div className="w-full h-full md:w-5/12 ">
                   <div className="relative w-full  flex flex-col-reverse ">
                     <label
-                      className="absolute top-[4px] left-[50px] text-secH md:text-[12px] leading-[15.22px]"
+                      className="absolute top-[4px] text-secH left-[50px]  md:text-[12px] leading-[15.22px]"
                       htmlFor="username"
                     >
                       User Name
@@ -235,7 +237,7 @@ const SignUp = () => {
                     <input
                       type="text"
                       id="userName"
-                      className="  h-[60px] border-2  border-primary2 rounded-[5px] outline-none"
+                      className="  h-[60px] border-2  border-primary2 dark:text-lightGray rounded-[5px] outline-none"
                       name="username"
                       {...register("userName")}
                       placeholder="user name"
@@ -442,23 +444,25 @@ const SignUp = () => {
                 </div>
               )}
             </div>
-            <p className="text-[#54555B] text-[12px] mt-[15px] text-center">
+            <p className="text-[#54555B] dark:text-lightGray  text-[12px] mt-[15px] text-center">
               By siging up, you agree to the{" "}
               <Link to="/term-of-use" smooth="true" duration={500}>
-                <span className="text-sec1 cursor-pointer">
+                <span className="text-sec1 dark:font-bold cursor-pointer">
                   {" "}
                   Terms of Service
                 </span>{" "}
               </Link>
               and{" "}
               <Link to="/privacy-policy" smooth="true" duration={500}>
-                <span className="text-sec1 cursor-pointer">Privacy Policy</span>
+                <span className="text-sec1 cursor-pointer dark:font-bold">
+                  Privacy Policy
+                </span>
               </Link>
             </p>
-            <p className="text-[#2F3035] text-[16px] text-center md:text-[20px] mt-[10px]">
+            <p className="text-[#2F3035] dark:text-lightGray  text-[16px] text-center md:text-[20px] mt-[10px]">
               Have an account?{" "}
               <Link to="/login" smooth="true" duration={500}>
-                <button className="text-primary0Blue cursor-pointer">
+                <button className="text-primary0Blue dark:font-bold cursor-pointer">
                   login
                 </button>
               </Link>

@@ -19,9 +19,11 @@ const transaction = [
     userId: "0001",
     userName: "segun olakkunle",
     phoneNumber: "08033077849",
-    email: "segunolakkunle@yaho.com",
+    email: "makindesamuel1999@gmail.com",
     address: "35 bourdillon drive, ikoyi, lagos state.",
     NoU: "3",
+    Subjects: "Physics, Chemistry, Biology",
+    Price: "N100,000",
   },
   {
     id: 2,
@@ -41,6 +43,8 @@ const transaction = [
     email: "segunolakkunle@yaho.com",
     address: "35 bourdillon drive, ikoyi, lagos state.",
     NoU: "3",
+    Subjects: "Physics, Chemistry, Biology",
+    Price: "N100,000",
   },
   {
     id: 3,
@@ -60,6 +64,8 @@ const transaction = [
     email: "segunolakkunle@yaho.com",
     address: "35 bourdillon drive, ikoyi, lagos state.",
     NoU: "3",
+    Subjects: "Physics, Chemistry, Biology",
+    Price: "N100,000",
   },
   {
     id: 4,
@@ -79,6 +85,8 @@ const transaction = [
     email: "segunolakkunle@yaho.com",
     address: "35 bourdillon drive, ikoyi, lagos state.",
     NoU: "3",
+    Subjects: "Physics, Chemistry, Biology",
+    Price: "N100,000",
   },
   {
     id: 5,
@@ -98,6 +106,8 @@ const transaction = [
     email: "segunolakkunle@yaho.com",
     address: "35 bourdillon drive, ikoyi, lagos state.",
     NoU: "3",
+    Subjects: "Physics, Chemistry, Biology",
+    Price: "N100,000",
   },
   {
     id: 6,
@@ -117,6 +127,8 @@ const transaction = [
     email: "segunolakkunle@yaho.com",
     address: "35 bourdillon drive, ikoyi, lagos state.",
     NoU: "3",
+    Subjects: "Physics, Chemistry, Biology",
+    Price: "N100,000",
   },
   {
     id: 7,
@@ -136,6 +148,8 @@ const transaction = [
     email: "segunolakkunle@yaho.com",
     address: "35 bourdillon drive, ikoyi, lagos state.",
     NoU: "3",
+    Subjects: "Physics, Chemistry, Biology",
+    Price: "N100,000",
   },
   {
     id: 8,
@@ -155,6 +169,8 @@ const transaction = [
     email: "segunolakkunle@yaho.com",
     address: "35 bourdillon drive, ikoyi, lagos state.",
     NoU: "3",
+    Subjects: "Physics, Chemistry, Biology",
+    Price: "N100,000",
   },
   {
     id: 9,
@@ -174,6 +190,8 @@ const transaction = [
     email: "segunolakkunle@yaho.com",
     address: "35 bourdillon drive, ikoyi, lagos state.",
     NoU: "3",
+    Subjects: "Physics, Chemistry, Biology",
+    Price: "N100,000",
   },
   {
     id: 10,
@@ -193,6 +211,8 @@ const transaction = [
     email: "segunolakkunle@yaho.com",
     address: "35 bourdillon drive, ikoyi, lagos state.",
     NoU: "3",
+    Subjects: "Physics, Chemistry, Biology",
+    Price: "N100,000",
   },
   {
     id: 11,
@@ -212,6 +232,8 @@ const transaction = [
     email: "segunolakkunle@yaho.com",
     address: "35 bourdillon drive, ikoyi, lagos state.",
     NoU: "3",
+    Subjects: "Physics, Chemistry, Biology",
+    Price: "N100,000",
   },
   {
     id: 12,
@@ -230,6 +252,8 @@ const transaction = [
     email: "segunolakkunle@yaho.com",
     address: "35 bourdillon drive, ikoyi, lagos state.",
     NoU: "3",
+    Subjects: "Physics, Chemistry, Biology",
+    Price: "N100,000",
   },
   {
     id: 13,
@@ -249,6 +273,8 @@ const transaction = [
     email: "segunolakkunle@yaho.com",
     address: "35 bourdillon drive, ikoyi, lagos state.",
     NoU: "3",
+    Subjects: "Physics, Chemistry, Biology",
+    Price: "N100,000",
   },
   {
     id: 14,
@@ -268,6 +294,8 @@ const transaction = [
     email: "segunolakkunle@yaho.com",
     address: "35 bourdillon drive, ikoyi, lagos state.",
     NoU: "3",
+    Subjects: "Physics, Chemistry, Biology",
+    Price: "N100,000",
   },
   {
     id: 15,
@@ -287,6 +315,8 @@ const transaction = [
     email: "segunolakkunle@yaho.com",
     address: "35 bourdillon drive, ikoyi, lagos state.",
     NoU: "3",
+    Subjects: "Physics, Chemistry, Biology",
+    Price: "N100,000",
   },
   {
     id: 16,
@@ -306,6 +336,8 @@ const transaction = [
     email: "segunolakkunle@yaho.com",
     address: "35 bourdillon drive, ikoyi, lagos state.",
     NoU: "3",
+    Subjects: "Physics, Chemistry, Biology",
+    Price: "N100,000",
   },
   {
     id: 17,
@@ -325,6 +357,8 @@ const transaction = [
     email: "segunolakkunle@yaho.com",
     address: "35 bourdillon drive, ikoyi, lagos state.",
     NoU: "3",
+    Subjects: "Physics, Chemistry, Biology",
+    Price: "N100,000",
   },
   {
     id: 18,
@@ -344,6 +378,8 @@ const transaction = [
     email: "segunolakkunle@yaho.com",
     address: "35 bourdillon drive, ikoyi, lagos state.",
     NoU: "3",
+    Subjects: "Physics, Chemistry, Biology",
+    Price: "N100,000",
   },
   {
     id: 19,
@@ -363,6 +399,8 @@ const transaction = [
     email: "segunolakkunle@yaho.com",
     address: "35 bourdillon drive, ikoyi, lagos state.",
     NoU: "3",
+    Subjects: "Physics, Chemistry, Biology",
+    Price: "N100,000",
   },
   {
     id: 20,
@@ -382,6 +420,8 @@ const transaction = [
     email: "segunolakkunle@yaho.com",
     address: "35 bourdillon drive, ikoyi, lagos state.",
     NoU: "3",
+    Subjects: "Physics, Chemistry, Biology",
+    Price: "N100,000",
   },
 ];
 

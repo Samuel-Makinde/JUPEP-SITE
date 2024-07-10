@@ -15,7 +15,17 @@ const AdminMessages = () => {
   const [userDetails, setUserDetail] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [transactionsPerPage] = useState(10);
+  const [userType, setUserType] = useState(null);
+  const [method, setMethod] = useState(null);
 
+  const handleMessageUser = (option) => {
+    setUserType(option);
+    console.log("this is the current option", option);
+  };
+  const handleMessageMethod = (option) => {
+    setMethod(option);
+    console.log("this is the current method", option);
+  };
   const handleOptionClick = (option) => {
     setIsActive(option);
   };
@@ -109,30 +119,30 @@ const AdminMessages = () => {
       {/* user section */}
       <div className="w-full mt-[20px] dark:text-primary1 flex justify-between ">
         <div className="w-[30%]  h-40 2xl:h-52 rounded-[10px] shadow-2xl dark:bg-primary3 px-4 2xl:px-6 flex justify-between">
-          <h1 className="mt-7">Total Messages</h1>
-          <div className="w-16 h-16 2xl:w-24 2xl:h-24 rounded-[10px] py-4 bg-primary5 flex flex-col justify-center items-center mt-20">
+          <h1 className="mt-7">Total</h1>
+          <div className="w-[60%] h-16 2xl:w-24 2xl:h-24 rounded-[10px] py-4 bg-primary5 flex flex-col justify-center items-center mt-20">
             <img src={users} alt="users" />
-            <p className="text-primary3 dark:text-primary1">
+            <p className="text-primary7 dark:text-primary1">
               {userDetails ? userDetails.users_records.totalUsers : 0}
             </p>
           </div>
         </div>
 
         <div className="w-[30%] h-40 2xl:h-52 rounded-[10px] shadow-2xl dark:bg-primary3 px-4 2xl:px-6 flex justify-between">
-          <h1 className="mt-7">Replied Messages</h1>
-          <div className="w-16 h-16 2xl:w-24 2xl:h-24  rounded-[10px] py-4 bg-primary9 flex flex-col justify-center items-center mt-20">
+          <h1 className="mt-7">Replied</h1>
+          <div className="w-[60%] h-16 2xl:w-24 2xl:h-24  rounded-[10px] py-4 bg-primary9 flex flex-col justify-center items-center mt-20">
             <img src={users} alt="users" />
-            <p className="text-primary3 ">
+            <p className="text-primary7 dark:text-primary1">
               {userDetails ? userDetails.users_records.activeUsers : 0}
             </p>
           </div>
         </div>
 
         <div className="w-[30%] h-40 2xl:h-52 rounded-[10px] shadow-2xl dark:bg-primary3 px-4 2xl:px-6 flex justify-between">
-          <h1 className="mt-7">Pending Messages</h1>
-          <div className="w-16 h-16 2xl:w-24 2xl:h-24 rounded-[10px] py-4 bg-sec8 flex flex-col justify-center items-center mt-20">
+          <h1 className="mt-7">Pending</h1>
+          <div className="w-[60%] h-16 2xl:w-24 2xl:h-24 rounded-[10px] py-4 bg-sec8 flex flex-col justify-center items-center mt-20">
             <img src={users} alt="users" />
-            <p className="text-primary3 dark:text-primary1">
+            <p className="text-primary7 dark:text-primary1">
               {userDetails ? userDetails.users_records.inactiveUsers : 0}
             </p>
           </div>
@@ -142,14 +152,72 @@ const AdminMessages = () => {
       <div className="w-full h-76  shadow-2xl  dark:bg-primary3 rounded-[10px] mt-12 px-6 xl:px-10 py-6 ">
         <div className="w-full h-full">
           <div className="w-full flex justify-between dark:text-primary1 font-bold">
-            <p>Bulk Sms</p>
-            <p>Email</p>
+            <div className="">
+              <div className="w-full flex">
+                <input
+                  type="radio"
+                  name="all"
+                  id="all"
+                  onClick={() => handleMessageUser("all")}
+                />
+                <p className="ml-4">All Users</p>
+              </div>
+              <div className="w-full flex mt-1">
+                <input
+                  type="radio"
+                  name="all"
+                  id="all"
+                  onClick={() => handleMessageUser("subcribe")}
+                />
+                <p className="ml-4">Subscribe Users</p>
+              </div>
+              <div className="w-full flex mt-1">
+                <input
+                  type="radio"
+                  name="all"
+                  id="all"
+                  onClick={() => handleMessageUser("free")}
+                />
+                <p className="ml-4">Free Users</p>
+              </div>
+            </div>
+
+            <div className="">
+              <div className="w-full flex">
+                <input
+                  type="radio"
+                  name="method"
+                  id="method"
+                  onClick={() => handleMessageMethod("both")}
+                />
+                <p className="ml-4">Email & Sms</p>
+              </div>
+              <div className="w-full flex mt-1">
+                <input
+                  type="radio"
+                  name="method"
+                  id="method"
+                  onClick={() => handleMessageMethod("sms")}
+                />
+                <p className="ml-4">Sms</p>
+              </div>
+              <div className="w-full flex mt-1">
+                <input
+                  type="radio"
+                  name="method"
+                  id="method"
+                  onClick={() => handleMessageMethod("email")}
+                />
+                <p className="ml-4">Email</p>
+              </div>
+            </div>
           </div>
+
           <textarea
             name="messages"
             id="messages"
             rows="4"
-            className="w-full border-primary2 border-[1px] resize-none mt-2 px-6 py-6 outline-none"
+            className="w-full border-primary2 border-[1px] resize-none mt-4 px-6 py-6 outline-none"
             placeholder="Leave a message..."
           ></textarea>
           <button className="w-full h-12 hover:opacity-100 opacity-80 bg-primary9 text-primary1 rounded-[10px] mt-6 font-normal">
@@ -159,7 +227,7 @@ const AdminMessages = () => {
       </div>
 
       {/* messages area */}
-      <div className="w-full h-full dark:bg-primary3 shadow-2xl rounded-[10px] 2xl:mt-16 mt-12  ">
+      <div className="w-full h-full dark:bg-primary3 shadow-2xl rounded-[10px] 2xl:mt-16 mt-12 ">
         <div className="w-full h-28 2xl:h-32">
           <div className="w-full  2xl:pt-10 pt-8 flex items-center justify-between font-semibold md:text-[14px] xl:text-[16px] px-4 2xl:px-8">
             <div className="w-[60%] flex dark:text-primary1">
@@ -192,12 +260,12 @@ const AdminMessages = () => {
         </div>
 
         <div className="w-full h-16 2xl:h-24 bg-primary7 dark:bg-primary2 mb-5 px-4 2xl:px-8 text-primary1 flex justify-center items-center">
-          <p className="w-[6%]">Id</p>
-          <p className="w-[15%]">Date & Time</p>
-          <p className="w-[22%]">User Details </p>
+          <p className="w-[9%]">Id</p>
+          <p className="w-[12%]">Date & Time</p>
+          <p className="w-[25%]">User Details </p>
           <p className="w-[10%]">Topic</p>
           <p className="w-[19%]">Description</p>
-          <p className="w-[15%]">Status</p>
+          <p className="w-[12%]">Status</p>
           <p className="w-[12%] ">Action</p>
         </div>
 
@@ -211,6 +279,7 @@ const AdminMessages = () => {
                 phoneNumber,
                 userName,
                 school,
+                Subjects,
                 address,
               } = transaction;
               return (
@@ -221,22 +290,13 @@ const AdminMessages = () => {
                     backgroundColor: setBackgroundColor(index),
                   }}
                 >
-                  {/* <div className="w-[21%] flex">
-                    <input type="checkbox" name="first" id="first" />
-                    <input
-                      type="radio"
-                      name="second"
-                      id="second"
-                      className="ml-2"
-                    />
-                    <p className="ml-2">{formatDate(created_at)} </p>
-                  </div> */}
-                  <p className="w-[6%] ">00{id}</p>
-                  <p className="w-[15%] ">{date_time}</p>
-                  <p className="w-[22%]">
+                  <p className="w-[9%] ">{id}</p>
+                  <p className="w-[12%] ">{date_time}</p>
+                  <p className="w-[25%]">
                     {userName ? userName : "Not available"} <br />
                     {phoneNumber ? phoneNumber : "Not available"} <br />
                     {email ? email : "Not available"} <br />
+                    {Subjects ? Subjects : "Not available"} <br />
                     {school ? school : "Not available"}
                   </p>
                   <p className="w-[10%]">Loan</p>
@@ -244,7 +304,7 @@ const AdminMessages = () => {
                     {/* <span className="tooltiptext">{address}</span> */}
                     <p>{truncateMessage(address)}</p>
                   </div>
-                  <div className="w-[15%] text-primary1 rounded-[10px]  cursor-pointer">
+                  <div className="w-[12%] text-primary1 rounded-[10px]  cursor-pointer">
                     <p
                       className="w-[90%] h-12 flex justify-center items-center px-4 rounded-[10px] cursor-pointer"
                       style={{

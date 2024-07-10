@@ -17,11 +17,12 @@ export default {
       animation: ['motion-safe'],
       darkMode: 'class',
       colors: {
+        logoColor: "#4190EA",
         darkGray: '#111827',
         navyBlue: '#192841',
         lightGray: "#D1D5DB",
         darkBlue: "#1F2937",
-        primary0Blue: "#203B8A",
+        primary0Blue: "#203B8A",           
         primary1: "#FFFFFF",
         primary2: "#5E6978",
         primary3: "#333333",
@@ -39,12 +40,13 @@ export default {
         sec2: "#458CC1",
         sec3: "#232F49",
         sec4: "#D9D9D9",
-        sec5: "#FFD700",
+        sec5: "#eab308",
         sec6: "#54555B",
         sec7: "#25D366",
         sec8: "#FF0000",
         sec9: "#586CA7",
-        sec10: "#5E6978"
+        sec10: "#5E6978",
+        secB: "#CED5DB"
       },
       fontFamily: {
         'body': ['"Open Sans"', "sans"],
