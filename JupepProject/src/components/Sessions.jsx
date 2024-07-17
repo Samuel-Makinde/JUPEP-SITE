@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import session from "../../../assets/OneOnOneSession.jpg";
+// import session from "../../../assets/OneOnOneSession.jpg";
 
-const Session = () => {
+const Session = ({ session, background }) => {
   return (
-    <div className="w-full flex flex-col lg:flex-row items-center py-12 px-4 md:px-6 lg:px-8 xl:px-20 dark:text-lightGray dark:bg-darkGray bg-[#F1F5F9] ">
+    <div
+      className={`w-full flex flex-col lg:flex-row items-center py-12 px-4 md:px-6 lg:px-8 xl:px-20 dark:text-lightGray ${background}  bg-[#F1F5F9]`}
+    >
       <div className="lg:w-1/2 mb-8 lg:mb-0 lg:mr-8">
         <h2 className="text-3xl font-bold  mb-4">
           Leverage on our
@@ -16,7 +18,7 @@ const Session = () => {
         </h2>
         <p className=" mb-6">
           Join monthly class lead by each subject expert to ask questions and
-          better explanation on each topics.
+          get better explanation on each topics.
         </p>
         <Link to="/sign-up">
           <button className="bg-sec2   text-base text-primary1 bg-opacity-80 hover:bg-opacity-100 p-4 rounded-md mb-2 mb-md-0 font-bold">

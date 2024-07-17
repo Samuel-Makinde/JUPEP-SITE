@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import VideoCard from "../../../components/Video/VideoCard";
+import VideoCard from "../../../components/Cards/VideoCard";
 import VideoData from "../../../data/Video";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

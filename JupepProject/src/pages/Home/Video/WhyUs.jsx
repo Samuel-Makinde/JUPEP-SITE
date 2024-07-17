@@ -8,13 +8,13 @@ import { GiTeacher } from "react-icons/gi";
 const WhyUs = () => {
   return (
     <section className="text-center  pb-32 px-4 pt-32   xl:px-20 font-roboto text-primary2 dark:text-lightGray dark:bg-darkBlue font-medium">
-      <h2 className="text-indigo-600 uppercase tracking-wide mb-4">
+      <h2 className="text-indigo-600 dark:text-lightGray uppercase tracking-wide mb-4">
         Why Learn with EaseReads
       </h2>
-      <h1 className="text-4xl font-bold mb-6 text-secH">
+      <h1 className="text-4xl font-bold mb-6 dark:text-lightGray text-secH">
         Watch Jupep Vidoes On All Topics
       </h1>
-      <p className="md:px-24 mb-12">
+      <p className="md:px-24 mb-12 dark:text-primary2">
         Watch video on any topic of your choice to get better understanding of
         the topic from top rated <strong>JUPEB INSTRUCTORS</strong> for more
         clarity and understanding
