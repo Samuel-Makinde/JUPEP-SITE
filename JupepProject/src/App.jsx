@@ -38,6 +38,8 @@ import Book from "./pages/Home/Books/Book";
 import Video from "./pages/Home/Video/Video";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Exams } from "./pages/Home/Exams/Exams";
+import Landing from "./pages/UserDashboard/LandingPage/Landing";
 
 function App() {
   const [deferredPrompt, setDeferredPrompt] = useState(null);
@@ -119,6 +121,10 @@ function App() {
             <Route path="/payment" element={<Paystack />} />
             <Route path="/read-books" element={<Book />} />
             <Route path="/watch-videos" element={<Video />} />
+            <Route path="/practice-exam" element={<Exams />} />
+
+            {/* user landing page and dashboard */}
+            <Route path="/user" element={<Landing />} />
 
             <Route
               path="/admin/*"

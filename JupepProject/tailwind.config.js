@@ -46,7 +46,8 @@ export default {
         sec8: "#FF0000",
         sec9: "#586CA7",
         sec10: "#5E6978",
-        secB: "#CED5DB"
+        secB: "#CED5DB",
+        secLB: "#F1F5F9"
       },
       fontFamily: {
         'body': ['"Open Sans"', "sans"],
