@@ -47,7 +47,7 @@ const Login = () => {
   });
 
   return (
-    <main className="w-full h-full  font-body  text-secH ">
+    <main className="w-full h-full  font-body  text-secH dark:text-lightGray dark:bg-darkBlue">
       <div className="w-full h-full"></div>
 
       <div className=" w-full min-h-screen md:grid md:grid-cols-2">
@@ -91,7 +91,7 @@ const Login = () => {
           </div>
         </div>
 
-        <div className=" h-full md:bg-primary1   px-6 md:px-3 lg:px-14 xl:px-16 mt-[40px] md:mt-0 pb-[20px]">
+        <div className=" h-full  dark:text-lightGray text-secH px-6 md:px-3 lg:px-14 xl:px-16 mt-[40px] md:mt-0 pb-[20px]">
           <Link to="/" smooth="true" duration={500}>
             <div className="w-[37px] h-[37px] flex justify-center bg-primary0Blue mt-[40px] items-center">
               <FaArrowLeftLong size={27} className="text-primary1" />
@@ -99,10 +99,8 @@ const Login = () => {
           </Link>
 
           <div className="w-full  mt-[20px]">
-            <h1 className="text-[#04050C] text-[24px] md:text-[48px] ">
-              Log in
-            </h1>
-            <p className="text-secH mt-[25px]">
+            <h1 className=" text-[24px] md:text-[48px] ">Log in</h1>
+            <p className=" mt-[25px]">
               Log in to continue your learning journey and explore a world of
               endless possibilities with EaseReads.
             </p>
@@ -112,14 +110,14 @@ const Login = () => {
               <div className="w-full h-full mt-[90px]">
                 <div className="relative w-full h-full flex flex-col-reverse">
                   <label
-                    className="absolute top-[4px] left-[50px] text-secH md:text-[12px] leading-[15.22px]"
+                    className="absolute top-[4px] left-[50px] dark:text-secH  md:text-[12px] leading-[15.22px]"
                     htmlFor="email"
                   >
                     Email
                   </label>
                   <AiOutlineMail
                     size={24}
-                    className="absolute top-[20px] left-[10px] text-secT"
+                    className="absolute top-[20px] left-[10px] text-secT dark:text-secH"
                   />
                   <input
                     type="email"
@@ -127,7 +125,7 @@ const Login = () => {
                     name="email"
                     {...register("email")}
                     placeholder="email address"
-                    className="w-full h-[60px] border-2  border-primary2 rounded-[5px] outline-none"
+                    className="w-full h-[60px] border-2  border-primary2  dark:text-secH rounded-[5px] outline-none"
                     style={{ paddingLeft: "50px" }}
                   />
                 </div>
@@ -144,14 +142,14 @@ const Login = () => {
               <div className="w-full h-full mt-[30px] ">
                 <div className="relative w-full h-full flex flex-col-reverse">
                   <label
-                    className="absolute top-[4px] left-[50px] text-secH md:text-[12px] leading-[15.22px]"
+                    className="absolute top-[4px] left-[50px] dark:text-secH md:text-[12px] leading-[15.22px]"
                     htmlFor="password"
                   >
                     Password
                   </label>
                   <BiKey
                     size={24}
-                    className="absolute top-[20px] left-[10px] text-secT"
+                    className="absolute top-[20px] left-[10px] text-secT dark:text-secH"
                   />
                   <input
                     type={passwordVisibile ? "text" : "password"}
@@ -159,7 +157,7 @@ const Login = () => {
                     name="password"
                     {...register("password")}
                     placeholder="********"
-                    className="w-full h-[60px] border-2   border-primary2 rounded-[5px] outline-none"
+                    className="w-full h-[60px] border-2 dark:text-secH  border-primary2 rounded-[5px] outline-none"
                     style={{ paddingLeft: "50px" }}
                   />
                   <button
@@ -180,7 +178,7 @@ const Login = () => {
                   {errors.password?.message}
                 </small>
               </div>
-              <div className="w-full flex justify-between text-[16px] mt-[25px]">
+              <div className="w-full dark:text-lightGray flex justify-between text-[16px] mt-[25px]">
                 <p>
                   <input
                     type="checkbox"
@@ -190,7 +188,7 @@ const Login = () => {
                   Remember me
                 </p>
                 <Link to="/forgot-password" smooth="true" duration={500}>
-                  <p className="text-sec1 text-[16px] leading-[15.22px]  cursor-pointer font-semibold">
+                  <p className="text-sec1 dark:text-lightGray text-[16px] leading-[15.22px]  cursor-pointer font-semibold">
                     Forgot Password?
                   </p>
                 </Link>
@@ -212,10 +210,10 @@ const Login = () => {
                 </div>
               )}
 
-              <p className="text-[#2F3035] text-[16px] leading-[20.22px] font-normal mt-[30px] text-center">
+              <p className="text-[#2F3035] dark:text-lightGray text-[16px] leading-[20.22px] font-normal mt-[30px] text-center">
                 Don&apos;t have an account?{" "}
                 <Link to="/sign-up" smooth="true" duration={500}>
-                  <button className="text-primary0Blue font-medium">
+                  <button className="text-primary0Blue dark:font-bold font-medium">
                     Sign Up.
                   </button>
                 </Link>

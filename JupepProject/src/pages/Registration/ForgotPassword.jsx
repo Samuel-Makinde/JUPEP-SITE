@@ -7,6 +7,8 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner";
+import { Link } from "react-router-dom";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 const ForgotPassword = () => {
   const [loading, setLoading] = useState(false);
@@ -54,11 +56,16 @@ const ForgotPassword = () => {
   });
 
   return (
-    <div className="w-full h-full mt-[4rem] px-4  ">
-      <h1 className="text-[#04050C] text-[24px] font-semibold text-center">
+    <div className="w-full h-screen py-8 pt-[2rem] px-4 dark:text-lightGray dark:bg-darkBlue ">
+      <Link to="/login" smooth="true" duration={500}>
+        <div className="w-[37px] h-[37px] flex justify-center bg-primary0Blue mt-[40px] items-center">
+          <FaArrowLeftLong size={27} className="text-primary1" />
+        </div>
+      </Link>
+      <h1 className="text-secH dark:text-lightGray text-[24px] font-semibold text-center mt-10">
         Forgot Password
       </h1>
-      <p className="text-[#04050C] mt-[5px] text-center ">
+      <p className="text-secH dark:text-lightGray mt-[5px] text-center ">
         input the email address you register with to get a reset password link
       </p>
       <form
@@ -67,7 +74,7 @@ const ForgotPassword = () => {
       >
         <div className="w-full flex flex-col justify-center items-center  mt-[40px]">
           <label
-            className="w-full sm:w-[345px] md:w-[25rem] font-medium text-[#04050C] text-left md:text-[20px] leading-[15.22px]"
+            className="w-full sm:w-[345px] md:w-[25rem] font-medium dark:text-lightGray text-secH text-left md:text-[20px] leading-[15.22px]"
             htmlFor="email"
           >
             Email address
@@ -78,7 +85,7 @@ const ForgotPassword = () => {
             name="email"
             {...register("email")}
             placeholder="Email address"
-            className="w-full sm:w-[345px] md:w-[25rem] h-[50px] border-2  border-[#B3B4BB] rounded-[12px] outline-none   pl-[10px] mt-[1rem]"
+            className="w-full sm:w-[345px] md:w-[25rem] h-[50px] border-2  dark:text-secH border-[#B3B4BB] rounded-[12px] outline-none   pl-[10px] mt-[1rem]"
           />
           <small
             className="text-red-900 text-[14px] w-[345px] md:w-[25rem] text-left font-bold"

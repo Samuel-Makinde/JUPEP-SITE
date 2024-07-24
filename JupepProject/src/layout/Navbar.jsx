@@ -71,7 +71,7 @@ const Navbar = () => {
   }, [darkMode]);
 
   return (
-    <main className="fixed w-full h-[60px] flex justify-between font-roboto items-center px-4 md:px-6 lg:px-8 xl:px-16 bg-primary4 dark:bg-darkGray text-primary7 shadow-md z-30 font-euclid capitalize">
+    <main className="fixed w-full h-[60px] flex justify-between font-roboto items-center px-4  lg:px-6 xl:px-20 bg-primary1 dark:bg-darkGray text-primary7 shadow-md z-30 font-euclid capitalize">
       <div onClick={handleToggle} className="md:hidden z-30" ref={navbarRef}>
         {toggle ? (
           <div className="w-full h-[32px] bg- cursor-pointer flex justify-end items-center rounded-[20px]">
@@ -140,14 +140,14 @@ const Navbar = () => {
           </li>
         </Link>
 
-        <Link to="/view-subject" smooth="true" duration={500}>
+        <Link to="/read-books" smooth="true" duration={500}>
           <li className="leading-[20px] text-[16px] flex  px-[24px] py-[14px] font-normal ">
             <FiBook size={20} />
             <h1 className="pl-[10px] cursor-pointer">Read-Books</h1>
           </li>
         </Link>
 
-        <Link to="/video-page" smooth="true" duration={500}>
+        <Link to="/watch-videos" smooth="true" duration={500}>
           <li className="leading-[20px] text-[16px] flex  px-[24px] py-[14px] font-normal ">
             <MdOutlinePersonalVideo size={20} />
             <h1 className="pl-[10px] cursor-pointer">Watch Videos</h1>
@@ -156,7 +156,7 @@ const Navbar = () => {
 
         <li className=" flex border-b-2 mt-[10px] border-b-[#D4D5DB] mx-[15px] "></li>
 
-        <Link to="/instruction" smooth="true" duration={500}>
+        <Link to="/practice-exam" smooth="true" duration={500}>
           <li className="leading-[20px] text-[16px] flex  px-[24px] py-[14px] font-normal ">
             <PiExam size={20} />
             <h1 className="pl-[10px] cursor-pointer">Take Exams</h1>
@@ -228,21 +228,21 @@ const Navbar = () => {
             <RiArrowDownSFill size={24} className="ml-2" />
           </span>
           <ul className="absolute hidden w-[250px] transform  ease-in-out duration-500 delay-700 shadow-md shadow-primary7  bg-primary4  rounded-xl text-primary7 font-medium p-4  space-y-2 group-hover:block">
-            <Link to="/view-subject" smooth="true" duration={500}>
+            <Link to="/read-books" smooth="true" duration={500}>
               <li className="flex items-center p-4 hover:bg-primary6  hover:text-primary1">
                 <FiBookOpen size={20} />
                 <span className="pl-2 cursor-pointer">Read Books</span>
               </li>
             </Link>
 
-            <Link to="/video-page" smooth="true" duration={500}>
+            <Link to="/watch-videos" smooth="true" duration={500}>
               <li className="flex items-center p-4 hover:bg-primary6 hover:text-primary1">
                 <MdOutlinePersonalVideo size={20} />
                 <span className="pl-2 cursor-pointer">Watch Videos</span>
               </li>
             </Link>
 
-            <Link to="/instruction" smooth="true" duration={500}>
+            <Link to="/practice-exam" smooth="true" duration={500}>
               <li className="flex items-center p-4 hover:bg-primary6 hover:text-primary1">
                 <PiExam size={20} />
                 <span className="pl-2 cursor-pointer">Take Exam</span>

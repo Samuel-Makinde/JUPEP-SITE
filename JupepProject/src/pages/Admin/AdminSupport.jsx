@@ -109,30 +109,30 @@ const AdminSupport = () => {
       {/* user section */}
       <div className="w-full mt-[20px] dark:text-primary1 flex justify-between ">
         <div className="w-[30%]  h-40 2xl:h-52 rounded-[10px] shadow-2xl dark:bg-primary3 px-4 2xl:px-6 flex justify-between">
-          <h1 className="mt-7">Total Support</h1>
-          <div className="w-16 h-16 2xl:w-24 2xl:h-24 rounded-[10px] py-4 bg-primary5 flex flex-col justify-center items-center mt-20">
+          <h1 className="mt-7">Total</h1>
+          <div className="w-[60%] h-16 2xl:w-24 2xl:h-24 rounded-[10px] py-4 bg-primary5 flex flex-col justify-center items-center mt-20">
             <img src={users} alt="users" />
-            <p className="text-primary3 dark:text-primary1">
+            <p className="text-primary7 dark:text-primary1">
               {userDetails ? userDetails.users_records.totalUsers : 0}
             </p>
           </div>
         </div>
 
         <div className="w-[30%] h-40 2xl:h-52 rounded-[10px] shadow-2xl dark:bg-primary3 px-4 2xl:px-6 flex justify-between">
-          <h1 className="mt-7">Replied Support</h1>
-          <div className="w-16 h-16 2xl:w-24 2xl:h-24  rounded-[10px] py-4 bg-primary9 flex flex-col justify-center items-center mt-20">
+          <h1 className="mt-7">Replied </h1>
+          <div className="w-[60%] h-16 2xl:w-24 2xl:h-24  rounded-[10px] py-4 bg-primary9 flex flex-col justify-center items-center mt-20">
             <img src={users} alt="users" />
-            <p className="text-primary3 ">
+            <p className="text-primary7 dark:text-primary1 ">
               {userDetails ? userDetails.users_records.activeUsers : 0}
             </p>
           </div>
         </div>
 
         <div className="w-[30%] h-40 2xl:h-52 rounded-[10px] shadow-2xl dark:bg-primary3 px-4 2xl:px-6 flex justify-between">
-          <h1 className="mt-7">Pending Support</h1>
-          <div className="w-16 h-16 2xl:w-24 2xl:h-24 rounded-[10px] py-4 bg-sec8 flex flex-col justify-center items-center mt-20">
+          <h1 className="mt-7">Pending</h1>
+          <div className="w-[60%] h-16 2xl:w-24 2xl:h-24 rounded-[10px] py-4 bg-sec8 flex flex-col justify-center items-center mt-20">
             <img src={users} alt="users" />
-            <p className="text-primary3 dark:text-primary1">
+            <p className="text-primary7 dark:text-primary1">
               {userDetails ? userDetails.users_records.inactiveUsers : 0}
             </p>
           </div>
@@ -173,12 +173,12 @@ const AdminSupport = () => {
         </div>
 
         <div className="w-full h-16 2xl:h-24 bg-primary7 dark:bg-primary2 mb-5 px-4 2xl:px-8 text-primary1 flex justify-center items-center">
-          <p className="w-[6%]">Id</p>
-          <p className="w-[15%]">Date & Time</p>
-          <p className="w-[22%]">User Details </p>
+          <p className="w-[9%]">Id</p>
+          <p className="w-[12%]">Date & Time</p>
+          <p className="w-[25%]">User Details </p>
           <p className="w-[10%]">Topic</p>
           <p className="w-[19%]">Description</p>
-          <p className="w-[15%]">Status</p>
+          <p className="w-[12%]">Status</p>
           <p className="w-[12%] ">Action</p>
         </div>
 
@@ -202,19 +202,9 @@ const AdminSupport = () => {
                     backgroundColor: setBackgroundColor(index),
                   }}
                 >
-                  {/* <div className="w-[21%] flex">
-                    <input type="checkbox" name="first" id="first" />
-                    <input
-                      type="radio"
-                      name="second"
-                      id="second"
-                      className="ml-2"
-                    />
-                    <p className="ml-2">{formatDate(created_at)} </p>
-                  </div> */}
-                  <p className="w-[6%] ">00{id}</p>
-                  <p className="w-[15%] ">{date_time}</p>
-                  <p className="w-[22%]">
+                  <p className="w-[9%] ">00{id}</p>
+                  <p className="w-[12%] ">{date_time}</p>
+                  <p className="w-[25%]">
                     {userName ? userName : "Not available"} <br />
                     {phoneNumber ? phoneNumber : "Not available"} <br />
                     {email ? email : "Not available"} <br />
@@ -225,7 +215,7 @@ const AdminSupport = () => {
                     {/* <span className="tooltiptext">{address}</span> */}
                     <p>{truncateMessage(address)}</p>
                   </div>
-                  <div className="w-[15%] text-primary1 rounded-[10px]  cursor-pointer">
+                  <div className="w-[12%] text-primary1 rounded-[10px]  cursor-pointer">
                     <p
                       className="w-[90%] h-12 flex justify-center items-center px-4 rounded-[10px] cursor-pointer"
                       style={{

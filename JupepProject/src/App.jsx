@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import { useEffect, useState } from "react";
 import SignUp from "./pages/Registration/SignUp";
 import Login from "./pages/Registration/Login";
 import Home from "./pages/Home/Home";
@@ -33,9 +33,60 @@ import AdminUsers from "./pages/Admin/Users";
 import AdminTransaction from "./pages/Admin/AdminTransaction";
 import AdminMessages from "./pages/Admin/AdminMessages";
 import AdminSupport from "./pages/Admin/AdminSupport";
+import AdminSubscribtion from "./pages/Admin/AdminSubscribtion";
+import Book from "./pages/Home/Books/Book";
+import Video from "./pages/Home/Video/Video";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { Exams } from "./pages/Home/Exams/Exams";
+import Landing from "./pages/UserDashboard/LandingPage/Landing";
 import BookDetails from "./pages/PriceDetails/BookDetails";
-
+import Courses from "./components/coursecard/data";
 function App() {
+  const [deferredPrompt, setDeferredPrompt] = useState(null);
+  const [isInstallable, setIsInstallable] = useState(false);
+
+  useEffect(() => {
+    const handleBeforeInstallPrompt = (event) => {
+      event.preventDefault();
+      setDeferredPrompt(event);
+      setIsInstallable(true);
+    };
+
+    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+
+    // Check if the button should be shown based on the date
+    const lastShownDate = localStorage.getItem("installPromptLastShownDate");
+    const currentDate = new Date().toISOString().split("T")[0]; // Get current date in YYYY-MM-DD format
+
+    if (lastShownDate !== currentDate) {
+      setIsInstallable(true);
+      localStorage.setItem("installPromptLastShownDate", currentDate);
+    }
+
+    return () => {
+      window.removeEventListener(
+        "beforeinstallprompt",
+        handleBeforeInstallPrompt
+      );
+    };
+  }, []);
+
+  const handleInstallClick = () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === "accepted") {
+          console.log("User accepted the install prompt");
+        } else {
+          console.log("User dismissed the install prompt");
+        }
+        setDeferredPrompt(null);
+        setIsInstallable(false);
+      });
+    }
+  };
+
   return (
     <div>
       <Router>
@@ -53,7 +104,8 @@ function App() {
             <Route path="/user/verify-email" element={<UserVerifyEmail />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/pricing" element={<Pricing />} />
-            <Route path="/book-details" element={<BookDetails />} />
+            <Route path="/book-details/:course" element={<BookDetails />} />
+            <Route path="/" element={<Courses />} />
             <Route path="/about" element={<About />} />
             <Route path="/syllabus" element={<Syllabus />} />
             <Route path="/view-subject" element={<ViewSubject />} />
@@ -70,6 +122,12 @@ function App() {
 
             <Route path="/admin-login" element={<AdminLogin />} />
             <Route path="/payment" element={<Paystack />} />
+            <Route path="/read-books" element={<Book />} />
+            <Route path="/watch-videos" element={<Video />} />
+            <Route path="/practice-exam" element={<Exams />} />
+
+            {/* user landing page and dashboard */}
+            <Route path="/user" element={<Landing />} />
 
             <Route
               path="/admin/*"
@@ -79,6 +137,10 @@ function App() {
                     <Route path="dashboard" element={<AdminHome />} />
                     <Route path="users" element={<AdminUsers />} />
                     <Route path="transaction" element={<AdminTransaction />} />
+                    <Route
+                      path="subscription"
+                      element={<AdminSubscribtion />}
+                    />
                     <Route path="messages" element={<AdminMessages />} />
                     <Route path="support" element={<AdminSupport />} />
                   </Routes>
@@ -91,8 +153,24 @@ function App() {
           </Routes>
         </UserProvider>
       </Router>
+      {isInstallable && (
+        <button onClick={handleInstallClick} style={installButtonStyles}>
+          Install Easereads
+        </button>
+      )}
     </div>
   );
 }
 
+const installButtonStyles = {
+  position: "fixed",
+  bottom: "20px",
+  right: "20px",
+  padding: "10px 20px",
+  backgroundColor: "#007bff",
+  color: "#fff",
+  border: "none",
+  borderRadius: "5px",
+  cursor: "pointer",
+};
 export default App;

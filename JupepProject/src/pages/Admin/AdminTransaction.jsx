@@ -4,7 +4,7 @@ import transactions from "../../data/AdminTransactions";
 import { useEffect, useState } from "react";
 import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 import monthlyData from "../../data/Monthly";
-import SupportModal from "../../components/SupportModal";
+import UserModal from "../../components/UserModal";
 
 const AdminTransaction = () => {
   //   const [transactions, setTransactions] = useState([]);
@@ -115,8 +115,8 @@ const AdminTransaction = () => {
                 key={index}
                 className="h-14 w-full border-solid border-2  border-primary7"
               >
-                <td className="w-50%  pl-[15%]">{data.month}</td>
-                <td className="w-50% pl-[15%]">{data.totalJobs}</td>
+                <td className="w-40%  pl-[5%]">{data.month}</td>
+                <td className="w-60% pl-[0%]">{data.totalJobs}</td>
               </tr>
             ))}
           </tbody>
@@ -135,8 +135,8 @@ const AdminTransaction = () => {
                 key={index}
                 className="h-14 w-full border-solid border-2  border-primary7"
               >
-                <td className="w-49%  pl-[15%]">{data.month}</td>
-                <td className="w-49% pl-[15%]">{data.totalJobs}</td>
+                <td className="w-40%  pl-[5%]">{data.month}</td>
+                <td className="w-60% pl-[0%]">{data.totalJobs}</td>
               </tr>
             ))}
           </tbody>
@@ -155,8 +155,8 @@ const AdminTransaction = () => {
                 key={index}
                 className="h-14 w-full border-solid border-2  border-primary7"
               >
-                <td className="w-50%  pl-[15%]">{data.month}</td>
-                <td className="w-50% pl-[15%]">{data.totalJobs}</td>
+                <td className="w-40%  pl-[5%]">{data.month}</td>
+                <td className="w-60% pl-[0%]">{data.totalJobs}</td>
               </tr>
             ))}
           </tbody>
@@ -171,9 +171,9 @@ const AdminTransaction = () => {
           <h2>Transaction History</h2>
         </div>
         <div className="w-full h-16  2xl:h-24 font-semibold bg-primary7 dark:bg-primary2 mb-5 px-4 2xl:px-8 text-primary1 flex justify-center items-center text-xs md:text-[16px] xl:text-[18px]">
-          <p className="w-[10%]">Num</p>
-          <p className="w-[15%]">Date&Time </p>
-          <p className="w-[19%]">User Details</p>
+          <p className="w-[9%]">Num</p>
+          <p className="w-[12%]">Date&Time </p>
+          <p className="w-[26%]">User Details</p>
           <p className="w-[15%]">Subject's</p>
           <p className="w-[13%]">Amount</p>
           <p className="w-[15%]">Status</p>
@@ -190,12 +190,11 @@ const AdminTransaction = () => {
                 phoneNumber,
                 email,
                 school,
-                payment_status,
+                Subjects,
                 amount,
                 type,
                 plan,
                 status,
-                address,
               } = transaction;
 
               return (
@@ -206,12 +205,13 @@ const AdminTransaction = () => {
                     backgroundColor: setBackgroundColor(index),
                   }}
                 >
-                  <p className="w-[10%]">{id}</p>
-                  <p className="w-[15%]">{date_time}</p>
-                  <p className="w-[19%]">
+                  <p className="w-[9%]">{id}</p>
+                  <p className="w-[12%]">{date_time}</p>
+                  <p className="w-[26%]">
                     {userName ? userName : "Not available"} <br />
                     {phoneNumber ? phoneNumber : "Not available"} <br />
                     {email ? email : "Not available"} <br />
+                    {Subjects ? Subjects : "Not available"} <br />
                     {school ? school : "Not available"}
                   </p>
                   <div className="w-[15%]  flex  items-center">
@@ -247,11 +247,10 @@ const AdminTransaction = () => {
                       {/* {action} */}
                       View
                     </p>
-                    <SupportModal
+                    <UserModal
                       openModal={openModal}
                       setOpenModal={setOpenModal}
                       supportID={transId}
-                      userMessage={address}
                     />
                   </div>
                 </div>

@@ -17,9 +17,12 @@ import { CiBookmark } from "react-icons/ci";
 import { IoTimeOutline } from "react-icons/io5";
 import { TiStar } from "react-icons/ti";
 import { GiNetworkBars } from "react-icons/gi";
+import { useParams } from 'react-router-dom';
+
 const BookDetails = () => {
 
   const [value, setValue] = useState('1');
+  const { course } = useParams();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -28,7 +31,7 @@ const BookDetails = () => {
     <Layout>
     <div className='px-[60px] py-[60px] bg-[#754fff] h-[450px]'>
       <div className='mt-[50px]'>
-      <h2 className='text-5xl text-[#ffffff] font-bold'>Javascript Beginner</h2>
+      <h2 className='text-5xl text-[#ffffff] font-bold'>{course}</h2>
       <div className='flex space-x-[20px] text-[#ffffff] pt-[15px]'>
        <div className='flex'><CiBookmark color="#b199ff" className='mt-[3px]' /><p><span className='pl-[5px]'>Bookmark</span></p></div>
      
@@ -51,9 +54,10 @@ const BookDetails = () => {
                 <TabContext value={value}>
                   <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                     <TabList onChange={handleChange} aria-label="basic tabs example">
-                      <Tab label="Item One" value="1" />
-                      <Tab label="Item Two" value="2" />
-                      <Tab label="Item Three" value="3" />
+                      <Tab label="Contents" value="1" />
+                      <Tab label="Description" value="2" />
+                      <Tab label="Reviews" value="3" />
+                      <Tab label="FAQ" value="4" />
                     </TabList>
                   </Box>
                   <TabPanel value="1">

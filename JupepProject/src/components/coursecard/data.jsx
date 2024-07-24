@@ -3,8 +3,10 @@ import exam from "../../assets/Home Landing Image/exams.png"
 import samuel from "../../assets/Home Landing Image/samuel.png"
 import peter from "../../assets/Home Landing Image/peter.jpg"
 import Coursecard from './coursecard'
+import { useNavigate } from 'react-router-dom';
 
 const Courses = () => {
+    const navigate = useNavigate()
     const coursecards = [
         {
             id: 1,
@@ -45,10 +47,11 @@ const Courses = () => {
         },
     ]
 
-
+    const handleClick = (course) => {
+        navigate(`/book-details/${course}`);
+      };
+   console.log(handleClick)
   return (
-
-
     <div className='flex'>
       {
  coursecards.map ((coursecard, index) => (
@@ -61,6 +64,7 @@ const Courses = () => {
     price={coursecard.price}
     author={coursecard.author}
     authorImg={coursecard.authorImg}
+    handleClick={() => handleClick(coursecard.course)}
     />
 ))
       }
