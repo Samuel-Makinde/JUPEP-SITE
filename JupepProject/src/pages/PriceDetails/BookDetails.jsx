@@ -19,7 +19,7 @@ import { GiNetworkBars } from "react-icons/gi";
 import questions from '../../data/FAQuestions';
 import reviews from '../../data/Review';
 import { IoSearch } from "react-icons/io5";
-import Button from "../../components/button/Button"
+import Button from "../../components/button/temp"
 import Descriptions from '../../data/description';
 // import phyImage from "../../assets/syllabus/phyImage.jpg"
 import { useParams, useLocation } from 'react-router-dom';
