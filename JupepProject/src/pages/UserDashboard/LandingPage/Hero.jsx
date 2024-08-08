@@ -5,9 +5,9 @@ import { PiExamFill } from "react-icons/pi";
 
 const Hero = () => {
   return (
-    <div className="w-full h-full  dark:text-lightGray dark:bg-darkBlue font-medium capitalize">
-      <div className="bg-[#754FFE] dark:bg-darkBlue px-4   xl:px-20 flex flex-col items-center justify-center min-h-[490px] text-primary1">
-        <header className="text-center mb-10">
+    <div className="w-full   dark:text-lightGray dark:bg-darkBlue font-medium capitalize">
+      <div className="bg-[#754FFE] dark:bg-darkBlue px-4 py-20  xl:px-20 flex flex-col items-center justify-center min-h-[490px] text-primary1">
+        <header className="text-center mt-10 md:mt-0 mb-10">
           <div>
             <h1 className="text-4xl font-bold mb-4">
               Welcome to EaseReads Learning Application
@@ -31,7 +31,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="w-full text-primary6 dark:text-lightGray dark:bg-darkGray text-left  pt-6  text-sm primary6 px-20 md:flex md:space-x-10">
+      <div className="w-full text-primary6 dark:text-lightGray dark:bg-darkGray text-left  pt-6  text-sm primary6 px-4 md:px-20 md:flex md:space-x-10">
         <div className="w-full md:w-1/3 text-left flex ">
           <div className="text-indigo-600 bg-[#FFEEDA]  p-4 rounded-2xl mb-4">
             <BsPersonVideo3 size={30} />

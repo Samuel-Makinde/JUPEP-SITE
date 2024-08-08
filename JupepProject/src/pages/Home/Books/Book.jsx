@@ -7,12 +7,14 @@ import BookFAQPage from "./BookFAQ.JSX";
 // import Session from "./Session";
 import Session from "../../../components/Sessions";
 import sessionImage from "../../../assets/OneOnOneSession.jpg";
+import Slidder from "./Slidder";
 
 const Book = () => {
   return (
     <Layout>
       <main className="">
         <HeroSection />
+        <Slidder />
         <ImageGalary />
         <FeatureSection />
         <Session session={sessionImage} background={"dark:bg-darkGray"} />

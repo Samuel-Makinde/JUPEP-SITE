@@ -48,7 +48,7 @@ const RecoomendedVideo = () => {
 
   return (
     <div className=" pb-32 px-4 pt-32   xl:px-20 font-roboto text-primary2 bg-primary4 dark:text-lightGray dark:bg-darkBlue font-medium">
-      <h1 className="text-3xl font-bold mb-4 text-secH dark:text-lightGray">
+      <h1 className="md:text-3xl text-xl font-bold mb-4 text-secH dark:text-lightGray">
         Recommended Videos
       </h1>
       <p className="text-primary2">
@@ -63,7 +63,7 @@ const RecoomendedVideo = () => {
             className={`p-2 m-2 ${
               selectedSubject === subject
                 ? "border-b-2 border-primary0Blue  text-primary0Blue"
-                : "text-secH dark:text-gray-500 hover:border-b-2 hover:border-primary0Blue"
+                : "text-secH dark:text-lightGray hover:border-b-2 hover:border-primary0Blue"
             }`}
           >
             {subject}
@@ -75,7 +75,7 @@ const RecoomendedVideo = () => {
           <VideoCard key={`${course.title}-${index}`} course={course} />
         ))}
       </Slider>
-      <button className=" px-4 bg-primary0Blue rounded-2xl mt-10 text-white h-16">
+      <button className=" px-4 bg-sec2 rounded-2xl mt-10 text-white h-16">
         View All Subject Videos
       </button>
     </div>

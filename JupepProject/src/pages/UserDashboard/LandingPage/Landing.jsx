@@ -1,16 +1,17 @@
 import React from "react";
 import Hero from "./Hero";
-import Layout from "../../../layout/Layout";
 import RecoomendedVideo from "./Video";
+import RecoomendedExams from "./Exams";
+import UserNavbar from "../../../layout/UserNavbar";
 
 const Landing = () => {
   return (
-    <Layout>
-      <main>
-        <Hero />
-        <RecoomendedVideo />
-      </main>
-    </Layout>
+    <main>
+      <UserNavbar />
+      <Hero />
+      <RecoomendedVideo />
+      <RecoomendedExams />
+    </main>
   );
 };
 

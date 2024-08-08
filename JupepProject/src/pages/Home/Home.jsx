@@ -102,12 +102,20 @@ const Home = () => {
                     textbooks, where learning meets comprehension, and success
                     becomes inevitable.
                   </p>
-
-                  <Link to="/view-subject" smooth="true" duration={500}>
-                    <button className="w-full md:w-[220px] mt-[20px] h-[59px] bg-primary0Blue hover:bg-sec3 flex justify-center items-center text-primary1 font-body text-xl rounded-[45px]">
-                      Start Reading
-                    </button>
-                  </Link>
+                  <div>
+                    <div className="flex mt-5 font-roboto">
+                      <Link to="/sign-up">
+                        <button className="bg-sec2 w-full  text-base text-primary1 bg-opacity-80 hover:bg-opacity-100 p-4 rounded-md mb-2 mb-md-0 font-bold">
+                          Get started for free
+                        </button>
+                      </Link>
+                      <Link to="/read-books">
+                        <button className=" w-full mt-5 md:mt-0 md:ml-5 text-base hover:text-primary1 hover:bg-sec2 border-[2px] border-sec2 font-bold text-sec2  p-4 rounded-md mb-2 mb-md-0">
+                          Read More
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -332,11 +340,18 @@ const Home = () => {
                   confidence. Experience personalized exam preparation that
                   aligns seamlessly with your study progress.
                 </p>
-                <Link to="/instruction" smooth="true" duration={500}>
-                  <button className="w-full md:w-[220px] mt-[20px] h-[59px] bg-primary0Blue hover:bg-sec3 flex justify-center items-center text-primary1 font-body text-xl rounded-[45px]">
-                    Take Exams
-                  </button>
-                </Link>
+                <div className="flex mt-5 font-roboto">
+                  <Link to="/sign-up">
+                    <button className="bg-sec2 w-full  text-base text-primary1 bg-opacity-80 hover:bg-opacity-100 p-4 rounded-md mb-2 mb-md-0 font-bold">
+                      Get started for free
+                    </button>
+                  </Link>
+                  <Link to="/practice-exam">
+                    <button className=" w-full mt-5 md:mt-0 md:ml-5 text-base hover:text-primary1 hover:bg-sec2 border-[2px] border-sec2 font-bold text-sec2  p-4 rounded-md mb-2 mb-md-0">
+                      Read More
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
 

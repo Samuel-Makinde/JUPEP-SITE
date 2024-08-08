@@ -1,22 +1,27 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { UserProvider } from "./context/AuthContext";
+// user authentication routes
 import SignUp from "./pages/Registration/SignUp";
 import Login from "./pages/Registration/Login";
+import ForgotPassword from "./pages/Registration/ForgotPassword";
+import ResetPassword from "./pages/Registration/ResetPassword";
+import UserVerifyEmail from "./pages/Registration/UserVerifyEmail";
+import VerifyPage from "./pages/Registration/VerifyPage";
+
+// user landing page routes
 import Home from "./pages/Home/Home";
 import ContactUs from "./pages/Contact/ContactUs";
 import Pricing from "./pages/Pricing-Page/Pricing";
 import ScrollToTop from "./layout/ScrollToTop/ScrollToTop";
 import About from "./pages/About/About";
 import Syllabus from "./pages/Syllabus/Syllabus";
-import UserVerifyEmail from "./pages/Registration/UserVerifyEmail";
-import { UserProvider } from "./context/AuthContext";
 import TermOfUse from "./pages/Regulation/TermOfUse";
 import PrivacyPolicy from "./pages/Regulation/PrivacyPolicy";
-import ForgotPassword from "./pages/Registration/ForgotPassword";
-import ResetPassword from "./pages/Registration/ResetPassword";
+
 import ViewSubject from "./pages/ViewSubject/ViewSubject";
 // import UploadFile from "./pages/UploadFile";
-import VerifyPage from "./pages/Registration/VerifyPage";
+
 import Error from "./pages/Error/Error";
 import ThirdPartyCookie from "./pages/ThirdPartyCookie/ThirdPartyCookie";
 import VideoPage from "./pages/VideoPage/VideoPage";
@@ -40,6 +45,17 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Exams } from "./pages/Home/Exams/Exams";
 import Landing from "./pages/UserDashboard/LandingPage/Landing";
+
+// login user routes
+import UserLayout from "./layout/UserLayout";
+import Dashboard from "./pages/UserDashboard/Dashboard/Dashboard";
+import MyBooks from "./pages/UserDashboard/Dashboard/myBook";
+import MyVideos from "./pages/UserDashboard/Dashboard/MyVideos";
+import MyExams from "./pages/UserDashboard/Dashboard/MyExams";
+import MySubscription from "./pages/UserDashboard/Dashboard/MySubscription";
+import MyHelpCenter from "./pages/UserDashboard/Dashboard/HelpCenter";
+import ProfileHeader from "./components/UserProfileHeader";
+import Toastify from "./components/Toastify";
 
 function App() {
   const [deferredPrompt, setDeferredPrompt] = useState(null);
@@ -125,7 +141,34 @@ function App() {
 
             {/* user landing page and dashboard */}
             <Route path="/user" element={<Landing />} />
+            <Route
+              path="/user/*"
+              element={
+                <UserLayout>
+                  <ProfileHeader />
+                  <Toastify message="To move up your rank, enage in reading textbooks, watching tutorial video, practice exams and create study plan" />
+                  <Routes>
+                    <Route path="dashboard" element={<Dashboard />} />
+                    <Route path="dashboard/my-learning" element={<MyBooks />} />
+                    <Route path="dashboard/my-videos" element={<MyVideos />} />
+                    <Route
+                      path="dashboard/exam-practice"
+                      element={<MyExams />}
+                    />
+                    <Route
+                      path="dashboard/subscriptions"
+                      element={<MySubscription />}
+                    />
+                    <Route
+                      path="dashboard/help-center"
+                      element={<MyHelpCenter />}
+                    />
+                  </Routes>
+                </UserLayout>
+              }
+            />
 
+            {/*admin route*/}
             <Route
               path="/admin/*"
               element={

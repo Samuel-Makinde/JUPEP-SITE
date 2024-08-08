@@ -65,6 +65,11 @@ const SupportModal = ({ openModal, setOpenModal, supportID, userMessage }) => {
       onClose={() => setOpenModal(false)}
       size="md"
       popup
+      className={` ${
+        openModal
+          ? " transform ease-in-out delay-300 duration-500 "
+          : "opacity-0 translate-y-4 transform ease-in-out delay-300 duration-500 "
+      }`}
     >
       <Modal.Header className="text-primary1  dark:bg-primary2"></Modal.Header>
       <form onSubmit={handleSubmit}>
@@ -111,7 +116,7 @@ const SupportModal = ({ openModal, setOpenModal, supportID, userMessage }) => {
           <Button color="gray" onClick={() => setOpenModal(false)}>
             Close
           </Button>
-          <Button type="submit" disabled={loading}>
+          <Button type="submit" color="blue" disabled={loading}>
             {loading ? "Sending..." : "Send Message"}{" "}
           </Button>
         </Modal.Footer>

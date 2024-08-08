@@ -228,7 +228,7 @@ const AdminSupport = () => {
 
                   <div className="w-[12%] text-primary3">
                     <button
-                      className="w-[90%] h-12 flex justify-center items-center px-4 rounded-[10px] text-primary1 bg-primary10 cursor-pointer"
+                      className="w-[90%]  h-12 flex justify-center items-center px-4 rounded-[10px] text-primary1 bg-primary10 cursor-pointer"
                       onClick={() => handleOpenModal(id)}
                     >
                       Reply

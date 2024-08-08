@@ -282,13 +282,7 @@ const Navbar = () => {
         {user ? (
           <div className="flex flex-col text-center ">
             <p className=" text-[22px] font-semibold md:text-[18px] lg:text-[20px]">
-              Welcome {user}
-            </p>
-            <p
-              className="font-medium cursor-pointer hover:border-b-2 hover:border-b-primary0Blue dark:hover:border-b-sec5 dark:hover:text-primary1 "
-              onClick={LogOut}
-            >
-              Logout
+              Dashboard
             </p>
           </div>
         ) : (

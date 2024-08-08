@@ -37,8 +37,6 @@ const AdminHome = () => {
       ? transaction.slice(indexOfFirstTransaction, indexOfLastTransaction)
       : [];
 
-  // const paginate = (pageNumber) => setCurrentPage(pageNumber);
-  //   for nene
   const paginate = (pageNumber) => {
     if (pageNumber < 1) {
       setCurrentPage(1);
