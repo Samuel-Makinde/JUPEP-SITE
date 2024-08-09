@@ -194,7 +194,11 @@ function App() {
         </UserProvider>
       </Router>
       {isInstallable && (
-        <button onClick={handleInstallClick} style={installButtonStyles}>
+        <button
+          className="z-30"
+          onClick={handleInstallClick}
+          style={installButtonStyles}
+        >
           Install Easereads
         </button>
       )}

@@ -15,7 +15,7 @@ const Book = () => {
       <main className="">
         <HeroSection />
         <Slidder />
-        <ImageGalary />
+        {/* <ImageGalary /> */}
         <FeatureSection />
         <Session session={sessionImage} background={"dark:bg-darkGray"} />
         <BookFAQPage />

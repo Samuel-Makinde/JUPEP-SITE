@@ -1,71 +1,42 @@
 import React from "react";
-import { IoTimeOutline } from "react-icons/io5";
-import { GiNetworkBars } from "react-icons/gi";
-import { FaRegBookmark } from "react-icons/fa6";
-import { HiStar } from "react-icons/hi";
+import frame from "../../assets/Home Landing Image/Frame 98.png";
 
-const Bookcard = ({
-  img,
-  course,
-  hours,
-  view,
-  subscriber,
-  rating,
-  price,
-  author,
-  authorImg,
-  reviews,
-  page,
-  description,
-  handleClick,
-}) => {
-  return (
-    <div onClick={handleClick}>
-      <div
-        className="border rounded-[10px] w-[290px] ml-[15px] cursor-pointer"
-        onClick={handleClick}
-      >
-        <img className="w-full" src={img} alt="courses" />
-        <p className="pl-[10px] pt-[20px] text-2xl font-bold"> {course} </p>
-        <div className="flex space-around w-full pl-[10px] pt-[25px]">
-          {/* <span className="pt-[3px]"><IoTimeOutline size={20} /> </span> <p className="text-xl pl-[8px]">{hours}</p>   */}
+const MAX_MESSAGE_LENGTH = 70;
 
-          {/* <span className="pl-[15px]"> <GiNetworkBars size={20}/></span> */}
-          <p className="w-full text-xl">Pages: {page}</p>
-          <p className="text-xl pl-[10px] w-full flex">
-            {" "}
-            Rating: {rating}
-            <span className="pt-[5px] pl-[5px]">
-              {" "}
-              <HiStar color="#fcd73f" />{" "}
-            </span>
-          </p>
-        </div>
-        <div className="pt-[10px] pl-[10px] flex space-x-[20px] text-xl pr-[2px]">
-          <p className="text-xl">Subscriber: {subscriber}</p>
-          <p>Reviews: {reviews}</p>
-        </div>
-        <div className="w-full py-[20px] pl-[10px] text-[18px] pr-[9px]">
-          <p>Summary: {description}</p>
-        </div>
-        {/* <p className="py-[30px] pl-[25px]">{price}</p> */}
-        <div className="border"></div>
-        <div className=" my-[20px] pl-[10px] border-2px-red w-full text-[18px]">
-          {/* <img className="w-[30px] rounded-[50px]" src={authorImg} alt="author-image"/>  */}
-
-          <p className=" flex pb-[15px]">
-            {" "}
-            Author: {author}
-            <span className="pt-[6px] pl-[10px]">
-              <FaRegBookmark size={20} />
-            </span>
-          </p>
-
-          <p> View by {view} </p>
-        </div>
-      </div>
-    </div>
-  );
+const truncateMessage = (messages) => {
+  if (messages.length > MAX_MESSAGE_LENGTH) {
+    return messages.slice(0, MAX_MESSAGE_LENGTH) + "...";
+  }
+  return messages;
 };
 
-export default Bookcard;
+const BookCard = ({ book }) => (
+  <div className="bg-white min-h-[400px] font-roboto  text-primary5  shadow-md rounded-lg p-4 m-2 ">
+    <img
+      src={book.image}
+      alt={book.title}
+      className="w-full h-32 object-cover rounded-md"
+    />
+    <h2 className="sm:text-base min-h-[30px] md:min-h-[40px] font-bold mt-2 text-secH">
+      {book.title} Jupeb TextBooks
+    </h2>
+
+    <p className="py-[2px]">N.O.P: {book.page} Pages</p>
+    <p className="py-[2px]">
+      Rating: {book.rating} ⭐ ({book.reviews} reviews)
+    </p>
+    <p className="py-2 tooltip cursor-pointer">
+      {/* <span className="tooltiptext">{address}</span> */}
+      Summary: {truncateMessage(book.description)}
+    </p>
+    <div className="w-full mt-[10px] flex">
+      <img src={frame} alt="frame" className="" />
+      <p className="text-xs sm:text-sm my-auto text-primary3 ">
+        Viewed By {book.view} people
+      </p>
+    </div>
+    {/* <p>Instructor: {course.instructor}</p> */}
+  </div>
+);
+
+export default BookCard;
