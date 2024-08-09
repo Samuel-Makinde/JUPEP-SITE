@@ -1,7 +1,7 @@
 import React from "react";
 import HeroSection from "./HeroSection";
 import Layout from "../../../layout/Layout";
-import ImageGalary from "./ImageGalary";
+// import ImageGalary from "./ImageGalary";
 import FeatureSection from "./FeatureSection";
 import BookFAQPage from "./BookFAQ.JSX";
 // import Session from "./Session";
